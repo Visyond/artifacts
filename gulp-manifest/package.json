@@ -1,0 +1,59 @@
+{
+  "name": "gulp-manifest",
+  "version": "0.0.6",
+  "description": "Generate HTML5 Cache Manifest files",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hillmanov/gulp-manifest"
+  },
+  "keywords": [
+    "gulp",
+    "gulpplugin",
+    "html5",
+    "manifest"
+  ],
+  "author": {
+    "name": "Scott Hillman"
+  },
+  "license": "MIT",
+  "gitHead": "58e17b7e8757385a1988e30735c46c86e78a2aba",
+  "devDependencies": {
+    "should": "~2.1.1",
+    "mocha": "~1.16.2"
+  },
+  "dependencies": {
+    "event-stream": "~3.0.20",
+    "through": "~2.3.4",
+    "gulp-util": "~2.2.6",
+    "slash": "^0.1.1"
+  },
+  "bugs": {
+    "url": "https://github.com/hillmanov/gulp-manifest/issues"
+  },
+  "homepage": "https://github.com/hillmanov/gulp-manifest",
+  "_id": "gulp-manifest@0.0.6",
+  "_shasum": "fbac84e550897a536041868bcb065fac08d3a3df",
+  "_from": "gulp-manifest@0.0.6",
+  "_npmVersion": "1.4.16",
+  "_npmUser": {
+    "name": "hillmanov",
+    "email": "hillmanov+npm@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "hillmanov",
+      "email": "hillmanov+npm@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "fbac84e550897a536041868bcb065fac08d3a3df",
+    "tarball": "http://registry.npmjs.org/gulp-manifest/-/gulp-manifest-0.0.6.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/gulp-manifest/-/gulp-manifest-0.0.6.tgz",
+  "readme": "ERROR: No README data found!"
+}

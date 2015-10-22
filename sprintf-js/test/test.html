@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>sprintf.js test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/mocha.css" />
+    <script src="lib/mocha.js"></script>
+    <script>
+      mocha.setup('bdd');
+
+      onload = function () {
+        mocha.checkLeaks();
+        mocha.globals(['foo']);
+        var runner = mocha.run();
+
+        // runner.on('test end', function(test){
+        //   console.log(test.fullTitle());
+        // });
+      };
+    </script>
+  </head>
+  <body>
+    <div id="mocha"></div>
+  </body>
+</html>

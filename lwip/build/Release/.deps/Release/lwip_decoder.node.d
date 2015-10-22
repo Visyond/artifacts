@@ -1,1 +1,1 @@
-cmd_Release/lwip_decoder.node := ln -f "Release/obj.target/lwip_decoder.node" "Release/lwip_decoder.node" 2>/dev/null || (rm -rf "Release/lwip_decoder.node" && cp -af "Release/obj.target/lwip_decoder.node" "Release/lwip_decoder.node")
+cmd_Release/lwip_decoder.node := rm -rf "Release/lwip_decoder.node" && cp -af "Release/obj.target/lwip_decoder.node" "Release/lwip_decoder.node"

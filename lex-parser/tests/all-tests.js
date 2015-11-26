@@ -7,31 +7,16 @@ function read (p, file) {
     return fs.readFileSync(path.join(__dirname, p, file), "utf8");
 }
 
-function lexer_reset() {
-    if (lex.parser.yy) {
-        var y = lex.parser.yy;
-        if (y.parser) {
-            delete y.parser;
-        }
-        if (y.lexer) {
-            delete y.lexer;
-        }
-    }
-
-    lex.parser.yy = {};
-}
-
 exports["test lex grammar with macros"] = function () {
     var lexgrammar = 'D [0-9]\nID [a-zA-Z][a-zA-Z0-9]+\n%%\n\n{D}"ohhai" {print(9);}\n"{" return \'{\';';
     var expected = {
         macros: {"D": "[0-9]", "ID": "[a-zA-Z][a-zA-Z0-9]+"},
         rules: [
-            ["{D}ohhai", "print(9);"],
+            ["{D}ohhai\\b", "print(9);"],
             ["\\{", "return '{';"]
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -45,7 +30,6 @@ exports["test escaped chars"] = function () {
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -60,7 +44,6 @@ exports["test advanced"] = function () {
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -69,12 +52,11 @@ exports["test [^\\]]"] = function () {
     var expected = {
         rules: [
             ["\\[[^\\]]\\]", "return true;"],
-            ["f\"oo'bar", "return 'baz2';"],
-            ['fo"obar', "return 'baz';"]
+            ["f\"oo'bar\\b", "return 'baz2';"],
+            ['fo"obar\\b', "return 'baz';"]
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -86,7 +68,6 @@ exports["test multiline action"] = function () {
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -98,7 +79,6 @@ exports["test multiline action with single braces"] = function () {
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -110,7 +90,6 @@ exports["test multiline action with brace in a multi-line-comment"] = function (
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -122,7 +101,6 @@ exports["test multiline action with brace in a single-line-comment"] = function 
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -134,7 +112,6 @@ exports["test multiline action with braces in strings"] = function () {
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -146,7 +123,6 @@ exports["test multiline action with braces in regexp"] = function () {
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -160,7 +136,6 @@ exports["test include"] = function () {
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -168,7 +143,6 @@ exports["test bnf lex grammar"] = function () {
     var lexgrammar = lex.parse(read('lex', 'bnf.jisonlex'));
     var expected = JSON.parse(read('lex', 'bnf.lex.json'));
 
-    lexer_reset();
     assert.deepEqual(lexgrammar, expected, "grammar should be parsed correctly");
 };
 
@@ -176,14 +150,12 @@ exports["test lex grammar bootstrap"] = function () {
     var lexgrammar = lex.parse(read('lex', 'lex_grammar.jisonlex'));
     var expected = JSON.parse(read('lex', 'lex_grammar.lex.json'));
 
-    lexer_reset();
     assert.deepEqual(lexgrammar, expected, "grammar should be parsed correctly");
 };
 
 exports["test ANSI C lexical grammar"] = function () {
     var lexgrammar = lex.parse(read('lex','ansic.jisonlex'));
 
-    lexer_reset();
     assert.ok(lexgrammar, "grammar should be parsed correctly");
 };
 
@@ -195,7 +167,6 @@ exports["test advanced"] = function () {
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -212,14 +183,13 @@ exports["test start conditions"] = function () {
             "EAT": 1,
         },
         rules: [
-            ["enter-test", "this.begin('TEST');" ],
-            [["TEST","EAT"], "x", "return 'T';" ],
-            [["*"], "z", "return 'Z';" ],
-            [["TEST"], "y", "this.begin('INITIAL'); return 'TY';" ]
+            ["enter-test\\b", "this.begin('TEST');" ],
+            [["TEST","EAT"], "x\\b", "return 'T';" ],
+            [["*"], "z\\b", "return 'Z';" ],
+            [["TEST"], "y\\b", "this.begin('INITIAL'); return 'TY';" ]
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -228,11 +198,10 @@ exports["test no brace action"] = function () {
     var expected = {
         rules: [
             ["\\[[^\\]]\\]", "return true;"],
-            ["x", "return 1;"]
+            ["x\\b", "return 1;"]
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -240,11 +209,10 @@ exports["test quote escape"] = function () {
     var lexgrammar = '%%\n\\"\\\'"x" return 1;';
     var expected = {
         rules: [
-            ["\"'x", "return 1;"]
+            ["\"'x\\b", "return 1;"]
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -252,7 +220,7 @@ exports["test escape things"] = function () {
     var lexgrammar = '%%\n\\"\\\'\\\\\\*\\i return 1;\n"a"\\b return 2;\n\\cA {}\n\\012 {}\n\\xFF {}';
     var expected = {
         rules: [
-            ["\"'\\\\\\*i", "return 1;"],
+            ["\"'\\\\\\*i\\b", "return 1;"],
             ["a\\b", "return 2;"],
             ["\\cA", ""],
             ["\\012", ""],
@@ -260,7 +228,6 @@ exports["test escape things"] = function () {
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -272,7 +239,6 @@ exports["test unicode encoding"] = function () {
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -284,7 +250,6 @@ exports["test unicode"] = function () {
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -296,7 +261,6 @@ exports["test bugs"] = function () {
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -308,7 +272,6 @@ exports["test special groupings"] = function () {
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -316,12 +279,11 @@ exports["test trailing code include"] = function () {
     var lexgrammar = '%%"foo"  {return bar;}\n%% var bar = 1;';
     var expected = {
         rules: [
-            ['foo', "return bar;"]
+            ['foo\\b', "return bar;"]
         ],
         moduleInclude: " var bar = 1;"
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -333,7 +295,6 @@ exports["test empty or regex"] = function () {
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -346,7 +307,6 @@ exports["test options"] = function () {
         options: {flex: true}
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -358,7 +318,6 @@ exports["test unquoted string rules"] = function () {
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -367,12 +326,11 @@ exports["test [^\\\\]"] = function () {
     var expected = {
         rules: [
             ["\\[[^\\\\]\\]", "return true;"],
-            ["f\"oo'bar", "return 'baz2';"],
-            ['fo"obar', "return 'baz';"]
+            ["f\"oo'bar\\b", "return 'baz2';"],
+            ['fo"obar\\b', "return 'baz';"]
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -384,7 +342,6 @@ exports["test comments"] = function () {
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -396,7 +353,6 @@ exports["test rules with trailing escapes"] = function () {
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -404,12 +360,11 @@ exports["test no brace action with surplus whitespace between rules"] = function
     var lexgrammar = '%%\n"a" return true;\n  \n"b" return 1;\n   \n';
     var expected = {
         rules: [
-            ["a", "return true;"],
-            ["b", "return 1;"]
+            ["a\\b", "return true;"],
+            ["b\\b", "return 1;"]
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -421,7 +376,6 @@ exports["test windows line endings"] = function () {
         ]
     };
 
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 
@@ -429,52 +383,11 @@ exports["test braced action with surplus whitespace between rules"] = function (
     var lexgrammar = '%%\n"a" %{  \nreturn true;\n%}  \n  \n"b" %{    return 1;\n%}  \n   \n';
     var expected = {
         rules: [
-            ["a", "  \nreturn true;\n"],
-            ["b", "    return 1;\n"]
+            ["a\\b", "  \nreturn true;\n"],
+            ["b\\b", "    return 1;\n"]
         ]
     };
 
-    lexer_reset();
-    assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
-};
-
-exports["test %options easy_keyword_rules"] = function () {
-    var lexgrammar = '%options easy_keyword_rules\n'+
-                     '%s TEST TEST2\n%x EAT\n%%\n'+
-                     '"enter-test" {this.begin(\'TEST\');}\n'+
-                     '<TEST,EAT>"x" {return \'T\';}\n'+
-                     '<*>"z" {return \'Z\';}\n'+
-                     '<TEST>"y" {this.begin(\'INITIAL\'); return \'TY\';}\n'+
-                     '\\"\\\'"a" return 1;\n'+
-                     '\\"\\\'\\\\\\*\\i return 1;\n"a"\\b return 2;\n\\cA {}\n\\012 {}\n\\xFF {}\n'+
-                     '"["[^\\\\]"]" {return true;}\n\'f"oo\\\'bar\'  {return \'baz2\';}\n"fo\\"obar"  {return \'baz\';}\n';
-    var expected = {
-        startConditions: {
-            "TEST": 0,
-            "TEST2": 0,
-            "EAT": 1,
-        },
-        rules: [
-            ["enter-test\\b", "this.begin('TEST');" ],
-            [["TEST","EAT"], "x\\b", "return 'T';" ],
-            [["*"], "z\\b", "return 'Z';" ],
-            [["TEST"], "y\\b", "this.begin('INITIAL'); return 'TY';" ],
-            ["\"'a\\b", "return 1;"],
-            ["\"'\\\\\\*i\\b", "return 1;"],
-            ["a\\b", "return 2;"],
-            ["\\cA", ""],
-            ["\\012", ""],
-            ["\\xFF", ""],
-            ["\\[[^\\\\]\\]", "return true;"],
-            ["f\"oo'bar\\b", "return 'baz2';"],
-            ['fo"obar\\b', "return 'baz';"]
-        ],
-        options: {
-            "easy_keyword_rules": true
-        }
-    };
-
-    lexer_reset();
     assert.deepEqual(lex.parse(lexgrammar), expected, "grammar should be parsed correctly");
 };
 

@@ -3,6 +3,7 @@
 TOOLSET := target
 TARGET := lwip_image
 DEFS_Debug := \
+	'-DNODE_GYP_MODULE_NAME=lwip_image' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
 	'-DBUILDING_NODE_EXTENSION' \
@@ -12,10 +13,10 @@ DEFS_Debug := \
 # Flags passed to all source files.
 CFLAGS_Debug := \
 	-fPIC \
+	-pthread \
 	-Wall \
 	-Wextra \
 	-Wno-unused-parameter \
-	-pthread \
 	-m64 \
 	-g \
 	-O0
@@ -25,16 +26,19 @@ CFLAGS_C_Debug :=
 
 # Flags passed to only C++ files.
 CFLAGS_CC_Debug := \
-	-fno-rtti
+	-fno-rtti \
+	-std=gnu++0x
 
 INCS_Debug := \
-	-I/home/doctor/.node-gyp/0.10.40/src \
-	-I/home/doctor/.node-gyp/0.10.40/deps/uv/include \
-	-I/home/doctor/.node-gyp/0.10.40/deps/v8/include \
-	-I$(srcdir)/node_modules/nan \
+	-I/home/doctor/.node-gyp/4.2.2/include/node \
+	-I/home/doctor/.node-gyp/4.2.2/src \
+	-I/home/doctor/.node-gyp/4.2.2/deps/uv/include \
+	-I/home/doctor/.node-gyp/4.2.2/deps/v8/include \
+	-I$(srcdir)/../nan \
 	-I$(srcdir)/src/lib/cimg
 
 DEFS_Release := \
+	'-DNODE_GYP_MODULE_NAME=lwip_image' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
 	'-DBUILDING_NODE_EXTENSION'
@@ -42,14 +46,14 @@ DEFS_Release := \
 # Flags passed to all source files.
 CFLAGS_Release := \
 	-fPIC \
+	-pthread \
 	-Wall \
 	-Wextra \
 	-Wno-unused-parameter \
-	-pthread \
 	-m64 \
-	-O2 \
-	-fno-strict-aliasing \
-	-fno-tree-vrp \
+	-O3 \
+	-ffunction-sections \
+	-fdata-sections \
 	-fno-omit-frame-pointer
 
 # Flags passed to only C files.
@@ -57,13 +61,15 @@ CFLAGS_C_Release :=
 
 # Flags passed to only C++ files.
 CFLAGS_CC_Release := \
-	-fno-rtti
+	-fno-rtti \
+	-std=gnu++0x
 
 INCS_Release := \
-	-I/home/doctor/.node-gyp/0.10.40/src \
-	-I/home/doctor/.node-gyp/0.10.40/deps/uv/include \
-	-I/home/doctor/.node-gyp/0.10.40/deps/v8/include \
-	-I$(srcdir)/node_modules/nan \
+	-I/home/doctor/.node-gyp/4.2.2/include/node \
+	-I/home/doctor/.node-gyp/4.2.2/src \
+	-I/home/doctor/.node-gyp/4.2.2/deps/uv/include \
+	-I/home/doctor/.node-gyp/4.2.2/deps/v8/include \
+	-I$(srcdir)/../nan \
 	-I$(srcdir)/src/lib/cimg
 
 OBJS := \

@@ -1,15 +1,12 @@
 
-all: build test
+all: install build test
 
-prep: npm-install
-
-npm-install:
+install:
 	npm install
 
-build: lex-parser.js
-
-lex-parser.js: lex.y lex.l
-	./node_modules/.bin/jison -o lex-parser.js lex.y lex.l
+build:
+	node ./node_modules/.bin/jison lex.y lex.l
+	mv lex.js lex-parser.js
 
 test:
 	node tests/all-tests.js
@@ -18,14 +15,8 @@ test:
 
 
 clean:
-	-rm -f lex-parser.js
-	-rm -rf node_modules/
 
 superclean: clean
 	-find . -type d -name 'node_modules' -exec rm -rf "{}" \;
 
 
-
-
-
-.PHONY: all prep npm-install build test clean superclean

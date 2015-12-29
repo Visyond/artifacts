@@ -1,0 +1,84 @@
+{
+  "_args": [
+    [
+      "gulp-nightwatch@^0.2.7",
+      "/home/vagrant/visyond/server/v2"
+    ]
+  ],
+  "_from": "gulp-nightwatch@>=0.2.7 <0.3.0",
+  "_id": "gulp-nightwatch@0.2.7",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/gulp-nightwatch",
+  "_nodeVersion": "5.3.0",
+  "_npmUser": {
+    "email": "tatsuya7.hoshino7@gmail.com",
+    "name": "tatsuyafw"
+  },
+  "_npmVersion": "3.3.12",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "gulp-nightwatch",
+    "raw": "gulp-nightwatch@^0.2.7",
+    "rawSpec": "^0.2.7",
+    "scope": null,
+    "spec": ">=0.2.7 <0.3.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gulp-nightwatch/-/gulp-nightwatch-0.2.7.tgz",
+  "_shasum": "48c94e4ecfcb8bf47e3532c17d2f4c7c7e795483",
+  "_shrinkwrap": null,
+  "_spec": "gulp-nightwatch@^0.2.7",
+  "_where": "/home/vagrant/visyond/server/v2",
+  "author": {
+    "name": "Tatsuya Hoshino"
+  },
+  "bugs": {
+    "url": "https://github.com/tatsuyafw/gulp-nightwatch/issues"
+  },
+  "dependencies": {
+    "event-stream": "^3.1.7",
+    "gulp-util": "^3.0.1",
+    "minimist": "^1.1.1",
+    "nightwatch": "^0.8.3",
+    "shell-quote": "^1.4.3"
+  },
+  "description": "gulp plugin for Nightwatch.js",
+  "devDependencies": {
+    "chai": "^2.1.2",
+    "mocha": "^2.2.1"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "48c94e4ecfcb8bf47e3532c17d2f4c7c7e795483",
+    "tarball": "http://registry.npmjs.org/gulp-nightwatch/-/gulp-nightwatch-0.2.7.tgz"
+  },
+  "gitHead": "f74ff8cc0ed193f3ac1012495e4a40e2fb1e6422",
+  "homepage": "https://github.com/tatsuyafw/gulp-nightwatch",
+  "keywords": [
+    "gulpplugin",
+    "nightwatch"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "tatsuyafw",
+      "email": "tatsuya7.hoshino7@gmail.com"
+    }
+  ],
+  "name": "gulp-nightwatch",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tatsuyafw/gulp-nightwatch.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "0.2.7"
+}

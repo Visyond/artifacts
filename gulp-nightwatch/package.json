@@ -1,0 +1,59 @@
+{
+  "name": "gulp-nightwatch",
+  "version": "0.2.7",
+  "description": "gulp plugin for Nightwatch.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tatsuyafw/gulp-nightwatch.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "nightwatch"
+  ],
+  "author": {
+    "name": "Tatsuya Hoshino"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tatsuyafw/gulp-nightwatch/issues"
+  },
+  "homepage": "https://github.com/tatsuyafw/gulp-nightwatch",
+  "dependencies": {
+    "event-stream": "^3.1.7",
+    "gulp-util": "^3.0.1",
+    "minimist": "^1.1.1",
+    "nightwatch": "^0.8.3",
+    "shell-quote": "^1.4.3"
+  },
+  "devDependencies": {
+    "chai": "^2.1.2",
+    "mocha": "^2.2.1"
+  },
+  "gitHead": "f74ff8cc0ed193f3ac1012495e4a40e2fb1e6422",
+  "_id": "gulp-nightwatch@0.2.7",
+  "_shasum": "48c94e4ecfcb8bf47e3532c17d2f4c7c7e795483",
+  "_from": "gulp-nightwatch@>=0.2.7 <0.3.0",
+  "_npmVersion": "3.3.12",
+  "_nodeVersion": "5.3.0",
+  "_npmUser": {
+    "name": "tatsuyafw",
+    "email": "tatsuya7.hoshino7@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "tatsuyafw",
+      "email": "tatsuya7.hoshino7@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "48c94e4ecfcb8bf47e3532c17d2f4c7c7e795483",
+    "tarball": "http://registry.npmjs.org/gulp-nightwatch/-/gulp-nightwatch-0.2.7.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/gulp-nightwatch/-/gulp-nightwatch-0.2.7.tgz",
+  "readme": "ERROR: No README data found!"
+}

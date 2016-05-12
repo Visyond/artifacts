@@ -1,85 +1,43 @@
 {
-  "_args": [
-    [
-      "gulp-jison@git://github.com/GerHobbelt/gulp-jison.git#master",
-      "/home/doctor/prog/environment_root/server/v2"
-    ]
-  ],
-  "_from": "git://github.com/GerHobbelt/gulp-jison.git#master",
-  "_id": "gulp-jison@1.2.0",
-  "_inCache": true,
-  "_installable": true,
-  "_location": "/gulp-jison",
-  "_phantomChildren": {
-    "core-util-is": "1.0.2",
-    "inherits": "2.0.1",
-    "isarray": "0.0.1",
-    "process-nextick-args": "1.0.3",
-    "string_decoder": "0.10.31",
-    "util-deprecate": "1.0.2",
-    "xtend": "4.0.1"
-  },
-  "_requested": {
-    "hosted": {
-      "directUrl": "https://raw.githubusercontent.com/GerHobbelt/gulp-jison/master/package.json",
-      "gitUrl": "git://github.com/GerHobbelt/gulp-jison.git#master",
-      "httpsUrl": "git+https://github.com/GerHobbelt/gulp-jison.git#master",
-      "shortcut": "github:GerHobbelt/gulp-jison#master",
-      "ssh": "git@github.com:GerHobbelt/gulp-jison.git#master",
-      "sshUrl": "git+ssh://git@github.com/GerHobbelt/gulp-jison.git#master",
-      "type": "github"
-    },
-    "name": "gulp-jison",
-    "raw": "gulp-jison@git://github.com/GerHobbelt/gulp-jison.git#master",
-    "rawSpec": "git://github.com/GerHobbelt/gulp-jison.git#master",
-    "scope": null,
-    "spec": "git://github.com/GerHobbelt/gulp-jison.git#master",
-    "type": "hosted"
-  },
-  "_requiredBy": [
-    "#DEV:/"
-  ],
-  "_resolved": "git://github.com/GerHobbelt/gulp-jison.git#eb207a2062066724481731c0769bec169ceaf2bf",
-  "_shasum": "a4e16dc6f10e547eef3ac7a4b40392e573c6f870",
-  "_shrinkwrap": null,
-  "_spec": "gulp-jison@git://github.com/GerHobbelt/gulp-jison.git#master",
-  "_where": "/home/doctor/prog/environment_root/server/v2",
-  "author": {
-    "email": "me@matteckert.com",
-    "name": "Matt Eckert"
-  },
-  "bugs": {
-    "url": "https://github.com/matteckert/gulp-jison/issues"
-  },
-  "dependencies": {
-    "gulp-util": "~3.0.6",
-    "jison": "git://github.com/GerHobbelt/jison.git#master",
-    "object-assign": "~4.0.1",
-    "through2": "~2.0.0"
-  },
-  "description": "Jison plugin for gulp",
-  "devDependencies": {
-    "mocha": "~2.3.3",
-    "should": "~7.1.0"
-  },
-  "gitHead": "eb207a2062066724481731c0769bec169ceaf2bf",
-  "homepage": "https://github.com/matteckert/gulp-jison",
-  "keywords": [
-    "gulpplugin",
-    "jison"
-  ],
-  "license": "MIT",
-  "main": "index.js",
   "name": "gulp-jison",
-  "optionalDependencies": {},
-  "readme": "gulp-jison [![NPM version](https://badge.fury.io/js/gulp-jison.png)](http://badge.fury.io/js/gulp-jison) [![Build Status](https://travis-ci.org/matteckert/gulp-jison.png?branch=master)](https://travis-ci.org/matteckert/gulp-jison) [![Dependency Status](https://david-dm.org/matteckert/gulp-jison.png)](https://david-dm.org/matteckert/gulp-jison)\n==========\n\nJison plugin for gulp\n\nUsage\n-----\n\n```javascript\nvar jison = require('gulp-jison');\n\ngulp.task('jison', function() {\n    return gulp.src('./src/*.jison')\n        .pipe(jison({ moduleType: 'commonjs' }))\n        .pipe(gulp.dest('./src/'));\n});\n```\n\nErrors\n------\n\ngulp-jison will emit any Jison errors. If you don't listen to the \n`.on('error', cb)` event, gulp will crash if there's a Jison error.\n\nOptions\n--------\n\ngulp-jison supports the same options object as Jison itself.\n\nLicense\n-------\n\nThe MIT License (MIT)\n\nCopyright (c) 2014 Matt Eckert <me@matteckert.com>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
-  "readmeFilename": "README.md",
+  "version": "1.2.0",
+  "description": "Jison plugin for gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/matteckert/gulp-jison.git"
   },
-  "scripts": {
-    "test": "mocha"
+  "keywords": [
+    "gulpplugin",
+    "jison"
+  ],
+  "author": {
+    "name": "Matt Eckert",
+    "email": "me@matteckert.com"
   },
-  "version": "1.2.0"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matteckert/gulp-jison/issues"
+  },
+  "homepage": "https://github.com/matteckert/gulp-jison",
+  "devDependencies": {
+    "mocha": "~2.4.5",
+    "should": "~8.3.1"
+  },
+  "dependencies": {
+    "jison": "git://github.com/GerHobbelt/jison.git#master",
+    "object-assign": "~4.1.0",
+    "through2": "~2.0.1",
+    "gulp-util": "~3.0.7"
+  },
+  "gitHead": "19b2ca786daf373e52813d610669dc7d002511e4",
+  "readme": "gulp-jison [![NPM version](https://badge.fury.io/js/gulp-jison.png)](http://badge.fury.io/js/gulp-jison) [![Build Status](https://travis-ci.org/matteckert/gulp-jison.png?branch=master)](https://travis-ci.org/matteckert/gulp-jison) [![Dependency Status](https://david-dm.org/matteckert/gulp-jison.png)](https://david-dm.org/matteckert/gulp-jison)\n==========\n\nJison plugin for gulp\n\nUsage\n-----\n\n```javascript\nvar jison = require('gulp-jison');\n\ngulp.task('jison', function() {\n    return gulp.src('./src/*.jison')\n        .pipe(jison({ moduleType: 'commonjs' }))\n        .pipe(gulp.dest('./src/'));\n});\n```\n\nErrors\n------\n\ngulp-jison will emit any Jison errors. If you don't listen to the \n`.on('error', cb)` event, gulp will crash if there's a Jison error.\n\nOptions\n--------\n\ngulp-jison supports the same options object as Jison itself.\n\nLicense\n-------\n\nThe MIT License (MIT)\n\nCopyright (c) 2014 Matt Eckert <me@matteckert.com>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+  "readmeFilename": "README.md",
+  "_id": "gulp-jison@1.2.0",
+  "_shasum": "e1ad4799ef2b864c753044ca3a4c626c416b7ace",
+  "_from": "gerhobbelt/gulp-jison#master",
+  "_resolved": "git://github.com/gerhobbelt/gulp-jison.git#19b2ca786daf373e52813d610669dc7d002511e4"
 }

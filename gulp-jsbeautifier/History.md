@@ -1,4 +1,35 @@
 
+1.0.1 / 2015-07-11
+==================
+
+  * Added `showDiff` option
+  * Upgrade `jsbeautifier` package
+
+1.0.0 / 2015-06-19
+==================
+
+  * Pushed out `1.0.0` release
+
+0.0.8 / 2015-03-23
+==================
+
+  * Fixed and added tests for `logSuccess` option
+
+0.0.7 / 2015-03-19
+==================
+
+  * Fixed option parsing to accept raw options
+
+0.0.6 / 2015-03-11
+==================
+
+  * Added `logSuccess` option
+
+0.0.5 / 2015-03-06
+==================
+
+  * Print out diff through `ansidiff`
+
 0.0.4 / 2014-11-20
 ==================
 

@@ -1,6 +1,6 @@
 {
   "name": "gulp-nightwatch",
-  "version": "0.2.7",
+  "version": "0.2.9",
   "description": "gulp plugin for Nightwatch.js",
   "main": "index.js",
   "scripts": {
@@ -33,9 +33,9 @@
     "chai": "^2.1.2",
     "mocha": "^2.2.1"
   },
-  "gitHead": "f74ff8cc0ed193f3ac1012495e4a40e2fb1e6422",
-  "_id": "gulp-nightwatch@0.2.7",
-  "_shasum": "48c94e4ecfcb8bf47e3532c17d2f4c7c7e795483",
+  "gitHead": "4ff035e3e4e9148e244d0cd2a637947fc5f3dbcc",
+  "_id": "gulp-nightwatch@0.2.9",
+  "_shasum": "abd4bee37eaac3ece641f1b1755fc6ec7e487e57",
   "_from": "gulp-nightwatch@>=0.2.7 <0.3.0",
   "_npmVersion": "3.3.12",
   "_nodeVersion": "5.3.0",
@@ -50,10 +50,14 @@
     }
   ],
   "dist": {
-    "shasum": "48c94e4ecfcb8bf47e3532c17d2f4c7c7e795483",
-    "tarball": "http://registry.npmjs.org/gulp-nightwatch/-/gulp-nightwatch-0.2.7.tgz"
+    "shasum": "abd4bee37eaac3ece641f1b1755fc6ec7e487e57",
+    "tarball": "https://registry.npmjs.org/gulp-nightwatch/-/gulp-nightwatch-0.2.9.tgz"
+  },
+  "_npmOperationalInternal": {
+    "host": "packages-5-east.internal.npmjs.com",
+    "tmp": "tmp/gulp-nightwatch-0.2.9.tgz_1455025245058_0.6252071158960462"
   },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/gulp-nightwatch/-/gulp-nightwatch-0.2.7.tgz",
+  "_resolved": "https://registry.npmjs.org/gulp-nightwatch/-/gulp-nightwatch-0.2.9.tgz",
   "readme": "ERROR: No README data found!"
 }

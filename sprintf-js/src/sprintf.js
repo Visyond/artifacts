@@ -20,7 +20,7 @@
 		if ( ! ( cache[key] && cache.hasOwnProperty( key ) ) ) {
 			cache[key] = sprintf.parse( key );
 		}
-		return sprintf.format.call( null, cache[key], arguments );
+		return sprintf.format( cache[key], arguments );
 	}
 
 	sprintf.format = function ( parse_tree, argv ) {
@@ -32,12 +32,13 @@
 			i, k, match, pad, pad_character, pad_length, 
 			is_positive, 
 			sign,
-			arglen, argprec, arg_left_align;
+			arglen, argprec, arg_left_align, argtype;
 
 		for ( i = 0; i < tree_length; i++ ) {
-			node_type = get_type( parse_tree[i] );
+			match = parse_tree[i]; // convenience purposes only
+			node_type = get_type( match );
 			if ( node_type === "string" ) {
-				output[output.length] = parse_tree[i];
+				output[output.length] = match;
 			}
 			else if ( node_type === "array" ) {
 				is_positive = true;
@@ -46,7 +47,6 @@
 				argprec = false; 
 				arg_left_align = false;
 
-				match = parse_tree[i]; // convenience purposes only
 				if (match[6]) {
 					arglen = +match[6];
 					if (match[6][0] === '*') { // length argument
@@ -85,8 +85,14 @@
 					arg = arg();
 				}
 
-				if ( re.not_string.test( match[12] ) && re.not_json.test(match[8]) && (get_type( arg ) !== "number" && isNaN( arg )) ) {
-					throw new TypeError( sprintf( "[sprintf] expecting number but found %s", get_type( arg ) ) );
+				if ( re.not_string.test( match[12] ) && re.not_json.test(match[8]) ) {
+					argtype = get_type( arg );
+					if ( argtype === "number" && !isFinite( arg ) ) {
+						argtype = String( arg );
+					}
+					if ( argtype !== "number" ) {
+						throw new TypeError( sprintf( "[sprintf] expecting number but found %s", argtype ) );
+					}
 				}
 
 				if ( re.number.test( match[12] ) ) {
@@ -114,13 +120,14 @@
 						arg = argprec !== false ? parseFloat( arg ).toFixed( argprec ) : parseFloat( arg ).toString();
                         break;
                     case "g":
-                        arg = argprec !== false ? parseFloat(arg).toPrecision(argprec) : parseFloat(arg).toString();
+                        arg = argprec !== false ? parseFloat( arg ).toPrecision( argprec ) : parseFloat( arg ).toString();
 						break;
 					case "o":
 						arg = arg.toString( 8 );
 						break;
 					case "s":
-						arg = ((arg = String( arg )) && argprec !== false ? arg.substring( 0, argprec ) : arg);
+					    arg = String( arg );
+						arg = (arg && argprec !== false ? arg.substring( 0, argprec ) : arg);
 						break;
 					case "u":
 						arg = (arg >>> 0).toString();
@@ -133,7 +140,7 @@
 						break;
 				}
                 if (re.json.test(match[8])) {
-                    output[output.length] = arg
+                    output[output.length] = arg;
                 }
                 else {
     				if ( re.number.test( match[12] ) && (! is_positive || match[3]) ) {
@@ -211,9 +218,9 @@
 		return parse_tree;
 	};
 
-	var vsprintf = function ( fmt, argv, _argv ) {
-		_argv = (argv || []).slice( 0 );
-		_argv.splice( 0, 0, fmt );
+	var vsprintf = function ( fmt, argv ) {
+		var _argv = (argv || []).slice( 0 );
+		_argv.unshift( fmt );
 		return sprintf.apply( null, _argv );
 	};
 
@@ -221,10 +228,20 @@
 	 * helpers
 	 */
 	function get_type( variable ) {
+        if ( typeof variable === 'number' ) return 'number';
+        if ( typeof variable === 'string' ) return 'string';
 		return Object.prototype.toString.call( variable ).slice( 8, -1 ).toLowerCase();
 	}
 
+    var preformattedPadding = {
+        '0': ['', '0', '00', '000', '0000', '00000', '000000', '0000000'],
+        ' ': ['', ' ', '  ', '   ', '    ', '     ', '      ', '       '],
+        '_': ['', '_', '__', '___', '____', '_____', '______', '_______'],
+    };
 	function str_repeat( input, multiplier ) {
+        if ( multiplier >= 0 && multiplier <= 7 && preformattedPadding[input] ) {
+            return preformattedPadding[input][multiplier];
+        }
 		return multiplier > 0 ? new Array( multiplier + 1 ).join( input ) : "";
 	}
 

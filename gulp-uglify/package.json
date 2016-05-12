@@ -1,55 +1,10 @@
 {
-  "_args": [
-    [
-      "gulp-uglify@*",
-      "/home/doctor/prog/environment_root/server/v2"
-    ]
-  ],
-  "_from": "gulp-uglify@*",
-  "_id": "gulp-uglify@1.5.1",
-  "_inCache": true,
-  "_installable": true,
-  "_location": "/gulp-uglify",
-  "_nodeVersion": "5.0.0",
-  "_npmUser": {
-    "email": "terinjokes@gmail.com",
-    "name": "terinjokes"
-  },
-  "_npmVersion": "3.3.10",
-  "_phantomChildren": {
-    "async": "0.2.10",
-    "cliui": "2.1.0",
-    "core-util-is": "1.0.2",
-    "decamelize": "1.1.1",
-    "inherits": "2.0.1",
-    "isarray": "0.0.1",
-    "process-nextick-args": "1.0.3",
-    "source-map": "0.5.3",
-    "string_decoder": "0.10.31",
-    "uglify-to-browserify": "1.0.2",
-    "util-deprecate": "1.0.2",
-    "window-size": "0.1.0",
-    "xtend": "4.0.1"
-  },
-  "_requested": {
-    "name": "gulp-uglify",
-    "raw": "gulp-uglify@*",
-    "rawSpec": "*",
-    "scope": null,
-    "spec": "*",
-    "type": "range"
-  },
-  "_requiredBy": [
-    "#DEV:/"
-  ],
-  "_resolved": "https://registry.npmjs.org/gulp-uglify/-/gulp-uglify-1.5.1.tgz",
-  "_shasum": "9e13294247354c91e15ace116b1630789366206a",
-  "_shrinkwrap": null,
-  "_spec": "gulp-uglify@*",
-  "_where": "/home/doctor/prog/environment_root/server/v2",
+  "name": "gulp-uglify",
+  "description": "Minify files with UglifyJS.",
+  "version": "1.5.1",
   "author": {
-    "email": "terinjokes@gmail.com",
-    "name": "Terin Stock"
+    "name": "Terin Stock",
+    "email": "terinjokes@gmail.com"
   },
   "bugs": {
     "url": "https://github.com/terinjokes/gulp-uglify/issues"
@@ -64,7 +19,6 @@
     "uglify-save-license": "^0.4.1",
     "vinyl-sourcemaps-apply": "^0.2.0"
   },
-  "description": "Minify files with UglifyJS.",
   "devDependencies": {
     "cmem": "^1.0.0",
     "coveralls": "^2.11.4",
@@ -75,42 +29,49 @@
     "vinyl": "^1.0.0",
     "xo": "^0.10.0"
   },
-  "directories": {},
-  "dist": {
-    "shasum": "9e13294247354c91e15ace116b1630789366206a",
-    "tarball": "http://registry.npmjs.org/gulp-uglify/-/gulp-uglify-1.5.1.tgz"
-  },
-  "files": [
-    "index.js",
-    "lib/",
-    "minifier.js"
-  ],
-  "gitHead": "c16275f4f5efe4d26b4daed683bade1cd77fb9bb",
   "homepage": "https://github.com/terinjokes/gulp-uglify/",
   "keywords": [
     "gulpplugin"
   ],
   "license": "MIT",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terinjokes/gulp-uglify.git"
+  },
+  "xo": {
+    "space": true
+  },
+  "files": [
+    "index.js",
+    "minifier.js",
+    "lib/"
+  ],
+  "scripts": {
+    "test": "xo && istanbul cover ./node_modules/tape/bin/tape test/*.js",
+    "coverage": "cat ./coverage/lcov.info | coveralls"
+  },
+  "gitHead": "c16275f4f5efe4d26b4daed683bade1cd77fb9bb",
+  "_id": "gulp-uglify@1.5.1",
+  "_shasum": "9e13294247354c91e15ace116b1630789366206a",
+  "_from": "gulp-uglify@1.5.1",
+  "_npmVersion": "3.3.10",
+  "_nodeVersion": "5.0.0",
+  "_npmUser": {
+    "name": "terinjokes",
+    "email": "terinjokes@gmail.com"
+  },
+  "dist": {
+    "shasum": "9e13294247354c91e15ace116b1630789366206a",
+    "tarball": "https://registry.npmjs.org/gulp-uglify/-/gulp-uglify-1.5.1.tgz"
+  },
   "maintainers": [
     {
       "name": "terinjokes",
       "email": "terinjokes@gmail.com"
     }
   ],
-  "name": "gulp-uglify",
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/terinjokes/gulp-uglify.git"
-  },
-  "scripts": {
-    "coverage": "cat ./coverage/lcov.info | coveralls",
-    "test": "xo && istanbul cover ./node_modules/tape/bin/tape test/*.js"
-  },
-  "version": "1.5.1",
-  "xo": {
-    "space": true
-  }
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/gulp-uglify/-/gulp-uglify-1.5.1.tgz",
+  "readme": "ERROR: No README data found!"
 }

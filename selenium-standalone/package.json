@@ -1,6 +1,6 @@
 {
   "name": "selenium-standalone",
-  "version": "4.8.0",
+  "version": "4.9.1",
   "description": "installs a `selenium-standalone` command line to install and start a standalone selenium server",
   "main": "index.js",
   "scripts": {
@@ -48,12 +48,12 @@
       "email": "joshuachisholm@gmail.com"
     }
   ],
-  "gitHead": "1f385420ff7e3ac47f6b643b1725cdf4d5bfaa2a",
-  "_id": "selenium-standalone@4.8.0",
-  "_shasum": "43169fb341fcb07ed03b16f54555463d5018a1de",
+  "gitHead": "b970d6fc08d56e0486be1f37c2b420be4a6dfdae",
+  "_id": "selenium-standalone@4.9.1",
+  "_shasum": "33cefd515151fb0fbc9a0a3abffa787721bb54dd",
   "_from": "selenium-standalone@>=4.8.0 <5.0.0",
-  "_npmVersion": "2.14.7",
-  "_nodeVersion": "4.2.2",
+  "_npmVersion": "2.14.16",
+  "_nodeVersion": "5.5.0",
   "_npmUser": {
     "name": "vvo",
     "email": "vincent.voyer@gmail.com"
@@ -69,10 +69,14 @@
     }
   ],
   "dist": {
-    "shasum": "43169fb341fcb07ed03b16f54555463d5018a1de",
-    "tarball": "http://registry.npmjs.org/selenium-standalone/-/selenium-standalone-4.8.0.tgz"
+    "shasum": "33cefd515151fb0fbc9a0a3abffa787721bb54dd",
+    "tarball": "https://registry.npmjs.org/selenium-standalone/-/selenium-standalone-4.9.1.tgz"
+  },
+  "_npmOperationalInternal": {
+    "host": "packages-6-west.internal.npmjs.com",
+    "tmp": "tmp/selenium-standalone-4.9.1.tgz_1455978077852_0.45680596493184566"
   },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/selenium-standalone/-/selenium-standalone-4.8.0.tgz",
+  "_resolved": "https://registry.npmjs.org/selenium-standalone/-/selenium-standalone-4.9.1.tgz",
   "readme": "ERROR: No README data found!"
 }

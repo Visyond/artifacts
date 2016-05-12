@@ -11,7 +11,7 @@ var createVirtualFile = function (filename, contents) {
         path: path.join(__dirname, 'fixtures', filename),
         base: path.join(__dirname, 'fixtures'),
         cwd: process.cwd(),
-        contents: contents
+        contents: new Buffer(contents)
     });
 };
 

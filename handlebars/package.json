@@ -1,61 +1,37 @@
 {
-  "_args": [
-    [
-      "handlebars@^3.0.0",
-      "/home/doctor/prog/environment_root/server/v2"
-    ]
+  "name": "handlebars",
+  "barename": "handlebars",
+  "version": "4.0.5",
+  "description": "Handlebars provides the power necessary to let you build semantic templates effectively with no frustration",
+  "homepage": "http://www.handlebarsjs.com/",
+  "keywords": [
+    "handlebars",
+    "mustache",
+    "template",
+    "html"
   ],
-  "_from": "handlebars@>=3.0.0 <4.0.0",
-  "_id": "handlebars@3.0.3",
-  "_inCache": true,
-  "_installable": true,
-  "_location": "/handlebars",
-  "_npmUser": {
-    "email": "kpdecker@gmail.com",
-    "name": "kpdecker"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wycats/handlebars.js.git"
   },
-  "_npmVersion": "1.4.28",
-  "_phantomChildren": {
-    "amdefine": "1.0.0",
-    "async": "0.2.10",
-    "wordwrap": "0.0.2"
-  },
-  "_requested": {
-    "name": "handlebars",
-    "raw": "handlebars@^3.0.0",
-    "rawSpec": "^3.0.0",
-    "scope": null,
-    "spec": ">=3.0.0 <4.0.0",
-    "type": "range"
-  },
-  "_requiredBy": [
-    "#DEV:/",
-    "/sprity"
-  ],
-  "_resolved": "https://registry.npmjs.org/handlebars/-/handlebars-3.0.3.tgz",
-  "_shasum": "0e09651a2f0fb3c949160583710d551f92e6d2ad",
-  "_shrinkwrap": null,
-  "_spec": "handlebars@^3.0.0",
-  "_where": "/home/doctor/prog/environment_root/server/v2",
   "author": {
     "name": "Yehuda Katz"
   },
-  "barename": "handlebars",
-  "bin": {
-    "handlebars": "bin/handlebars"
-  },
-  "bugs": {
-    "url": "https://github.com/wycats/handlebars.js/issues"
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.4.7"
   },
   "dependencies": {
+    "async": "^1.4.0",
     "optimist": "^0.6.1",
-    "source-map": "^0.1.40",
-    "uglify-js": "~2.3"
+    "source-map": "^0.4.4",
+    "uglify-js": "^2.6"
   },
-  "description": "Handlebars provides the power necessary to let you build semantic templates effectively with no frustration",
+  "optionalDependencies": {
+    "uglify-js": "^2.6"
+  },
   "devDependencies": {
-    "async": "^0.9.0",
-    "aws-sdk": "~1.5.0",
+    "aws-sdk": "^2.1.49",
     "babel-loader": "^5.0.0",
     "babel-runtime": "^5.1.10",
     "benchmark": "~1.0",
@@ -71,61 +47,59 @@
     "grunt-contrib-requirejs": "0.x",
     "grunt-contrib-uglify": "0.x",
     "grunt-contrib-watch": "0.x",
-    "grunt-eslint": "^11.0.0",
+    "grunt-eslint": "^17.1.0",
     "grunt-saucelabs": "8.x",
     "grunt-webpack": "^1.0.8",
     "istanbul": "^0.3.0",
     "jison": "~0.3.0",
-    "keen.io": "0.0.3",
     "mocha": "~1.20.0",
-    "mustache": "0.x",
-    "semver": "^4.0.0",
-    "underscore": "^1.5.1"
+    "mock-stdin": "^0.3.0",
+    "mustache": "^2.1.3",
+    "semver": "^5.0.1",
+    "underscore": "^1.5.1",
+    "webpack": "^1.12.6",
+    "webpack-dev-server": "^1.12.1"
   },
-  "directories": {},
-  "dist": {
-    "shasum": "0e09651a2f0fb3c949160583710d551f92e6d2ad",
-    "tarball": "http://registry.npmjs.org/handlebars/-/handlebars-3.0.3.tgz"
+  "main": "lib/index.js",
+  "bin": {
+    "handlebars": "bin/handlebars"
   },
-  "engines": {
-    "node": ">=0.4.7"
+  "scripts": {
+    "test": "grunt"
   },
-  "gitHead": "891f48b7e9c321dd9cbe7a898533eb6b2434b8a0",
-  "homepage": "http://www.handlebarsjs.com/",
   "jspm": {
-    "buildConfig": {
-      "minify": true
-    },
+    "main": "handlebars",
     "directories": {
       "lib": "dist/amd"
     },
-    "main": "handlebars"
+    "buildConfig": {
+      "minify": true
+    }
   },
-  "keywords": [
-    "handlebars",
-    "html",
-    "mustache",
-    "template"
-  ],
-  "license": "MIT",
-  "main": "lib/index.js",
+  "gitHead": "205c61cfb1acdb599bbdfcf2d356641254e09e5c",
+  "bugs": {
+    "url": "https://github.com/wycats/handlebars.js/issues"
+  },
+  "_id": "handlebars@4.0.5",
+  "_shasum": "92c6ed6bb164110c50d4d8d0fbddc70806c6f8e7",
+  "_from": "handlebars@4.0.5",
+  "_npmVersion": "3.3.8",
+  "_nodeVersion": "4.2.1",
+  "_npmUser": {
+    "name": "kpdecker",
+    "email": "kpdecker@gmail.com"
+  },
+  "dist": {
+    "shasum": "92c6ed6bb164110c50d4d8d0fbddc70806c6f8e7",
+    "tarball": "https://registry.npmjs.org/handlebars/-/handlebars-4.0.5.tgz"
+  },
   "maintainers": [
     {
       "name": "kpdecker",
       "email": "kpdecker@gmail.com"
     }
   ],
-  "name": "handlebars",
-  "optionalDependencies": {
-    "uglify-js": "~2.3"
-  },
-  "readme": "ERROR: No README data found!",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wycats/handlebars.js.git"
-  },
-  "scripts": {
-    "test": "grunt"
-  },
-  "version": "3.0.3"
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/handlebars/-/handlebars-4.0.5.tgz",
+  "readme": "ERROR: No README data found!"
 }

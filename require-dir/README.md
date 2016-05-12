@@ -83,6 +83,19 @@ be the same by default, but specifying `duplicates: true` would yield:
 }
 ```
 
+`sort`: Load the modules in sorted order per directory. Not all platforms
+produce a directory listing in canonical sorted order (e.g. Windows/NTFS)
+and it should not matter, ideally, but when it does, you can set `sort` to `true`
+or even provide your own `Array.prototype.sort`-compatible compare function
+via this option.
+
+Default is false.
+
+`debug`: Produce some diagnostics output to help analyze requireDir's behaviour.
+Particularly useful in conjunction with the `sort` option.
+
+Default is false.
+
 There might be more options in the future. ;)
 
 ## Tips

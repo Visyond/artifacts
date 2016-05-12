@@ -1,304 +1,382 @@
 // this file handles outputting usage instructions,
 // failures, etc. keeps logging in one place.
-var wordwrap = require('wordwrap'),
-  wsize = require('window-size');
+var cliui = require('cliui')
+var decamelize = require('decamelize')
+var wsize = require('window-size')
 
-module.exports = function (yargs) {
-    var self = {};
+module.exports = function (yargs, y18n) {
+  var __ = y18n.__
+  var self = {}
 
-    // methods for ouputting/building failure message.
-    var fails = [];
-    self.failFn = function (f) {
-        fails.push(f);
-    };
+  // methods for ouputting/building failure message.
+  var fails = []
+  self.failFn = function (f) {
+    fails.push(f)
+  }
 
-    var failMessage = null;
-    var showHelpOnFail = true;
-    self.showHelpOnFail = function (enabled, message) {
-        if (typeof enabled === 'string') {
-            message = enabled;
-            enabled = true;
+  var failMessage = null
+  var showHelpOnFail = true
+  self.showHelpOnFail = function (enabled, message) {
+    if (typeof enabled === 'string') {
+      message = enabled
+      enabled = true
+    } else if (typeof enabled === 'undefined') {
+      enabled = true
+    }
+    failMessage = message
+    showHelpOnFail = enabled
+    return self
+  }
+
+  var failureOutput = false
+  self.fail = function (msg) {
+    if (fails.length) {
+      fails.forEach(function (f) {
+        f(msg)
+      })
+    } else {
+      // don't output failure message more than once
+      if (!failureOutput) {
+        failureOutput = true
+        if (showHelpOnFail) yargs.showHelp('error')
+        if (msg) console.error(msg)
+        if (failMessage) {
+          if (msg) console.error('')
+          console.error(failMessage)
         }
-        else if (typeof enabled === 'undefined') {
-            enabled = true;
-        }
-        failMessage = message;
-        showHelpOnFail = enabled;
-        return self;
-    };
+      }
+      if (yargs.getExitProcess()) {
+        process.exit(1)
+      } else {
+        throw new Error(msg)
+      }
+    }
+  }
 
-    self.fail = function (msg) {
-        if (fails.length) {
-            fails.forEach(function (f) {
-                f(msg);
-            });
-        } else {
-            if (showHelpOnFail) {
-                yargs.showHelp("error");
-            }
-            if (msg) console.error(msg);
-            if (failMessage) {
-                if (msg) {
-                    console.error("");
-                }
-                console.error(failMessage);
-            }
-            if (yargs.getExitProcess()){
-                process.exit(1);
-            }else{
-                throw new Error(msg);
-            }
-        }
-    };
+  // methods for ouputting/building help (usage) message.
+  var usage
+  self.usage = function (msg) {
+    usage = msg
+  }
 
-    // methods for ouputting/building help (usage) message.
-    var usage;
-    self.usage = function (msg) {
-        usage = msg;
-    };
+  var examples = []
+  self.example = function (cmd, description) {
+    examples.push([cmd, description || ''])
+  }
 
-    var examples = [];
-    self.example = function (cmd, description) {
-        examples.push([cmd, description || '']);
-    };
+  var commands = []
+  self.command = function (cmd, description) {
+    commands.push([cmd, description || ''])
+  }
+  self.getCommands = function () {
+    return commands
+  }
 
-    var commands = [];
-    self.command = function (cmd, description) {
-        commands.push([cmd, description || '']);
-    };
+  var descriptions = {}
+  self.describe = function (key, desc) {
+    if (typeof key === 'object') {
+      Object.keys(key).forEach(function (k) {
+        self.describe(k, key[k])
+      })
+    } else {
+      descriptions[key] = desc
+    }
+  }
+  self.getDescriptions = function () {
+    return descriptions
+  }
 
-    var descriptions = {};
-    self.describe = function (key, desc) {
-        if (typeof key === 'object') {
-            Object.keys(key).forEach(function (k) {
-                self.describe(k, key[k]);
-            });
-        }
-        else {
-            descriptions[key] = desc;
-        }
-    };
-    self.getDescriptions = function() {
-        return descriptions;
+  var epilog
+  self.epilog = function (msg) {
+    epilog = msg
+  }
+
+  var wrap = windowWidth()
+  self.wrap = function (cols) {
+    wrap = cols
+  }
+
+  var deferY18nLookupPrefix = '__yargsString__:'
+  self.deferY18nLookup = function (str) {
+    return deferY18nLookupPrefix + str
+  }
+
+  var defaultGroup = 'Options:'
+  self.help = function () {
+    normalizeAliases()
+
+    var demanded = yargs.getDemanded()
+    var groups = yargs.getGroups()
+    var options = yargs.getOptions()
+    var keys = Object.keys(
+      Object.keys(descriptions)
+      .concat(Object.keys(demanded))
+      .concat(Object.keys(options.default))
+      .reduce(function (acc, key) {
+        if (key !== '_') acc[key] = true
+        return acc
+      }, {})
+    )
+    var ui = cliui({
+      width: wrap,
+      wrap: !!wrap
+    })
+
+    // the usage string.
+    if (usage) {
+      var u = usage.replace(/\$0/g, yargs.$0)
+      ui.div(u + '\n')
     }
 
-    var epilog;
-    self.epilog = function (msg) {
-        epilog = msg;
-    };
+    // your application's commands, i.e., non-option
+    // arguments populated in '_'.
+    if (commands.length) {
+      ui.div(__('Commands:'))
 
-    var wrap = windowWidth();
-    self.wrap = function (cols) {
-        wrap = cols;
-    };
+      commands.forEach(function (command) {
+        ui.div(
+          {text: command[0], padding: [0, 2, 0, 2], width: maxWidth(commands) + 4},
+          {text: command[1]}
+        )
+      })
 
-    self.help = function () {
-        var demanded = yargs.getDemanded(),
-            options = yargs.getOptions(),
-            keys = Object.keys(
-                Object.keys(descriptions)
-                .concat(Object.keys(demanded))
-                .concat(Object.keys(options.default))
-                .reduce(function (acc, key) {
-                    if (key !== '_') acc[key] = true;
-                    return acc;
-                }, {})
-            );
-
-        var help = keys.length ? [ 'Options:' ] : [];
-
-        // your application's commands, i.e., non-option
-        // arguments populated in '_'.
-        if (commands.length) {
-            help.unshift('');
-
-            var commandsTable = {};
-            commands.forEach(function(command) {
-                commandsTable[command[0]] = {
-                    desc: command[1],
-                    extra: ''
-                };
-            });
-
-            help = ['Commands:'].concat(formatTable(commandsTable, 5), help);
-        }
-
-        // the usage string.
-        if (usage) {
-            var u = usage.replace(/\$0/g, yargs.$0);
-            if (wrap) u = wordwrap(0, wrap)(u);
-            help.unshift(u, '');
-        }
-
-        // the options table.
-        var aliasKeys = (Object.keys(options.alias) || [])
-            .concat(Object.keys(yargs.parsed.newAliases) || []);
-
-        keys = keys.filter(function(key) {
-            return !yargs.parsed.newAliases[key] && aliasKeys.every(function(alias) {
-                return -1 == (options.alias[alias] || []).indexOf(key);
-            });
-        });
-
-        var switches = keys.reduce(function (acc, key) {
-            acc[key] = [ key ].concat(options.alias[key] || [])
-                .map(function (sw) {
-                    return (sw.length > 1 ? '--' : '-') + sw
-                })
-                .join(', ')
-            ;
-            return acc;
-        }, {});
-
-        var switchTable = {};
-        keys.forEach(function (key) {
-            var kswitch = switches[key];
-            var desc = descriptions[key] || '';
-            var type = null;
-
-            if (options.boolean[key]) type = '[boolean]';
-            if (options.count[key]) type = '[count]';
-            if (options.string[key]) type = '[string]';
-            if (options.normalize[key]) type = '[string]';
-
-            var extra = [
-                type,
-                demanded[key]
-                    ? '[required]'
-                    : null
-                ,
-                options.default[key] !== undefined
-                    ? '[default: ' + (typeof options.default[key] === 'string' ?
-                    JSON.stringify : String)(options.default[key]) + ']'
-                    : null
-            ].filter(Boolean).join('  ');
-
-            switchTable[kswitch] = {
-              desc: desc,
-              extra: extra
-            };
-        });
-        help.push.apply(help, formatTable(switchTable, 3));
-
-        if (keys.length) help.push('');
-
-        // describe some common use-cases for your application.
-        if (examples.length) {
-            examples.forEach(function (example) {
-                example[0] = example[0].replace(/\$0/g, yargs.$0);
-            });
-
-            var examplesTable = {};
-            examples.forEach(function(example) {
-                examplesTable[example[0]] = {
-                    desc: example[1],
-                    extra: ''
-                };
-            });
-
-            help.push.apply(help, ['Examples:'].concat(formatTable(examplesTable, 5), ''));
-        }
-
-        // the usage string.
-        if (epilog) {
-            var e = epilog;
-            if (wrap) e = wordwrap(0, wrap)(epilog);
-            help.push(epilog, '');
-        }
-
-        return help.join('\n');
-    };
-
-    self.showHelp = function (level) {
-        level = level || 'error';
-        console[level](self.help());
+      ui.div()
     }
 
-    // word-wrapped two-column layout used by
-    // examples, options, commands.
-    function formatTable (table, padding) {
-        var output = [];
+    // perform some cleanup on the keys array, making it
+    // only include top-level keys not their aliases.
+    var aliasKeys = (Object.keys(options.alias) || [])
+      .concat(Object.keys(yargs.parsed.newAliases) || [])
 
-        // determine lengths of left column, and
-        // description column.
-        var llen = longest(Object.keys(table));
+    keys = keys.filter(function (key) {
+      return !yargs.parsed.newAliases[key] && aliasKeys.every(function (alias) {
+        return (options.alias[alias] || []).indexOf(key) === -1
+      })
+    })
 
-        var desclen = longest(Object.keys(table).map(function (k) {
-            return table[k].desc;
-        }));
+    // populate 'Options:' group with any keys that have not
+    // explicitly had a group set.
+    if (!groups[defaultGroup]) groups[defaultGroup] = []
+    addUngroupedKeys(keys, options.alias, groups)
 
-        Object.keys(table).forEach(function(left) {
-            var desc = table[left].desc,
-              extra = table[left].extra;
+    // display 'Options:' table along with any custom tables:
+    Object.keys(groups).forEach(function (groupName) {
+      if (!groups[groupName].length) return
 
-            if (wrap) {
-                desc = wordwrap(llen + padding + 1, wrap)(desc)
-                    .slice(llen + padding + 1)
-                ;
-            }
+      ui.div(__(groupName))
 
-            var lpadding = new Array(
-                Math.max(llen - left.length + padding, 0)
-            ).join(' ');
+      // if we've grouped the key 'f', but 'f' aliases 'foobar',
+      // normalizedKeys should contain only 'foobar'.
+      var normalizedKeys = groups[groupName].map(function (key) {
+        if (~aliasKeys.indexOf(key)) return key
+        for (var i = 0, aliasKey; (aliasKey = aliasKeys[i]) !== undefined; i++) {
+          if (~(options.alias[aliasKey] || []).indexOf(key)) return aliasKey
+        }
+        return key
+      })
 
-            var dpadding = new Array(
-                Math.max(desclen - desc.length + 1, 0)
-            ).join(' ');
+      // actually generate the switches string --foo, -f, --bar.
+      var switches = normalizedKeys.reduce(function (acc, key) {
+        acc[key] = [ key ].concat(options.alias[key] || [])
+          .map(function (sw) {
+            return (sw.length > 1 ? '--' : '-') + sw
+          })
+          .join(', ')
 
-            if (!wrap && dpadding.length > 0) {
-                desc += dpadding;
-            }
+        return acc
+      }, {})
 
-            var prelude = '  ' + left + lpadding;
+      normalizedKeys.forEach(function (key) {
+        var kswitch = switches[key]
+        var desc = descriptions[key] || ''
+        var type = null
 
-            var body = [ desc, extra ].filter(Boolean).join('  ');
+        if (~desc.lastIndexOf(deferY18nLookupPrefix)) desc = __(desc.substring(deferY18nLookupPrefix.length))
 
-            if (wrap) {
-                var dlines = desc.split('\n');
-                var dlen = dlines.slice(-1)[0].length
-                    + (dlines.length === 1 ? prelude.length : 0)
+        if (~options.boolean.indexOf(key)) type = '[' + __('boolean') + ']'
+        if (~options.count.indexOf(key)) type = '[' + __('count') + ']'
+        if (~options.string.indexOf(key)) type = '[' + __('string') + ']'
+        if (~options.normalize.indexOf(key)) type = '[' + __('string') + ']'
+        if (~options.array.indexOf(key)) type = '[' + __('array') + ']'
 
-                if (extra.length > wrap) {
-                    body = desc + '\n' + wordwrap(llen + 4, wrap)(extra)
-                } else {
-                    body = desc + (dlen + extra.length > wrap - 2
-                        ? '\n'
-                            + new Array(wrap - extra.length + 1).join(' ')
-                            + extra
-                        : new Array(wrap - extra.length - dlen + 1).join(' ')
-                            + extra
-                    );
-                }
-            }
+        var extra = [
+          type,
+          demanded[key] ? '[' + __('required') + ']' : null,
+          options.choices && options.choices[key] ? '[' + __('choices:') + ' ' +
+            self.stringifiedValues(options.choices[key]) + ']' : null,
+          defaultString(options.default[key], options.defaultDescription[key])
+        ].filter(Boolean).join(' ')
 
-            output.push(prelude + body);
-        });
+        ui.span(
+          {text: kswitch, padding: [0, 2, 0, 2], width: maxWidth(switches) + 4},
+          desc
+        )
 
-        return output;
+        if (extra) ui.div({text: extra, padding: [0, 0, 0, 2], align: 'right'})
+        else ui.div()
+      })
+
+      ui.div()
+    })
+
+    // describe some common use-cases for your application.
+    if (examples.length) {
+      ui.div(__('Examples:'))
+
+      examples.forEach(function (example) {
+        example[0] = example[0].replace(/\$0/g, yargs.$0)
+      })
+
+      examples.forEach(function (example) {
+        ui.div(
+          {text: example[0], padding: [0, 2, 0, 2], width: maxWidth(examples) + 4},
+          example[1]
+        )
+      })
+
+      ui.div()
     }
 
-    // find longest string in array of strings.
-    function longest (xs) {
-        return Math.max.apply(
-            null,
-            xs.map(function (x) { return x.length })
-        );
+    // the usage string.
+    if (epilog) {
+      var e = epilog.replace(/\$0/g, yargs.$0)
+      ui.div(e + '\n')
     }
 
-    // guess the width of the console window, max-width 100.
-    function windowWidth() {
-        return wsize.width ? Math.min(80, wsize.width) : null;
+    return ui.toString()
+  }
+
+  // return the maximum width of a string
+  // in the left-hand column of a table.
+  function maxWidth (table) {
+    var width = 0
+
+    // table might be of the form [leftColumn],
+    // or {key: leftColumn}}
+    if (!Array.isArray(table)) {
+      table = Object.keys(table).map(function (key) {
+        return [table[key]]
+      })
     }
 
-    // logic for displaying application version.
-    var version = null;
-    self.version = function (ver, opt, msg) {
-        version = ver;
-    };
+    table.forEach(function (v) {
+      width = Math.max(v[0].length, width)
+    })
 
-    self.showVersion = function() {
-        console.log(version);
-    };
+    // if we've enabled 'wrap' we should limit
+    // the max-width of the left-column.
+    if (wrap) width = Math.min(width, parseInt(wrap * 0.5, 10))
 
-    return self;
+    return width
+  }
+
+  // make sure any options set for aliases,
+  // are copied to the keys being aliased.
+  function normalizeAliases () {
+    var demanded = yargs.getDemanded()
+    var options = yargs.getOptions()
+
+    ;(Object.keys(options.alias) || []).forEach(function (key) {
+      options.alias[key].forEach(function (alias) {
+        // copy descriptions.
+        if (descriptions[alias]) self.describe(key, descriptions[alias])
+        // copy demanded.
+        if (demanded[alias]) yargs.demand(key, demanded[alias].msg)
+        // type messages.
+        if (~options.boolean.indexOf(alias)) yargs.boolean(key)
+        if (~options.count.indexOf(alias)) yargs.count(key)
+        if (~options.string.indexOf(alias)) yargs.string(key)
+        if (~options.normalize.indexOf(alias)) yargs.normalize(key)
+        if (~options.array.indexOf(alias)) yargs.array(key)
+      })
+    })
+  }
+
+  // given a set of keys, place any keys that are
+  // ungrouped under the 'Options:' grouping.
+  function addUngroupedKeys (keys, aliases, groups) {
+    var groupedKeys = []
+    var toCheck = null
+    Object.keys(groups).forEach(function (group) {
+      groupedKeys = groupedKeys.concat(groups[group])
+    })
+
+    keys.forEach(function (key) {
+      toCheck = [key].concat(aliases[key])
+      if (!toCheck.some(function (k) {
+        return groupedKeys.indexOf(k) !== -1
+      })) {
+        groups[defaultGroup].push(key)
+      }
+    })
+    return groupedKeys
+  }
+
+  self.showHelp = function (level) {
+    level = level || 'error'
+    console[level](self.help())
+  }
+
+  self.functionDescription = function (fn) {
+    var description = fn.name ? decamelize(fn.name, '-') : __('generated-value')
+    return ['(', description, ')'].join('')
+  }
+
+  self.stringifiedValues = function (values, separator) {
+    var string = ''
+    var sep = separator || ', '
+    var array = [].concat(values)
+
+    if (!values || !array.length) return string
+
+    array.forEach(function (value) {
+      if (string.length) string += sep
+      string += JSON.stringify(value)
+    })
+
+    return string
+  }
+
+  // format the default-value-string displayed in
+  // the right-hand column.
+  function defaultString (value, defaultDescription) {
+    var string = '[' + __('default:') + ' '
+
+    if (value === undefined && !defaultDescription) return null
+
+    if (defaultDescription) {
+      string += defaultDescription
+    } else {
+      switch (typeof value) {
+        case 'string':
+          string += JSON.stringify(value)
+          break
+        case 'object':
+          string += JSON.stringify(value)
+          break
+        default:
+          string += value
+      }
+    }
+
+    return string + ']'
+  }
+
+  // guess the width of the console window, max-width 80.
+  function windowWidth () {
+    return wsize.width ? Math.min(80, wsize.width) : null
+  }
+
+  // logic for displaying application version.
+  var version = null
+  self.version = function (ver, opt, msg) {
+    version = ver
+  }
+
+  self.showVersion = function () {
+    if (typeof version === 'function') console.log(version())
+    else console.log(version)
+  }
+
+  return self
 }

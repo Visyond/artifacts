@@ -22,6 +22,7 @@ Runnable.prototype = create(MochaRunnable.prototype, {
 
 Runnable.prototype.setNightwatchClient = function(client) {
   this._nightwatch = client;
+  this._nightwatch.clearGlobalResult();
   return this;
 };
 

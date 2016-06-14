@@ -2,8 +2,16 @@
 
 %lex
 
-NAME                                    [a-zA-Z_](?:[a-zA-Z0-9_-]*[a-zA-Z0-9_])?
-ID                                      [a-zA-Z_][a-zA-Z0-9_]*
+
+ASCII_LETTER                            [a-zA-z]
+// \p{Alphabetic} already includes [a-zA-z], hence we don't need to merge with {UNICODE_LETTER}:
+UNICODE_LETTER                          [\p{Alphabetic}]
+ALPHA                                   [{UNICODE_LETTER}_]
+DIGIT                                   [\p{Number}]
+WHITESPACE                              [\s\r\n\p{Separator}]
+
+NAME                                    [{ALPHA}](?:[{ALPHA}{DIGIT}-]*[{ALPHA}{DIGIT}])?
+ID                                      [{ALPHA}][{ALPHA}{DIGIT}]*
 DECIMAL_NUMBER                          [1-9][0-9]*
 HEX_NUMBER                              "0"[xX][0-9a-fA-F]+
 BR                                      \r\n|\n|\r
@@ -16,7 +24,18 @@ DOUBLEQUOTED_STRING_CONTENT             (?:\\'"'|(?!'"').)*
 
 \s+                       /* skip whitespace */
 {ID}                      return 'SYMBOL';
+"$end"                    return 'SYMBOL';
+"$eof"                    return 'SYMBOL';
 "["{ID}"]"                yytext = yytext.substr(1, yyleng - 2); return 'ALIAS';
+
+// Support bison's `%empty` (and our own alias `%epsilon`) to identify an empty rule alt:
+"%empty"                  return 'EPSILON';
+"%epsilon"                return 'EPSILON';
+// See also https://en.wikipedia.org/wiki/Epsilon#Glyph_variants
+"\u0190"                  return 'EPSILON';
+"\u025B"                  return 'EPSILON';
+"\u03B5"                  return 'EPSILON';
+"\u03F5"                  return 'EPSILON';
 
 // Stringified tokens are always `'`-surrounded by the bnf.y grammar unless the token
 // itself contain an `'`.
@@ -62,8 +81,20 @@ handle_list
 handle
   :
     { $$ = []; }
-  | handle expression_suffixed
-    { $handle.push($expression_suffixed); }
+  | EPSILON                       
+    // %epsilon may only be used to signal this is an empty rule alt; 
+    // hence it can only occur by itself 
+    // (with an optional action block, but no alias what-so-ever).
+    { $$ = []; }
+  | rule
+    { $$ = $rule; }
+  ;
+
+rule
+  : expression_suffixed
+    { $$ = [$expression_suffixed]; }
+  | rule expression_suffixed
+    { $rule.push($expression_suffixed); }
   ;
 
 expression_suffixed

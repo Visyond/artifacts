@@ -61,7 +61,7 @@
   "directories": {},
   "dist": {
     "shasum": "859ad31890f5f9528727be89f1932c94fb4731e2",
-    "tarball": "http://registry.npmjs.org/urijs/-/urijs-1.16.1.tgz"
+    "tarball": "https://registry.npmjs.org/urijs/-/urijs-1.16.1.tgz"
   },
   "files": [
     "LICENSE.txt",

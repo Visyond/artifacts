@@ -42,7 +42,7 @@
   "directories": {},
   "dist": {
     "shasum": "f29852e70fd7e25f360e013a8ec44c82aedb5708",
-    "tarball": "http://registry.npmjs.org/over/-/over-0.0.5.tgz"
+    "tarball": "https://registry.npmjs.org/over/-/over-0.0.5.tgz"
   },
   "engines": {
     "node": "*"

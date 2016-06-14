@@ -15,7 +15,12 @@
     "name": "evanoxfeld"
   },
   "_npmVersion": "1.4.21",
-  "_phantomChildren": {},
+  "_phantomChildren": {
+    "core-util-is": "1.0.2",
+    "inherits": "2.0.1",
+    "isarray": "0.0.1",
+    "string_decoder": "0.10.31"
+  },
   "_requested": {
     "name": "unzip",
     "raw": "unzip@0.1.11",
@@ -60,7 +65,7 @@
   },
   "dist": {
     "shasum": "89749c63b058d7d90d619f86b98aa1535d3b97f0",
-    "tarball": "http://registry.npmjs.org/unzip/-/unzip-0.1.11.tgz"
+    "tarball": "https://registry.npmjs.org/unzip/-/unzip-0.1.11.tgz"
   },
   "gitHead": "5a62ecbcef6523708bb8b37decaf6e41728ac7fc",
   "homepage": "https://github.com/EvanOxfeld/node-unzip",

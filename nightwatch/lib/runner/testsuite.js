@@ -7,9 +7,9 @@ var Module = require('./module.js');
 var TestCase = require('./testcase.js');
 var Logger = require('../util/logger.js');
 var Utils = require('../util/utils.js');
+var DEFAULT_ASYNC_HOOK_TIMEOUT = 10000;
 
 function noop() {}
-var ASYNC_HOOK_TIMEOUT = 10000;
 
 function TestSuite(modulePath, fullPaths, opts, addtOpts) {
   events.EventEmitter.call(this);
@@ -192,6 +192,7 @@ TestSuite.prototype.run = function() {
     this.globalBeforeEach()
       .then(function() {
         if (self.client.terminated() && self.client.skipTestcasesOnFail()) {
+          self.testResults.errmessages = self.client.errors();
           self.deferred.resolve(self.testResults);
           return null;
         }
@@ -223,6 +224,10 @@ TestSuite.prototype.getGroupName = function() {
 
 TestSuite.prototype.printResult = function(startTime) {
   return this.client.print(startTime);
+};
+
+TestSuite.prototype.shouldRetrySuite = function() {
+  return this.suiteMaxRetries > this.suiteRetries && (this.testResults.failed > 0 || this.testResults.errors > 0);
 };
 
 TestSuite.prototype.setTestResult = function() {
@@ -259,11 +264,15 @@ TestSuite.prototype.printRetry = function() {
 };
 
 TestSuite.prototype.retryTestSuiteModule = function() {
+  this.client.resetTerminated();
+  this.clearResult();
   this.suiteRetries +=1;
   this.resetTestCases();
   this.printRetry();
-  this.globalBeforeEach();
-  return this.runTestSuiteModule();
+
+  return this.globalBeforeEach().then(function() {
+    return this.runTestSuiteModule();
+  }.bind(this));
 };
 
 TestSuite.prototype.runTestSuiteModule = function() {
@@ -279,17 +288,19 @@ TestSuite.prototype.runTestSuiteModule = function() {
       return self.client.checkQueue();
     })
     .then(function() {
-      if (self.suiteMaxRetries > self.suiteRetries && (self.testResults.failed > 0 || self.testResults.errors > 0)) {
-        self.globalAfterEach();
-        self.client.resetTerminated();
-        self.clearResult();
-        return self.retryTestSuiteModule();
+      return self.shouldRetrySuite();
+    })
+    .then(function(shouldRetrySuite) {
+      if (shouldRetrySuite) {
+        return self.globalAfterEach().then(function() {
+          return self.retryTestSuiteModule();
+        });
       }
     })
     .catch(function(e) {
-      this.testResults.errors++;
+      self.testResults.errors++;
       throw e;
-    }.bind(this));
+    });
 };
 
 TestSuite.prototype.onTestCaseFinished = function(results, errors, time) {
@@ -406,12 +417,12 @@ TestSuite.prototype.globalAfterEach = function() {
 TestSuite.prototype.adaptGlobalHook = function(hookName) {
   return this.makePromise(function(done, deffered) {
     var callbackDeffered = false;
-    var doneFn = function() {
+    var doneFn = function(err) {
       if (callbackDeffered) {
         return;
       }
       var fn = this.adaptDoneCallback(done, 'global ' + hookName, deffered);
-      return fn();
+      return this.onGlobalHookError(err, true, fn);
     }.bind(this);
 
     var argsCount;
@@ -434,11 +445,7 @@ TestSuite.prototype.adaptGlobalHook = function(hookName) {
       callbackDeffered = true;
       if (hookName == 'before' || hookName == 'beforeEach') {
         this.client.start(function(err) {
-          if (err) {
-            this.testResults.errors++;
-            this.testResults.errmessages = [err.message];
-          }
-          done(err);
+          return this.onGlobalHookError(err, false, done);
         }.bind(this));
       } else {
         this.client.restartQueue(function() {
@@ -450,20 +457,20 @@ TestSuite.prototype.adaptGlobalHook = function(hookName) {
   });
 };
 
-TestSuite.prototype.adaptDoneCallback = function(done, hookName, deferred) {
-  var timeout = setTimeout(function() {
-    try {
-      throw new Error('done() callback timeout was reached while executing '+ hookName + '.' +
-        ' Make sure to call the done() callback when the operation finishes.');
-    } catch (err) {
-      deferred.reject(err);
-    }
-  }, ASYNC_HOOK_TIMEOUT);
+TestSuite.prototype.onGlobalHookError = function(err, hookErr, done) {
+  if (err && err.message) {
+    this.testResults.errors++;
+    this.testResults.errmessages = [err.message];
+  }
 
-  return function() {
-    clearTimeout(timeout);
-    done();
-  };
+  return done(err, hookErr);
+};
+
+TestSuite.prototype.adaptDoneCallback = function(done, hookName, deferred) {
+  var asyncHookTimeout = this.client.globals('asyncHookTimeout') || DEFAULT_ASYNC_HOOK_TIMEOUT;
+  return Utils.setCallbackTimeout(done, hookName, asyncHookTimeout, function(err) {
+    deferred.reject(err);
+  });
 };
 
 //////////////////////////////////////////////////////////////////////
@@ -472,8 +479,13 @@ TestSuite.prototype.adaptDoneCallback = function(done, hookName, deferred) {
 TestSuite.prototype.makePromise = function (fn) {
   var deferred = Q.defer();
   try {
-    fn.call(this, function() {
-      deferred.resolve();
+    fn.call(this, function(err, hookErr) {
+      // in case of an exception thrown inside a global hook, we need to reject the promise here
+      if (hookErr && err && (err instanceof Error)) {
+        deferred.reject(err);
+      } else {
+        deferred.resolve();
+      }
     }, deferred);
   } catch (e) {
     deferred.reject(e);

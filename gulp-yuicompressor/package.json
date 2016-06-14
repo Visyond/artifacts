@@ -1,61 +1,91 @@
 {
-  "name": "gulp-yuicompressor",
-  "version": "0.0.3",
-  "description": "Minify files with yuicompressor",
-  "license": "MIT",
-  "keywords": [
-    "yuicompressor",
-    "gulpplugin"
+  "_args": [
+    [
+      "gulp-yuicompressor@0.0.3",
+      "/home/vagrant/visyond/server/v2"
+    ]
   ],
+  "_from": "gulp-yuicompressor@0.0.3",
+  "_id": "gulp-yuicompressor@0.0.3",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/gulp-yuicompressor",
+  "_npmUser": {
+    "email": "anhulife@gmail.com",
+    "name": "anhulife"
+  },
+  "_npmVersion": "1.4.14",
+  "_phantomChildren": {
+    "core-util-is": "1.0.2",
+    "inherits": "2.0.1",
+    "isarray": "0.0.1",
+    "string_decoder": "0.10.31"
+  },
+  "_requested": {
+    "name": "gulp-yuicompressor",
+    "raw": "gulp-yuicompressor@0.0.3",
+    "rawSpec": "0.0.3",
+    "scope": null,
+    "spec": "0.0.3",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gulp-yuicompressor/-/gulp-yuicompressor-0.0.3.tgz",
+  "_shasum": "a6f238f7603f5d428ee052dbd0fc089c046a6853",
+  "_shrinkwrap": null,
+  "_spec": "gulp-yuicompressor@0.0.3",
+  "_where": "/home/vagrant/visyond/server/v2",
   "author": {
-    "name": "anhulife",
-    "email": "anhulife@gmail.com"
+    "email": "anhulife@gmail.com",
+    "name": "anhulife"
   },
-  "homepage": "https://github.com/anhulife/gulp-yuicompressor",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:anhulife/gulp-yuicompressor.git"
+  "bugs": {
+    "url": "https://github.com/anhulife/gulp-yuicompressor/issues"
   },
-  "scripts": {
-    "test": "mocha"
-  },
-  "files": [
-    "lib",
-    "yuicompressor.js",
-    "index.js"
-  ],
   "dependencies": {
     "gulp-util": "^3.0.0",
     "through2": "^0.5.1"
   },
+  "description": "Minify files with yuicompressor",
   "devDependencies": {
-    "vinyl": "~0.2.3",
     "gulp": "^3.8.7",
-    "mocha": "*"
+    "mocha": "*",
+    "vinyl": "~0.2.3"
   },
+  "directories": {},
+  "dist": {
+    "shasum": "a6f238f7603f5d428ee052dbd0fc089c046a6853",
+    "tarball": "https://registry.npmjs.org/gulp-yuicompressor/-/gulp-yuicompressor-0.0.3.tgz"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "yuicompressor.js"
+  ],
   "gitHead": "7bfd0de8e64f3ebcd1b87cbfd79e02d9caafb9bd",
-  "bugs": {
-    "url": "https://github.com/anhulife/gulp-yuicompressor/issues"
-  },
-  "_id": "gulp-yuicompressor@0.0.3",
-  "_shasum": "a6f238f7603f5d428ee052dbd0fc089c046a6853",
-  "_from": "gulp-yuicompressor@0.0.3",
-  "_npmVersion": "1.4.14",
-  "_npmUser": {
-    "name": "anhulife",
-    "email": "anhulife@gmail.com"
-  },
+  "homepage": "https://github.com/anhulife/gulp-yuicompressor",
+  "keywords": [
+    "gulpplugin",
+    "yuicompressor"
+  ],
+  "license": "MIT",
   "maintainers": [
     {
       "name": "anhulife",
       "email": "anhulife@gmail.com"
     }
   ],
-  "dist": {
-    "shasum": "a6f238f7603f5d428ee052dbd0fc089c046a6853",
-    "tarball": "http://registry.npmjs.org/gulp-yuicompressor/-/gulp-yuicompressor-0.0.3.tgz"
+  "name": "gulp-yuicompressor",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/anhulife/gulp-yuicompressor.git"
   },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/gulp-yuicompressor/-/gulp-yuicompressor-0.0.3.tgz",
-  "readme": "ERROR: No README data found!"
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "0.0.3"
 }

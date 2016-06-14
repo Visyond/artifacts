@@ -48,7 +48,7 @@
   "directories": {},
   "dist": {
     "shasum": "ffdc56dcc35d02926dd50ad13439bbc54061d598",
-    "tarball": "http://registry.npmjs.org/ejs/-/ejs-0.8.8.tgz"
+    "tarball": "https://registry.npmjs.org/ejs/-/ejs-0.8.8.tgz"
   },
   "homepage": "https://github.com/visionmedia/ejs",
   "keywords": [

@@ -2,7 +2,7 @@
   "_args": [
     [
       "nomnom@github:gerhobbelt/nomnom#master",
-      "/home/vagrant/visyond/server/v2/node_modules/gulp-jison/node_modules/jison"
+      "/home/vagrant/visyond/server/v2/node_modules/jison"
     ]
   ],
   "_from": "gerhobbelt/nomnom#master",
@@ -10,7 +10,11 @@
   "_inCache": true,
   "_installable": true,
   "_location": "/nomnom",
-  "_phantomChildren": {},
+  "_phantomChildren": {
+    "ansi-styles": "2.2.1",
+    "escape-string-regexp": "1.0.5",
+    "get-stdin": "4.0.1"
+  },
   "_requested": {
     "hosted": {
       "directUrl": "https://raw.githubusercontent.com/gerhobbelt/nomnom/master/package.json",
@@ -29,14 +33,15 @@
     "type": "hosted"
   },
   "_requiredBy": [
-    "/gulp-jison/jison",
-    "/gulp-jison/jison-lex"
+    "/jison",
+    "/jison-lex",
+    "/sprity"
   ],
   "_resolved": "git://github.com/gerhobbelt/nomnom.git#178bc62db3848267dd2f529282265b20abec14f0",
-  "_shasum": "c319334fa7b12052398c3850d6b8849b2951ab2d",
+  "_shasum": "3e7262af4d3045542682d1b8db77b4e6556c5022",
   "_shrinkwrap": null,
   "_spec": "nomnom@github:gerhobbelt/nomnom#master",
-  "_where": "/home/vagrant/visyond/server/v2/node_modules/gulp-jison/node_modules/jison",
+  "_where": "/home/vagrant/visyond/server/v2/node_modules/jison",
   "author": {
     "email": "fayearthur@gmail.com",
     "name": "Heather Arthur"

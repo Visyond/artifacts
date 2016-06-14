@@ -3,6 +3,7 @@
 TOOLSET := target
 TARGET := lwip_encoder
 DEFS_Debug := \
+	'-DNODE_GYP_MODULE_NAME=lwip_encoder' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
 	'-DBUILDING_NODE_EXTENSION' \
@@ -28,10 +29,11 @@ CFLAGS_CC_Debug := \
 	-fno-rtti
 
 INCS_Debug := \
-	-I/home/doctor/.node-gyp/0.10.40/src \
-	-I/home/doctor/.node-gyp/0.10.40/deps/uv/include \
-	-I/home/doctor/.node-gyp/0.10.40/deps/v8/include \
-	-I$(srcdir)/node_modules/nan \
+	-I/home/vagrant/.node-gyp/0.10.25/include/node \
+	-I/home/vagrant/.node-gyp/0.10.25/src \
+	-I/home/vagrant/.node-gyp/0.10.25/deps/uv/include \
+	-I/home/vagrant/.node-gyp/0.10.25/deps/v8/include \
+	-I$(srcdir)/../nan \
 	-I$(srcdir)/src/encoder \
 	-I$(srcdir)/src/lib/zlib \
 	-I$(srcdir)/src/lib/jpeg \
@@ -40,6 +42,7 @@ INCS_Debug := \
 	-I$(srcdir)/src/lib/gif
 
 DEFS_Release := \
+	'-DNODE_GYP_MODULE_NAME=lwip_encoder' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
 	'-DBUILDING_NODE_EXTENSION'
@@ -65,10 +68,11 @@ CFLAGS_CC_Release := \
 	-fno-rtti
 
 INCS_Release := \
-	-I/home/doctor/.node-gyp/0.10.40/src \
-	-I/home/doctor/.node-gyp/0.10.40/deps/uv/include \
-	-I/home/doctor/.node-gyp/0.10.40/deps/v8/include \
-	-I$(srcdir)/node_modules/nan \
+	-I/home/vagrant/.node-gyp/0.10.25/include/node \
+	-I/home/vagrant/.node-gyp/0.10.25/src \
+	-I/home/vagrant/.node-gyp/0.10.25/deps/uv/include \
+	-I/home/vagrant/.node-gyp/0.10.25/deps/v8/include \
+	-I$(srcdir)/../nan \
 	-I$(srcdir)/src/encoder \
 	-I$(srcdir)/src/lib/zlib \
 	-I$(srcdir)/src/lib/jpeg \
@@ -116,6 +120,7 @@ OBJS := \
 	$(obj).target/$(TARGET)/src/lib/png/pngtrans.o \
 	$(obj).target/$(TARGET)/src/lib/png/pngmem.o \
 	$(obj).target/$(TARGET)/src/lib/png/pngerror.o \
+	$(obj).target/$(TARGET)/src/lib/png/pngread.o \
 	$(obj).target/$(TARGET)/src/lib/png/pngwrite.o \
 	$(obj).target/$(TARGET)/src/lib/png/pngwutil.o \
 	$(obj).target/$(TARGET)/src/lib/png/pngwio.o \

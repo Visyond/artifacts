@@ -14,8 +14,7 @@ var jsdoc = {
         syntax: require('jsdoc/src/syntax')
     },
     util: {
-        doop: require('jsdoc/util/doop'),
-        runtime: require('jsdoc/util/runtime')
+        doop: require('jsdoc/util/doop')
     }
 };
 var logger = require('jsdoc/util/logger');
@@ -27,8 +26,7 @@ var Syntax = jsdoc.src.syntax.Syntax;
 
 // TODO: docs
 var PARSERS = exports.PARSERS = {
-    js: 'jsdoc/src/parser',
-    rhino: 'rhino/jsdoc/src/parser'
+    js: 'jsdoc/src/parser'
 };
 /* eslint-disable no-script-url */
 // Prefix for JavaScript strings that were provided in lieu of a filename.
@@ -62,7 +60,7 @@ exports.createParser = function(type) {
 
     if (!type) {
         /* istanbul ignore next */
-        type = jsdoc.util.runtime.isRhino() ? 'rhino' : 'js';
+        type = 'js';
     }
 
     if (hasOwnProp.call(PARSERS, type)) {
@@ -340,7 +338,7 @@ Parser.prototype.astnodeToMemberof = function(node) {
     var doclet;
     var scope;
 
-    var result = '';
+    var result = {};
     var type = node.type;
 
     if ( (type === Syntax.FunctionDeclaration || type === Syntax.FunctionExpression ||
@@ -349,10 +347,10 @@ Parser.prototype.astnodeToMemberof = function(node) {
         doclet = this._getDocletById(node.enclosingScope.nodeId);
 
         if (!doclet) {
-            result = jsdoc.name.LONGNAMES.ANONYMOUS + jsdoc.name.SCOPE.PUNC.INNER;
+            result.memberof = jsdoc.name.LONGNAMES.ANONYMOUS + jsdoc.name.SCOPE.PUNC.INNER;
        }
         else {
-            result = doclet.longname + jsdoc.name.SCOPE.PUNC.INNER;
+            result.memberof = doclet.longname + jsdoc.name.SCOPE.PUNC.INNER;
         }
     }
     else {
@@ -364,7 +362,8 @@ Parser.prototype.astnodeToMemberof = function(node) {
         while (scope.enclosingScope) {
             doclet = this._getDocletById(scope.enclosingScope.nodeId);
             if ( doclet && definedInScope(doclet, basename) ) {
-                result = [doclet.meta.vars[basename], basename];
+                result.memberof = doclet.meta.vars[basename];
+                result.basename = basename;
                 break;
             }
             else {
@@ -376,7 +375,8 @@ Parser.prototype.astnodeToMemberof = function(node) {
         // do we know that it's a global?
         doclet = this._getDocletByLongname(jsdoc.name.LONGNAMES.GLOBAL);
         if ( doclet && definedInScope(doclet, basename) ) {
-            result = [doclet.meta.vars[basename], basename];
+            result.memberof = doclet.meta.vars[basename];
+            result.basename = basename;
         }
         else {
             doclet = this._getDocletById(node.parent.nodeId);
@@ -384,7 +384,7 @@ Parser.prototype.astnodeToMemberof = function(node) {
             // set the result if we found a doclet. (if we didn't, the AST node may describe a
             // global symbol.)
             if (doclet) {
-                result = doclet.longname || doclet.name;
+                result.memberof = doclet.longname || doclet.name;
             }
         }
     }

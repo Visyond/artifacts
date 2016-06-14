@@ -30,7 +30,14 @@ module.exports = function (options) {
         }
 
         if (file.isBuffer()) {
-            var fileOpts = objectAssign({}, options);
+            var fileOpts = objectAssign({
+                moduleType: 'js',
+                //moduleName: xxx,
+                debug: false,
+                outputDebugTables: false,
+                parserType: 'lalr',
+                compressTables: 2,
+            }, options);
             
             // special callbacks:
             var preprocessor = mkF(fileOpts.preprocessor, function (file, content, options) {

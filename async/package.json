@@ -55,7 +55,7 @@
   "directories": {},
   "dist": {
     "shasum": "a4816a17cd5ff516dfa2c7698a453369b9790de0",
-    "tarball": "http://registry.npmjs.org/async/-/async-1.2.1.tgz"
+    "tarball": "https://registry.npmjs.org/async/-/async-1.2.1.tgz"
   },
   "gitHead": "b66e85d1cca8c8056313253f22d18f571e7001d2",
   "homepage": "https://github.com/caolan/async#readme",

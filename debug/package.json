@@ -69,7 +69,7 @@
   "directories": {},
   "dist": {
     "shasum": "89bd9df6732b51256bc6705342bba02ed12131ef",
-    "tarball": "http://registry.npmjs.org/debug/-/debug-2.0.0.tgz"
+    "tarball": "https://registry.npmjs.org/debug/-/debug-2.0.0.tgz"
   },
   "gitHead": "c61ae82bde19c6fdedfc6684817ff7eb541ff029",
   "homepage": "https://github.com/visionmedia/debug",

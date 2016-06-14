@@ -164,7 +164,7 @@ walkers[Syntax.DoWhileStatement] = function(node, parent, state, cb) {
 walkers[Syntax.EmptyStatement] = leafNode;
 
 walkers[Syntax.ExperimentalRestProperty] = function(node, parent, state, cb) {
-    cb(node.argument);
+    cb(node.argument, node, state);
 };
 
 walkers[Syntax.ExperimentalSpreadProperty] = walkers[Syntax.ExperimentalRestProperty];
@@ -176,6 +176,11 @@ walkers[Syntax.ExportAllDeclaration] = function(node, parent, state, cb) {
 };
 
 walkers[Syntax.ExportDefaultDeclaration] = function(node, parent, state, cb) {
+    // if the declaration target is a class, move leading comments to the declaration target
+    if (node.declaration && node.declaration.type === Syntax.ClassDeclaration) {
+        moveComments(node, node.declaration);
+    }
+
     if (node.declaration) {
         cb(node.declaration, node, state);
     }
@@ -275,7 +280,9 @@ walkers[Syntax.ImportSpecifier] = walkers[Syntax.ExportSpecifier];
 walkers[Syntax.JSXAttribute] = function(node, parent, state, cb) {
     cb(node.name, node, state);
 
-    cb(node.value, node, state);
+    if (node.value) {
+        cb(node.value, node, state);
+    }
 };
 
 walkers[Syntax.JSXClosingElement] = function(node, parent, state, cb) {
@@ -580,7 +587,6 @@ Walker.prototype._recurse = function(filename, ast) {
 };
 
 // TODO: docs
-// TODO: skip the AST root node to be consistent with Rhino?
 Walker.prototype.recurse = function(ast, visitor, filename) {
     var shouldContinue;
     var state = this._recurse(filename, ast);

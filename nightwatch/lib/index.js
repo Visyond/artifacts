@@ -15,11 +15,13 @@ function Nightwatch(options) {
   events.EventEmitter.call(this);
 
   this.locateStrategy = 'css selector';
+
   this.api = {
     capabilities : {},
-    globals : {},
+    globals : options && options.persist_globals && options.globals || {},
     sessionId : null
   };
+
   this.setMaxListeners(0);
   this.sessionId = null;
   this.context = null;
@@ -71,7 +73,7 @@ Nightwatch.prototype.setOptions = function(options) {
   // backwords compatibility
   this.api.launch_url = this.api.launchUrl;
 
-  if (this.options.globals && typeof this.options.globals == 'object') {
+  if (this.options.globals && typeof this.options.globals == 'object' && !this.options.persist_globals) {
     for (var globalKey in this.options.globals) {
       this.api.globals[globalKey] = this.options.globals[globalKey];
     }
@@ -193,11 +195,15 @@ Nightwatch.prototype.start = function() {
     if (error) {
       var stackTrace = '';
       if (error.stack) {
-        stackTrace = '\n' + error.stack.split('\n').slice(1).join('\n');
+        stackTrace = error.stack.split('\n').slice(1).join('\n');
       }
 
       self.results.errors++;
-      self.errors.push(error.name + ': ' + error.message + stackTrace);
+      self.errors.push(error.name + ': ' + error.message + '\n' + stackTrace);
+      if (self.options.output) {
+        Utils.showStackTrace(error.name + ': ' + error.message, stackTrace, true);
+      }
+
       if (self.options.start_session) {
         self.terminate();
       }
@@ -210,20 +216,15 @@ Nightwatch.prototype.start = function() {
   return this;
 };
 
-Nightwatch.prototype.terminate = function() {
-  var self = this;
+Nightwatch.prototype.terminate = function(deferred) {
   this.terminated = true;
-  this.queue.reset();
-  this.queue.empty();
 
-  if (this.options.end_session_on_fail && this.options.start_session) {
-    this.api.end(function() {
-      self.finished();
-    });
-
-    this.queue.run();
+  // in case this was a synchronous command (e.g. assert.ok()) we need to wait for other possible
+  // commands which might have been added afterwards while client is terminated
+  if (deferred) {
+    this.queue.instance().once('queue:started', this.terminateSession.bind(this));
   } else {
-    this.finished();
+    this.terminateSession();
   }
 
   return this;
@@ -231,6 +232,22 @@ Nightwatch.prototype.terminate = function() {
 
 Nightwatch.prototype.resetTerminated = function() {
   this.terminated = false;
+  return this;
+};
+
+Nightwatch.prototype.terminateSession = function() {
+  this.queue.reset();
+  this.queue.empty();
+
+  if (this.options.end_session_on_fail && this.options.start_session) {
+    this.api.end(function() {
+      this.finished();
+    }.bind(this));
+
+    this.queue.run();
+  } else {
+    this.finished();
+  }
   return this;
 };
 
@@ -253,7 +270,7 @@ Nightwatch.prototype.getFailureMessage = function() {
     for (var i = 0; i < this.errors.length; i++) {
       error = this.errors[i].split('\n');
       var headline = error.shift();
-      Utils.showStackTrace(headline, error);
+      Utils.showStackTrace(headline, error, true);
     }
   }
   var failure_msg = [];
@@ -321,17 +338,16 @@ Nightwatch.prototype.runProtocolAction = function(requestOptions, callback) {
         try {
           callback.call(self.api, result);
         } catch (ex) {
-
           var stack = ex.stack.split('\n');
           var firstLine = ' ' + String.fromCharCode(10006) + ' ' +stack.shift();
 
-          Utils.showStackTrace(firstLine, stack);
           if (ex.name == 'AssertionError') {
+            Utils.showStackTrace(firstLine, stack);
             self.results.failed++;
           } else {
-            self.addError(ex.message, firstLine);
+            self.addError('\n  ' + ex.stack, firstLine);
+            self.terminate();
           }
-
         }
       }
 
@@ -373,7 +389,7 @@ Nightwatch.prototype.addError = function(message, logMessage) {
     currentTest = 'tests';
   }
 
-  this.errors.push('Error while running '+ currentTest  + ':\n' + message);
+  this.errors.push('  Error while running '+ currentTest  + ':\n' + message);
   this.results.errors++;
   if (this.options.output) {
     Logger.warn('    ' + (logMessage || message));

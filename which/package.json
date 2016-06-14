@@ -56,7 +56,7 @@
   "directories": {},
   "dist": {
     "shasum": "9ce512459946166e12c083f08ec073380fc8cbbb",
-    "tarball": "http://registry.npmjs.org/which/-/which-1.1.1.tgz"
+    "tarball": "https://registry.npmjs.org/which/-/which-1.1.1.tgz"
   },
   "gitHead": "c80a08e9f8cf7a5c0f39c2e2f87f18f153b118a8",
   "homepage": "https://github.com/isaacs/node-which#readme",

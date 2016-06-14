@@ -81,7 +81,7 @@
   "directories": {},
   "dist": {
     "shasum": "303519bf6393fe7e42f34d8b630ef7794e3542b7",
-    "tarball": "http://registry.npmjs.org/lodash._baseclone/-/lodash._baseclone-3.3.0.tgz"
+    "tarball": "https://registry.npmjs.org/lodash._baseclone/-/lodash._baseclone-3.3.0.tgz"
   },
   "homepage": "https://lodash.com/",
   "icon": "https://lodash.com/icon.svg",

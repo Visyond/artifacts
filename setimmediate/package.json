@@ -67,7 +67,7 @@
   "directories": {},
   "dist": {
     "shasum": "20e81de622d4a02588ce0c8da8973cbcf1d3138f",
-    "tarball": "http://registry.npmjs.org/setimmediate/-/setimmediate-1.0.4.tgz"
+    "tarball": "https://registry.npmjs.org/setimmediate/-/setimmediate-1.0.4.tgz"
   },
   "gitHead": "f15fe2649c6e1722c57be0fd11b0e251f8bbff4b",
   "homepage": "https://github.com/yuzujs/setImmediate#readme",

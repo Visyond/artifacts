@@ -3,6 +3,10 @@
     [
       "lcid@^1.0.0",
       "/home/vagrant/visyond/server/v2/node_modules/os-locale"
+    ],
+    [
+      "lcid@^1.0.0",
+      "/home/vagrant/visyond/server/v2/node_modules/os-locale"
     ]
   ],
   "_from": "lcid@>=1.0.0 <2.0.0",
@@ -28,8 +32,6 @@
   "_requiredBy": [
     "/os-locale"
   ],
-  "_resolved": "https://registry.npmjs.org/lcid/-/lcid-1.0.0.tgz",
-  "_shasum": "308accafa0bc483a3867b4b6f2b9506251d1b835",
   "_shrinkwrap": null,
   "_spec": "lcid@^1.0.0",
   "_where": "/home/vagrant/visyond/server/v2/node_modules/os-locale",
@@ -51,7 +53,7 @@
   "directories": {},
   "dist": {
     "shasum": "308accafa0bc483a3867b4b6f2b9506251d1b835",
-    "tarball": "http://registry.npmjs.org/lcid/-/lcid-1.0.0.tgz"
+    "tarball": "https://registry.npmjs.org/lcid/-/lcid-1.0.0.tgz"
   },
   "engines": {
     "node": ">=0.10.0"

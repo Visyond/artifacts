@@ -3,6 +3,10 @@
     [
       "right-align@^0.1.1",
       "/home/vagrant/visyond/server/v2/node_modules/cliui"
+    ],
+    [
+      "right-align@^0.1.1",
+      "/home/vagrant/visyond/server/v2/node_modules/cliui"
     ]
   ],
   "_from": "right-align@>=0.1.1 <0.2.0",
@@ -28,8 +32,6 @@
   "_requiredBy": [
     "/cliui"
   ],
-  "_resolved": "https://registry.npmjs.org/right-align/-/right-align-0.1.3.tgz",
-  "_shasum": "61339b722fe6a3515689210d24e14c96148613ef",
   "_shrinkwrap": null,
   "_spec": "right-align@^0.1.1",
   "_where": "/home/vagrant/visyond/server/v2/node_modules/cliui",

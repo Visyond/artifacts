@@ -2,11 +2,14 @@ var bnf = require("./parser").parser,
     ebnf = require("./ebnf-transform"),
     jisonlex = require("lex-parser");
 
-exports.parse = function parse (grammar) { return bnf.parse(grammar); };
+exports.parse = function parse(grammar) { 
+    return bnf.parse(grammar); 
+};
+
 exports.transform = ebnf.transform;
 
 // adds a declaration to the grammar
-bnf.yy.addDeclaration = function (grammar, decl) {
+bnf.yy.addDeclaration = function bnfAddDeclaration(grammar, decl) {
     if (decl.start) {
         grammar.start = decl.start;
     } else if (decl.lex) {
@@ -48,11 +51,16 @@ bnf.yy.addDeclaration = function (grammar, decl) {
             grammar.actionInclude = '';
         }
         grammar.actionInclude += decl.actionInclude;
+    } else if (decl.initCode) {
+        if (!grammar.moduleInit) {
+            grammar.moduleInit = [];
+        }
+        grammar.moduleInit.push(decl.initCode);       // {qualifier: <name>, include: <source code chunk>}
     }
 };
 
 // parse an embedded lex section
-var parseLex = function (text) {
+var parseLex = function bnfParseLex(text) {
     text = text.replace(/(?:^%lex)|(?:\/lex$)/g, '');
     return jisonlex.parse(text);
 };

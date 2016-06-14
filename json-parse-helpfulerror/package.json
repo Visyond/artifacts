@@ -1,11 +1,11 @@
 {
   "_args": [
     [
-      "json-parse-helpfulerror",
-      "/home/vagrant/visyond/server/v2"
+      "json-parse-helpfulerror@^1.0.3",
+      "/home/vagrant/visyond/server/v2/node_modules/cjson"
     ]
   ],
-  "_from": "json-parse-helpfulerror@*",
+  "_from": "json-parse-helpfulerror@>=1.0.3 <2.0.0",
   "_id": "json-parse-helpfulerror@1.0.3",
   "_inCache": true,
   "_installable": true,
@@ -19,21 +19,21 @@
   "_phantomChildren": {},
   "_requested": {
     "name": "json-parse-helpfulerror",
-    "raw": "json-parse-helpfulerror",
-    "rawSpec": "",
+    "raw": "json-parse-helpfulerror@^1.0.3",
+    "rawSpec": "^1.0.3",
     "scope": null,
-    "spec": "*",
+    "spec": ">=1.0.3 <2.0.0",
     "type": "range"
   },
   "_requiredBy": [
-    "#USER",
-    "/cjson"
+    "/cjson",
+    "/jison/cjson"
   ],
   "_resolved": "https://registry.npmjs.org/json-parse-helpfulerror/-/json-parse-helpfulerror-1.0.3.tgz",
   "_shasum": "13f14ce02eed4e981297b64eb9e3b932e2dd13dc",
   "_shrinkwrap": null,
-  "_spec": "json-parse-helpfulerror",
-  "_where": "/home/vagrant/visyond/server/v2",
+  "_spec": "json-parse-helpfulerror@^1.0.3",
+  "_where": "/home/vagrant/visyond/server/v2/node_modules/cjson",
   "author": {
     "email": "smikes@cubane.com",
     "name": "Sam Mikes"

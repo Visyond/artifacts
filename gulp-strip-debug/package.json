@@ -1,76 +1,101 @@
 {
-  "name": "gulp-strip-debug",
-  "version": "1.0.2",
-  "description": "Strip console and debugger statements from JavaScript code",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sindresorhus/gulp-strip-debug"
-  },
-  "author": {
-    "name": "Sindre Sorhus",
+  "_args": [
+    [
+      "gulp-strip-debug@1.1.0",
+      "/home/vagrant/visyond/server/v2"
+    ]
+  ],
+  "_from": "gulp-strip-debug@1.1.0",
+  "_id": "gulp-strip-debug@1.1.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/gulp-strip-debug",
+  "_nodeVersion": "4.2.1",
+  "_npmUser": {
     "email": "sindresorhus@gmail.com",
+    "name": "sindresorhus"
+  },
+  "_npmVersion": "2.14.7",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "gulp-strip-debug",
+    "raw": "gulp-strip-debug@1.1.0",
+    "rawSpec": "1.1.0",
+    "scope": null,
+    "spec": "1.1.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gulp-strip-debug/-/gulp-strip-debug-1.1.0.tgz",
+  "_shasum": "5d56b008452edf6823dadecb3e6254d06f3b5d3d",
+  "_shrinkwrap": null,
+  "_spec": "gulp-strip-debug@1.1.0",
+  "_where": "/home/vagrant/visyond/server/v2",
+  "author": {
+    "email": "sindresorhus@gmail.com",
+    "name": "Sindre Sorhus",
     "url": "http://sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/gulp-strip-debug/issues"
+  },
+  "dependencies": {
+    "gulp-util": "^3.0.0",
+    "strip-debug": "^1.0.0",
+    "through2": "^2.0.0"
+  },
+  "description": "Strip console and debugger statements from JavaScript code",
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "5d56b008452edf6823dadecb3e6254d06f3b5d3d",
+    "tarball": "https://registry.npmjs.org/gulp-strip-debug/-/gulp-strip-debug-1.1.0.tgz"
   },
   "engines": {
     "node": ">=0.10.0"
   },
-  "scripts": {
-    "test": "mocha"
-  },
   "files": [
     "index.js"
   ],
+  "gitHead": "bd1d6830a6962bbab0bcafec9c961d0d4747f379",
+  "homepage": "https://github.com/sindresorhus/gulp-strip-debug",
   "keywords": [
-    "gulpplugin",
-    "strip",
-    "remove",
-    "delete",
+    "ast",
     "clean",
+    "console",
     "debug",
     "debugger",
-    "console",
+    "delete",
+    "ecmascript",
+    "esprima",
+    "gulpplugin",
+    "javascript",
+    "js",
     "log",
     "logging",
-    "js",
-    "javascript",
-    "ecmascript",
-    "ast",
-    "esprima"
+    "remove",
+    "strip"
   ],
-  "dependencies": {
-    "gulp-util": "^3.0.0",
-    "strip-debug": "^1.0.0",
-    "through2": "^0.6.1"
-  },
-  "devDependencies": {
-    "mocha": "*"
-  },
-  "gitHead": "407b72069a650f917a8ddf120dbdd83c78bf987e",
-  "bugs": {
-    "url": "https://github.com/sindresorhus/gulp-strip-debug/issues"
-  },
-  "homepage": "https://github.com/sindresorhus/gulp-strip-debug",
-  "_id": "gulp-strip-debug@1.0.2",
-  "_shasum": "82073e520b41c6d49bbacdd5a83a183facd02e6e",
-  "_from": "gulp-strip-debug@^1.0.2",
-  "_npmVersion": "2.1.5",
-  "_nodeVersion": "0.10.32",
-  "_npmUser": {
-    "name": "sindresorhus",
-    "email": "sindresorhus@gmail.com"
-  },
+  "license": "MIT",
   "maintainers": [
     {
       "name": "sindresorhus",
       "email": "sindresorhus@gmail.com"
     }
   ],
-  "dist": {
-    "shasum": "82073e520b41c6d49bbacdd5a83a183facd02e6e",
-    "tarball": "http://registry.npmjs.org/gulp-strip-debug/-/gulp-strip-debug-1.0.2.tgz"
+  "name": "gulp-strip-debug",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/gulp-strip-debug.git"
   },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/gulp-strip-debug/-/gulp-strip-debug-1.0.2.tgz",
-  "readme": "ERROR: No README data found!"
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "1.1.0"
 }

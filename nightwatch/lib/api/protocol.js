@@ -908,6 +908,7 @@ module.exports = function(Nightwatch) {
    * Retrieve the current window handle.
    *
    * @link /session/:sessionId/window/:windowHandle/maximize
+   * @param {string} [handleOrName] windowHandle URL parameter; if it is "current", the currently active window will be maximized.
    * @param {function} [callback] Optional callback function to be called when the command finishes.
    * @api protocol
    */
@@ -970,6 +971,43 @@ module.exports = function(Nightwatch) {
     return postRequest(path, {
       width : width,
       height : height
+    }, callback);
+  };
+
+  /**
+   * Change or get the position of the specified window. If the second argument is a function it will be used as a callback and the call will perform a get request to retrieve the existing window position.
+   *
+   * @link /session/:sessionId/window/:windowHandle/position
+   * @param {string} windowHandle
+   * @param {number} offsetX
+   * @param {number} offsetY
+   * @param {function} [callback] Optional callback function to be called when the command finishes.
+   * @api protocol
+   */
+  Actions.windowPosition = function(windowHandle, offsetX, offsetY, callback) {
+    if (typeof windowHandle !== 'string') {
+      throw new Error('First argument must be a window handle string.');
+    }
+
+    var path = '/window/' + windowHandle + '/position';
+    if (arguments.length === 2 && typeof arguments[1] === 'function') {
+      return getRequest(path, arguments[1]);
+    }
+
+    offsetX = Number(offsetX);
+    offsetY = Number(offsetY);
+
+    if (typeof offsetX !== 'number' || isNaN(offsetX)) {
+      throw new Error('Offset arguments must be passed as numbers.');
+    }
+
+    if (typeof offsetY !== 'number' || isNaN(offsetY)) {
+      throw new Error('Offset arguments must be passed as numbers.');
+    }
+
+    return postRequest(path, {
+      x : offsetX,
+      y : offsetY
     }, callback);
   };
 

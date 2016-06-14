@@ -2,7 +2,7 @@
   "_args": [
     [
       "lodash.keys@^3.0.0",
-      "/home/vagrant/visyond/server/v2/node_modules/lodash._baseclone"
+      "/home/vagrant/visyond/server/v2/node_modules/lodash.template"
     ]
   ],
   "_from": "lodash.keys@>=3.0.0 <4.0.0",
@@ -27,13 +27,14 @@
   },
   "_requiredBy": [
     "/lodash._baseassign",
-    "/lodash._baseclone"
+    "/lodash._baseclone",
+    "/lodash.template"
   ],
   "_resolved": "https://registry.npmjs.org/lodash.keys/-/lodash.keys-3.1.2.tgz",
   "_shasum": "4dbc0472b156be50a0b286855d1bd0b0c656098a",
   "_shrinkwrap": null,
   "_spec": "lodash.keys@^3.0.0",
-  "_where": "/home/vagrant/visyond/server/v2/node_modules/lodash._baseclone",
+  "_where": "/home/vagrant/visyond/server/v2/node_modules/lodash.template",
   "author": {
     "email": "john.david.dalton@gmail.com",
     "name": "John-David Dalton",
@@ -79,7 +80,7 @@
   "directories": {},
   "dist": {
     "shasum": "4dbc0472b156be50a0b286855d1bd0b0c656098a",
-    "tarball": "http://registry.npmjs.org/lodash.keys/-/lodash.keys-3.1.2.tgz"
+    "tarball": "https://registry.npmjs.org/lodash.keys/-/lodash.keys-3.1.2.tgz"
   },
   "homepage": "https://lodash.com/",
   "icon": "https://lodash.com/icon.svg",

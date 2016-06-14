@@ -6,16 +6,20 @@
     ]
   ],
   "_from": "selenium-standalone@>=4.8.0 <5.0.0",
-  "_id": "selenium-standalone@4.8.0",
+  "_id": "selenium-standalone@4.9.1",
   "_inCache": true,
   "_installable": true,
   "_location": "/selenium-standalone",
-  "_nodeVersion": "4.2.2",
+  "_nodeVersion": "5.5.0",
+  "_npmOperationalInternal": {
+    "host": "packages-6-west.internal.npmjs.com",
+    "tmp": "tmp/selenium-standalone-4.9.1.tgz_1455978077852_0.45680596493184566"
+  },
   "_npmUser": {
     "email": "vincent.voyer@gmail.com",
     "name": "vvo"
   },
-  "_npmVersion": "2.14.7",
+  "_npmVersion": "2.14.16",
   "_phantomChildren": {},
   "_requested": {
     "name": "selenium-standalone",
@@ -28,8 +32,8 @@
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/selenium-standalone/-/selenium-standalone-4.8.0.tgz",
-  "_shasum": "43169fb341fcb07ed03b16f54555463d5018a1de",
+  "_resolved": "https://registry.npmjs.org/selenium-standalone/-/selenium-standalone-4.9.1.tgz",
+  "_shasum": "33cefd515151fb0fbc9a0a3abffa787721bb54dd",
   "_shrinkwrap": null,
   "_spec": "selenium-standalone@^4.8.0",
   "_where": "/home/vagrant/visyond/server/v2",
@@ -72,10 +76,10 @@
   },
   "directories": {},
   "dist": {
-    "shasum": "43169fb341fcb07ed03b16f54555463d5018a1de",
-    "tarball": "http://registry.npmjs.org/selenium-standalone/-/selenium-standalone-4.8.0.tgz"
+    "shasum": "33cefd515151fb0fbc9a0a3abffa787721bb54dd",
+    "tarball": "https://registry.npmjs.org/selenium-standalone/-/selenium-standalone-4.9.1.tgz"
   },
-  "gitHead": "1f385420ff7e3ac47f6b643b1725cdf4d5bfaa2a",
+  "gitHead": "b970d6fc08d56e0486be1f37c2b420be4a6dfdae",
   "homepage": "https://github.com/vvo/selenium-standalone",
   "license": "MIT",
   "main": "index.js",
@@ -99,5 +103,5 @@
   "scripts": {
     "test": "./bin/selenium-standalone install && mocha"
   },
-  "version": "4.8.0"
+  "version": "4.9.1"
 }

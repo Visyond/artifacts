@@ -47,7 +47,7 @@
   "directories": {},
   "dist": {
     "shasum": "5bca2881d41437f54b2407ebe34888c7b9ad4f7d",
-    "tarball": "http://registry.npmjs.org/caseless/-/caseless-0.8.0.tgz"
+    "tarball": "https://registry.npmjs.org/caseless/-/caseless-0.8.0.tgz"
   },
   "gitHead": "1bfbf01d4481c057738a64ba284749222a944176",
   "homepage": "https://github.com/mikeal/caseless",

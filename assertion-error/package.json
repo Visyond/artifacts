@@ -48,7 +48,7 @@
   "directories": {},
   "dist": {
     "shasum": "c7f85438fdd466bc7ca16ab90c81513797a5d23b",
-    "tarball": "http://registry.npmjs.org/assertion-error/-/assertion-error-1.0.0.tgz"
+    "tarball": "https://registry.npmjs.org/assertion-error/-/assertion-error-1.0.0.tgz"
   },
   "engines": {
     "node": "*"

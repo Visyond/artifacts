@@ -6,20 +6,21 @@
     ]
   ],
   "_from": "nightwatch@>=0.8.9 <0.9.0",
-  "_id": "nightwatch@0.8.11",
+  "_id": "nightwatch@0.8.18",
   "_inCache": true,
   "_installable": true,
   "_location": "/nightwatch",
   "_nodeVersion": "4.2.1",
+  "_npmOperationalInternal": {
+    "host": "packages-13-west.internal.npmjs.com",
+    "tmp": "tmp/nightwatch-0.8.18.tgz_1457564465410_0.19176727952435613"
+  },
   "_npmUser": {
     "email": "getintouch@beatfactor.net",
     "name": "beatfactor"
   },
   "_npmVersion": "2.14.7",
-  "_phantomChildren": {
-    "lru-cache": "2.7.3",
-    "sigmund": "1.0.1"
-  },
+  "_phantomChildren": {},
   "_requested": {
     "name": "nightwatch",
     "raw": "nightwatch@^0.8.9",
@@ -32,8 +33,8 @@
     "/",
     "/gulp-nightwatch"
   ],
-  "_resolved": "https://registry.npmjs.org/nightwatch/-/nightwatch-0.8.11.tgz",
-  "_shasum": "14c545b56820009d2931674819dd33c5594c108d",
+  "_resolved": "https://registry.npmjs.org/nightwatch/-/nightwatch-0.8.18.tgz",
+  "_shasum": "a50cf4e6ff36fc9528fcb15286b15e1b45fb70a3",
   "_shrinkwrap": null,
   "_spec": "nightwatch@^0.8.9",
   "_where": "/home/vagrant/visyond/server/v2",
@@ -51,10 +52,10 @@
     "chai-nightwatch": "~0.1.x",
     "ejs": "~0.8.3",
     "lodash.clone": "^3.0.3",
-    "merge-defaults": "^0.2.1",
+    "lodash.defaultsdeep": "^4.3.2",
     "minimatch": "~0.2.14",
     "mkpath": ">=0.1.0",
-    "mocha-nightwatch": "2.2.6",
+    "mocha-nightwatch": "2.2.7",
     "optimist": ">=0.3.5",
     "proxy-agent": ">=2.0.0",
     "q": "^1.1.2"
@@ -78,8 +79,8 @@
   },
   "directories": {},
   "dist": {
-    "shasum": "14c545b56820009d2931674819dd33c5594c108d",
-    "tarball": "http://registry.npmjs.org/nightwatch/-/nightwatch-0.8.11.tgz"
+    "shasum": "a50cf4e6ff36fc9528fcb15286b15e1b45fb70a3",
+    "tarball": "https://registry.npmjs.org/nightwatch/-/nightwatch-0.8.18.tgz"
   },
   "files": [
     "LICENSE.md",
@@ -89,12 +90,9 @@
     "index.js",
     "lib"
   ],
-  "gitHead": "b92ed627899a8bade689b16063d083353c2ca7b0",
+  "gitHead": "78f1c054866869a0bdb13e92ecda787d23bd8299",
   "homepage": "http://nightwatchjs.org",
-  "licenses": {
-    "type": "MIT",
-    "url": "https://raw.github.com/nightwatchjs/nightwatch/master/LICENSE"
-  },
+  "license": "MIT",
   "main": "./lib/index.js",
   "maintainers": [
     {
@@ -115,5 +113,5 @@
     "jshint": "jshint --verbose --config .jshintrc lib/",
     "test": "node ./tests/run_tests.js"
   },
-  "version": "0.8.11"
+  "version": "0.8.18"
 }

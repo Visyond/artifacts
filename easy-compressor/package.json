@@ -1,0 +1,67 @@
+{
+  "_args": [
+    [
+      "easy-compressor@*",
+      "/home/vagrant/visyond/server/v2/node_modules/gulp-compressor"
+    ]
+  ],
+  "_from": "easy-compressor@*",
+  "_id": "easy-compressor@0.0.4",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/easy-compressor",
+  "_npmUser": {
+    "email": "lbbsteel@gmail.com",
+    "name": "steel1990"
+  },
+  "_npmVersion": "1.4.21",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "easy-compressor",
+    "raw": "easy-compressor@*",
+    "rawSpec": "*",
+    "scope": null,
+    "spec": "*",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/gulp-compressor"
+  ],
+  "_resolved": "https://registry.npmjs.org/easy-compressor/-/easy-compressor-0.0.4.tgz",
+  "_shasum": "03ad284b8376dd856f1dbb51c859547630876d1d",
+  "_shrinkwrap": null,
+  "_spec": "easy-compressor@*",
+  "_where": "/home/vagrant/visyond/server/v2/node_modules/gulp-compressor",
+  "author": {
+    "name": "lbbsteel@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/steel1990/compressor/issues"
+  },
+  "dependencies": {},
+  "description": "easy-compressor is a tool can minify html,js and css very easy.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "03ad284b8376dd856f1dbb51c859547630876d1d",
+    "tarball": "https://registry.npmjs.org/easy-compressor/-/easy-compressor-0.0.4.tgz"
+  },
+  "gitHead": "2f441f13f34ef340cb4fcd4ffd8cc3b8fd209273",
+  "homepage": "https://github.com/steel1990/compressor",
+  "main": "./compressor.js",
+  "maintainers": [
+    {
+      "name": "steel1990",
+      "email": "lbbsteel@gmail.com"
+    }
+  ],
+  "name": "easy-compressor",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/steel1990/compressor.git"
+  },
+  "scripts": {},
+  "version": "0.0.4"
+}

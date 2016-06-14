@@ -6,16 +6,20 @@
     ]
   ],
   "_from": "shell-quote@>=1.4.3 <2.0.0",
-  "_id": "shell-quote@1.4.3",
+  "_id": "shell-quote@1.6.0",
   "_inCache": true,
   "_installable": true,
   "_location": "/shell-quote",
-  "_nodeVersion": "0.12.0",
+  "_nodeVersion": "5.5.0",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/shell-quote-1.6.0.tgz_1461477204944_0.5755356843583286"
+  },
   "_npmUser": {
-    "email": "mail@substack.net",
+    "email": "substack@gmail.com",
     "name": "substack"
   },
-  "_npmVersion": "2.3.0",
+  "_npmVersion": "3.7.1",
   "_phantomChildren": {},
   "_requested": {
     "name": "shell-quote",
@@ -28,8 +32,8 @@
   "_requiredBy": [
     "/gulp-nightwatch"
   ],
-  "_resolved": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.4.3.tgz",
-  "_shasum": "952c44e0b1ed9013ef53958179cc643e8777466b",
+  "_resolved": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.6.0.tgz",
+  "_shasum": "c8906761e1730d1ef771c82df5423d595c1bb31d",
   "_shrinkwrap": null,
   "_spec": "shell-quote@^1.4.3",
   "_where": "/home/vagrant/visyond/server/v2/node_modules/gulp-nightwatch",
@@ -53,11 +57,11 @@
   },
   "directories": {},
   "dist": {
-    "shasum": "952c44e0b1ed9013ef53958179cc643e8777466b",
-    "tarball": "http://registry.npmjs.org/shell-quote/-/shell-quote-1.4.3.tgz"
+    "shasum": "c8906761e1730d1ef771c82df5423d595c1bb31d",
+    "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.6.0.tgz"
   },
-  "gitHead": "88c9b82e446c32bf782461059d2cb8b147e037d8",
-  "homepage": "https://github.com/substack/node-shell-quote",
+  "gitHead": "88a5280d9c3f5d43fffa538ae9919d1ae579b56e",
+  "homepage": "https://github.com/substack/node-shell-quote#readme",
   "keywords": [
     "command",
     "parse",
@@ -68,8 +72,12 @@
   "main": "index.js",
   "maintainers": [
     {
+      "name": "karissa",
+      "email": "krmckelv@gmail.com"
+    },
+    {
       "name": "substack",
-      "email": "mail@substack.net"
+      "email": "substack@gmail.com"
     }
   ],
   "name": "shell-quote",
@@ -99,5 +107,5 @@
     ],
     "files": "test/*.js"
   },
-  "version": "1.4.3"
+  "version": "1.6.0"
 }

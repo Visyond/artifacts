@@ -1,8 +1,24 @@
-NAME                                    [a-zA-Z_](?:[a-zA-Z0-9_-]*[a-zA-Z0-9_])?
-ID                                      [a-zA-Z_][a-zA-Z0-9_]*
+
+ASCII_LETTER                            [a-zA-z]
+// \p{Alphabetic} already includes [a-zA-z], hence we don't need to merge with {UNICODE_LETTER}:
+UNICODE_LETTER                          [\p{Alphabetic}]
+ALPHA                                   [{UNICODE_LETTER}_]
+DIGIT                                   [\p{Number}]
+WHITESPACE                              [\s\r\n\p{Separator}]
+
+NAME                                    [{ALPHA}](?:[{ALPHA}{DIGIT}-]*[{ALPHA}{DIGIT}])?
+ID                                      [{ALPHA}][{ALPHA}{DIGIT}]*
 DECIMAL_NUMBER                          [1-9][0-9]*
 HEX_NUMBER                              "0"[xX][0-9a-fA-F]+
 BR                                      \r\n|\n|\r
+// WhiteSpace MUST NOT match CR/LF and the regex `\s` DOES, so we cannot use that one directly. 
+// Instead we define the {WS} macro here:
+WS                                      [^\S\r\n]
+
+// Regex for matching all the possible stuff which can be placed between those `%lex.../lex` markers:
+// multiple lines of arbitrary material. Use a non-gready `*?` in there to ensure that the regex
+// doesn't also consume the terminating `/lex` token!
+LEX_CONTENT                             {WS}*(?:{BR}[\w\W]*?)?{BR}{WS}*  
 
 
 %x action code path options
@@ -14,11 +30,20 @@ BR                                      \r\n|\n|\r
 
 %%
 
-<token>\r|\n                            this.popState();
+<token>{BR}                             this.popState();
 <token>"%%"                             this.popState();
 <token>";"                              this.popState();
 
 <bnf,ebnf>"%%"                          this.pushState('code'); return '%%';
+
+// Support bison's `%empty` (and our own alias `%epsilon`) to identify an empty rule alt:
+<bnf,ebnf>"%empty"                      return 'EPSILON';
+<bnf,ebnf>"%epsilon"                    return 'EPSILON';
+// See also https://en.wikipedia.org/wiki/Epsilon#Glyph_variants
+<bnf,ebnf>"\u0190"                      return 'EPSILON';
+<bnf,ebnf>"\u025B"                      return 'EPSILON';
+<bnf,ebnf>"\u03B5"                      return 'EPSILON';
+<bnf,ebnf>"\u03F5"                      return 'EPSILON';
 
 <ebnf>"("                               return '(';
 <ebnf>")"                               return ')';
@@ -32,14 +57,16 @@ BR                                      \r\n|\n|\r
 <options>"'"("\\\\"|"\'"|[^'])*"'"      yytext = yytext.substr(1, yytext.length - 2); return 'OPTION_VALUE';
 <options>[^\s\r\n]+                     return 'OPTION_VALUE';
 <options>{BR}+                          this.popState(); return 'OPTIONS_END';
-<options>\s+{BR}+                       this.popState(); return 'OPTIONS_END';
-<options>\s+                            /* empty */
+<options>{WS}+                          /* skip whitespace */
 
-\s+                                     /* skip whitespace */
-"//".*                                  /* skip comment */
-"/*"(.|\n|\r)*?"*/"                     /* skip comment */
+{WS}+                                   /* skip whitespace */
+{BR}+                                   /* skip newlines */
+"//"[^\r\n]*                            /* skip single-line comment */
+"/*"(.|\n|\r)*?"*/"                     /* skip multi-line comment */
 "["{ID}"]"                              yytext = yytext.substr(1, yyleng - 2); return 'ALIAS';
 {ID}                                    return 'ID';
+"$end"                                  return 'ID';
+"$eof"                                  return 'ID';
 '"'[^"]+'"'                             yytext = yytext.substr(1, yyleng - 2); return 'STRING';
 "'"[^']+"'"                             yytext = yytext.substr(1, yyleng - 2); return 'STRING';
 <token>[^\s\r\n]+                       return 'TOKEN_WORD';
@@ -48,7 +75,7 @@ BR                                      \r\n|\n|\r
 "|"                                     return '|';
 "%%"                                    this.pushState(ebnf ? 'ebnf' : 'bnf'); return '%%';
 "%ebnf"                                 if (!yy.options) { yy.options = {}; } ebnf = yy.options.ebnf = true;
-"%debug"                                if (!yy.options) { yy.options = {}; } yy.options.debug = true;
+"%debug"                                if (!yy.options) { yy.options = {}; } yy.options.debug = true; return 'DEBUG';
 "%parser-type"                          return 'PARSER_TYPE';
 "%prec"                                 return 'PREC';
 "%start"                                return 'START';
@@ -58,10 +85,16 @@ BR                                      \r\n|\n|\r
 "%token"                                this.pushState('token'); return 'TOKEN';
 "%parse-param"                          return 'PARSE_PARAM';
 "%options"                              this.pushState('options'); return 'OPTIONS';
-"%lex"[\w\W]*?{BR}\s*"/lex"\b           return 'LEX_BLOCK';
+"%lex"{LEX_CONTENT}"/lex"               %{ 
+                                            // remove the %lex../lex wrapper and return the pure lex section:
+                                            yytext = this.matches[1];
+                                            return 'LEX_BLOCK'; 
+                                        %}
 
+"%code"                                 return 'INIT_CODE';
 "%import"                               return 'IMPORT';
-<INITIAL,ebnf,bnf,code>"%include"       this.pushState('path'); return 'INCLUDE';
+<INITIAL,ebnf,bnf,code>"%include"       
+                                        this.pushState('path'); return 'INCLUDE';
 
 "%"{NAME}[^\r\n]*                       %{
                                             /* ignore unrecognized decl */
@@ -81,7 +114,7 @@ BR                                      \r\n|\n|\r
 <*><<EOF>>                              return 'EOF';
 
 <action>"/*"(.|\n|\r)*?"*/"             return 'ACTION_BODY';
-<action>"//".*                          return 'ACTION_BODY';
+<action>"//"[^\r\n]*                    return 'ACTION_BODY';
 <action>"/"[^ /]*?['"{}'][^ ]*?"/"      return 'ACTION_BODY'; // regexp with braces or quotes (and no spaces)
 <action>\"("\\\\"|'\"'|[^"])*\"         return 'ACTION_BODY';
 <action>"'"("\\\\"|"\'"|[^'])*"'"       return 'ACTION_BODY';
@@ -97,10 +130,10 @@ BR                                      \r\n|\n|\r
 <code>[^\r\n]+                          return 'CODE';      // the bit of CODE just before EOF...
 
 
-<path>[\r\n]                            this.popState(); this.unput(yytext);
+<path>{BR}                              this.popState(); this.unput(yytext);
 <path>"'"[^\r\n]+"'"                    yytext = yytext.substr(1, yyleng - 2); this.popState(); return 'PATH';
 <path>'"'[^\r\n]+'"'                    yytext = yytext.substr(1, yyleng - 2); this.popState(); return 'PATH';
-<path>\s+                               // skip whitespace in the line
+<path>{WS}+                             // skip whitespace in the line
 <path>[^\s\r\n]+                        this.popState(); return 'PATH';
 
 

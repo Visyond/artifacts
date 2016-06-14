@@ -1,51 +1,76 @@
 {
-  "author": {
-    "name": "Lloyd Hilaiel",
+  "_args": [
+    [
+      "JSONSelect@0.4.0",
+      "/home/vagrant/visyond/server/v2"
+    ]
+  ],
+  "_defaultsLoaded": true,
+  "_engineSupported": true,
+  "_from": "JSONSelect@0.4.0",
+  "_id": "JSONSelect@0.4.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/JSONSelect",
+  "_nodeVersion": "v0.6.6",
+  "_npmUser": {
     "email": "lloyd@hilaiel.com",
+    "name": "lloyd"
+  },
+  "_npmVersion": "1.0.106",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "JSONSelect",
+    "raw": "JSONSelect@0.4.0",
+    "rawSpec": "0.4.0",
+    "scope": null,
+    "spec": "0.4.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/JSONSelect/-/JSONSelect-0.4.0.tgz",
+  "_shasum": "a08edcc67eb3fcbe99ed630855344a0cf282bb8d",
+  "_shrinkwrap": null,
+  "_spec": "JSONSelect@0.4.0",
+  "_where": "/home/vagrant/visyond/server/v2",
+  "author": {
+    "email": "lloyd@hilaiel.com",
+    "name": "Lloyd Hilaiel",
     "url": "http://lloyd.io"
   },
-  "name": "JSONSelect",
-  "description": "CSS-like selectors for JSON",
-  "version": "0.4.0",
-  "homepage": "http://jsonselect.org",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/lloyd/JSONSelect.git"
+  "bugs": {
+    "url": "https://github.com/lloyd/JSONSelect/issues"
   },
-  "main": "src/jsonselect",
+  "dependencies": {},
+  "description": "CSS-like selectors for JSON",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "a08edcc67eb3fcbe99ed630855344a0cf282bb8d",
+    "tarball": "https://registry.npmjs.org/JSONSelect/-/JSONSelect-0.4.0.tgz"
+  },
   "engines": {
     "node": ">=0.4.7"
   },
-  "dependencies": {},
-  "devDependencies": {},
-  "scripts": {
-    "test": "node src/test/run.js"
-  },
-  "_npmUser": {
-    "name": "lloyd",
-    "email": "lloyd@hilaiel.com"
-  },
-  "_id": "JSONSelect@0.4.0",
-  "_engineSupported": true,
-  "_npmVersion": "1.0.106",
-  "_nodeVersion": "v0.6.6",
-  "_defaultsLoaded": true,
-  "dist": {
-    "shasum": "a08edcc67eb3fcbe99ed630855344a0cf282bb8d",
-    "tarball": "http://registry.npmjs.org/JSONSelect/-/JSONSelect-0.4.0.tgz"
-  },
+  "homepage": "http://jsonselect.org",
+  "main": "src/jsonselect",
   "maintainers": [
     {
       "name": "lloyd",
       "email": "lloyd@hilaiel.com"
     }
   ],
-  "directories": {},
-  "_shasum": "a08edcc67eb3fcbe99ed630855344a0cf282bb8d",
-  "_from": "JSONSelect@",
-  "_resolved": "https://registry.npmjs.org/JSONSelect/-/JSONSelect-0.4.0.tgz",
-  "bugs": {
-    "url": "https://github.com/lloyd/JSONSelect/issues"
+  "name": "JSONSelect",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lloyd/JSONSelect.git"
   },
-  "readme": "ERROR: No README data found!"
+  "scripts": {
+    "test": "node src/test/run.js"
+  },
+  "version": "0.4.0"
 }

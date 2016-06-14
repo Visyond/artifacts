@@ -2,7 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var Q = require('q');
 var clone = require('lodash.clone');
-var defaults = require('merge-defaults');
+var defaults = require('lodash.defaultsdeep');
 
 var Runner = require('../run.js');
 var Logger = require('../../util/logger.js');
@@ -33,7 +33,6 @@ CliRunner.prototype = {
   init : function(done) {
     this
       .readSettings()
-      .setOutputFolder()
       .parseTestSettings({}, done);
 
     return this;
@@ -47,7 +46,6 @@ CliRunner.prototype = {
   setup : function(settings, done) {
     this
       .readSettings()
-      .setOutputFolder()
       .parseTestSettings(settings, done);
 
     return this;
@@ -173,10 +171,13 @@ CliRunner.prototype = {
    * @returns {CliRunner}
    */
   setOutputFolder : function() {
-    var isDisabled = this.settings.output_folder === false;
+    var isDisabled = this.settings.output_folder === false && typeof(this.test_settings.output_folder) == 'undefined' ||
+      this.test_settings.output_folder === false;
     var isDefault = this.cli.command('output').isDefault(this.argv.output);
+    var folder = this.test_settings.output_folder || this.settings.output_folder;
 
-    this.output_folder = isDisabled ? false : (isDefault && this.settings.output_folder || this.argv.output);
+    this.output_folder = isDisabled ? false : (isDefault && folder || this.argv.output);
+
     return this;
   },
 
@@ -392,6 +393,10 @@ CliRunner.prototype = {
             fn(null, {
               failed : failures
             });
+
+            if (failures) {
+              process.exit(10);
+            }
           });
 
         }.bind(this));
@@ -477,6 +482,7 @@ CliRunner.prototype = {
   initTestSettings : function(env, settings) {
     // picking the environment specific test settings
     this.test_settings = env && this.settings.test_settings[env] || {};
+
     if (env) {
       this.test_settings.custom_commands_path = this.settings.custom_commands_path || '';
       this.test_settings.custom_assertions_path = this.settings.custom_assertions_path || '';
@@ -487,6 +493,7 @@ CliRunner.prototype = {
       this.readExternalGlobals();
     }
 
+    this.setOutputFolder();
     this.setGlobalOutputOptions();
 
     if (typeof this.test_settings.test_workers != 'undefined') {

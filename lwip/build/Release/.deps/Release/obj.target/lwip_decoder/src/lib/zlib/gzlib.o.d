@@ -1,0 +1,8 @@
+cmd_Release/obj.target/lwip_decoder/src/lib/zlib/gzlib.o := cc '-DNODE_GYP_MODULE_NAME=lwip_decoder' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' -I/var/lib/jenkins/.node-gyp/4.4.4/include/node -I/var/lib/jenkins/.node-gyp/4.4.4/src -I/var/lib/jenkins/.node-gyp/4.4.4/deps/uv/include -I/var/lib/jenkins/.node-gyp/4.4.4/deps/v8/include -I../../nan -I../src/decoder -I../src/lib/zlib -I../src/lib/jpeg -I../src/lib/cimg -I../src/lib/png -I../src/lib/gif  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -ffunction-sections -fdata-sections -fno-omit-frame-pointer  -MMD -MF ./Release/.deps/Release/obj.target/lwip_decoder/src/lib/zlib/gzlib.o.d.raw   -c -o Release/obj.target/lwip_decoder/src/lib/zlib/gzlib.o ../src/lib/zlib/gzlib.c
+Release/obj.target/lwip_decoder/src/lib/zlib/gzlib.o: \
+ ../src/lib/zlib/gzlib.c ../src/lib/zlib/gzguts.h ../src/lib/zlib/zlib.h \
+ ../src/lib/zlib/zconf.h
+../src/lib/zlib/gzlib.c:
+../src/lib/zlib/gzguts.h:
+../src/lib/zlib/zlib.h:
+../src/lib/zlib/zconf.h:

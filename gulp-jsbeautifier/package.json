@@ -1,32 +1,56 @@
 {
-  "name": "gulp-jsbeautifier",
-  "description": "jsbeautifier.org for Gulp",
-  "version": "1.0.1",
-  "homepage": "https://github.com/tarunc/gulp-jsbeautifier",
+  "_args": [
+    [
+      {
+        "name": "gulp-jsbeautifier",
+        "raw": "gulp-jsbeautifier@1.0.1",
+        "rawSpec": "1.0.1",
+        "scope": null,
+        "spec": "1.0.1",
+        "type": "version"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2"
+    ]
+  ],
+  "_from": "gulp-jsbeautifier@1.0.1",
+  "_id": "gulp-jsbeautifier@1.0.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/gulp-jsbeautifier",
+  "_nodeVersion": "0.12.0",
+  "_npmUser": {
+    "email": "tarunc92@gmail.com",
+    "name": "tarunc"
+  },
+  "_npmVersion": "2.5.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "gulp-jsbeautifier",
+    "raw": "gulp-jsbeautifier@1.0.1",
+    "rawSpec": "1.0.1",
+    "scope": null,
+    "spec": "1.0.1",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gulp-jsbeautifier/-/gulp-jsbeautifier-1.0.1.tgz",
+  "_shasum": "0abf856c8af0a99f9dd28f0646d805c18d8eb937",
+  "_shrinkwrap": null,
+  "_spec": "gulp-jsbeautifier@1.0.1",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2",
   "author": {
     "name": "Tarun Chaudhry",
     "url": "https://github.com/tarunc"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tarunc/gulp-jsbeautifier.git"
-  },
   "bugs": {
     "url": "https://github.com/tarunc/gulp-jsbeautifier/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/tarunc/gulp-jsbeautifier/blob/master/LICENSE.md"
+  "config": {
+    "blanket": {
+      "pattern": "gulp-jsbeautifier/index.js"
     }
-  ],
-  "main": "index.js",
-  "engines": {
-    "node": ">= 0.10.0"
-  },
-  "scripts": {
-    "test": "mocha",
-    "coverage": "jscoverage index.js index-cov.js; COVERAGE=1 mocha --reporter mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js"
   },
   "dependencies": {
     "ansidiff": "^1.0.0",
@@ -36,6 +60,7 @@
     "lodash": "^3.5.0",
     "underscore.string": "^3.0.3"
   },
+  "description": "jsbeautifier.org for Gulp",
   "devDependencies": {
     "blanket": "^1.1.6",
     "chai": "^2.1.2",
@@ -45,6 +70,16 @@
     "mocha": "^2.2.1",
     "mocha-lcov-reporter": "0.0.1"
   },
+  "directories": {},
+  "dist": {
+    "shasum": "0abf856c8af0a99f9dd28f0646d805c18d8eb937",
+    "tarball": "https://registry.npmjs.org/gulp-jsbeautifier/-/gulp-jsbeautifier-1.0.1.tgz"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "gitHead": "234d60c31f66a82b579d0516c61da844aa26547d",
+  "homepage": "https://github.com/tarunc/gulp-jsbeautifier",
   "keywords": [
     "beautify",
     "format",
@@ -63,32 +98,29 @@
     "css beautify",
     "json beautify"
   ],
-  "config": {
-    "blanket": {
-      "pattern": "gulp-jsbeautifier/index.js"
-    }
-  },
-  "gitHead": "234d60c31f66a82b579d0516c61da844aa26547d",
-  "_id": "gulp-jsbeautifier@1.0.1",
-  "_shasum": "0abf856c8af0a99f9dd28f0646d805c18d8eb937",
-  "_from": "gulp-jsbeautifier@1.0.1",
-  "_npmVersion": "2.5.1",
-  "_nodeVersion": "0.12.0",
-  "_npmUser": {
-    "name": "tarunc",
-    "email": "tarunc92@gmail.com"
-  },
-  "maintainers": [
+  "licenses": [
     {
-      "name": "tarunc",
-      "email": "tarunc92@gmail.com"
+      "type": "MIT",
+      "url": "https://github.com/tarunc/gulp-jsbeautifier/blob/master/LICENSE.md"
     }
   ],
-  "dist": {
-    "shasum": "0abf856c8af0a99f9dd28f0646d805c18d8eb937",
-    "tarball": "https://registry.npmjs.org/gulp-jsbeautifier/-/gulp-jsbeautifier-1.0.1.tgz"
+  "main": "index.js",
+  "maintainers": [
+    {
+      "email": "tarunc92@gmail.com",
+      "name": "tarunc"
+    }
+  ],
+  "name": "gulp-jsbeautifier",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tarunc/gulp-jsbeautifier.git"
   },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/gulp-jsbeautifier/-/gulp-jsbeautifier-1.0.1.tgz",
-  "readme": "ERROR: No README data found!"
+  "scripts": {
+    "coverage": "jscoverage index.js index-cov.js; COVERAGE=1 mocha --reporter mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js",
+    "test": "mocha"
+  },
+  "version": "1.0.1"
 }

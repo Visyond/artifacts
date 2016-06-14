@@ -1,0 +1,3959 @@
+<!DOCTYPE html>
+<html lang="en-US" class="site-index-page site-area">
+<head>
+    <title>Visyond | Visual Spreadsheet</title>
+    <!-- Some meta information for mobile clients -->
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="">
+<meta name="title" content="Visyond | Visual Spreadsheet">
+<meta name="description" content="">
+
+<link rel="icon" href="/f/img/visy-favicon.ico" type="image/x-icon" />
+
+<!-- Fav and touch icons -->
+<link rel="apple-touch-icon-precomposed"                        href="/frontend/application/images/ico/touch-icon-iphone.png">
+<link rel="apple-touch-icon-precomposed"    sizes="72x72"       href="/frontend/application/images/ico/touch-icon-ipad.png">
+<link rel="apple-touch-icon-precomposed"    sizes="114x114"     href="/frontend/application/images/ico/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon-precomposed"    sizes="144x144"     href="/frontend/application/images/ico/touch-icon-ipad-retina.png">
+<link rel="apple-touch-startup-image" href="/frontend/application/images/ico/startup-640x920.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
+<link rel="apple-touch-startup-image" href="/frontend/application/images/ico/startup-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
+<link rel="shortcut icon"             href="/f/img/visy-favicon.ico">
+
+
+    
+    <!-- CSS -->
+    <link href="/lib/_/fonts/arro_vegur-v2/webfontkit/stylesheet.css" rel="stylesheet" type="text/css" />
+<link href="/frontend/application/css/colorbox.css" rel="stylesheet" type="text/css" />
+<link href="/lib/_/js/intro.js/introjs.css" rel="stylesheet" type="text/css" />
+<link href="/lib/_/js/spectrum/spectrum.css" rel="stylesheet" type="text/css" />
+<link href="/lib/_/fonts/Font-Awesome/font/stylesheet.css" rel="stylesheet" type="text/css" />
+<link href="/lib/_/fonts/Font-Awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+<link href="/lib/_/fonts/Font-Batch/font/stylesheet.css" rel="stylesheet" type="text/css" />
+<link href="/lib/_/fonts/Font-Batch/css/batch-icons.css" rel="stylesheet" type="text/css" />
+<link href="/frontend/application/css/icon-fonts.css" rel="stylesheet" type="text/css" />
+<link href="/lib/_/fonts/open-sans-fontface/open-sans.css" rel="stylesheet" type="text/css" />
+<link href="/frontend/application/css/superuser-pages.css" rel="stylesheet" type="text/css" />
+<link href="/lib/_/fonts/icomoon/style.css" rel="stylesheet" type="text/css" />
+<link href="/lib/_/js/slickgrid/slick.grid.css" rel="stylesheet" type="text/css" />
+<link href="/frontend/application/css/slick-default-theme.css" rel="stylesheet" type="text/css" />
+<link href="/frontend/application/css/grid.css" rel="stylesheet" type="text/css" />
+<link href="/frontend/application/css/node-color-styling.css" rel="stylesheet" type="text/css" />
+<link href="/lib/_/js/jQuery-File-Upload/css/jquery.fileupload.css" rel="stylesheet" type="text/css" />
+<link href="/lib/_/js/jQuery-File-Upload/css/jquery.fileupload-ui.css" rel="stylesheet" type="text/css" />
+<link href="/lib/_/js/gridster/src/jquery.gridster.css" rel="stylesheet" type="text/css" />
+<link href="/frontend/application/css/gridster.css" rel="stylesheet" type="text/css" />
+<link href="/lib/_/js/c3/c3.css" rel="stylesheet" type="text/css" />
+<link href="/frontend/application/css/formula_and_cellref_formatting.css" rel="stylesheet" type="text/css" />
+<link href="/lib/_/js/tooltipster/css/tooltipster.css" rel="stylesheet" type="text/css" />
+<link href="/lib/_/js/jquery-gritter/css/jquery.gritter.css" rel="stylesheet" type="text/css" />
+<link href="/frontend/application/css/print.css" rel="stylesheet" type="text/css" />
+<link href="/frontend/application/css/nprogress.css" rel="stylesheet" type="text/css" />
+<link href="/frontend/application/css/jquery.vSort.css" rel="stylesheet" type="text/css" />
+<link href="/frontend/application/css/fonts.css" rel="stylesheet" type="text/css" />
+<link href="/frontend/application/css/chat.css" rel="stylesheet" type="text/css" />
+<link href="/lib/_/js/d3/d3-context-menu.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body class="project-page" spellcheck="false">
+
+<style>
+.rotating-image {
+    -webkit-animation-name: rotation;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: rotation;
+    -moz-animation-duration: 10s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -o-animation-name: rotation;
+    -o-animation-duration: 10s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: linear;
+    animation-name: rotation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@-webkit-keyframes rotation {
+    0% {-webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+        transform:rotate(0deg);}
+    100% {-webkit-transform:rotate(360deg);
+        -moz-transform:rotate(360deg);
+        -o-transform:rotate(360deg);
+        transform:rotate(360deg);}
+}
+@-moz-keyframes rotation {
+    0% {-webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+        transform:rotate(0deg);}
+    100% {-webkit-transform:rotate(360deg);
+        -moz-transform:rotate(360deg);
+        -o-transform:rotate(360deg);
+        transform:rotate(360deg);}
+}
+@-o-keyframes rotation {
+    0% {-webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+        transform:rotate(0deg);}
+    100% {-webkit-transform:rotate(360deg);
+        -moz-transform:rotate(360deg);
+        -o-transform:rotate(360deg);
+        transform:rotate(360deg);}
+}
+@keyframes rotation {
+    0% {-webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+        transform:rotate(0deg);}
+    100% {-webkit-transform:rotate(360deg);
+        -moz-transform:rotate(720deg);
+        -o-transform:rotate(360deg);
+        transform:rotate(360deg);}
+}</style>
+
+<div class="loader" style="width:100%; height: 100%; margin: 0 auto; position:fixed; background-color: white;display: block;z-index: 1000000;top: 0px;">
+    <div style="margin-top: 25%">
+
+        <img width="128" class='rotating-image' height="128" src="data:image/png;base64,{base64:frontend/application/images/loader-circle.png}"
+             style="position: relative; top: 50%; transform: translateY(-50%);display: block;margin: 0 auto;">
+
+        <img width="256" src="data:image/png;base64,{base64:frontend/application/images/visyond-logo.png}"
+             style="position: relative; top: 20%; display: block;margin: 0 auto;">
+
+       <!--  <div class="loadingProgress" style="width: 100%; text-align: left;">
+            Loading Phase <span id="loadingPhaseNum"></span> of <b></b>: <span id="loadingPhaseName"></span>
+        </div> -->
+
+        <div class="timeouted" style="width: 100%; text-align: center; display: none">
+            Your project is taking longer than expected to load.<br />
+            Please wait or
+
+            <a href="" onclick='if (typeof (localStorage) !== undefined) localStorage.clear();' >try again</a>
+        </div>
+        <script>
+            var loading_timeout = 15; //In seconds
+            setTimeout(function() {
+                document.querySelector('.timeouted').style.display = "block";
+            }, loading_timeout * 1000);
+        </script>
+    </div>
+</div>
+
+<!--  style="display:none" -->
+<div class="wrapper">
+
+        
+<div id="collaboratorsPane" class="collaboratorsPane visyond-floating-panel in-cell-floating visyond-pane">
+    <span class="draghandle" unselectable="on"> </span>
+    <button class='closePane closeOptPane' title='Close pane'></button>
+    <button class='enlargePane' title='Enlarge pane'></button>
+    <div class='paneDragHandle' title='Drag panel'></div>
+
+    <div class="paneHeader chartPaneHeader">Manage Collaborators
+    </div>
+
+    <div class="paneContainer">
+        <div class='inviteCollaborators'>
+            Go to projects' <a title="Manage Projects and Collaborators" class="noUnderlineLink" href="/dashboard/">dashboard</a> to manage invitations and permissions.
+            <!-- <img src="/frontend/application/images/people_icon.png" alt="imagelink"/> -->
+        
+           <!--  Uncomment when ready in frontend
+            <table>
+                <tr>
+                    <td>
+                        <b>Invite:</b>
+                    </td>
+
+                    <td class='collNameTd'>
+                        <input type='text' class='newCollaboratorName' placeholder='Type names or emails' />
+                    </td>
+                    <td class='collInviteMsgTd'>
+                        <input type='text' class='newCaseCommentInput' placeholder='Type Message' />
+                    </td>
+                    <td class='collRoleTd'>
+                        <select id='newCollaboratorsRolesMul' placeholder='Role'>
+                        </select>
+                    </td>
+                    <td>
+                        <button title='Invite collaborators' class='inviteCollaborators fancy fancyColor1'>Invite collaborators</button>
+                    </td>
+                </tr>
+            </table> -->
+        </div>
+
+        <table border=0 class="collaboratorsDlgTable">
+            
+        </table>
+
+        <div class="listOfCollaborators"></div>
+    </div>
+
+
+
+    <script id="collaborators-table" type="text/x-handlebars-template">
+    // <tbody class='collaboratorsDlgTbody'>
+    //     <tr class="collaboratorsHeaderTr">
+    //         <td class='collaboratorsHeaderTd'>
+
+    //         </td>
+
+    //         <td class='collaboratorsHeaderTd'>
+
+    //         </td>
+
+    //         <td class='collaboratorsHeaderTd'>
+    //             Name
+    //         </td>
+    //         <td class='collaboratorsHeaderTd'>
+    //             Role
+    //         </td>
+    //     </tr>
+        
+    //     {{#each collaborators}}
+    //     {{#if disabled}}
+    //     <tr data-id="{{id}}">
+    //         <td class='collaboratorsHeaderTd'>
+            
+    //         </td>
+    //         <td class='collaboratorsHeaderTd'>
+    //             <img src="{{avatar}}" class="user-pic">
+    //         </td>
+
+    //         <td class='collaboratorsHeaderTd' style="color:gray!important;">            
+    //             {{name}}
+    //         </td>
+    //         <td class='collaboratorsHeaderTd' style="color:gray!important;">
+    //             {{role}}
+    //         </td>
+    //     </tr>
+    //     {{else}}
+    //     <tr data-id="{{id}}">
+    //         <td class='collaboratorsHeaderTd'>
+    //             {{#if canBeChanged}}
+    //             <div style="width:45px; min-height:16px;">
+    //                 <div class="deleteCollaboration" title="Delete Collaboration"></div>
+    //             </div>
+    //             {{/if}}
+    //         </td>
+
+    //         <td class='collaboratorsHeaderTd'>
+    //             <img src="{{avatar}}" class="user-pic">
+    //         </td>
+
+    //         <td class='collaboratorsHeaderTd' style="color:steelblue!important;">            
+    //             {{name}}
+    //         </td>
+    //         <td class='collaboratorsHeaderTd' style="color:steelblue!important;">
+    //         {{#if canBeChanged}}
+    //             <select class="roles_list">
+    //                 {{#select role}}                    
+    //                 <option value="reader" title="User may read/view the project">Reader</option>
+    //                 <option value="coworker" title="User may read and/or create/modify/delete cases and scenarios owned by the user">Coworker</option>
+    //                 {{/select}}
+    //             </select>
+    //         {{else}}
+    //             {{role}}
+    //         {{/if}}
+    //         </td>
+    //     </tr>
+    //     {{/if}}
+        
+    //     {{/each}} 
+    // </tbody>
+    </script>
+
+    <div class="paneResize">
+        <!-- <span class="resizehandle" unselectable="on"> </span> -->
+    </div>
+</div>
+
+
+
+        
+
+    <div id="topbar">
+        <ul class="block">
+
+            <li class="current">
+                <span class="icon-menu"></span>
+                <a href="/dashboard/">
+                    <div class="logo-pic" ></div>
+                </a>
+                <div class="menu">
+                    <ul class="block left">
+                        <!--<li class="item editProjectAttributes">-->
+                        <!--<a title="Add comments to project"><span class="icon-pencil"></span></a>-->
+                        <!--</li>-->
+                        <li class="item saveProject">
+                            <a id="saveProject" title="Click to save (Ctrl+S or COMMAND+S)"><span class="icon-disk"></span><span class="text">Save</span></a>
+                        </li>
+
+                        <li class="item">
+                            <a id="exportToExcelIcn" title="Export to Excel" target="_blank"><span class="icon-Ico-20"></span><span class="text">Export</span></a>
+                        </li>
+                        <li class="item menuLinkForIntro">
+                            <a id="take_intro" href="#" title="Take Intro"><span class="icon-map"></span><span class="text">Intro</span></a>
+                        </li>
+                        <li class="item menuLinkForIntro">
+                            <a id="watch_tutorials" href="https://www.youtube.com/playlist?list=PLoTjjkFFBLt7PoG8iLtr22Vn-gu7fIP7S" target="_blank" title="Tutorials"><span class="icon-images"></span><span class="text">Tutorials</span></a>
+                        </li>
+                        <li class="item menuLinkForIntro">
+                            <a id="feedback-link" title="Feedback"><span class="icon-pencil"></span><span class="text">Feedback</span></a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </li>
+
+        </ul>
+
+        <div class="blinkMessage">
+            Select the cell <a id="abort-pickup">Cancel</a>
+        </div>
+
+        <div class="blinkRecordScenario">
+            Record Scenario <a class="stopRecording">Stop Recording</a>
+        </div>
+
+        <div class="projectName">
+            <a><span id="projectName" class="text visyondCurrentProjectName"></span></a>
+        </div>
+
+        <div id="topnav">
+            <div class="collaboratorsDiv">
+                <div class="projRolAndOwn" name="projRolAndOwn"></div>
+                <a class="manageCollaboratorsBtn" title='Manage Colaborators'>
+                    <span class="icon-users"></span>
+                   <!--  <span class="text">+</span> -->
+                </a>
+               <!--  <button class="manageCollaboratorsBtn fancy fancyColor1" title='Manage Collaborators'>
+                    <span class="icon-users"></span><span class="text">Collaborators</span>
+                </button> -->
+
+            </div>
+            <ul class="block right">
+                <!-- <li class="item"> -->
+                <!-- <a title="Developer Panel"><span class="icon-expand"></span></a> -->
+                <!--                        <a title="Click to exit full screen mode"><span class="icon-contract"></span></a>-->
+                <!-- </li> -->
+                <!-- <li class="item"> -->
+                <!-- <a title="Click to enter full screen mode"><span class="icon-expand"></span></a> -->
+                <!--                        <a title="Click to exit full screen mode"><span class="icon-contract"></span></a>-->
+                <!-- </li> -->
+                <!--TODO: remvoe comment when oflfine comes-->
+                <li class="item">
+                    <span class="icon-connection"></span>
+                </li>
+            </ul>
+            <div class="active-links">
+
+                <!-- sign up -->
+                <div id="sessionUser">
+                    <a id="signUser-link" href="#">
+                        <!--    <em>Welcome</em>-->
+                        <img class='user-pic'/>    <strong>[undefined]</strong>
+                    </a>
+                </div>
+                <!-- http://www.9lessons.info/2011/01/gravity-registration-form-with-jquery.html -->
+                <ul id="signUser-dropdown" class="fast-hide">
+                    <!--<li class="item">-->
+                    <!--<a id="open_new_project"><span class="icon-file"></span><span class="text">New Project</span></a>-->
+                    <!--</li>-->
+                    <li class="item">
+                        <a href="/dashboard/"><span class="icon-briefcase"></span><span class="text">Projects</span></a>
+                    </li>
+                    <li class="item">
+                        <a href="/user/collaborator/index/"><span class="icon-users"></span><span class="text">Collaborators</span></a>
+                    </li>
+                    <!--<li class="item">-->
+                    <!--<a href="/grouping/index.html"><span class="icon-users"></span><span class="text">Companies and Groups</span></a>-->
+                    <!--</li>-->
+                    <!--                <li class="item">-->
+                    <!--                    <a href="--><!--"><span class="icon-cog"></span><span class="text">Settings</span></a>-->
+                    <!--                </li>-->
+
+                    <!--<li class="item">-->
+                    <!--<a href="/site/plans.html"><span class="icon-rocket"></span><span class="text">Upgrade Account</span></a>-->
+                    <!--</li>-->
+
+                    <!--                <li class="item">-->
+                    <!--                    <a href="--><!--"><span class="icon-history"></span><span class="text">Templates</span></a>-->
+                    <!--                </li>-->
+                    <!--<li class="item">-->
+                    <!--<a href="/site/authRequests.html"><span class="icon-accessibility"></span><span class="text">Authorization Requests</span></a>-->
+                    <!--</li>-->
+                    <!--                <li class="item">-->
+                    <!--                    <a href="--><!--"><span class="icon-history"></span><span class="text">Invitations</span></a>-->
+                    <!--                </li>-->
+                    <!--<li class="item">-->
+                    <!--<a href="/site/activityLog.html"><span class="icon-history"></span><span class="text">Activity Log</span></a>-->
+                    <!--</li>-->
+                    <li class="item">
+                        <a href="/user/user/myProfile/"><span class="icon-cog"></span><span class="text">Profile Settings</span></a>
+                    </li>
+                    <li class="item">
+                        <a href="/site/logout/"><span class="icon-switch"></span><span class="text">Sign Out</span></a>
+                    </li>
+                </ul>
+
+
+
+            </div>
+        </div>
+        <div id="feedbackPanelDiv" class="groove-hidden">
+
+    <div class="GrooveHead">
+             <button class='closePane closeOptPane' title='Close pane'></button>
+             Feedback
+    </div>
+
+    <div class="paneAction">
+    </div>
+
+    <div class="grooveFields">
+        <div id="gr-successPanel" class="groove-hidden">
+            <p id="gr-successMessage">
+                Thanks for submitting a support request! We'll get back to you shortly via email
+             </p>
+             <p id="gr-ErrorMessage" class="groove-hidden">
+                We could not send your message right now. Please try again later.
+             </p>
+            <button id="grooveOk" type="button" class="fancy fancyColor2" > Ok</button>
+        </div>
+        <form id='feedbackForm'>
+
+            <div id="grooveHiddenData">
+                <p>Your name</p>
+                <input id="grooveCustomerName" type='text' class="" placeholder='your name' />
+                <p>Email:</p>
+                <input type='email' placeholder='your.email@host.com' />
+            </div>
+
+            <p>Type of message</p>
+            <select id="listTheme">
+                <option value="Question"> Question</option>
+                <option value="Problem"> Problem</option>
+                <option value="Suggestion"> Suggestion</option>
+                <option value="Sales"> Sales</option>
+            </select>
+            <p>Subject of message</p>
+            <input id ="grooveMesSubject" type='text' class="" placeholder='Message&#39s subject' />
+            <p>Text of your message</p>
+            <textarea id ="grooveMes" placeholder="Your Message"></textarea>
+
+            <div class="formsSubmitWrapper">
+                <input id="feedbackSubmitButton" type="submit" class="fancy fancyColor2" value="Send" />
+                <img id="gr-preloader" class="groove-hidden" src="/frontend/application/images/submitGroove.gif" alt="">
+                <button id="feedbackCancelButton" type="button" class="fancy fancyColor1" > Cancel</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+        </div>
+
+ </div>
+
+        
+    <div class="printPreviewPanel">
+        <div class="printPreviewPanelControls">
+            <div class="preview-input">
+                <label for="preview-layout">Layout</label>
+                <select id="preview-layout">
+                    <option value="Portrait" selected>Portrait</option>
+                    <option value="Landscape">Landscape</option>
+                </select>
+            </div>
+
+            <div class="preview-input">
+                <label for="preview-papersize">Paper Size</label>
+                <select id="preview-papersize">
+                    <!-- <option value="Letter" data-height="11" data-width="8.5">Letter</option>
+            <option value="Legal" data-height="14" data-width="8.5">Legal</option>
+            <option value="Executive" data-height="10.5" data-width="7.25">Executive</option> -->
+                    <option value="A4" data-height="11.692" data-width="8.267" selected>A4</option>
+                    <option value="A3" data-height="16.53" data-width="11.69">A3</option>
+                    <option value="Letter" data-height="11" data-width="8.5">Letter</option>
+                    <option value="Legal" data-height="14" data-width="8.5">Legal</option>
+                    <option value="Tabloid" data-height="17" data-width="11">Tabloid</option>
+                    <!-- <option value="Envelope10" data-height="9.5" data-width="4.125">Envelope #10</option>
+            <option value="EnvelopeDL" data-height="8.625" data-width="4.313">Envelope DL</option>
+            <option value="EnvelopeC5" data-height="9.0" data-width="6.4">Envelope C5</option>
+            <option value="EnvelopeMonarch" data-height="7.5" data-width="3.875">Envelope Monarch</option> -->
+                </select>
+            </div>
+            <!-- <hr /> -->
+            <!-- <p>Now that you see this preview above, are you sure you want to print this stuff? Hit the <code>YES</code> button if you want to, otherwise click on the <code>NO/ABORT</code> button when you wish to abort the print action now.</p> -->
+            <!-- <p>
+        Now that you see this preview above, are you sure you want to print this stuff? Hit the <strong>YES</strong> button if you want to, otherwise click on the <strong>NO/ABORT</strong> button when you wish to abort the print action now.
+    </p> -->
+
+
+
+            <button id="preview-okay">Print</button>
+
+            <button id="preview-abort">Cancel</button>
+        </div>
+        <div id="printNote"></div>
+       <!--  <div id="printLoading">
+            <div id="printStatus"></div>
+        </div> -->
+    </div>
+
+
+        <div id="colorPane" class="colorPane visyond-floating-panel in-cell-floating visyond-pane">
+    <span class="draghandle" unselectable="on"> </span>
+    <button class='closePane closeOptPane' title='Close pane'></button>
+    <button class='enlargePane' title='Enlarge pane'></button>
+    <div class='paneDragHandle' title='Drag panel'></div>
+    <div class='chartPaneHeader paneHeader'>Color Palette</div>
+    <hr />
+
+    <div class="paneContainer">
+    </div>
+
+    <div class="paneResize">
+        <!-- <span class="resizehandle" unselectable="on"> </span> -->
+    </div>
+
+</div>
+        <div id="helpPane" class="helpPane visyond-floating-panel in-cell-floating visyond-pane">
+    <span class="draghandle" unselectable="on"> </span>
+    <button class='closePane closeOptPane' title='Close pane'></button>
+    <button class='enlargePane' title='Enlarge pane'></button>
+    <div class='paneDragHandle' title='Drag panel'></div>
+    <div class='chartPaneHeader paneHeader'></div>
+    <hr />
+
+    <div class="paneContainer">
+    </div>
+
+    <div class="paneResize">
+        <!-- <span class="resizehandle" unselectable="on"> </span> -->
+    </div>
+
+</div>
+        <div id="chartsOption" style="display:none" >
+    <div class="analysis">
+        <div class="sidebar">
+            <div class="sidebar-header"> 
+                <span class="icon double-arrow left toggle"> </span>
+                <span class="text" >Chart Settings </span>
+            </div>
+
+            <div class="sidebar-container chart-panel margin-bottom-35">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div id="top-container-inner">
+
+            <div id="tabs">
+                <ul>
+                    <li class="visyond-ui-tab">
+                        <a href="#tabs-model"><span class="icon-table"></span><span class="text">Model</span></a>
+                    </li>
+                    <li class="visyond-ui-tab">
+                        <a href="#tabs-overview"><span class="icon-eye"></span><span class="text">Overview</span></a>
+                    </li>
+                    <li class="visyond-ui-tab">
+                        <a href="#tabs-dependencies"><span class="icon-share"></span><span class="text">Dependencies</span></a>
+                    </li>
+                    <li class="visyond-ui-tab">
+                        <a href="#tabs-tornado"><span class="icon-tornado"></span><span class="text">Tornado</span></a>
+                    </li>
+                    <li class="visyond-ui-tab">
+                        <a href="#tabs-sensitivity"><span class="icon-equalizer"></span><span class="text">Sensitivity</span></a>
+                    </li>
+                    <li class="visyond-ui-tab">
+                        <a href="#tabs-scenarios"><span class="icon-images"></span><span class="text">Scenarios</span></a>
+                    </li>
+                    <li class="visyond-ui-tab">
+                        <a href="#tabs-simulation"><span class="icon-dice"></span><span class="text">Simulation</span></a>
+                    </li>
+                   <!--  <li class="visyond-ui-tab">
+                       <a href="#tabs-regressions"><span class="icon-binoculars"></span><span class="text">Regressions</span></a>
+                    </li> -->
+                    <li class="visyond-ui-tab">
+                        <a href="#tabs-statements"><span class="icon-signup"></span><span class="text">Statements</span></a>
+                    </li>
+                      <!--Uncomment it when you will to implement presentation-->
+                    <!--            <li class="visyond-ui-tab">-->
+                    <!--               <a href="#tabs-presentation"><span class="icon-file-powerpoint"></span><span class="text">Presentation</span></a>-->
+                    <!--            </li>-->
+                </ul>
+
+
+
+                <!-- ----------------- -->
+                <!-- MODEL TAB -->
+                <!-- ----------------- -->
+                <div id="tabs-model">
+                    <!-- TEST DIVs -->
+
+                    <!-- ////////////////////////////////// -->
+                    <!-- // solution with contenteditable // -->
+                    <!-- http://stackoverflow.com/questions/1181700/set-cursor-position-on-contenteditable-div-->
+                    <!-- ////////////////////////////////// -->
+
+                    <div class="rowNameIconCluster">
+    <button class='headerOverlayN0 inRowIndentLeft'></button>
+    <button class='headerOverlayS0 inRowIndentRight'></button>
+    <button class='headerOverlayN1 inRowProjNameUp'></button>
+    <button class='headerOverlayS1 inRowProjNameDown'></button>
+    <button class='headerOverlayN2 inRowProjectRowUp'></button>
+    <button class='headerOverlayS2 inRowProjectRowDown'></button>
+    <button class='headerOverlayN3 inRowInsertRowUp'></button>
+    <button class='headerOverlayS3 inRowInsertRowDown'></button>
+    <!-- <button class='headerOverlayN5 inRowSelectRow'></button>
+    <span class='headerOverlayS5 inRowDeleteRow icon-remove'></span> -->
+    <button class='headerOverlayN4 inRowDelShiftRowUp'></button>
+    <button class='headerOverlayS4 inRowDelShiftRowDown'></button>
+</div>
+
+<!-- header row cell overlay -->
+<div class="colNameIconCluster">
+    <button class="headerOverlayW1  inColumnDelShiftColRight"></button>
+    <button class="headerOverlayW   inColumnProjectLeft"></button>
+    <button class="headerOverlayW2  inColumnInsertColLeft"></button>
+    <button class="headerOverlayW3  inColumnProjNameLeft"></button>
+    <!-- <span class="headerOverlayX   inColumnDeleteColumn icon-remove"></span>
+    <button class="headerOverlayTop inColumnSelectColumn"></button> -->
+    <button class="headerOverlayE1  inColumnDelShiftColLeft"></button>
+    <button class="headerOverlayE   inColumnProjectRight"></button>
+    <button class="headerOverlayE2  inColumnInsertColRight"></button>
+    <button class="headerOverlayE3  inColumnProjNameRight"></button>
+</div>
+
+<div class="cellOverlayIconCluster">
+    <button class="cellOverlayW    inCellArrowProjectLeft"></button>
+    <button class="cellOverlayN    inCellArrowProjectUp"></button>
+    <button class="cellOverlayE    inCellArrowProjectRight"></button>
+    <button class="cellOverlayS    inCellArrowProjectDown"></button>
+    <button class="cellOverlayNW   inCellCases" data-test="doOpenCasesPanel">C</button>
+    <button class="cellOverlayNE   inCellInfo">I</button>
+    <button class="cellOverlaySW   inCellGoalSeek">G</button>
+    <button class="cellOverlaySE   inCellPrecedentsAndDependents">D</button>
+    <button class="cellOverlayNWNW inCellExtra"></button>
+</div>
+
+<div id="cellEditClose" class="cellClose"></div>
+<div id="cellEditingHeader" class="cellHeader" title="Drag to type comfortably and view the cells you need. On scroll it will pin again to its cell."></div>
+<div id="cellEditingOverlay" class="cellOverlay" spellcheck="false" contentEditable="true"></div>
+
+
+
+                    <div id="precedentsAndDependentsPane" class="visyond-floating-panel in-cell-floating visyond-pane">
+	<span class="draghandle" unselectable="on"> </span>
+    <button class='closePane closeOptPane' title='Close pane'></button>
+    <button class='enlargePane' title='Enlarge pane'></button>
+    <div class='paneDragHandle' title='Drag panel'></div>
+    <div class="paneHeader chartPaneHeader">Precedents &amp; dependents of <span class="cellSelected"></span></div>
+
+    <hr />
+    <div class="paneSubTitle">See 'Dependencies TAB' for a larger view and to change drivers' percentage change</div>
+    <div id="forcedPrecsAndDepsGraphDiv" class="paneContainer"></div>
+    <div class="paneResize">
+        <!-- <span class="resizehandle" unselectable="on"> </span> -->
+    </div>
+</div>
+                    
+                <div id="selectedRangeOptions" class="visyond-floating-panel">
+                    <button class='closeOptPane' title='Close pane'></button>
+                    <div class='paneDragHandle' title='Drag panel'></div>
+                    <div class="chartPaneHeader marginLeft"><!--Range Commands--></div>
+
+                    <div class="paneChunkCollective">
+                        <div class="paneChunk paneChunk-5">
+                            <div class="paneChunk-centered-content">
+                                <table id="cell-range-options">
+                                    <!-- top row -->
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <div class="paneChunk-centered-content">
+                                                <button id="rangePU" class="inCellArrowProjectUp"></button>
+                                                <button id="dragUp" class="inCellArrowDragUp"></button>
+                                                <button id="insertRangeUp" class="insertRangeUp"></button>
+                                                <button id="rangeDelDown" class="delShiftRangeDown"></button>
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                    </tr>
+                                    <!-- middle row -->
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <button id="rangePL" class="inCellArrowProjectLeft"></button>
+                                                <button id="dragLeft" class="inCellArrowDragLeft"></button>
+                                                <button id="insertRangeLeft" class="insertRangeLeft"></button>
+                                                <button id="rangeDelRight" class="delShiftRangeRight"></button>
+                                            </div>
+                                        </td>
+
+                                        <!-- main central area of the main outer table -->
+                                        <td class="range-central-area">
+                                            <table>
+                                                <tr>
+<!-- 
+                                                    <td>
+                                                        <button class="fancy fancyColor1" style='height: 20px; width: 30px;' id="extendAllRows">&uarr;&darr;</button>
+                                                    </td>
+                                                    <td>
+                                                        <button class="fancy fancyColor1" style='height: 20px; width: 30px;' id="extendAllCols">&harr;</button>
+                                                    </td>
+                                                    <td>
+                                                        <button class="fancy fancyColor1" style='height: 20px; width: 30px;' id="extendToAll">All</button>
+                                                    </td> -->
+                                                    <td>
+                                                        <div class="fancy fancyColor1" style='min-height: 14px; width: 32px;' id="btnCreateChart">
+                                                            <span class="icon-bars"></span>
+                                                            <select id="createChartOptions" name="createChartOptions" >
+                                                                <option value="" checked="true">&#9660</option>
+                                                                <option value="bar">Vertical Bars</option>
+                                                                <option value="bar-stacked">Vertical Stacked Bars</option>
+                                                                <option value="row">Horizontal Bars</option>
+                                                                <option value="row-stacked">Horizontal Stacked Bars</option>
+                                                                <option value="scatter">Scatter </option>
+                                                                <option value="line">Line </option>
+                                                                <option value="area">Area </option>
+                                                                <option value="spline">Spline </option>
+                                                                <option value="area-spline">Area Spline </option>
+                                                                <option value="step">Step </option>
+                                                                <option value="area-step">Area Step </option>
+                                                                <option value="donut">Donut </option>
+                                                                <option value="pie">Pie </option>
+                                                                <option value="gauge">Gauge </option>
+                                                            </select>
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>   <!-- closes the main central area of the main outer table -->
+
+                                        <td>
+                                            <div class="paneChunk-block-content">
+                                                <button id="rangePR"class="inCellArrowProjectRight"></button>
+                                                <button id="dragRight" class="inCellArrowDragRight"></button>
+                                                <button id="insertRangeRight" class="insertRangeRight"></button>
+                                                <button id="rangeDelLeft" class="delShiftRangeLeft"></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- bottom row -->
+                                    <tr>
+                                        <td>
+                                        </td>
+
+                                        <td>
+                                            <div class="paneChunk-centered-content">
+                                                <button id="rangePD" class="inCellArrowProjectDown"></button>
+                                                <button id="dragDown" class="inCellArrowDragDown"></button>
+                                                <button id="insertRangeDown" class="insertRangeDown"></button>
+                                                <button id="rangeDelUp" class="delShiftRangeUp"></button>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <table id="row-name-range-options">
+                                    <!-- top row -->
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <div class="paneChunk-centered-content">
+                                                <button id="indentLeft" class="inProjectionRowIndentLeft"></button>
+                                                <button id="indentRight" class="inProjectionRowIndentRight"></button>
+                                                <button id="collapseAll" class="inProjectionRowCollapseAll"></button>
+                                                <button id="expandAll" class="inProjectionRowExpandAll"></button>
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    
+
+<div id="casePane" class="casePane visyond-floating-panel in-cell-floating visyond-pane">
+    <span class="draghandle" unselectable="on"> </span>
+    <button class='closePane closeOptPane' title='Close pane'></button>
+    <button class='enlargePane' title='Enlarge pane'></button>
+    <div class='paneDragHandle' title='Drag panel'></div>
+
+    <div class="paneHeader chartPaneHeader">Cases of <span class="cellSelected"></span></div>
+
+    <div class="toggle-section">
+        <div id="cp_addCase" class='cpl toggle-section-title'>Add Case</div>
+    </div>
+
+    <div id="paneAddCase" class="paneAction">
+        <div class="boxPs100">
+            <input type='text' class='newCaseNameInput boxInputName' placeholder='Case Name' size="16" />
+            <input type='text' class='newCaseCommentInput boxInputComment' placeholder='Optional Comment' />
+            <input type='text' class='newCaseValueInput boxInputValue' placeholder='Value'></input>
+            <button title='Add new case' class='addCase fancy fancyColor2 boxBtnAdd'>Add Case</button>
+            <button title='Reset case' class='resetCase fancy fancyColor0 boxBtnReset'>Reset Case</button>
+        </div>
+    </div>
+
+    <div class="paneContainerHeader">
+    </div>
+
+    <div class="paneContainer">
+    </div>
+
+    <div class="paneResize">
+        <!-- <span class="resizehandle" unselectable="on"> </span> -->
+    </div>
+</div>
+
+                    <div id="infoPane" class="infoPane visyond-floating-panel in-cell-floating visyond-pane">
+    <span class="draghandle" unselectable="on"> </span>
+    <button class='closePane closeOptPane' title='Close pane'></button>
+    <button class='enlargePane' title='Enlarge pane'></button>
+    <div class='paneDragHandle' title='Drag panel'></div>
+    <div class='chartPaneHeader paneHeader'>Information of <span class="cellSelected"></span></div>
+    <hr />
+
+    <div class="paneAction">
+        <ul id="infoMenu">
+            <li class="first selected" data-info="all">All</li>
+            <li class="withborder" data-info="comments">Comments</li>
+            <li class="last" data-info="files">Files</li>
+        </ul>
+    </div>
+
+    <div class="paneContainer">
+    </div>
+
+    <div class="paneFooter">
+        <textarea class='newCommentInput' placeholder='Type New Comment'></textarea>
+        <div class="arrowRight addComment" title="Save Comment"></div>
+        <div class="seperator"></div>
+        <div class="attachment" title="Attach File"></div>
+        <div class="dragFiles">
+            <div class="btn btn-success fileinput-button">
+                <div class="upload-text">
+                    <!--Drag here<br><br>or<br>-->
+                    <span style="color:gray">Drag your file here</span>
+                    <span style="color:lightgray">or</span>
+                    <span style="color:#3C98FC;cursor:pointer">Upload</span>
+                </div>
+                <!-- The file input field used as target for the file upload widget -->
+                <input id="fileupload" type="file" name="files[]" multiple="">
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="paneResize">
+        <!-- <span class="resizehandle" unselectable="on"> </span> -->
+    </div>
+
+</div>
+
+                    <div id="goalPane" class="goalPane visyond-floating-panel visyond-pane in-cell-floating">
+    <span class="draghandle" unselectable="on"> </span>
+    <button class='closePane closeOptPane' title='Close pane'></button>
+    <button class='enlargePane' title='Enlarge pane'></button>
+    <div class='paneDragHandle' title='Drag panel'></div>
+
+    <div class="paneHeader chartPaneHeader ui-draggable-handle">Goal Seek of <span class="cellSelected"></span></div>
+        
+    <div class="myBox boxPs99 centerText">
+        Set cell <b><span id="goalOutput"></span></b> to value
+        <br />
+        <br />
+        <div class="edit" id="outputGoal" style="text-align: center; font-size: 14px; font-weight: bold;"></div>
+        <br />
+    </div>
+
+    <div class="myBox boxPs99 boxesBckColor centerText">
+        By changing cell
+        <div class="warningFixedArea">
+            <div class="cellWarning goalInputCellTest"></div>
+        </div>
+        <div class="editableDIV inputGoal" contenteditable="true" placeholder="Type cell here"></div>
+        <div data-module-class="inputGoal" data-module-tab="tabs-model" class="pickCellRefFromModule" title="Pick cell from grid" onclick="onClickPickCellRefFromModule(this)">Pick cell from grid</div>
+        <div class="inputGoalMatch"></div>
+    </div>
+    
+    <br />
+    <br />
+    
+    <div class="myBox boxPs99 centerText">
+
+        <button id="runGoalSeek" class="fancy fancyColor1 fancyMini">Find</button>
+        <button id="cancelGoalSeek" class="fancy fancyColor4 fancyMini">Cancel</button>
+        <div id="goalSeekProgress" class="progress"></div>
+        <br />
+        <br />
+        <div id="goalSought"></div>
+        <div class="errorMsgGoalSeek"></div>
+    </div>
+
+</div>
+
+
+                    <!-- Scenarios Manager -->
+                    <div class="scenariosDiv">
+
+    <div class="selectedScenarioName" name="selectedScenarioName">
+        Selected: <b>**error situation**</b> by: <i>Admin</i>
+    </div>
+    <button class="manageScenariosBtn fancy fancyColor5" title='Manage Scenarios' data-test="doOpenScenarios">
+        <span class="icon-images"></span><span class="text">Scenarios</span>
+    </button>
+
+     <div class="scenarioRecordingBlock">
+        <button title="Record Scenario: click and edit cells. Cases will be created automatically and linked to a scenario you can rename and edit later." class='recordScenario'>R</button>
+        <button title="Stop recording" class='stopRecording'>S</button>
+
+        <div id="scenariosRecordingPane" class="visyond-floating-panel visyond-pane" style="width: 206;">
+            <span class="draghandle" unselectable="on"> </span>
+        <!--     <button class='closePane closeOptPane' title='Close pane'></button>
+            <button class='enlargePane' title='Enlarge pane'></button> -->
+            <div class='paneDragHandle' title='Drag panel'></div>
+
+            <div class="paneHeader chartPaneHeader">Scenario recording</div>
+
+            <!-- <div class="toggle-section">
+                <div id="cp_addScenario" class='cpl toggle-section-title'>Add Scenario</div>
+            </div> -->
+
+            <div id="paneRecordedScenarioName" class="paneAction">
+               Cells edited in recording mode automatically create new cases in the cell and link them to the scenario.<br><br>After recording, you can rename the scenario and its cases.<br><br>
+                <!-- <div class="boxPs100">
+                    <input type='text' class='newScenarioNameInput boxInputName' placeholder='Scenario Name' data-test="inScenarioName"/>
+                    <input type='text' class='newScenarioCommentInput boxInputComment' placeholder='Optional Comment' data-test="inScenarioComment"/>
+                </div> -->
+            </div>
+
+            <div class="paneContainerHeader">
+            </div>
+
+            <div class="paneContainer">
+            </div>
+
+            <div class="paneResize">
+                <!-- <span class="resizehandle" unselectable="on"> </span> -->
+            </div>
+        </div>
+    </div>
+
+    <div id="scenariosPane" class="visyond-floating-panel visyond-pane">
+        <span class="draghandle" unselectable="on"> </span>
+        <button class='closePane closeOptPane' title='Close pane'></button>
+        <button class='enlargePane' title='Enlarge pane'></button>
+        <div class='paneDragHandle' title='Drag panel'></div>
+
+        <div class="paneHeader chartPaneHeader">Scenarios management</div>
+
+        <div class="toggle-section">
+            <div id="cp_addScenario" class='cpl toggle-section-title'>Add Scenario</div>
+        </div>
+
+        <div id="paneAddScenario" class="paneAction">
+            <div class="boxPs100">
+                <input type='text' class='newScenarioNameInput boxInputName' placeholder='Scenario Name' data-test="inScenarioName"/>
+                <input type='text' class='newScenarioCommentInput boxInputComment' placeholder='Optional Comment' data-test="inScenarioComment"/>
+                <button title='Set the cells on the cases you want in a new scenario and click here to create it' class='addScenario fancy fancyColor2 boxBtnAdd' data-test="doScenarioAdd">Add Scenario</button>
+                <button title='Reset scenarios: set all cells to their default input created by the Owner.' class='resetScenarios fancy fancyColor0 boxBtnReset' data-test="doScenarioReset">Reset Scenarios</button>
+            </div>
+        </div>
+
+        <div class="paneContainerHeader">
+        </div>
+
+        <div class="paneContainer">
+        </div>
+
+        <div class="paneResize">
+            <!-- <span class="resizehandle" unselectable="on"> </span> -->
+        </div>
+    </div>
+</div>
+
+
+                    <div id="chat-root" class="live-chat chat-minimized">
+	<header class="clearfix">
+        <!-- <a class="chat-close" title="Quit">&times;</a> -->
+        <span class="chat-title-icon-open fa fa-caret-down"></span>
+        <span class="chat-title-icon-minimized fa fa-caret-right"></span>
+		<span class="chat-title chat-title-open"></span>
+		<span class="chat-title chat-title-minimized"> Chat </span>
+        <span class="chat-message-counter"></span>
+	</header>
+
+	<div class="chat-history">
+		<div class="chat-list"></div>
+	</div>
+
+    <div class="chat-info chat-is-empty">
+        <span class="chat-note">No messages</span>
+    </div>
+
+    <!-- <div class="chat-info chat-is-loading"> -->
+    <!--     <span class="chat-note"></span> -->
+    <!-- </div> -->
+
+    <div class="chat-feedback">
+        <input class="chat-new-message"
+               type="text"
+               placeholder="Type your message..."
+               title="Press “Enter” to send your message"
+               autofocus>
+    </div>
+</div>
+
+                    <div id="settingsZone" class="floatRight">
+                        <div class="pivotPanelBtn">
+    <button id="pivotPanelBtn" class="fancy fancyColor5" title="Open/Close Pivot Dashboard">
+        <span class="icon-pivot-table"></span>
+        <span class="text">Pivot</span>
+    </button>
+
+
+    <div id="pivotPanelDiv" class="visyond-pivot-pane visyond-floating-panel visyond-pane">
+        <span class="draghandle" unselectable="on"> </span>
+        <button class='closePane closeOptPane' title='Close pane'></button>
+        <button class='enlargePane' title='Enlarge pane'></button>
+        <div class='paneDragHandle' title='Drag panel'></div>
+
+        <div class="paneHeader chartPaneHeader ui-draggable-handle">
+            Pivot Dashboard
+        </div>
+
+        <div id="paneSelectColForPivot" class="paneAction" >
+            <div class="boxPs50 boxPsInline">
+                <select id="selectWorkbookInPivot" name="" multiple="multiple"></select>
+            </div>
+            <div class="boxPs48 boxPsInline">
+                <select id="selectColsPivot" name="" multiple="multiple"></select>
+            </div>
+        </div>
+
+        <div class='btn_prn'>
+            <button onclick='Visyond.IO.printSpecial(".pvtRendererArea");' title='Print or save as PDF' class='noUnderlineLink'><span class='icon-print'></span>
+            </button>
+        </div>
+
+        <div class="pivotContainer paneContainer">
+        </div>
+
+        <div class="paneResize">
+            <!-- <span class="resizehandle" unselectable="on"> </span> -->
+        </div>
+    </div>
+
+</div>
+
+
+                        <div class="IOcontrolPanelBtn">
+    <button id="IOcontrolPanelBtn" class="fancy fancyColor5" title="Open/Close Cells Dashboard: activate Tooltips from the Settings Panel for more information on the module and its options">
+        <span class="icon-insert-template"></span>
+        <span class="text">Cells Dashboard</span>
+    </button>
+
+
+    <div class="visyond-IOControl-pane  visyond-floating-panel visyond-pane" id="IOcontrolPanelDiv">
+        <span class="draghandle" unselectable="on"> </span>
+        <button class='closePane closeOptPane' title='Close pane'></button>
+        <button class='enlargePane' title='Enlarge pane'></button>
+        <div class='paneDragHandle' title='Drag panel'></div>
+        <div class="paneHeader chartPaneHeader">
+            Cells Dashboard  
+        </div>
+
+        <div class="paneAction">
+            <button id="addCellToControlPanel" class="fancy fancyColor2" type="button" value="Add Cell" data-inputcontrolcell="1">
+                <span class="icon-plus"></span>
+                <span>Add Cell</span>
+            </button>
+        </div>
+        
+        <div class="container paneContainer">
+            <div id="inputCellsInControl" class="clearfix"></div> 
+        </div>
+
+        <div class="paneResize">
+            <!-- <span class="resizehandle" unselectable="on"> </span> -->
+        </div>
+    </div>
+
+</div>
+
+                        <!-- Application settings -->
+                        <div class="applicationsettingsPaneDivl">
+    <!-- include the Settings Pane -->
+    <button id="settingsPaneBtn" class="fancy fancyColor5 toggle-settings" title="Open/Close Settings Pane"><span class="icon-Ico-21"></span><span class="text">Settings</span></button>
+    <div class="visyond-settings-pane  visyond-floating-panel visyond-pane" id="settingsPaneDiv">
+        <span class="draghandle" unselectable="on"> </span>
+        <button class='closePane closeOptPane' title='Close pane'></button>
+        <button class='enlargePane' title='Enlarge pane'></button>
+        <div class='paneDragHandle' title='Drag panel'></div>
+        <div class="paneHeader chartPaneHeader">
+            Settings
+        </div>
+
+        <hr>
+
+        <br>
+
+
+        <!--    <br>
+
+            <table class="inPanelTbl">
+            <tr>
+                <td class="inPanelLabelTD">
+                    <label id="doNotOverwrite" class="paneSubTitle showQuestionMark">Do Not Overwrite Cells </label>
+                </td>
+                <td>
+                    <label for="doNotOverWriteCells"></label>
+                    <input id="doNotOverWriteCells" type="checkbox">
+                </td>
+
+            </tr>
+            </table> -->
+        <div class="paneContainer">
+
+            <div class="myBox visyondSolidBorder boxPs99 boxesBckColor2">
+                <div class="cpl">
+                    <label class="paneSubTitle">Tooltips</label>
+                </div>
+                <div class="cpr">
+                    <div class="tooltipsterDiv" title="Activate/Deactivate dynamic tooltips.">
+                        <label for="tooltipsterBtn"></label>
+                        <input type="checkbox" style="display:none" id="tooltipsterBtn"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="myBox visyondSolidBorder boxPs99 boxesBckColor2">
+                <div class="cpl">
+                    <label id="fillSeriesSetting" class="paneSubTitle showQuestionMark">Fill Series on cell projections</label>
+                </div>
+                <div class="cpr">
+                    <label for="cellProjections"></label>
+                    <input id="cellProjections" type="checkbox">
+                </div>
+            </div>
+
+            <div class="myBox visyondSolidBorder boxPs99 boxesBckColor2">
+                <div class="cpl">
+                    <label class="paneSubTitle showQuestionMark">Date format</label>
+                </div>
+                <!-- use moment.js notation http://momentjs.com/docs/#/displaying/ -->
+                <div class="cpr">
+                    <select id="dateFormatSelectGlobal"  name="dateFormatSelectGlobal" title="Date formats">
+                        <option value="DD/MM/YYYY">15/04/2001</option>
+                        <option value="DD/MM/YY">15/04/01</option>
+                        <option value="DD/MMM/YYYY">15/Apr/2001</option>
+                        <option value="DD/MMM/YY">15/Apr/01</option>
+                        <option value="DD/MMMM/YYYY">15/April/2001</option>
+                        <option value="DD/MMMM/YY">15/April/01</option>
+
+                        <option value="MM/DD/YYYY">04/18/2001</option>
+                        <option value="MM/DD/YY">04/18/01</option>
+                        <option value="MMM/DD/YYYY">Apr/18/2001</option>
+                        <option value="MMM/DD/YY">Apr/18/01</option>
+                        <option value="MMMM/DD/YYYY">April/18/2001</option>
+                        <option value="MMMM/DD/YY">April/18/01</option>
+
+                        <option value="DD-MM-YYYY">15-04-2001</option>
+                        <option value="DD-MM-YY">15-04-01</option>
+                        <option value="DD-MMM-YYYY">15-Apr-2001</option>
+                        <option value="DD-MMM-YY">15-Apr-01</option>
+                        <option value="DD-MMMM-YYYY">15-April-2001</option>
+                        <option value="DD-MMMM-YY">15-April-01</option>
+
+                        <option value="MM-DD-YYYY">04-18-2001</option>
+                        <option value="MM-DD-YY">04-18-01</option>
+                        <option value="MMM-DD-YYYY">Apr-18-2001</option>
+                        <option value="MMM-DD-YY">Apr-18-01</option>
+                        <option value="MMMM-DD-YYYY">April-18-2001</option>
+                        <option value="MMMM-DD-YY">April-18-01</option>
+
+                        <option value="DD.MM.YYYY">15.04.2001</option>
+                        <option value="DD.MM.YY">15.04.01</option>
+                        <option value="DD.MMM.YYYY">15.Apr.2001</option>
+                        <option value="DD.MMM.YY">15.Apr.01</option>
+                        <option value="DD.MMMM.YYYY">15.April.2001</option>
+                        <option value="DD.MMMM.YY">15.April.01</option>
+
+                        <option value="MM.DD.YYYY">04.18.2001</option>
+                        <option value="MM.DD.YY">04.18.01</option>
+                        <option value="MMM.DD.YYYY">Apr.18.2001</option>
+                        <option value="MMM.DD.YY">Apr.18.01</option>
+                        <option value="MMMM.DD.YYYY">April.18.2001</option>
+                        <option value="MMMM.DD.YY">April.18.01</option>
+
+                        <option value="MM/YYYY">04/2001</option>
+                        <option value="MM/YY">04/01</option>
+                        <option value="MMM/YYYY">Apr/2001</option>
+                        <option value="MMMM/YYYY">April/2001</option>
+                        <option value="MMM/YY">Apr/01</option>
+                        <option value="MMMM/YY">April/01</option>
+                        <option value="YYYY">2001</option>
+                        <option value="YY">01</option>
+
+                    </select>
+                </div>
+            </div>
+
+            <div class="myBox visyondSolidBorder boxPs99 boxesBckColor2">
+                <div class="cpl">
+                    <label id="replaceNonNum" class="paneSubTitle showQuestionMark">Replace non-numerical cells with zero</label>
+                </div>
+                <div class="cpr">
+                    <label for="treatNonNumericsAsZeroCheck"></label>
+                    <input id="treatNonNumericsAsZeroCheck" type="checkbox">
+                </div>
+            </div>
+
+            <div class="myBox visyondSolidBorder boxPs99 boxesBckColor2">
+                <div class="cpl">
+                    <label class="paneSubTitle">Decimals</label>
+                </div>
+                <div class="cpr">
+                    <button id="decrement" class="increment floatLeft" title="Decrement decimals">.0</button>
+                    <input id="decimals" class="inputIncrDecr floatLeft" name="decimals" style="width: 20px;text-align: middle;" type="text">
+                    <button id="increment" class="increment floatLeft" title="Increment decimals">.00</button>
+                </div>
+            </div>
+
+            <div class="myBox visyondSolidBorder boxPs99 boxesBckColor2">
+                <div class="cpl">
+                    <label id="nameProjCountSet" class="paneSubTitle showQuestionMark">Name Projection Count</label>
+                </div>
+                <div class="cpr">
+                    <button id="decrementDblClickProjectSize" class="increment floatLeft">-</button>
+                    <input id="dblClickProjectSize" class="inputIncrDecr floatLeft" name="dblClickProjectSize" style="width: 20px;text-align: middle;" type="text">
+                    <button id="incrementDblClickProjectSize" class="increment floatLeft">+</button>
+                </div>
+            </div>
+
+            <div class="myBox visyondSolidBorder boxPs99 boxesBckColor2">
+                <div class="cpl">
+                    <label class="paneSubTitle">Font Size</label>
+                </div>
+                <div class="cpr">
+                    <button id="decrementFont" class="increment floatLeft" style="font-size: 8px;">A</button>
+                    <input id="fontSize" class="inputIncrDecr floatLeft" name="fontSize" style="width: 20px;text-align: middle;" type="text">
+                    <button id="incrementFont" class="increment floatLeft" style="font-size: 12px;">A</button>
+                </div>
+            </div>
+
+            <div class="myBox visyondSolidBorder boxPs99 boxesBckColor2">
+                <div class="cpl">
+                    <label class="paneSubTitle">Lock Cells</label>
+                </div>
+                <div class="cpr">
+                    <label for="lockAll" title="Lock All cells">All</label>
+                    <input id="lockAll" data-type="0" class="radioForLock" name="lockType" type="radio" value="All" />
+
+                    <label for="lockFormulae" title="Lock Formulae">Formulae</label>
+                    <input id="lockFormulae" data-type="1"  class="radioForLock" name="lockType" type="radio" value="Formula" />
+
+                    <label for="lockNone" title="No locks">None</label>
+                    <input checked="true" id="lockNone" data-type="2" class="radioForLock" name="lockType" type="radio" value="None" />
+                </div>
+            </div>
+        </div>
+
+        <div class="paneResize">
+            <!-- <span class="resizehandle" unselectable="on"> </span> -->
+        </div>
+    </div>
+</div>
+
+
+ <div id="supportedFunctionsPaneDiv" class="scenariosPane visyond-floating-panel visyond-pane">
+    <span class="draghandle" unselectable="on"> </span>
+    <button class='closePane closeOptPane' title='Close pane'></button>
+    <button class='enlargePane' title='Enlarge pane'></button>
+    <div class='paneDragHandle' title='Drag panel'></div>
+    <div class="paneHeader chartPaneHeader">Visyond Functions</div>
+    <hr />
+    <div class="paneContainer listOfAllFunctionsMatch"></div>
+     <div class="paneResize">
+        <!-- <span class="resizehandle" unselectable="on"> </span> -->
+    </div>
+</div>
+
+                        <!-- CHARTS -->
+                        <div class="chartsPanel">
+    <button id="chartPaneBtn" class="fancy fancyColor5 toggle-chart" title="Chart Pane">
+        <span class="icon-bars"></span><span class="text">Charts</span>
+    </button>
+    <!-- include the Chart Pane -->
+    <div id="chartPaneDiv" class="chart-manager visyond-chart-pane visyond-floating-panel visyond-pane">
+        <span class="draghandle" unselectable="on"> </span>
+        <button class='closePane closeOptPane' title='Close pane'></button>
+        <button class='enlargePane' title='Enlarge pane'></button>
+        <div class='paneDragHandle' title='Drag panel'></div>
+        <div class="paneHeader chartPaneHeader">
+            Charts <span id="chartsProgress" class="progress"></span>
+
+            <br>
+
+            <hr>
+
+        </div>
+
+        <div class="paneAction">
+        </div>
+
+        <div class="paneContainer">
+            <div id="charts" class="chartContainer"></div>
+        </div>
+
+        <div class="paneResize">
+            <!-- <span class="resizehandle" unselectable="on"> </span> -->
+        </div>
+            
+    </div>
+    <!-- END chartPaneDiv -->
+</div>
+
+                    </div>
+
+                    <div class="toggle-section">
+                        <div id="cp_gridOption" class='cpl toggle-section-title'>Grid Options</div>
+                    </div>
+
+                    <div style="clear:both;"></div>
+
+                    <div id="overGridDiv">
+
+                        <div id="customBar" class="clearfix">
+
+                            
+                    <div class="formulaBar">
+                        <div class="formulaBar-selectedCellReport boxPs100 clearfix">
+
+                            <div class="switchRenderMode-toolbar">
+                                <div class="tglBtnGroup customCellFormattingBtn">
+                                    <div class="tglBtnSpan">Audit</div>
+                                    <label for="customCellFormatting"></label>
+                                    <input type="checkbox" id="customCellFormatting"/>
+                                </div>
+
+                                <div id="realNamesDiv" class="tglBtnGroup visyond-toolbar-part">
+                                    <div class="tglBtnSpan">Names</div>
+                                    <label for="displayRealNames"></label>
+                                    <input id="displayRealNames" type="checkbox"/>
+                                </div>
+                            </div>
+
+                            <div class="floatRight">
+
+                                <div id="displayPrecDiv" class="formulaBar-precedentCellsReport tglBtnGroup visyond-toolbar-part">
+                                    <!-- <span class="icon-share flip"></span> -->
+                                    <div class="tglBtnSpan">Precedents</div>
+                                    <label for="displayPrecBtn"></label>
+                                    <input id="displayPrecBtn" type="checkbox"/>
+                                    <div class="formulaBarPreCell"></div>
+                                </div>
+
+                                <div id="displayDepDiv" class="formulaBar-dependentCellsReport tglBtnGroup visyond-toolbar-part">
+                                    <!-- <span class="icon-share"></span> -->
+                                    <div class="tglBtnSpan">Dependents</div>
+                                    <label for="displayDepBtn"></label>
+                                    <input id="displayDepBtn" type="checkbox"/>
+                                    <div class="formulaBarDepCell"></div>
+                                </div>
+                                
+                            </div>
+
+                            <div id="nodeInfoOverFormulaBar" class="visyond-toolbar-part">
+                                <div class="cellName-toolbar visyond-toolbar-part"></div>
+                                <div class="caseOfEdited visyond-toolbar-part"></div>
+                                <div class="formulaBarResult-toolbar visyond-toolbar-part"></div>
+                                <div class="showWarningOnNodeInfo visyond-toolbar-part"></div>
+                                <!-- <div class="lockLog-toolbar visyond-toolbar-part"></div> -->
+                            </div>
+
+                        </div>
+
+                        <!-- the formula bar itself -->
+                        <div class="formulaBar-daMainMan">
+                            <div class="fxBtnWrapper">
+                                <button id="supportedFunctionsBtn" class="fancy fancyColor0" title='Visyond Functions'><span class="text">fx</span></button>
+                            </div>
+
+                            <div class="formulaBar-editable" spellcheck="false" contentEditable="true"></div>
+                            <div class="matches"></div>
+                        </div>
+                    </div>
+
+                            
+<div class="visyond-toolbar-ui clearfix">
+
+   <!--  <div class="switchRenderMode-toolbar">
+        <div class="tglBtnGroup customCellFormattingBtn">
+            <span class="tglBtnSpan">Audit</span>
+            <label for="customCellFormatting"></label>
+            <input type="checkbox" id="customCellFormatting"/>
+        </div>
+    </div> -->
+
+    <!-- print outside of other blocks as everybody is allowed to print and we always show the option --> 
+    <div class="toolBarHRPad"> <!-- visyondSolidBorder boxesBckColor4 -->
+        <a onclick="Visyond.IO.printSpecial('.calculusGrid');" title="Print or save as PDF" class="noUnderlineLink">
+            <span class="icon-print"></span>
+        </a>
+    </div>
+
+    <div class="commonActions-toolbar">
+        <!--
+        <div class="myBox visyondSolidBorder">
+            <a id="btnCustom" title="Show/Hide FormulaBar" class="noUnderlineLink">
+                <input type="checkbox" id="chkCustom" checked />
+            </a>
+            <span id="btnCustomX">&nbsp;</span>
+        </div>
+        -->
+
+        <!-- DO NOT REMOVE CLASSES UNLESS YOU DO A GLOBAL SEARCH AND ARE UNUESED: THEY ARE USED TO HIDE UI ELEMENTS FROM READERS! -->
+        <div class="toolBarHRPad undoRedoBlock"> <!-- visyondSolidBorder boxesBckColor4 -->
+            <a title="Undo" class="noUnderlineLink undoIcon">
+                <span class="icon-undo"></span>
+            </a>
+            <a title="Redo" class="noUnderlineLink redoIcon">
+                <span class="icon-redo"></span>
+            </a>
+        </div>
+
+        <div class="toolBarHRPad copyCutPasteBlock"> <!-- visyondSolidBorder boxesBckColor4 -->
+            <button class='copyButton' title='Copy (Ctrl+C)'><span class="icon-copy"></span></button>
+            <button class='cutButton' title='Cut (Ctrl+X)'><span class="icon-scissors"></span></button>
+            <button class='pasteButton' title='Paste (Ctrl+V)'><span class="icon-paste"></span></button>
+        </div>
+
+        <div class="toolBarHRPad0 copyCutPasteBlock">
+            <select id="pasteSpecialOptions" name="pasteSpecialOptions" title="Paste Special">
+                <option value="noneSelected" checked="true">&#9660</option>
+                <option value="onlyValues">Only Values</option>
+                <option value="onlyFormats">Only Formats</option>
+                <option value="valuesAndFormats">Values and formats</option>
+            </select>
+        </div>
+
+        <div class="toolBarHRPad0 delButtonBlock"> <!-- visyondSolidBorder boxesBckColor4 -->
+            <button class='delButton' title='Delete (Del)'><span class="icon-remove"></span></button>
+        </div>
+
+    </div>
+
+    <div class="numericValueFormatting-toolbar">
+        <div class="toolBarHRPad"> <!-- visyondSolidBorder boxesBckColor4 -->
+            <button class="increment" id="numberFormat" title="Number Format">,</button>
+            <button class="increment" id="percFormat" title="Percentage Format">%</button>
+            <button class="increment" id="dateFormat" title="Date Format"><span style="font-size: 8px;margin-left: -3px;">May</span></button>
+        </div>
+
+        <div class="toolBarHRPad"> <!-- visyondSolidBorder boxesBckColor4 -->
+            <select id="unitDenominator"  name="unitDenominator" title="Units for display">
+                <option value="0">-</option> <!-- option for range selections where there could be some cells on None and others on something else-->
+<option value="1">No Units</option>
+<option value="2">Thousands</option>
+<option value="3">Millions</option>
+<option value="4">Billions</option>
+<option value="5">Trillions</option>
+<option value="6">Milli</option>
+<option value="7">Micro</option>
+<option value="8">Nano</option>
+<option value="9">Pico</option>
+            
+            </select>
+        </div>
+
+        <div class="toolBarHRPad"> <!-- visyondSolidBorder boxesBckColor4 -->
+            <button class="increment floatLeft" id="decrementInfoPane" title="Decrement decimals">.0</button>
+            <input class="inputIncrDecr floatLeft" id="decimalsInfoPane" name="decimals" type="text">
+            <button class="increment floatLeft" id="incrementInfoPane" title="Increment decimals">.00</button>
+        </div>
+
+        <div class="toolBarHRPad"> <!-- visyondSolidBorder boxesBckColor4 -->
+            <input id="prefix" class="floatLeft" placeholder="Type prefix and ENTER"></input>
+            <input id="suffix" class="floatLeft" placeholder="Type suffix and ENTER"></input>
+        </div>
+    </div>
+
+    <div class="cellFormatting-toolbar">
+        <div class="customFormattingBtns-toolbar toolBarHRPad"> <!-- visyondSolidBorder boxesBckColor4 -->
+            <button class="increment floatLeft" id="decrementFontInfoPane">A</button>
+            <input class="inputIncrDecr floatLeft" id="fontInfoPane" name="fontsize" type="text">
+            <button class="increment" id="incrementFontInfoPane">A</button>
+        </div>
+
+        <div class="customFormattingBtns-toolbar toolBarHRPad"> <!-- visyondSolidBorder boxesBckColor4 -->
+            <button class="increment" id="boldInfo" title="Bold"><span class="icon-bold"></span></button>
+            <button class="increment" id="italicInfo" title="Italic"><span class="icon-italic"></span></button>
+        </div>
+
+        <div class="customFormattingBtns-toolbar toolBarHRPad"> <!-- visyondSolidBorder boxesBckColor4 -->
+            <div class="fullSpectrumPickerBackgroundInfoTD spectrumColorPickerInLine">
+                <input type="text" id="fullSpectrumPickerBackgroundInfo">
+            </div>
+            <div class="fullSpectrumPickerColorInfoTD spectrumColorPickerInLine">
+                <input type="text" id="fullSpectrumPickerColorInfo">
+            </div>
+        </div>
+
+        <div class="customFormattingBtns-toolbar toolBarHRPad"> <!-- visyondSolidBorder boxesBckColor4 -->
+            <button class="increment" id="alighLInfo" title="Align Left"><span class="icon-paragraph-left"></span></button>
+            <button class="increment" id="alighCInfo" title="Align Center"><span class="icon-paragraph-center"></span></button>
+            <button class="increment" id="alighRInfo" title="Align Right"><span class="icon-paragraph-right"></span></button>
+        </div>
+
+        <div class="customFormattingBtns-toolbar toolBarHRPad"> <!-- visyondSolidBorder boxesBckColor4 -->
+            <select id="borderSelected" name="borderSelected">
+                <option value="no_common">-</option>
+                <option value=0>No Border</option> <!-- option for range selections where there could be some cells on None and others on something else-->
+                <option value=1>Top</option>
+                <option value=2>Right</option>
+                <option value=3>Bottom</option>
+                <option value=4>Left</option>
+                <option value=5>All</option>
+                <option value=6>Left-Right</option>
+                <option value=7>Top-Bottom</option>
+            </select>
+
+            <select id="borderType" name="borderType">
+                <option value="no_common">-</option>
+                <option value="solid">Solid</option>
+                <option value="dotted">Dotted</option>
+                <option value="dashed">Dashed</option>
+                <option value="double">Double</option>
+            </select>
+        </div>
+
+        <div class="customFormattingBtns-toolbar toolBarHRPad0">
+            <div class="fullSpectrumPickerColorBorderTD spectrumColorPickerInLine">
+                <input type="text" id="fullSpectrumPickerColorBorder">
+            </div>
+        </div>
+
+        <div class="customFormattingBtns-toolbar toolBarHRPad0">
+            <select id="borderWeight" name="borderWeight">
+                <option value="no_common">-</option>
+                <option value="1px">1px</option>
+                <option value="2px">2px</option>
+                <option value="3px">3px</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
+                        </div>
+
+                    </div>
+                    <!-- closes overGridDiv -->
+
+                    <div class="findCellPanel">
+    <!-- <div class="cellWarning" id="gotoCellTest"></div> -->
+    <!-- http://stackoverflow.com/questions/9093424/placeholder-in-contenteditable-focus-event-issue/14531126#14531126 -->
+    <div class="goToCell input" placeholder="Cell Name or ID to Find" contentEditable="true"></div>
+    <!-- <button id="goToCellBtn" type="button" class="fancy fancyColor1 fancyMini" value="Find cell"><span class="icon-search"></span></button> -->
+    <div class="goToCellMatch"></div>
+    <div id="reparseProgress" class="progress_in_grid"></div>
+</div>
+
+
+                    <div class="calculusGridWrapper">
+                        <div class="calculusGrid PrintArea"></div>
+                    </div>
+
+                </div>
+
+                <!-- ----------------- -->
+                <!-- OVERVIEW TAB -->
+                <!-- ----------------- -->
+                <div id="tabs-overview">
+    <div id="cases_outer_div" class="myBox visyondSolidBorder boxPs49">
+        <div>
+            <div class="myBox statementPaneTitle">
+                Cells with multiple cases
+            </div>
+            <div class="btn_prn">
+                <button onclick='Visyond.IO.printSpecial("#cases_outer_div");' title='Print or save as PDF' class="noUnderlineLink"><span class="icon-print"></span></button>
+            </div>
+        </div>
+
+        <div style="clear:both"></div>
+
+        <div id="cases_overview_list" class="overviewList">
+        </div>
+    </div>
+
+    <div id="scenarios_outer_div" class="myBox visyondSolidBorder boxPs49">
+        <div>
+            <div class="myBox statementPaneTitle">
+                Scenarios
+            </div>
+            
+            <div class="myBox statementScenarios">
+                <select id="selectScenariosToSummariseMul" name="selectScenariosToSummariseMul" multiple="multiple"></select>
+            </div>
+            
+            <div class="boxPs100 selectScenariosAreas">
+                <div title='Hide cells set on the same case in all the scenarios selected for comparison.' class="myBox visyondSolidBorder smallerPadding">
+                    <label class="marginRightTextToBtn">Hide cells on same cases</label>
+                    <label for="displayOnlyDiffInScenarios"></label>
+                    <input align="right" type="checkbox" id="displayOnlyDiffInScenarios"/>
+                </div>
+            </div>
+
+            <div class="btn_prn">
+                <button onclick='Visyond.IO.printSpecial("#scenarios_outer_div");' title='Print or save as PDF' class="noUnderlineLink"><span class="icon-print"></span></button>
+            </div>
+        </div>
+
+        <div style="clear:both"></div>
+
+        <div id="scenarios_overview_list" class="overviewList"></div>
+    </div>
+
+    <div id="comments_outer_div" class="myBox visyondSolidBorder boxPs49">
+        <div>
+            <div class="myBox statementPaneTitle">
+                Cells with comments or attachments
+            </div>
+            <div class="btn_prn">
+                <button onclick='Visyond.IO.printSpecial("#comments_outer_div");' title='Print or save as PDF' class="noUnderlineLink"><span class="icon-print"></span></button>
+            </div>
+        </div>
+        
+        <div style="clear:both"></div>
+
+        <div id="comments_overview_list" class="overviewList"></div>
+    </div>
+
+    <!-- <div style="clear:both"></div> -->
+
+
+    <div id="notdriven_outer_div" class="myBox visyondSolidBorder boxPs49">
+        <div>
+            <div title='Cells not driving or not driven by any other cell' class='myBox statementPaneTitle'>
+                Unused cell: 
+            </div>
+            <div class="btn_prn">
+                <button onclick='Visyond.IO.printSpecial("#notdriven_outer_div");' title='Print or save as PDF' class="noUnderlineLink"><span class="icon-print"></span></button>
+            </div>
+        </div>
+
+        <div style="clear:both"></div>
+
+        <div id="unused_overview_list" class="overviewList"></div>
+    </div>
+
+
+            <!--     commented until we find a better way to explain this to user -->
+            <!--
+<div class="ovbox ovbox100" class="listOfAttentionSeekingCells-panel">
+<div class='statementPaneTitle'>
+Cells which need your attention (Errors, ...)
+<a onclick='Visyond.IO.printSpecial(".listOfAttentionSeekingCells-panel .listOfAttentionSeekingCells");' title='Print or save as PDF'><img src='/images/print_pdf_icon.gif' align="right" alt='imagelink'/></a>
+</div>
+<div class="listOfAttentionSeekingCells overviewList"></div>
+</div>
+<div style="clear:both"></div>
+-->
+
+        </div>
+
+
+                <!-- ----------------- -->
+                <!-- DEPENDENCIES TAB -->
+                <!-- ----------------- -->
+                <div id="tabs-dependencies">
+
+    <div class="analysis">
+        <div class="sidebar">
+            <div class="sidebar-header visualImpactCLASSforTooltip"> 
+                <span class="icon double-arrow left toggle"> </span>
+                <span class="text" title="Activate Tooltips from the Settings Panel or click on Intro for more information on the module and its options"> Settings </span>
+            </div>
+
+            <div class="sidebar-container margin-bottom-100">                
+                <div class="section"> 
+                    <div class="title"> 
+                        <span class="icon dir down toggle"> </span>     
+                        <span class="text"> Dependencies Analysis </span>                 
+                    </div>             
+                    <div class="content">
+                        <label class="field-container"> 
+                            <p class="label"> Select Focus Cell </p>
+                            <div class="warningFixedArea">
+                                <div class="cellWarning depenOutCellTest"></div>
+                            </div>
+                            <div class="editableDIV depenFocusNode select-cell-field output-cell" placeholder='Type cell name' contenteditable="true" placeholder="Type cell here"></div>
+                            <div data-module-class="depenFocusNode" data-module-tab="tabs-dependencies" class="pickCellRefFromModule" title="Pick cell from grid" onclick="onClickPickCellRefFromModule(this)">Pick cell from grid</div>
+                            <div class="depenMatch"></div>
+                        </label>
+                        <label class="field-container"> 
+                            <p class="label"> Drivers' % Change </p>
+                            <div class="editInPlaceFixedArea">
+                                <div class="edit" id="driverPerChangeDep"></div>
+                            </div>
+                        </label>
+
+                        <!-- <div id="dependenciesProgress" class="progress"></div> -->
+                        <button class="btn" id="runDependencies" type="button" value="Explore Dependencies">
+                            Explore Dependencies
+                        </button>
+                        <!-- <button class="btn cancel-analysis-btn" id="cancelTornado" type="button" value="Cancel">
+                            Cancel
+                        </button> -->
+                    </div>
+                </div>
+
+                <div style="clear:both"></div>
+                 
+                <div class="section">    
+                    <div class="title"> 
+                        <span class="icon dir down toggle"> </span>     
+                        <span class="text pathAnalCLASSforTooltip" title="Activate Tooltips from the Settings Panel or click on Intro for more information on the module and its options"> Impact Analysis </span>
+                    </div>          
+
+                    <div class="content">
+                   
+                        <label class="field-container"> 
+                            <p class="label"> Path Cell 1 </p>
+                            <div class="warningFixedArea">
+                                <div class="cellWarning pathNode1CellTest"></div>
+                            </div>
+                            <div class="editableDIV pathNode1 select-cell-field output-cell" placeholder='Type cell name' contenteditable="true" placeholder="Type cell here"></div>
+                            <div data-module-class="pathNode1" data-module-tab="tabs-dependencies" class="pickCellRefFromModule" title="Pick cell from grid" onclick="onClickPickCellRefFromModule(this)">Pick cell from grid</div>
+                            <div class="pathNode1match"></div>
+                        </label>
+
+                        <label class="field-container"> 
+                            <p class="label"> Path Cell 2 </p>
+                            <div class="warningFixedArea">
+                                <div class="cellWarning pathNode2CellTest"></div>
+                            </div>
+                            <div class="editableDIV pathNode2 select-cell-field output-cell" placeholder='Type cell name' contenteditable="true" placeholder="Type cell here"></div>
+                            <div data-module-class="pathNode2" data-module-tab="tabs-dependencies" class="pickCellRefFromModule" title="Pick cell from grid" onclick="onClickPickCellRefFromModule(this)">Pick cell from grid</div>
+                            <div class="pathNode2match"></div>
+                        </label>
+
+                        <button class="btn" id="runPathSensitivity" type="button" value="Explore Path">
+                            Explore Path
+                        </button>
+
+                        <div style="clear:both;"></div>
+
+                        <div id="pathSensitivityResult" class="results data-table"></div>
+              
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="printDivDependencies" class="main-container withSetting dependencies-component">       
+
+            <div class="header">
+                <div class="title myBox"> 
+                    <span class="text visualImpactCLASSforTooltip dependenciesCLASSforIntro"> Dependencies Analysis </span>
+                    <span class="icon-print" onclick='Visyond.IO.printSpecial("#printDivDependencies");'></span>
+                    <!-- <div class="selected-analysis">
+                        <span class="icon dir right toggle"> </span>
+                        Selected analysis
+                        <span class="selected-analysis-name"> </span>
+                        by 
+                        <span class="selected-analysis-author"> </span>
+                    </div> -->
+                </div>
+            </div>     
+
+            <div class="container margin-40">
+                <!-- <div class="full-history-container">
+                    <div class="full-history-title">Saved Analyses</div>
+                    <div class="full-history-list">
+                        
+                    </div>
+                </div> -->
+               <!--  <div class="myBox visyondSolidBorder boxesBckColor3 centerText history-graph tornado-history-graph">
+                    <span class="full-history-toggle">Show full history</span>
+                </div> -->
+                <div class="myBox results-graphs"> 
+                    <div class="graph-container"> 
+                        <div class="graph-content"> 
+                            <div id="force-graph-full" class="chart-item"></div>
+
+                            <div class="contextMenu" id="rightClickMenuDependecy" >
+                                <ul>
+                                    <!--<li id="open"><img src="folder.png" /> Open</li>-->
+                                    <!--<li id="ShowInGrid">Show In Grid</li>-->
+                                    <li id="ExpandNode">Expand Both Side</li>
+                                    <li id="CollapseNode">Collapse Both Side</li>
+                                    <li id="startWithNode">Start With Node</li>
+                                    <li id="HideNode">Hide Node</li>
+                                </ul>
+                            </div>
+                            <!-- <div id="forcedFullGraphDiv"></div> we do not need force graph anymore...we will keep commented and delete later -->
+                            <!-- <div id="nodes"></div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+                <!-- ----------------- -->
+                <!-- SENSITIVITY TAB -->
+                <!-- ----------------- -->
+
+                <div id="tabs-sensitivity">
+    
+    <div class="analysis">
+        <div class="sidebar">
+            <div class="sidebar-header sensitivityCLASSforTooltip"> 
+                <span class="icon double-arrow left toggle"> </span>
+                <span class="text" title="Activate Tooltips from the Settings Panel or click on Intro for more information on the module and its options"> Settings </span>
+            </div>
+
+            <div class="sidebar-container margin-bottom-160">                
+                <div class="section">
+                    <div class="title"> 
+                        <span class="icon dir down toggle"> </span>     
+                        <span class="text"> Select Output Cell </span>                       
+                    </div>            
+                    <div class="content">
+                        <label class="field-container"> 
+                            <div class="warningFixedArea">
+                                <div class="cellWarning sensOutCellTest"></div>
+                            </div>
+                            <div class="editableDIV sensOutput select-cell-field output-cell" placeholder="Type cell name" contenteditable="true" placeholder="Type cell here"></div>
+                            <div data-module-class="sensOutput" data-module-tab="tabs-sensitivity" class="pickCellRefFromModule" title="Pick cell from grid" onclick="onClickPickCellRefFromModule(this)">Pick cell from grid</div>
+                            <div class="sensOutMatch"></div>
+                        </label>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="title"> 
+                        <span class="icon dir down toggle"> </span>     
+                        <span class="text"> Select Input Cell </span>                       
+                    </div>            
+                    <div class="content">
+                        <label class="field-container"> 
+                            <div class="warningFixedArea">
+                                <div class="cellWarning sensIn1CellTest"></div>
+                            </div>
+                            <div class="editableDIV sensInput select-cell-field output-cell" placeholder="Type cell name" contenteditable="true" placeholder="Type cell here"></div>
+                            <div data-module-class="sensInput" data-module-tab="tabs-sensitivity" class="pickCellRefFromModule" title="Pick cell from grid" onclick="onClickPickCellRefFromModule(this)">Pick cell from grid</div>
+                            <div class="sensInMatch"></div>
+                        </label>
+                        <label class="field-container"> 
+                            <button class="switch" id="switchInt1">Input Range</button>
+                            <button class="switch" id="switchVal1">Input Values</button>
+                        </label>
+                        <label id="commaSepBlock1" class="field-container">
+                            <p class="label"> Comma or Space Separated Values </p>
+                            <input placeholder="Type comma separated values" id="sensVal"></input>
+                        </label>
+                        <div id="rangeBlock1">
+                            <label class="field-container"> 
+                                <p id="rangeMin" class="label"> Range Minimum </p>
+                                <div class="edit" id="sensMin"></div>
+                            </label>
+                            <label class="field-container"> 
+                                <p id="rangeMax" class="label"> Range Maximum </p>
+                                <div class="edit" id="sensMax"></div>
+                            </label>
+                            <label class="field-container"> 
+                                <p id="intervals" class="label"> No. of Intervals </p>
+                                <div class="edit" id="sensIntervals"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="title"> 
+                        <span class="icon dir down toggle"> </span>     
+                        <span class="text"> Select Input Cell 2 <span style='font-size: 10px;'>(optional)</span></span>                       
+                    </div>            
+                    <div class="content">
+                        <label class="field-container"> 
+                            <div class="warningFixedArea">
+                                <div class="cellWarning sensIn2CellTest"></div>
+                            </div>
+                            <div class="editableDIV sensInput2 select-cell-field output-cell" placeholder="Type cell name" contenteditable="true" placeholder="Type cell here"></div>
+                            <div data-module-class="sensInput2" data-module-tab="tabs-sensitivity" class="pickCellRefFromModule" title="Pick cell from grid" onclick="onClickPickCellRefFromModule(this)">Pick cell from grid</div>
+                            <div class="sensInMatch2"></div>
+                        </label>
+                        <label class="field-container"> 
+                            <button class="switch" id="switchInt2">Input Range</button>
+                            <button class="switch" id="switchVal2">Input Values</button>
+                        </label>
+                        <label id="commaSepBlock2" class="field-container"> 
+                            <p class="label"> Comma or Space Separated Values </p>
+                            <input placeholder="Type comma separated values" id="sensVal2"></input>
+                        </label>
+                        <div id="rangeBlock2">
+                            <label class="field-container"> 
+                                <p id="rangeMin2" class="label"> Range Minimum </p>
+                                <div class="edit" id="sensMin2"></div>
+                            </label>
+                            <label class="field-container"> 
+                                <p id="rangeMax2" class="label"> Range Maximum </p>
+                                <div class="edit" id="sensMax2"></div>
+                            </label>
+                            <label class="field-container"> 
+                                <p id="intervals2" class="label"> No. of Intervals </p>
+                                <div class="edit" id="sensIntervals2"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-footer"> 
+               <div id="sensitivityProgress" class="progress"></div>
+                <button class="btn" id="runSensitivity" type="button" value="Run Sensitivity">
+                    Run Sensitivity
+                </button>
+                <button class="btn cancel-analysis-btn" id="cancelSensitivity" type="button" value="Cancel">
+                    Cancel
+                </button>
+            </div>
+        </div>
+
+        <div id="printDivSens" class="main-container withSetting toggleChartSetting sensitivity-component">
+
+            <div class="header">
+                <div class="title myBox"> 
+                    <span class="text sensitivityCLASSforTooltip sensitivityCLASSforIntro" title="Activate Tooltips from the Settings Panel or click on Intro for more information on the module and its options"> Sensitivity Analysis </span>
+                    <span class="icon-print" title="Print Analysis" onclick='Visyond.IO.printSpecial("#printDivSens");'></span>
+                    <!-- <div class="divSave fast-hide">
+                        <input class="analysis-name" placeholder="Analysis Name"></input>
+                        <input class="analysis-comment" placeholder="Optional Comment"></input>
+                        <span class="save-analysis icon-disk" title="Save Analysis" ></span>
+                    </div> -->
+                    <div class="selected-analysis">
+                        <span class="icon dir right toggle"> </span>
+                        Selected analysis
+                        <span class="selected-analysis-name"> </span>
+                        by 
+                        <span class="selected-analysis-author"> </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="full-history-container">
+                    <div class="full-history-title">Saved Analyses</div>
+                    <div class="full-history-list">
+                        
+                    </div>
+                </div>                
+                
+                <div class="results-graphs myBox"> 
+                    <div class="graph-container"> 
+                        <div class="graph-content"> 
+                            <div id="sensChart" class="chart-item"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sensResults" class="data-table myBox boxPs99"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                <!-- ----------------- -->
+                <!-- SENSITIVITY TAB -->
+                <!-- ----------------- -->
+
+                <div id="tabs-tornado">
+
+    <div class="analysis">
+        <div class="sidebar">
+            <div class="sidebar-header tornadoCLASSforTooltip"> 
+                <span class="icon double-arrow left toggle"> </span>
+                <span class="text" title="Activate Tooltips from the Settings Panel or click on Intro for more information on the module and its options"> Settings </span>
+            </div>
+
+            <div class="sidebar-container margin-bottom-160">                
+                <div class="section">          
+                    <div class="content">
+                        <label class="field-container"> 
+                            <p class="label"> Select Output Cell </p>
+                            <div class="warningFixedArea">
+                                <div class="cellWarning tornadoOutCellTest"></div>
+                            </div>
+                            <div class="editableDIV tornadoOutput select-cell-field output-cell" placeholder='Type cell name' contenteditable="true" placeholder="Type cell here"></div>
+                            <div data-module-class="tornadoOutput" data-module-tab="tabs-tornado" class="pickCellRefFromModule" title="Pick cell from grid" onclick="onClickPickCellRefFromModule(this)">Pick cell from grid</div>
+                            <div class="tornadoOutMatch"></div>
+                        </label>
+                        <label class="field-container"> 
+                            <p class="label"> Drivers' % Change </p>
+                            <div class="editInPlaceFixedArea">
+                                <div class="edit" id="driverPerChangeTornado"></div>
+                            </div>
+                        </label>
+                        <label class="field-container"> 
+                            <p class="label"> Visualised drivers </p>
+                            <div class="editInPlaceFixedArea">
+                                <div class="edit" id="tornadoMaxNumDrivers"></div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-footer"> 
+                <div id="tornadoProgress" class="progress"></div>
+                <button class="btn" id="runTornado" type="button" value="Run Tornado">
+                    Run Tornado
+                </button>
+                <button class="btn cancel-analysis-btn" id="cancelTornado" type="button" value="Cancel">
+                    Cancel
+                </button>
+            </div>
+        </div>
+
+        <div id="printDivTorn" class="main-container withSetting toggleChartSetting tornado-component">
+
+            <div class="header">
+                <div class="title myBox"> 
+                    <span class="text tornadoCLASSforTooltip tornadoCLASSforIntro" title="Activate tooltips from the Settings Panel or click on Intro for more information on the module and its options"> Tornado Analysis </span>
+                    <span class="icon-print" title="Print Analysis" onclick='Visyond.IO.printSpecial("#printDivTorn");'></span>
+                    <!-- <div class="divSave fast-hide">
+                        <input class="analysis-name" placeholder="Analysis Name"></input>
+                        <input class="analysis-comment" placeholder="Optional Comment"></input>
+                        <span class="save-analysis icon-disk" title="Save Analysis" ></span>
+                    </div> -->
+                    <div class="selected-analysis">
+                        <span class="icon dir right toggle"> </span>
+                        Selected analysis
+                        <span class="selected-analysis-name"> </span>
+                        by 
+                        <span class="selected-analysis-author"> </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="full-history-container">
+                    <div class="full-history-title">Saved Analyses</div>
+                    <div class="full-history-list">
+                        
+                    </div>
+                </div>                
+                <!-- <div class="myBox visyondSolidBorder boxesBckColor3 centerText history-graph tornado-history-graph">
+                    
+                </div> -->
+                <div class="myBox results-graphs"> 
+                    <div class="graph-container"> 
+                        <div class="graph-content"> 
+                            <div id="tornadoChart" class="chart-item"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tornadoResultsSorted" class="data-table myBox boxPs99"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                <!-- ----------------- -->
+                <!-- SCENARIOS TAB -->
+                <!-- ----------------- -->
+
+                <div id="tabs-scenarios">
+  
+    <div class="analysis">
+        <div class="sidebar">
+            <div class="sidebar-header scenarioCLASSforTooltip"> 
+                <span class="icon double-arrow left toggle"> </span>
+                <span class="text" title="Activate Tooltips from the Settings Panel or click on Intro for more information on the module and its options"> Settings </span>
+            </div>
+
+            <div class="sidebar-container margin-bottom-160">                
+                <div class="section">          
+                    <div class="content">
+                        <label class="field-container"> 
+                            <p class="label"> Select Output Cell </p>
+                            <div class="warningFixedArea">
+                                <div class="cellWarning scenOutCellTest"></div>
+                            </div>
+                            <div class="editableDIV scenOutput select-cell-field output-cell" placeholder='Type cell name' contenteditable="true" placeholder="Type cell here"></div>
+                            <div data-module-class="scenOutput" data-module-tab="tabs-scenarios" class="pickCellRefFromModule" title="Pick cell from grid" onclick="onClickPickCellRefFromModule(this)">Pick cell from grid</div>
+                            <div class="scenOutMatch"></div>
+                        </label>
+                        <label class="field-container selectScenariosIntroHook"> 
+                            <p class="label"> Scenarios To Compare </p>
+                            <select id="selectScenariosToCompareMul" name="selectScenariosToCompareMul" multiple="multiple"></select>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-footer"> 
+                    <div id="scenariosProgress" class="progress"></div>
+                    <button class="btn" id="runScenarios" type="button" value="Compare Scenarios">
+                        Compare Scenarios
+                    </button>
+                    <button class="btn cancel-analysis-btn" id="cancelScenarios" type="button" value="Cancel">
+                        Cancel
+                    </button>
+                </div>
+        </div>
+
+        <div id="printDivScen" class="main-container withSetting toggleChartSetting scenarios-component">
+
+            <div class="header">
+                <div class="title myBox"> 
+                    <span class="text scenarioCLASSforTooltip scenarioCLASSforIntro" title="Activate Tooltips from the Settings Panel or click on Intro for more information on the module and its options"> Scenario Analysis </span>
+                    <span class="icon-print" title="Print Analysis" onclick='Visyond.IO.printSpecial("#printDivScen");'></span>
+                    <!-- <div class="divSave fast-hide">
+                        <input class="analysis-name" placeholder="Analysis Name"></input>
+                        <input class="analysis-comment" placeholder="Optional Comment"></input>
+                        <span class="save-analysis icon-disk" title="Save Analysis" ></span>
+                    </div> -->
+                    <div class="selected-analysis">
+                        <span class="icon dir right toggle"> </span>
+                        Selected analysis
+                        <span class="selected-analysis-name"> </span>
+                        by 
+                        <span class="selected-analysis-author"> </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="full-history-container">
+                    <div class="full-history-title">Saved Analyses</div>
+                    <div class="full-history-list">
+                        
+                    </div>
+                </div>                
+                
+                <div class="results-graphs myBox"> 
+                    <div class="graph-container"> 
+                        <div class="graph-content"> 
+                            <div id="scenChart" class="chart-item"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="scenResults" class="data-table myBox boxPs99"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                <!-- ----------------- -->
+                <!-- SIMULATION TAB -->
+                <!-- ----------------- -->
+
+                <div id="tabs-simulation">
+
+    <div id="distrFitPane" class="visyond-floating-panel in-cell-floating visyond-pane">
+        <span class="draghandle" unselectable="on"> </span>
+        <button class='closePane closeOptPane' title='Close pane'></button>
+        <button class='enlargePane' title='Enlarge pane'></button>
+        <div class='paneDragHandle' title='Drag panel'></div>
+        <div class='chartPaneHeader paneHeader'>Distribution Fitting<span class="cellSelected"></span></div>
+        <hr />
+
+        <div class="paneContainer">
+
+            <label class="field-container" style="text-align: center">
+                <p class="label"> Paste Comma or Space Separated samples to see which distributions may fit the data </p>
+                <textarea id="distrFitInput" placeholder="Type comma or space separated values"></textarea>
+            </label>
+            
+            <button id="runFitting" class="runAnalysisBtn" value="Run Distribution Fitting" onclick="distributionFitting()"> Fit the dataset </button>
+
+            <div id="distrFitChart1" class="chart-item"></div>
+            <!-- <div id="distrFitChart2" class="chart-item"></div> -->
+            <div class="distrFitTable"></div>
+            
+        </div>
+
+        <div class="paneResize">
+            <!-- <span class="resizehandle" unselectable="on"> </span> -->
+        </div>
+    </div>
+
+    <div class="analysis"> 
+        <div class="sidebar">
+            <div class="sidebar-header simulationCLASSforTooltip"> 
+                <span class="icon double-arrow left toggle"> </span>
+                <span class="text" title="Activate Tooltips from the Settings Panel or click on Intro for more information on the module and its options"> Settings </span>
+            </div>
+            <div class="sidebar-container margin-bottom-200">                
+                <div class="section">
+                    <div class="title"> 
+                        <span class="icon dir down toggle"> </span>     
+                        <span class="text"> Select Output Cell </span>                       
+                    </div>              
+                    <div class="content">
+                        <label class="field-container"> 
+                            <div class="warningFixedArea">
+                                <div class="cellWarning simOutCellTest"></div>
+                            </div>
+                            <div class="editableDIV simOutput select-cell-field output-cell" placeholder="Type cell name" contenteditable="true" placeholder="Type cell here"></div>
+                            <div data-module-class="simOutput" data-module-tab="tabs-simulation" class="pickCellRefFromModule" title="Pick cell from grid" onclick="onClickPickCellRefFromModule(this)">Pick cell from grid</div>
+                            <div class="simOutMatch"></div>
+                        </label>
+                        <label class="field-container iterationsForIntro">  <!-- DO NOT DELETE classes used for intro -->
+                            <p class="label"> Number of iterations </p>
+                            <select id="simIterations" name="chartType">
+                                <option value="500">500</option>
+                                <option value="1000">1,000</option>
+                                <option value="5000">5,000</option>
+                                <option value="10000">10,000</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+
+                <div id="simInputLines" class="clearfix"></div>
+            </div>
+            <div class="sidebar-footer">
+                <span id="addSimInputLine" class="btn-link add-input-btn"> Add Input </span>
+                
+                <div id="simulationProgress" class="progress"></div>
+                <button id="runSimulation" class="btn" value="Compare Scenarios">
+                    Run Simulation 
+                </button>
+                <button id="cancelSimulation" class="btn cancel-analysis-btn" value="Cancel">
+                    Cancel
+                </button>
+            </div>
+            
+        </div>
+
+        <div id="printDivSim" class="main-container toggleChartSetting withSetting simulation-component">
+            <div class="header">
+                <div class="myBox title"> 
+                    <span class="text simulationCLASSforTooltip simulationCLASSforIntro" title="Activate Tooltips from the Settings Panel or click on Intro for more information on the module and its options"> Simulation Analysis </span>
+                    <span class="icon-print" title="Print Analysis" onclick='Visyond.IO.printSpecial("#printDivSim");'></span>
+
+                     <span id="distrFitBtn" class="pickCellRefFromModule" title="Fit distribution from data"><span class="icon-bars"></span><span>What distribution for my data?</span></span>
+                    <!-- <div class="divSave fast-hide">
+                        <input class="analysis-name" placeholder="Analysis Name"></input>
+                        <input class="analysis-comment" placeholder="Optional Comment"></input>
+                        <span class="save-analysis icon-disk" title="Save Analysis" ></span>
+                    </div> -->
+                    <div class="selected-analysis">
+                        <span class="icon dir right toggle"> </span>
+                        Selected analysis
+                        <span class="selected-analysis-name"> </span>
+                        by 
+                        <span class="selected-analysis-author"> </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="full-history-container">
+                    <div class="full-history-title">Saved Analyses</div>
+                    <div class="full-history-list">
+                        
+                    </div>
+                </div>                
+                <!-- <div class="myBox visyondSolidBorder boxesBckColor3 centerText history-graph simulation-history-graph">
+                    
+                </div> --> 
+                <div class="myBox results-data-table"> 
+                    <div class="results-data-table-cell first"> 
+                        <div class="results-data-table-cell-content">
+                            <span class="title">Min </span>
+                            <span id="simMinVal" class="value"></span>
+                        </div>
+                    </div>
+                    <div class="results-data-table-cell"> 
+                        <div class="results-data-table-cell-content">
+                            <span class="title">Max </span>
+                            <span id="simMaxVal" class="value"></span>
+                        </div>
+                    </div>
+                    <div class="results-data-table-cell"> 
+                        <div class="results-data-table-cell-content">                   
+                            <span class="title">Mean </span>
+                            <span id="simMeanVal" class="value"></span>
+                        </div>
+                    </div>
+                    <div class="results-data-table-cell"> 
+                        <div class="results-data-table-cell-content">
+                            <span class="title">Median </span>
+                            <span id="simMedianVal" class="value"></span>
+                        </div>
+                    </div>
+                    <div class="results-data-table-cell"> 
+                        <div class="results-data-table-cell-content">
+                            <span class="title">Variance </span>
+                            <span id="simVarianceVal" class="value"></span>
+                        </div>  
+                    </div>
+                    <div class="results-data-table-cell last"> 
+                        <div class="results-data-table-cell-content">
+                            <span class="title">Stdv </span>
+                            <span id="simStdvVal" class="value"></span>
+                        </div>  
+                    </div>
+                </div>
+
+                <div class="results-graphs"> 
+                    <div class="myBox graph-container boxPs49"> 
+                        <div class="graph-title"> 
+                            <span> Probability Density Function </span>
+                            <div class="distribution-probability">
+                                <div class="probability-label">
+                                    <span class="title">Probability in range = </span>
+                                    <span class="sim_range_result_pdf value"></span>
+                                </div>
+                                <div class="probability-range">                         
+                                    <span class="range-from">Range from</span>
+                                    <input id="sim_range1_pdf" class="probability-range-from">                         
+                                    <span class="range-to">to</span>
+                                    <input id="sim_range2_pdf" class="probability-range-to">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="graph-slider">
+                            <div id="sliderSimChart_pdf" class="probability-slider">
+                            </div>
+                        </div>
+
+                        <!-- <div class="graph-brush" id="sliderSimChart_pdf_brush">
+                            <span class="sim_range_result_pdf value"></span>
+                        </div> -->
+
+                        <div class="graph-content topMargin"> 
+                            <div id="simChart" class="chart-item"></div>
+                        </div>
+                    </div>
+
+                    <div class="myBox graph-container boxPs49"> 
+                        <div class="graph-title"> 
+                            <span> Cumulative Distribution Function </span>
+                            <div class="distribution-probability">
+                                <div class="probability-label">
+                                    <span class="title">Probability in range = </span>
+                                    <span class="sim_range_result value"></span>
+                                </div>
+                                <div class="probability-range">                         
+                                    <span class="range-from">Range from</span>
+                                    <input id="sim_range1" class="probability-range-from">                         
+                                    <span class="range-to">to</span>
+                                    <input id="sim_range2" class="probability-range-to">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="graph-slider">
+                            <div id="sliderSimChart" class="probability-slider">
+                            </div>
+                        </div>
+
+                        <!-- <div class="graph-brush" id="sliderSimChart_brush">
+                            <span class="sim_range_result value"></span>
+                        </div> -->
+
+                        <div class="graph-content topMargin"> 
+                            <div id="simChartCum" class="chart-item"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                <!-- END SIMULATION TAB -->
+
+
+                <!-- ----------------- -->
+                <!-- REGRESSION FORECASTING TAB -->
+                <!-- ----------------- -->
+
+                
+                <!-- END REGRESSION FORECASTING TAB -->
+
+
+                <!-- ----------------- -->
+                <!-- STATEMENTS TAB -->
+                <!-- ----------------- -->
+
+                <div id="tabs-statements">
+
+    <div class="analysis">
+        <div class="sidebar">
+            <div class="sidebar-header statementsCLASSforTooltip">
+                <span class="icon double-arrow left toggle"> </span>
+                <span class="text" title="Activate Tooltips from the Settings Panel or click on Intro for more information on the module and its options"> Settings </span>
+            </div>
+
+            <div class="sidebar-container margin-bottom-100">
+
+                <div class="section">
+                    <div class="title">
+                        <span class="icon dir down toggle"> </span>
+                        <span class="text"> Format </span>
+                    </div>
+
+                    <div class="content">
+                        <label class="field-container">
+                            <p class="label">Units</p>
+                            <select id="unitDenominatorStat" name="unitDenominator" title="Units for display">
+                                <option value="0">-</option> <!-- option for range selections where there could be some cells on None and others on something else-->
+<option value="1">No Units</option>
+<option value="2">Thousands</option>
+<option value="3">Millions</option>
+<option value="4">Billions</option>
+<option value="5">Trillions</option>
+<option value="6">Milli</option>
+<option value="7">Micro</option>
+<option value="8">Nano</option>
+<option value="9">Pico</option>
+
+                            </select>
+                        </label>
+
+                        <label class="field-container">
+                            <p class="label">Decimals for numbers</p>
+                            <div class="decimalsBlock">
+                                <button class="increment floatLeft" id="decrementStat" title="Decrement decimals">.0</button>
+                                <input class="inputIncrDecr floatLeft" id="decimalsStat" name="decimals" type="text">
+                                <button class="increment floatLeft" id="incrementStat" title="Increment decimals">.00</button>
+                            </div>
+                        </label>
+
+                        <label class="field-container">
+                            <p class="label">Decimals for percentages</p>
+                            <div class="decimalsBlock">
+                                <button class="increment floatLeft" id="decrementStatPerc" title="Decrement decimals">.0</button>
+                                <input class="inputIncrDecr floatLeft" id="decimalsStatPerc" name="decimals" type="text">
+                                <button class="increment floatLeft" id="incrementStatPerc" title="Increment decimals">.00</button>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="title statementSetForIntro">
+                        <span class="icon dir down toggle"> </span>
+                        <span class="text"> Parameters </span>
+                    </div>
+
+                    <div class="content">
+
+                        <label class="field-container">
+                            <p class="label"> Title (e.g., 'Company Name, in USD')</p>
+                            <div class="edit" id="statementsTitle"></div>
+                        </label>
+
+                        <label class="field-container">
+                            <div class="btn-toggle">
+                                <span class="label">Display ratios </span>
+                                <label for="showGrowthToggleBtn"></label>
+                                <input type="checkbox" id="showGrowthToggleBtn">
+                            </div>
+
+                        </label>
+
+                        <label class="field-container">
+                            <div class="btn-toggle">
+                                <span class="label">Display breakdown</span>
+                                <label for="showBreakdownToggleBtn"></label>
+                                <input type="checkbox" id="showBreakdownToggleBtn">
+                            </div>
+                        </label>
+
+                        <label class="field-container">
+                            <p class="label"> Select Worksheet </p>
+                            <select id="selectWorkbookInStat" name=""></select>
+                        </label>
+
+                        <label class="field-container">
+                            <p class="label"> Select Periods </p>
+                            <select id="selectPeriods" name="" multiple="multiple"></select>
+                        </label>
+
+                        <label class="field-container">
+                            <p class="label"> Select Min Cash required </p>
+                            <select id="selectCash" name="" multiple="multiple"></select>
+                        </label>
+
+                        <label class="field-container">
+                            <p class="label"> Target Debt to Equity ratio </p>
+                            <button class="switch" id="divDV" title="Debt to Value ratio">D/V</button>
+                            <button class="switch" id="divDE" title="Debt to Equity ratio">D/E</button>
+                        </label>
+
+                        <label class="field-container">
+                            <div class="edit" id="selectDEorDV"></div>
+                        </label>
+
+                        <label class="field-container">
+                            <p class="label"> Interest Rate </p>
+                            <select id="selectInterest" name="" multiple="multiple"></select>
+                        </label>
+
+                        <label class="field-container">
+                            <p class="label"> Tax Rate </p>
+                            <select id="selectTax" name="" multiple="multiple"></select>
+                        </label>
+
+                        <label class="field-container">
+                            <p class="label"> Dividend payout ratio </p>
+                            <select id="selectDiv" name="" multiple="multiple"></select>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="title">
+                        <span class="icon dir down toggle"> </span>
+                        <span class="text"> Drivers </span>
+                    </div>
+
+                    <div class="content">
+
+                        <label class="field-container">
+                            <p class="label"> Revenues </p>
+                             <select id="selectRevenues" name="" multiple="multiple"></select>
+                        </label>
+
+                        <label class="field-container">
+                            <p class="label"> COGS </p>
+                            <select id="selectCogs" name="" multiple="multiple"></select>
+                        </label>
+
+                        <label class="field-container">
+                            <p class="label"> OPEX </p>
+                            <select id="selectOpex" name="" multiple="multiple"></select>
+                        </label>
+
+                        <label class="field-container">
+                            <p class="label"> CAPEX </p>
+                            <select id="selectCapex" name="" multiple="multiple"></select>
+                        </label>
+
+                        <label class="field-container">
+                            <div id="depInput"></div>
+                        </label>
+
+                         <label class="field-container">
+                            <p class="label"> Days in a period </p>
+                        </label>
+
+                        <label class="field-container">
+                            <div class="edit" id="days_in_period"></div>
+                        </label>
+
+                        <label class="field-container">
+                            <p class="label"> Inventory </p>
+                            <button class="switch" id="invDays" title="Use selected item as days">Days</button>
+                            <button class="switch" id="invAmount" title="Use selected item as amount">Amount</button>
+                        </label>
+
+                        <label class="field-container">
+                            <select id="selectInv" name="" multiple="multiple"></select>
+                        </label>
+
+                        <label class="field-container">
+                            <p class="label"> Acc. Receivable </p>
+                            <button class="switch" id="recDays" title="Use selected item as days">Days</button>
+                            <button class="switch" id="recAmount" title="Use selected item as amount">Amount</button>
+                        </label>
+
+                        <label class="field-container">
+                            <select id="selectAccRec" name="" multiple="multiple"></select>
+                        </label>
+
+                        <label class="field-container">
+                            <p class="label"> Acc. Payable </p>
+                            <button class="switch" id="payDays" title="Use selected item as days">Days</button>
+                            <button class="switch" id="payAmount" title="Use selected item as amount">Amount</button>
+                        </label>
+
+                        <label class="field-container">
+                            <select id="selectAccPay" name="" multiple="multiple"></select>
+                        </label>
+
+                        <label class="field-container">
+                            <p class="label"> Other Current Assets </p>
+                            <select id="selectCurrentAssets" name="" multiple="multiple"></select>
+                        </label>
+
+                        <label class="field-container">
+                            <p class="label"> Other Current Liabilities </p>
+                            <select id="selectCurrentLiab" name="" multiple="multiple"></select>
+                        </label>
+
+                    </div>
+
+                </div>
+            </div> <!-- section container -->
+        </div> <!-- analysis -->
+
+        <div id="printDivStat" class="main-container withSetting">
+
+            <div class="header">
+                <div class="myBox title">
+                    <span class="text statementsForIntro statementsCLASSforTooltip" title="Activate Tooltips from the Settings Panel or click on Intro for more information on the module and its options"> Financial Statements </span>
+                    <span class="icon-print" onclick='Visyond.IO.printSpecial("#printDivStat");'></span>
+                </div>
+            </div>
+
+            <!-- <div class="full-history-container">
+                <div class="full-history-title">Saved Analyses</div>
+                <div class="full-history-list">
+                </div>
+            </div> -->
+
+            <!-- <div class="myBox visyondSolidBorder boxesBckColor3 centerText history-graph simulation-history-graph">
+                <span class="full-history-toggle">Show full history</span>
+            </div> -->
+            <div class="container">
+                <div class="toggle-section">
+                    <div id="cp_incomeHeader" class='cpl toggle-section-title'>Income Statement</div>
+                    <div style="clear:both;"></div>
+                    <div id="cp_income">
+                        <div id="plAccount" class="statementDIV"></div>
+                    </div>
+                </div>
+
+                <div class="toggle-section">
+                    <div id="cp_balanceHeader" class='cpl toggle-section-title'>Balance Sheet</div>
+                    <div style="clear:both;"></div>
+                    <div id="cp_balance">
+                        <div id="bsAccount" class="statementDIV"></div>
+                    </div>
+                </div>
+
+                <div class="toggle-section">
+                    <div id="cp_cashHeader" class='cpl toggle-section-title'>Cash Flow Statement</div>
+                    <div style="clear:both;"></div>
+                    <div id="cp_cash">
+                        <div id="cfAccount" class="statementDIV"></div>
+                    </div>
+                </div>
+
+                <div class="toggle-section">
+                    <div id="cp_ratiosHeader" class='cpl toggle-section-title'>Ratios</div>
+                    <div style="clear:both;"></div>
+                    <div id="cp_ratios">
+                        <div id="ratios" class="statementDIV"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                <!-- ----------------- -->
+                <!-- PRESENTATION TAB -->
+                <!-- ----------------- -->
+                <!--            <div id="tabs-presentation">-->
+                <!--      -->
+                <!--                --><!--      -->
+                <!--            </div>-->
+                <!-- END PRESENTATION TAB -->
+
+            <!--  FIXME! is it needed?-->
+            <!-- </div> -->
+            <!--END of ---------option panel ------------ -->
+            </div><!-- tabs -->
+        </div><!-- top-container-inner -->
+
+    <script id="labelOptions-tpl" type="text/x-handlebars-template">
+        <hr />
+        <table>
+            <tr>
+                <td>
+                    <label class="showQuestionMark" title="Move ticks.">Move ticks: </label>
+                </td>
+
+                <td COLSPAN='3'>
+                    <table>
+                        <tr>
+                            <td>
+                            </td>
+
+                            <td align="center">
+                                <button class="increment" id="moveTickUp" title='Move tick up'>&uarr;</button>
+                            </td>
+
+                            <td>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <button class="increment" id="moveTickLeft" title='Move tick left'>&larr;</button>
+                            </td>
+
+                            <td class="rangeWord">
+                                <div>H: <span id="HmoveTickDiv"></span> | V: <span id="VmoveTickDiv"></span></div>
+                            </td>
+
+                            <td>
+                                <button class="increment" id="moveTickRight" title='Move tick right'>&rarr;</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                            </td>
+
+                            <td align="center">
+                                <button class="increment" id="moveTickDown" title='Move tick down'>&darr;</button>
+                            </td>
+
+                            <td>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <label class="showQuestionMark" title="Rotate ticks.">Rotate ticks: </label>
+                </td>
+
+                <td COLSPAN='3'>
+                    <table>
+
+                        <tr>
+                            <td>
+                                <button class="increment" style="font-size: 14px" id="rotateCkW" title='Rotate Clockwise'>&#8635;</button>
+                            </td>
+
+                            <td class="rangeWord">
+                                <div id="rotateTickDiv"></div>
+                            </td>
+
+                            <td align="center">
+                                <button class="increment" style="font-size: 14px" id="rotateACkW" title='Rotate Anticlockwise'>&#8634;</button>
+                            </td>
+
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label class="showQuestionMark" title="Resize ticks.">Resize ticks: </label>
+                </td>
+
+                <td COLSPAN='3'>
+                    <table>
+
+                        <tr>
+                            <td>
+                                <button class="increment" id="resizeLeft" title='Decrease font size.'>&larr;</button>
+                            </td>
+
+                            <td class="rangeWord">
+                                <div id="resizeTickDiv"></div>
+                            </td>
+
+                            <td align="center">
+                                <button class="increment" id="resizeRight" title='Increase font size.'>&rarr;</button>
+                            </td>
+
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label class="showQuestionMark" title="Change color.">Change color: </label>
+                </td>
+
+                <td COLSPAN='3'>
+                    <input type='text' id="fullSpectrumPicker"/>
+                </td>
+            </tr>
+        </table>
+    </script>
+    <!-- Charts templates -->
+
+    <script id="ticksOptionsTpl" type="text/x-handlebars-template">
+        <div class="visyond-floating-panel ticks-options">
+    <button class='closeOptPane' title='Close pane'></button>
+    <div class='paneDragHandle' title='Drag panel'></div>
+    <div class="chartPaneHeader marginLeft">Options for <span id='tickEdited'>{{ type }}</span> ticks</div>
+    <hr />
+
+    <table>
+        <tr>
+            <td>
+                <label class="showQuestionMark" title="Move ticks.">Move ticks: </label>
+            </td>
+
+            <td COLSPAN='3'>
+                <table>
+                    <tr>
+                        <td>
+                        </td>
+
+                        <td align="center">
+                            <button class="increment" id="moveTickUp" title='Move tick up'>&uarr;</button>
+                        </td>
+
+                        <td>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <button class="increment" id="moveTickLeft" title='Move tick left'>&larr;</button>
+                        </td>
+
+                        <td class="rangeWord">
+                            <div>H: <span id="HmoveTickDiv">{{HmoveTick}}</span> | V: <span id="VmoveTickDiv">{{VmoveTick}}</span></div>
+                        </td>
+
+                        <td>
+                            <button class="increment" id="moveTickRight" title='Move tick right'>&rarr;</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                        </td>
+
+                        <td align="center">
+                            <button class="increment" id="moveTickDown" title='Move tick down'>&darr;</button>
+                        </td>
+
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <label class="showQuestionMark" title="Rotate ticks.">Rotate ticks: </label>
+            </td>
+
+            <td COLSPAN='3'>
+                <table>
+
+                    <tr>
+                        <td>
+                            <button class="increment" style="font-size: 14px" id="rotateCkW" title='Rotate Clockwise'>&#8635;</button>
+                        </td>
+
+                        <td class="rangeWord">
+                            <div id="rotateTickDiv">{{ rotateTick }}</div>
+                        </td>
+
+                        <td align="center">
+                            <button class="increment" style="font-size: 14px" id="rotateACkW" title='Rotate Anticlockwise'>&#8634;</button>
+                        </td>
+
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label class="showQuestionMark" title="Resize ticks.">Resize ticks: </label>
+            </td>
+
+            <td COLSPAN='3'>
+                <table>
+
+                    <tr>
+                        <td>
+                            <button class="increment" id="resizeLeft" title='Decrease font size.'>&larr;</button>
+                        </td>
+
+                        <td class="rangeWord">
+                            <div id="resizeTickDiv">{{ resizeTick }}</div>
+                        </td>
+
+                        <td align="center">
+                            <button class="increment" id="resizeRight" title='Increase font size.'>&rarr;</button>
+                        </td>
+
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label class="showQuestionMark" title="Change color.">Change color: </label>
+            </td>
+
+            <td COLSPAN='3'>
+                <input type='text' id="fullSpectrumPicker"/>
+            </td>
+        </tr>
+
+    </table>
+
+</div>
+
+    </script>
+
+    <script id="settingsOptionsTpl" type="text/x-handlebars-template">
+        <!--http://stackoverflow.com/questions/309081/how-do-you-create-a-toggle-button -->
+
+{{#xif "this.workbook || this.listOfRows || this.listOfCols || this.palette || this.isSymmetry || this.isInLabels" }}
+<div class="section">
+    <div class="title"> 
+        <span class="icon dir down toggle"> </span>     
+        <span class="text"> Data </span>                       
+    </div>              
+    <div class="content">
+
+        {{#xif "this.workbook && this.showWorkbook && !this.isWaterfall"}}
+
+        <div class="field-container">  <!-- DO NOT DELETE classes used for intro -->
+            <p class="label"> Workbooks </p>
+            <select id="selectWorkbooksToChartMul"
+                    name="selectWorkbooksToChartMul"
+                    class="toggle-section-cell"
+                    multiple="multiple">
+            </select>
+        </div>
+
+        {{/xif}}
+
+        {{#xif "this.listOfRows && this.showRows"}}
+
+        <div class="field-container">  <!-- DO NOT DELETE classes used for intro -->
+            <p class="label"> Rows </p>
+            <select id="selectRowsToChartMul"
+                    name="selectRowsToChartMul"
+                    class="toggle-section-cell"
+                    multiple="multiple">
+            </select>
+        </div>
+
+        {{/xif}}
+
+        {{#xif "this.listOfCols && this.showColumns"}}
+
+        <div class="field-container">  <!-- DO NOT DELETE classes used for intro -->
+            <p class="label"> Columns </p>
+            <select id="selectColsToChartMul"
+                name="selectColsToChartMul"
+                class="toggle-section-cell"
+                multiple="multiple">
+            </select>
+        </div>
+
+        {{/xif}}
+
+        {{#xif "this.listOfY2 && this.showY2Axis"}}
+
+        <div class="field-container">  <!-- DO NOT DELETE classes used for intro -->
+            <p class="label"> Second y axis </p>
+            <select id="selectColsToChartMul2"
+                name="selectColsToChartMul2"
+                class="toggle-section-cell"
+                multiple="multiple">
+            </select>
+        </div>
+
+        {{/xif}}
+
+        {{#if this.scatterXAxis}}
+
+        <label class="field-container">  <!-- DO NOT DELETE classes used for intro -->
+            <p class="label"> x axis </p>
+            <select id="selectXAxisToChartMul"
+                name="selectXAxisToChartMul"
+                class="toggle-section-cell"
+                multiple="multiple">
+            </select>
+        </label>
+
+        {{/if}}
+
+        {{#if isWaterfall}}
+        <div class="field-container">  <!-- DO NOT DELETE classes used for intro -->
+            <div id="inputCellsWaterfall" class="clearfix">
+               
+            </div>
+
+            <button id="addCellToWaterfall" class="fancy fancyColor2 fancyMini" type="button" value="Add Cell" data-inputwaterfallcell="1">
+                <span class="icon-plus"></span>
+                <span>Add Cell</span>
+            </button> 
+        </div>
+
+        {{/if}}
+
+        {{#if palette}}
+
+        <div class="field-container">  <!-- DO NOT DELETE classes used for intro -->
+            <p class="label"> Palette </p>
+            
+            {{#unless isColorPicker}}
+            
+            <table id="selectedPalette"></table>
+            
+            {{/unless}}
+
+            {{#if isColorPicker}}
+
+            <div class="fullSpectrumPickerChartInfoTD spectrumColorPickerInLine">
+                <input type="text" id="fullSpectrumPickerChartInfo">
+            </div>
+
+            {{/if}} 
+        </div>
+
+        {{/if}}
+
+        {{#xif "this.showSwapped && this.swapped && !this.isWaterfall "}}
+
+        <div class="field-container">  <!-- DO NOT DELETE classes used for intro -->
+            <p class="label"> Swap axes for rows and columns </p>
+            <button class="btn-default faswapncyMini tooltip swapChartAxes" title="Swap Axes">
+                <span class="icon-loop"></span> Swap Axis
+            </button>
+
+        </div>
+
+        {{/xif}}
+
+        {{#if isWaterfall}}
+
+        <!--<div class="field-container"> 
+            <table id="waterfall_table">
+                <thead>
+                    <tr>
+                        <th>Value</th>
+                        <th>Initial</th>
+                        <th>Positive</th>
+                        <th>Negative</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>  -->
+
+        {{/if}}
+
+        {{#if showSelectedSeries}}
+
+        <div id="selectedSeries" class="field-container">  <!-- DO NOT DELETE classes used for intro -->
+        </div>
+
+        {{/if}}
+
+    </div>
+</div>
+
+{{#if showGroup}}
+
+<div class="section">
+    <div class="title"> 
+        <span class="icon dir down toggle"> </span>     
+        <span class="text"> Bar Groups </span>                       
+    </div>              
+    <div class="content">
+        <div id="chartGroup">
+
+        </div>
+        <div class="field-container">  <!-- DO NOT DELETE classes used for intro -->
+            <p class="label"> 
+                <a id="addChartGroup" href="javascript:void(0)"> Add Group </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+{{/if}}
+
+{{/xif}}
+
+    </script>
+
+    <script id="settingsPanelTpl" type="text/x-handlebars-template">
+        
+<div class="section">
+    <div class="title"> 
+        <span class="icon dir down toggle"> </span>     
+        <span class="text"> Basic Settings </span>                       
+    </div>              
+    <div class="content">
+
+        {{#if title}}
+
+        <div class="field-container">  <!-- DO NOT DELETE classes used for intro -->
+            <p class="label"> Title </p>
+            <div class="chartName edit" style="font-size: 14px; font-weight: bold;">{{ title.value }}</div>
+        </div>
+
+        {{/if}}
+
+
+        {{#xif "this.type && this.showType"}}
+
+        <div class="field-container">  <!-- DO NOT DELETE classes used for intro -->
+            <p class="label"> Type </p>
+            <select id="chartTypeMul" name="chartType">
+                <option value="bar">Vertical Bars</option>
+                <option value="bar-stacked">Vertical Stacked Bars</option>
+                <option value="row">Horizontal Bars</option>
+                <option value="row-stacked">Horizontal Stacked Bars</option>
+                <option value="scatter">Scatter </option>
+                <option value="line">Line </option>
+                <option value="area">Area </option>
+                <option value="spline">Spline </option>
+                <option value="area-spline">Area Spline </option>
+                <option value="step">Step </option>
+                <option value="area-step">Area Step </option>
+                <option value="donut">Donut </option>
+                <option value="pie">Pie </option>
+                <!-- <option value="gauge">Gauge </option> -->
+                <option value="waterfall">Vertical Waterfall</option>
+                <option value="row-waterfall">Horizontal Waterfall</option>
+            </select>
+        </div>
+
+        {{/xif}}
+
+        {{#if showButtons}}
+
+        <div class="field-container">  <!-- DO NOT DELETE classes used for intro -->
+            <button id="duplicateChart" class="btn-default boxPs49" >
+                <span class="icon-copy"></span> Duplicate Chart
+            </button>
+            <button id="removeChartPermanently" class="btn-default boxPs49" >
+                <span class="icon-remove"></span>Delete Chart
+            </button>
+        </div>
+
+        {{/if}}
+
+    </div>
+</div>
+
+    </script>
+
+    <script id="settingsAdditionalOptionsTpl" type="text/x-handlebars-template">
+        <!--http://stackoverflow.com/questions/309081/how-do-you-create-a-toggle-button -->
+
+{{#if extraOptions.interpolation_options}}
+<div class="section">
+    <div class="title"> 
+        <span class="icon dir down toggle"> </span>     
+        <span class="text"> Line Special Options </span>                       
+    </div>              
+    <div class="content">
+        <div class="field-container">
+            <p class="label"> Marker Options </p>
+            <select
+                id="markerType" class="boxPs100">
+                {{#select markerType.value}}
+                <option value="0">None</option>
+                <option value="1">Circle</option>
+                {{/select}}
+            </select>
+        </div>
+        <!--<div class="field-container">-->
+            <!--<p class="label"> Interpolation Options </p>-->
+            <!--<select class="toggle-section-cell"-->
+            <!--id="interpolationType">-->
+            <!--<option value="linear" title="piecewise linear segments, as in a polyline" selected>Linear</option>-->
+            <!--<option value="basis" title="a B-spline, with control point duplication on the ends">Basis</option>-->
+            <!--<option value="cardinal" title="a Cardinal spline, with control point duplication on the ends">Cardinal</option>-->
+            <!--<option value="monotone" title="cubic interpolation that preserves monotonicity in y">Monotone</option>-->
+            <!--</select>-->
+        <!--</div>-->
+    </div>
+</div>
+
+{{/if}}
+
+
+{{#if extraOptions.connectors}}
+
+<div class="section">
+    <div class="title"> 
+        <span class="icon dir down toggle"> </span>     
+        <span class="text"> Stacked Special Options </span>                       
+    </div>              
+    <div class="content">
+        <div class="field-container">
+            <div class="btn-toggle boxPs48 boxPs48"> 
+                <span class="label">Connectors</span>
+                <label for="connectorsToggleBtn"></label>
+                <input type="checkbox" id="connectorsToggleBtn"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{/if}}
+
+
+{{#if xAxisValue}}
+
+<div class="section">
+    <div class="title"> 
+        <span class="icon dir down toggle"> </span>     
+        <span class="text"> X axis </span>                       
+    </div>              
+    <div class="content">
+        {{#if showXTitle}}
+        
+        <div class="field-container">
+            <p class="label"> Title </p>
+            <div id="xAxisName" class="edit" >{{ xAxisValue.value }}</div>
+        </div>
+        
+        {{/if}}
+
+        <div class="field-container">
+            <div class="btn-toggle boxPs48"> 
+                <span class="label">Line</span>
+                <label for="xAxisToggleBtn{{id.value}}"></label>
+                <input type="checkbox" id="xAxisToggleBtn{{id.value}}" />
+            </div>
+
+            <div class="btn-toggle boxPs48"> 
+                <span class="label">Tics</span>
+                <label for="xTicksToggleBtn{{id.value}}"></label>
+                <input type="checkbox" id="xTicksToggleBtn{{id.value}}" />
+            </div>
+        </div>
+        
+         <!-- <div class="field-container">
+            <button id="open_x-tick_options" class="fancy fancyColor1 fancyMini tooltip" title="Open X tick options">Ticks options</button>
+            <span id="xTicksIsAutoMode" class="ticks-toggle ticks-auto">&nbsp;&nbsp;Auto</span>
+        </div> -->
+
+        {{#if extraOptions.isHorisontal}}
+
+            {{#if units}}
+
+            <div class="field-container">
+                <div class="btn-toggle boxPs48"> 
+                    <span class="label">Unit Labels</span>
+                    <label for="showUnitsBtn"></label>
+                    <input type="checkbox" id="showUnitsBtn" {{checkedIf isUnitsLabel.value}}/>
+                </div>
+            </div>
+
+            <div class="field-container">
+                <p class="label"> Unit Type </p>
+                <select id="unitDisplayed" name="unitDisplayed" class="boxPs100">
+                    {{#select units.value}}
+                    <!-- remember to update 
+                    this.units = ['', '', 'Thousands', 'Millions', 'Billions', 'Trillions', 'Milli', 'Micro', 'Nano', 'Pico', '%']; in chart-c3.js
+
+                    AND
+
+                    returnUnitDenominatorObj in utils.js
+
+                    AND
+
+                    the template in settings-additional-options-tpl.hbs
+
+                    -->
+                    <option value="1">No Units</option>
+                    <option value="2">Thousands</option>
+                    <option value="3">Millions</option>
+                    <option value="4">Billions</option>
+                    <option value="5">Trillions</option>
+                    <option value="6">Milli</option>
+                    <option value="7">Micro</option>
+                    <option value="8">Nano</option>
+                    <option value="9">Pico</option>
+                    <option value="10">%</option>
+                    {{/select}}
+                </select>
+            </div>
+
+            {{/if}}
+
+        {{/if}}
+    </div>
+</div>
+
+{{/if}}
+
+{{#if yAxisValue}}
+
+<div class="section">
+    <div class="title"> 
+        <span class="icon dir down toggle"> </span>     
+        <span class="text"> Y axis </span>                       
+    </div>              
+    <div class="content">
+        {{#if showYTitle}}
+
+        <div class="field-container">
+            <p class="label"> Title </p>
+            <div id="yAxisName" class="edit" >{{ yAxisValue.value }}</div>
+        </div>
+        
+        {{/if}}
+
+        <div class="field-container">
+            <div class="btn-toggle boxPs48"> 
+                <span class="label">Line</span>
+                <label for="yAxisToggleBtn{{id.value}}"></label>
+                <input type="checkbox" id="yAxisToggleBtn{{id.value}}" />
+            </div>
+
+            <div class="btn-toggle boxPs48"> 
+                <span class="label">Tics</span>
+                <label for="yTicksToggleBtn{{id.value}}"></label>
+                <input type="checkbox" id="yTicksToggleBtn{{id.value}}" />
+            </div>
+        </div>
+        <!-- <div class="field-container">
+            <button id="open_y-tick_options" class="fancy fancyColor1 fancyMini tooltip" title="Open Y tick options">Ticks options</button>
+            <span id="yTicksIsAutoMode" class="ticks-toggle ticks-auto">&nbsp;&nbsp;Auto</span>
+        </div> -->
+
+        {{#unless extraOptions.isHorisontal}}
+            {{#if units}}
+
+            <div class="field-container">
+                <div class="btn-toggle boxPs48"> 
+                    <span class="label">Unit Labels</span>
+                    <label for="showUnitsBtn"></label>
+                    <input type="checkbox" id="showUnitsBtn" {{checkedIf isUnitsLabel.value}}/>
+                </div>
+            </div>
+
+            <div class="field-container">
+                <p class="label"> Unit type </p>
+                <select id="unitDisplayed" name="unitDisplayed" class="boxPs100">
+                    {{#select units.value}}
+                    <option value="1">No Units</option>
+                    <option value="2">Thousands</option>
+                    <option value="3">Millions</option>
+                    <option value="4">Billions</option>
+                    <option value="5">Trillions</option>
+                    <option value="6">Milli</option>
+                    <option value="7">Micro</option>
+                    <option value="8">Nano</option>
+                    <option value="9">Pico</option>
+                    <option value="10">%</option>
+                    {{/select}}
+                </select>
+            </div>
+
+            {{/if}}
+        {{/unless}}
+    </div>
+
+</div>
+
+{{/if}}
+
+
+{{#xif "this.extraOptions.second_axis && this.showY2Axis"}}
+
+<div class="section">
+    <div class="title"> 
+        <span class="icon dir down toggle"> </span>     
+        <span class="text"> Y2 axis </span>                       
+    </div>              
+    <div class="content">
+        {{#if showY2Title}}
+
+        <div class="field-container">
+            <p class="label"> Title </p>
+            <div id="y2AxisName" class="edit" >{{ y2AxisValue.value }}</div>
+        </div>
+        
+        {{/if}}
+
+        <div class="field-container">
+            <div class="btn-toggle boxPs48"> 
+                <span class="label">Line</span>
+                <label for="y2AxisToggleBtn{{id.value}}"></label>
+                <input type="checkbox" id="y2AxisToggleBtn{{id.value}}" />
+            </div>
+            <div class="btn-toggle boxPs48"> 
+                <span class="label">Tics</span>
+                <label for="y2TicksToggleBtn{{id.value}}"></label>
+                <input type="checkbox" id="y2TicksToggleBtn{{id.value}}" />
+            </div>
+        </div>
+        <!-- <div class="field-container">
+            <button id="open_y2-tick_options" class="fancy fancyColor1 fancyMini tooltip" title="Open Y tick options">Ticks options</button>
+            <span id="y2TicksIsAutoMode" class="ticks-toggle ticks-auto">&nbsp;&nbsp;Auto</span>
+        </div> -->
+
+        {{#unless extraOptions.isHorisontal}}
+            {{#if unitsY2}}
+
+            <div class="field-container">
+                <div class="btn-toggle boxPs48"> 
+                    <span class="label">Unit Labels</span>
+                    <label for="showY2UnitsBtn"></label>
+                    <input type="checkbox" id="showY2UnitsBtn" {{checkedIf isUnitsY2Label.value}}/>
+                </div>
+            </div>
+
+            <div class="field-container">
+                <p class="label"> Unit type </p>
+                <select id="unitDisplayedY2" name="unitDisplayed-y2" class="boxPs100">
+                    {{#select unitsY2.value}}
+                    <option value="1">No Units</option>
+                    <option value="2">Thousands</option>
+                    <option value="3">Millions</option>
+                    <option value="4">Billions</option>
+                    <option value="5">Trillions</option>
+                    <option value="6">Milli</option>
+                    <option value="7">Micro</option>
+                    <option value="8">Nano</option>
+                    <option value="9">Pico</option>
+                    <option value="10">%</option>
+                    {{/select}}
+                </select>
+            </div>
+            
+            {{/if}}
+        {{/unless}}
+    </div>
+
+</div>
+
+{{/xif}}
+
+{{#xif "this.isXGrid || this.isYGrid || this.isZeroLine || this.isSymmetry || this.isInLabels" }}
+
+<div class="section">
+    <div class="title"> 
+        <span class="icon dir down toggle"> </span>     
+        <span class="text"> Options </span>                       
+    </div>              
+    <div class="content">
+
+        {{#xif "this.isXGrid || this.isYGrid" }}
+            <div class="field-container">
+            {{#if isXGrid }}
+                <div class="btn-toggle boxPs48"> 
+                    <span class="label">x-Grid</span>
+                    <label for="xGridToggleBtn"></label>
+                    <input type="checkbox" id="xGridToggleBtn"/>
+                </div>
+            {{/if}}
+            {{#if isYGrid }}
+                <div class="btn-toggle boxPs48"> 
+                    <span class="label">y-Grid</span>
+                    <label for="yGridToggleBtn"></label>
+                    <input type="checkbox" id="yGridToggleBtn"/>
+                </div>
+            {{/if}}
+            </div>
+        {{/xif}}
+
+        {{#xif "this.isInLabels || this.isZeroLine" }}
+            <div class="field-container">
+            {{#if isInLabels }}
+                <div class="btn-toggle boxPs48"> 
+                    <span class="label">Labels</span>
+                    <label for="inLabelsToggleBtn"></label>
+                    <input type="checkbox" id="inLabelsToggleBtn"/>
+                </div>
+            {{/if}}
+            {{#if isZeroLine }}
+                <div class="btn-toggle boxPs48"> 
+                    <span class="label">Zero Line</span>
+                    <label for="zeroLineToggleBtn"></label>
+                    <input type="checkbox" id="zeroLineToggleBtn"/>
+                </div>
+            {{/if}}
+            </div>
+        {{/xif}}
+
+        {{#xif "this.isInChartLegend || this.isSymmetry" }}
+            <div class="field-container">
+            {{#xif "this.isInChartLegend && this.showLegend" }}
+                <div class="btn-toggle boxPs48"> 
+                    <span class="label">Legend</span>
+                    <label for="inChartLegendToggleBtn"></label>
+                    <input type="checkbox" id="inChartLegendToggleBtn"/>
+                </div>
+            {{/xif}}
+            {{#xif "this.isSymmetry && this.showSymmetry" }}
+                <div class="btn-toggle boxPs48"> 
+                    <span class="label">Symmetry</span>
+                    <label for="isScaleSymmetricBtn"></label>
+                    <input type="checkbox" id="isScaleSymmetricBtn"/>
+                </div>
+            {{/xif}}
+            </div>
+        {{/xif}}
+
+        {{#xif "this.isWaterfall && this.showWaterfall" }}
+            <div class="field-container">
+                <div class="btn-toggle boxPs48"> 
+                    <span class="label">Waterfall Line</span>
+                    <label for="waterfallLineToggleBtn"></label>
+                    <input type="checkbox" id="waterfallLineToggleBtn"/>
+                </div>
+            </div>
+        {{/xif}}
+    </div>
+</div>
+
+{{/xif}}
+
+<!--<hr>-->
+<!--<label for="marginTypeBtn">Margin auto</label>-->
+<!--<input type="checkbox" id="marginTypeBtn" {{checkedIf heuristic.value}}/><br>-->
+<!--<div class="manual-margin" style="display: none">-->
+<!--Left:<input type="range" min="20" max="500" class="margin-range" data-margin="left" value="{{ margin.value.left}}"><br>-->
+<!--Right:<input type="range" min="20" max="500" class="margin-range"  data-margin="right" value="{{ margin.value.right}}"><br>-->
+<!--Top: <input type="range" min="20" max="500" class="margin-range" data-margin="top" value="{{ margin.value.top}}"><br>-->
+<!--Bottom: <input type="range" min="20" max="500" class="margin-range" data-margin="bottom" value="{{ margin.value.bottom}}">-->
+<!--</div>-->
+
+
+<!--&lt;!&ndash;<td>&ndash;&gt;-->
+<!--&lt;!&ndash;<label for="legend"><b>Legend: </b></label>&ndash;&gt;-->
+<!--&lt;!&ndash;</td>&ndash;&gt;-->
+<!--&lt;!&ndash;<td>&ndash;&gt;-->
+<!--&lt;!&ndash;<label for="legendToggleBtn"></label>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="checkbox" id="legendToggleBtn"/>&ndash;&gt;-->
+<!--&lt;!&ndash;</td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td width="250px" style='text-align: right'>&ndash;&gt;-->
+<!--&lt;!&ndash;          <button id="open_labels_options" class="fancy fancyColor1 fancyMini tooltip" title="Open labels options">Label Options</button>&ndash;&gt;-->
+<!--&lt;!&ndash;        </td>&ndash;&gt;-->
+<!--</tr>-->
+
+    </script>
+
+    <script id="ChartsManagerTpl" type="text/x-handlebars-template">
+        <div class="charts-options">
+    <div class="myBox boxPs45 visyondSolidBorder">
+        <div class="cpl">
+            <b>In view</b>
+        </div>
+
+        <div class="cpr">
+            <select id="openChartsMul" name="selectCharts" multiple="multiple"></select>
+        </div>
+    </div>
+
+    <div class="myBox boxPs50">
+        <button id="newChart" type="button" class="fancy fancyColor2" title="Create New Chart">
+            <span class="icon-plus"></span>
+            <span>New Chart</span>
+        </button>
+
+        <div class="btn_prn">
+            <div id="printCharts" class="noUnderlineLink" title="Print or Save as PDF all charts">
+                <span class="icon-print"></span>
+            </div>
+        </div>    
+
+        <div class="btn_save">
+            <div class="noUnderlineLink" title="Save as PNG all charts (you can then drag them into Powerpoint, Word or other editors)">
+                <!-- FOLLOWING LINE CAN CREATE CSS ISSUE! MAKE SURE THAT ICON-SELECT AND SAVECHARTS IN LINE! DO NOT EDIT! -->
+                <span class="icon-disk"></span><select id="saveCharts" title="Save as PNG all charts (you can then drag them into Powerpoint, Word or other editors)">
+                    <option value="" checked="true">&#9660</option>
+                    <option value="#ffffff">Save With White Background</option>
+                    <option value="transparent">Save With Transparent Background</option>
+                </select>
+            </div>
+        </div>    
+    </div>
+</div>
+    
+
+    </script>
+
+    <div id="popups">
+        <!-- Projects manager template -->
+        <!--
+            here we should include /partials/projects_manager.html when it will be availible
+        -->
+    </div>
+</div> <!-- wrapper -->
+
+<!-- Templates -->
+<script id="full-history-list-row-tpl" type="text/x-handlebars-template">
+    <div class="full-history-list-row" data-date="{{date}}">
+        <div class="full-history-list-column history-author">
+            <img class="user-pic" src="{{avatar}}">
+        </div>
+        <div class="full-history-list-column history-name">
+            {{name}}
+            {{#if isCurrent}}
+            <input class="analysis-name" placeholder="Analysis Name"></input>
+            {{/if}}
+        </div>
+        <div class="full-history-list-column history-comment">
+            {{comment}}
+            {{#if isCurrent}}
+            <input class="analysis-comment" placeholder="Optional Comment"></input>
+            {{/if}}
+        </div>
+        <div class="full-history-list-column history-date">
+            {{readable_date}}
+        </div>
+
+        <div class="full-history-list-column history-btn">
+            {{#if isOwner}}
+            <span class="icon-remove history-remove-btn" title="Remove Analysis"> </span>
+            {{/if}}
+            {{#if isCurrent}}
+            <span class="icon-disk save-analysis" title="Save Analysis"> </span>
+            {{/if}}
+
+        </div>
+
+    </div>
+</script>
+
+
+    <!-- FRESHDESK.com -->
+<!--
+<script type="text/javascript" src="https://s3.amazonaws.com/assets.freshdesk.com/widget/freshwidget.js"></script>
+<script type="text/javascript">
+    FreshWidget.init("", {"queryString": "&widgetType=popup", "utf8": "✓", "widgetType": "popup", "buttonType": "text", "buttonText": "Support", "buttonColor": "white", "buttonBg": "rgb(86, 138, 137);", "alignment": "3", "offset": "90%", "formHeight": "500px", "url": "http://visyond.freshdesk.com"} );
+</script>
+-->
+
+<!-- Piwik -->
+<!--
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//visyond.com/admin/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//visyond.com/admin/piwik/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+-->
+<!-- End Piwik Code -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45839636-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+    <!--
+        Build number: {git.revision}
+    -->
+
+    <script>
+        // FIXME: TEMPORARY SOLUTION. NEED REWRITE
+        setInterval(function() {
+           $.ajax("/site/ping");
+        }, 120000);
+        
+    </script>
+    <!-- Old performance hack -->
+
+    <script>
+        var VisyondSettings = {};
+        VisyondSettings.CONFIGURATION='dev';
+        VisyondSettings.SOLLWERT_COUNTER=209;
+        VisyondSettings.feature_core = true;
+VisyondSettings.feature_dev = true;
+VisyondSettings.feature_dependencies = false;
+VisyondSettings.feature_tornado = false;
+VisyondSettings.feature_sensitivity = false;
+VisyondSettings.feature_scenarios = false;
+VisyondSettings.feature_simulation = false;
+VisyondSettings.feature_regressions = false;
+VisyondSettings.feature_statements = false;
+VisyondSettings.feature_pivot = false;
+VisyondSettings.feature_tracker = false;
+VisyondSettings.feature_support = false;
+;
+    </script>
+
+    <!-- Scripts -->
+    <script src="/frontend/application/js/polyfills.js"></script>
+<script src="/frontend/application/js/assert.js"></script>
+<script src="/frontend/framework/base.utilities/log4js.js"></script>
+<script src="/lib/_/js/jquery/dist/jquery.js"></script>
+<script src="/frontend/application/config.js"></script>
+<script src="/frontend/application/js/scripts.custom.mobile-init.js"></script>
+<script src="/lib/_/js/lodash/lodash.js"></script>
+<script src="/lib/_/js/jquery-ui/dist/jquery-ui.js"></script>
+<script src="/lib/_/js/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+<script src="/lib/_/js/verge-screendimensions/verge.js"></script>
+<script src="/lib/_/js/intro.js/intro.js"></script>
+<script src="/lib/_/js/TinyColor/tinycolor.js"></script>
+<script src="/lib/_/js/spectrum/spectrum.js"></script>
+<script src="/lib/_/js/slickgrid/lib/threedubmedia/event.drag/jquery.event.drag.js"></script>
+<script src="/lib/_/js/slickgrid/lib/threedubmedia/event.drop/jquery.event.drop.js"></script>
+<script src="/lib/_/js/jquery-vSort/jquery.vSort.js"></script>
+<script src="/lib/_/js/jquery-sortElements/jquery.sortElements.js"></script>
+<script src="/lib/_/js/pubsub/pubsub.js"></script>
+<script src="/lib/_/js/javascript-debug/ba-debug.js"></script>
+<script src="/lib/_/js/javascript-stacktrace/stacktrace.js"></script>
+<script src="/lib/_/js/debug-helper-functions/get-current-function-name-and-srcinfo.js"></script>
+<script src="/lib/_/js/debug-helper-functions/detect_browser.js"></script>
+<script src="/lib/_/js/detect-zoom/detect-zoom.js"></script>
+<script src="/lib/_/js/handlebars/dist/handlebars.js"></script>
+<script src="/lib/_/js/JavaScript-MD5/js/md5.js"></script>
+<script src="/lib/_/js/json3/lib/json3.js"></script>
+<script src="/lib/_/js/d3/d3.latest.js"></script>
+<script src="/lib/_/js/c3/c3.js"></script>
+<script src="/lib/_/js/d3/d3-context-menu.js"></script>
+<script src="/lib/_/js/d3/labeler.js"></script>
+<script src="/lib/_/js/mersenne-twister/src/mersenne-twister.js"></script>
+<script src="/lib/_/js/jquery-sparkline/dist/jquery.sparkline.js"></script>
+<script src="/lib/_/js/jquery-tooltip-toolbar/jquery.toolbar.js"></script>
+<script src="/lib/_/js/filesaver.js/FileSaver.min.js"></script>
+<script src="/lib/_/js/autosize/jquery.autosize.js"></script>
+<script src="/lib/_/js/moment/moment.js"></script>
+<script src="/lib/_/js/moment-parseformat/lib/parseformat.js"></script>
+<script src="/lib/_/js/jquery-multiselect/src/jquery.multiselect.js"></script>
+<script src="/lib/_/js/jquery-multiselect/src/jquery.multiselect.filter.js"></script>
+<script src="/lib/_/js/jquery-print-in-page/src/jquery.print-in-page.js"></script>
+<script src="/lib/_/js/jquery-fixclick/jquery-fixclick.js"></script>
+<script src="/lib/_/js/jquery-simulate/jquery.simulate.js"></script>
+<script src="/lib/_/js/rangy/lib/rangy-core.js"></script>
+<script src="/lib/_/js/rangy/lib/rangy-textrange.js"></script>
+<script src="/lib/_/js/jquery-jeditable/jquery.jeditable.js"></script>
+<script src="/lib/_/js/jquery-mousewheel/jquery.mousewheel.js"></script>
+<script src="/lib/_/js/jquery-gritter/js/jquery.gritter.js"></script>
+<script src="/lib/_/js/noty/js/noty/packaged/jquery.noty.packaged.js"></script>
+<script src="/lib/_/js/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+<script src="/lib/_/js/jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
+<script src="/lib/_/js/slickgrid/slick.core.js"></script>
+<script src="/lib/_/js/slickgrid/slick.grid.js"></script>
+<script src="/lib/_/js/slickgrid/slick.dataview.js"></script>
+<script src="/lib/_/js/slickgrid/slick.editors.js"></script>
+<script src="/lib/_/js/slickgrid/slick.formatters.js"></script>
+<script src="/lib/_/js/slickgrid/slick.groupitemmetadataprovider.js"></script>
+<script src="/lib/_/js/slickgrid/slick.remotemodel.js"></script>
+<script src="/lib/_/js/slickgrid/plugins/slick.autotooltips.js"></script>
+<script src="/lib/_/js/slickgrid/plugins/slick.cellrangedecorator.js"></script>
+<script src="/lib/_/js/slickgrid/plugins/slick.cellrangeselector.js"></script>
+<script src="/lib/_/js/slickgrid/plugins/slick.cellcopymanager.js"></script>
+<script src="/lib/_/js/slickgrid/plugins/slick.cellexternalcopymanager.js"></script>
+<script src="/lib/_/js/slickgrid/plugins/slick.checkboxselectcolumn.js"></script>
+<script src="/lib/_/js/slickgrid/plugins/slick.rowmovemanager.js"></script>
+<script src="/lib/_/js/slickgrid/plugins/slick.headermenu.js"></script>
+<script src="/lib/_/js/slickgrid/plugins/slick.headerbuttons.js"></script>
+<script src="/lib/_/js/slickgrid/plugins/slick.cellselectionmodel.js"></script>
+<script src="/lib/_/js/slickgrid/plugins/slick.rowselectionmodel.js"></script>
+<script src="/lib/_/js/slickgrid/controls/slick.pager.js"></script>
+<script src="/lib/_/js/slickgrid/controls/slick.columnpicker.js"></script>
+<script src="/lib/_/js/gridster/src/jquery.coords.js"></script>
+<script src="/lib/_/js/gridster/src/jquery.collision.js"></script>
+<script src="/lib/_/js/gridster/src/jquery.draggable.js"></script>
+<script src="/lib/_/js/gridster/src/utils.js"></script>
+<script src="/lib/_/js/gridster/src/jquery.gridster.js"></script>
+<script src="/lib/_/js/tooltipster/js/jquery.tooltipster.js"></script>
+<script src="/lib/_/js/jquery-fast-show-hide/jquery-fast-show-hide.js"></script>
+<script src="/lib/_/js/q/q.js"></script>
+<script src="/frontend/kernel/migrations/migrate.js"></script>
+<script src="/frontend/kernel/jsdiff/jsquery.js"></script>
+<script src="/frontend/kernel/merger/differ.js"></script>
+<script src="/frontend/kernel/merger/merger.js"></script>
+<script src="/frontend/kernel/validator/joi.browser.js"></script>
+<script src="/frontend/kernel/validator/validate.js"></script>
+<script src="/frontend/kernel/chat/client.js"></script>
+<script src="/lib/_/js/nprogress/nprogress.js"></script>
+<script src="/frontend/application/js/start.js"></script>
+<script src="/frontend/kernel/vproject/constants/vgraph_attributes.js"></script>
+<script src="/frontend/application/js/visyond/constants/visual_grid_attributes.js"></script>
+<script src="/frontend/kernel/parser/constants/AST-expected-errors.js"></script>
+<script src="/frontend/kernel/parser/constants/AST-masks.js"></script>
+<script src="/frontend/kernel/parser/constants/AST-node-attributes.js"></script>
+<script src="/frontend/kernel/parser/constants/AST-opcode.js"></script>
+<script src="/frontend/kernel/parser/constants/AST-filter-opcode.js"></script>
+<script src="/frontend/kernel/parser/constants/cellref-position-attrs.js"></script>
+<script src="/frontend/kernel/parser/constants/formula-parse-modes.js"></script>
+<script src="/frontend/kernel/parser/constants/formula-type.js"></script>
+<script src="/frontend/kernel/parser/constants/formula-value-unit.js"></script>
+<script src="/frontend/kernel/parser/constants/symbol-types.js"></script>
+<script src="/frontend/kernel/parser/constants/currency-types.js"></script>
+<script src="/frontend/kernel/parser/constants/symbol-notation-modes.js"></script>
+<script src="/frontend/kernel/parser/constants/quality-levels.js"></script>
+<script src="/frontend/application/js/constants/activity_type.js"></script>
+<script src="/frontend/application/js/constants/error_codes.js"></script>
+<script src="/frontend/application/js/constants/object_type.js"></script>
+<script src="/frontend/application/js/constants/permission.js"></script>
+<script src="/frontend/application/js/constants/role.js"></script>
+<script src="/frontend/application/js/constants/subscription_plan.js"></script>
+<script src="/frontend/application/js/constants/user_setting.js"></script>
+<script src="/frontend/framework/base.utilities/state_stack.js"></script>
+<script src="/frontend/application/js/visyond/print_save.js"></script>
+<script src="/lib/_/private_lib/utils/utils.screen.js"></script>
+<script src="/frontend/framework/base.utilities/debug.js"></script>
+<script src="/frontend/framework/base.utilities/deferred_bulk_op.js"></script>
+<script src="/frontend/application/js/visyond/subject.js"></script>
+<script src="/lib/_/private_lib/component/component.js"></script>
+<script src="/frontend/application/js/visyond/offline_manager.js"></script>
+<script src="/frontend/application/js/visyond/components/api/api-model.js"></script>
+<script src="/frontend/application/js/visyond/components/api/project.js"></script>
+<script src="/frontend/application/js/visyond/components/analysis.js"></script>
+<script src="/frontend/application/js/visyond/color_palettes.js"></script>
+<script src="/frontend/application/js/visyond/utils.js"></script>
+<script src="/frontend/framework/base.utilities/utils.debounce.js"></script>
+<script src="/frontend/framework/base.utilities/performance.timer.js"></script>
+<script src="/lib/_/private_lib/utils/guid.generator.js"></script>
+<script src="/frontend/kernel/parser/optimization/calculate_formula.js"></script>
+<script src="/frontend/kernel/vproject/data_node.js"></script>
+<script src="/frontend/kernel/vproject/data_vproject.js"></script>
+<script src="/frontend/kernel/vproject/data_vgraph.js"></script>
+<script src="/frontend/kernel/vproject/data.cases.js"></script>
+<script src="/frontend/kernel/vproject/data.scenarios.js"></script>
+<script src="/frontend/kernel/vproject/parserinput.js"></script>
+<script src="/frontend/kernel/vproject/cell_projections.js"></script>
+<script src="/frontend/kernel/vproject/formula_bar_for_grid.js"></script>
+<script src="/frontend/kernel/vproject/probability_distributions.js"></script>
+<script src="/frontend/application/js/visyond/overview.js"></script>
+<script src="/frontend/kernel/vproject/goalseek.js"></script>
+<script src="/frontend/application/js/visyond/sanity_checks.js"></script>
+<script src="/frontend/application/js/visyond/components/project/project.ui.js"></script>
+<script src="/lib/_/private_lib/chart/js/data_source.js"></script>
+<script src="/lib/_/private_lib/chart/js/c3_ext.js"></script>
+<script src="/lib/_/private_lib/chart/js/chart.js"></script>
+<script src="/lib/_/private_lib/chart/js/chart_panel.js"></script>
+<script src="/lib/_/private_lib/chart/js/charts_manager.js"></script>
+<script src="/frontend/UI-components/limited-to-viewport-UI-manager/base.js"></script>
+<script src="/frontend/UI-components/collaborators/collaborators_manager.js"></script>
+<script src="/frontend/application/js/visyond/ui.js"></script>
+<script src="/frontend/application/js/visyond/control_panel.js"></script>
+<script src="/frontend/application/js/visyond/grid/slick.visyondselectionmodel.js"></script>
+<script src="/frontend/application/js/visyond/grid/slick.visyondcopymanager.js"></script>
+<script src="/frontend/application/js/visyond/grid/slick.visyonddataviewaggregators.js"></script>
+<script src="/frontend/application/js/visyond/grid/slick.visyond.cell.editors.js"></script>
+<script src="/frontend/application/js/visyond/grid/grid.js"></script>
+<script src="/frontend/application/js/visyond/grid/formulabar.js"></script>
+<script src="/frontend/application/js/visyond/grid/cell.overlay.bar.js"></script>
+<script src="/frontend/application/js/visyond/grid/tabmodel.js"></script>
+<script src="/frontend/application/js/visyond/grid/workbooks-bar.js"></script>
+<script src="/frontend/UI-components/chart/tabchart.js"></script>
+<script src="/frontend/application/js/visyond/casepanel.ui.js"></script>
+<script src="/frontend/kernel/parser/visyondLookupGraphForCellValues.js"></script>
+<script src="/frontend/kernel/parser/parserWithTokens.js"></script>
+<script src="/frontend/kernel/parser/functions/jStat.js"></script>
+<script src="/frontend/kernel/parser/functions/matrix_functions.js"></script>
+<script src="/frontend/kernel/parser/functions/__support_functions.js"></script>
+<script src="/frontend/kernel/parser/functions/regression_functions.js"></script>
+<script src="/frontend/kernel/parser/functions/database_functions.js"></script>
+<script src="/frontend/kernel/parser/functions/engineering_functions.js"></script>
+<script src="/frontend/kernel/parser/functions/datetime_functions.js"></script>
+<script src="/frontend/kernel/parser/functions/financial_functions.js"></script>
+<script src="/frontend/kernel/parser/functions/information_functions.js"></script>
+<script src="/frontend/kernel/parser/functions/logical_functions.js"></script>
+<script src="/frontend/kernel/parser/functions/lookup_ref_functions.js"></script>
+<script src="/frontend/kernel/parser/functions/mathematical_functions.js"></script>
+<script src="/frontend/kernel/parser/functions/statistical_functions.js"></script>
+<script src="/frontend/kernel/parser/functions/text_functions.js"></script>
+<script src="/frontend/kernel/parser/functions/quality_assurance_functions.js"></script>
+<script src="/frontend/kernel/parser/symboltables_setup.js"></script>
+<script src="/frontend/application/js/visyond/intro_guide.js"></script>
+<script src="/frontend/application/js/visyond/tooltips.js"></script>
+<script src="/frontend/application/js/visyond/jquery_and_hbs_helpers.js"></script>
+<script src="/frontend/application/js/visyond/bootstrap.js"></script>
+<script src="/frontend/application/js/visyond/saver.js"></script>
+<script src="/frontend/kernel/loader/machine.js"></script>
+<script src="/frontend/application/features.js"></script>
+<script src="/frontend/kernel/loader/loader.js"></script>
+<script src="/frontend/application/js/visyond/NProgress_guide.js"></script>
+<script src="/lib/_/js/save-as-png/rgbcolor.js"></script>
+<script src="/lib/_/js/save-as-png/StackBlur.js"></script>
+<script src="/lib/_/js/save-as-png/canvg.js"></script>
+<script src="/frontend/application/js/visyond/save_as_png.js"></script>
+<script src="/frontend/application/js/visyond/chat.js"></script>
+<script src="/lib/_/js/jquery-exportTable/tableExport.js"></script>
+<script src="/lib/_/js/jquery-exportTable/jquery.base64.js"></script>
+<script src="/lib/_/js/jquery-exportTable/html2canvas.js"></script>
+<script src="/lib/_/js/jquery-exportTable/jspdf/libs/sprintf.js"></script>
+<script src="/lib/_/js/jquery-exportTable/jspdf/jspdf.js"></script>
+<script src="/lib/_/js/jquery-exportTable/jspdf/libs/base64.js"></script>
+<script src="/frontend/application/js/load.js"></script>
+<script src="/frontend/application/config.dev.js"></script>
+<script src="/frontend/application/dependencies_module/dependencies_off.js"></script>
+<script src="/frontend/application/tornado_module/tornado_off.js"></script>
+<script src="/frontend/application/sensitivity_module/sensitivity_off.js"></script>
+<script src="/frontend/application/scenarios_module/scenarios_off.js"></script>
+<script src="/frontend/application/simulation_module/simulation_off.js"></script>
+<script src="/frontend/application/regressions_module/regressions_off.js"></script>
+<script src="/frontend/application/statements_module/statements_off.js"></script>
+<script src="/frontend/application/pivot_module/pivot_off.js"></script>
+<script src="/frontend/application/tracker_module/tracker_off.js"></script>
+<script src="/frontend/application/support_module/support_off.js"></script>
+
+
+</body>
+</html>

@@ -1,36 +1,87 @@
 {
-  "name": "gulp-fncallback",
-  "version": "2.0.2",
-  "description": "Callback for streams",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/itgalaxy-company/gulp-fncallback.git"
+  "_args": [
+    [
+      {
+        "hosted": {
+          "directUrl": "https://raw.githubusercontent.com/gerhobbelt/gulp-fncallback/master/package.json",
+          "gitUrl": "git://github.com/gerhobbelt/gulp-fncallback.git#master",
+          "httpsUrl": "git+https://github.com/gerhobbelt/gulp-fncallback.git#master",
+          "shortcut": "github:gerhobbelt/gulp-fncallback#master",
+          "ssh": "git@github.com:gerhobbelt/gulp-fncallback.git#master",
+          "sshUrl": "git+ssh://git@github.com/gerhobbelt/gulp-fncallback.git#master",
+          "type": "github"
+        },
+        "name": "gulp-fncallback",
+        "raw": "gulp-fncallback@github:gerhobbelt/gulp-fncallback#master",
+        "rawSpec": "github:gerhobbelt/gulp-fncallback#master",
+        "scope": null,
+        "spec": "github:gerhobbelt/gulp-fncallback#master",
+        "type": "hosted"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2"
+    ]
+  ],
+  "_from": "gerhobbelt/gulp-fncallback#master",
+  "_id": "gulp-fncallback@2.0.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/gulp-fncallback",
+  "_phantomChildren": {},
+  "_requested": {
+    "hosted": {
+      "directUrl": "https://raw.githubusercontent.com/gerhobbelt/gulp-fncallback/master/package.json",
+      "gitUrl": "git://github.com/gerhobbelt/gulp-fncallback.git#master",
+      "httpsUrl": "git+https://github.com/gerhobbelt/gulp-fncallback.git#master",
+      "shortcut": "github:gerhobbelt/gulp-fncallback#master",
+      "ssh": "git@github.com:gerhobbelt/gulp-fncallback.git#master",
+      "sshUrl": "git+ssh://git@github.com/gerhobbelt/gulp-fncallback.git#master",
+      "type": "github"
+    },
+    "name": "gulp-fncallback",
+    "raw": "gulp-fncallback@github:gerhobbelt/gulp-fncallback#master",
+    "rawSpec": "github:gerhobbelt/gulp-fncallback#master",
+    "scope": null,
+    "spec": "github:gerhobbelt/gulp-fncallback#master",
+    "type": "hosted"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "git://github.com/gerhobbelt/gulp-fncallback.git#1badd55e8570255e356f482446024363846c612c",
+  "_shasum": "c6d49dfde6a96852708313134886ddc5734f3237",
+  "_shrinkwrap": null,
+  "_spec": "gulp-fncallback@github:gerhobbelt/gulp-fncallback#master",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2",
+  "author": {
+    "email": "info@itgalaxy.company",
+    "name": "Alexander Krasnoyarov",
+    "url": "http://itgalaxy.company"
   },
   "bugs": {
     "url": "https://github.com/itgalaxy-company/gulp-fncallback/issues"
   },
-  "homepage": "https://github.com/itgalaxy-company/gulp-fncallback",
-  "maintainers": [
-    {
-      "name": "itgalaxy",
-      "email": "info@itgalaxy.company"
-    }
-  ],
-  "author": {
-    "name": "Alexander Krasnoyarov",
-    "email": "info@itgalaxy.company",
-    "url": "http://itgalaxy.company"
+  "dependencies": {
+    "gulp-util": "~3.0.6",
+    "lodash": "~3.10.1",
+    "through2": "~2.0.0"
+  },
+  "description": "Callback for streams",
+  "devDependencies": {
+    "coveralls": "~2.11.4",
+    "event-stream": "3.3.1",
+    "istanbul": "~0.3.22",
+    "mocha": "2.3.3",
+    "should": "7.1.0",
+    "vinyl": "1.0.0"
   },
   "engines": {
     "node": ">=0.10.0"
   },
-  "scripts": {
-    "test": "mocha test"
-  },
   "files": [
     "index.js"
   ],
+  "gitHead": "1badd55e8570255e356f482446024363846c612c",
+  "homepage": "https://github.com/itgalaxy-company/gulp-fncallback",
   "keywords": [
     "gulp",
     "gulpplugin",
@@ -38,24 +89,23 @@
     "callback",
     "functions"
   ],
-  "dependencies": {
-    "gulp-util": "~3.0.6",
-    "through2": "~2.0.0",
-    "lodash": "~3.10.1"
-  },
-  "devDependencies": {
-    "mocha": "2.3.3",
-    "should": "7.1.0",
-    "vinyl": "1.0.0",
-    "event-stream": "3.3.1",
-    "istanbul": "~0.3.22",
-    "coveralls": "~2.11.4"
-  },
-  "gitHead": "1badd55e8570255e356f482446024363846c612c",
+  "license": "MIT",
+  "maintainers": [
+    {
+      "email": "info@itgalaxy.company",
+      "name": "itgalaxy"
+    }
+  ],
+  "name": "gulp-fncallback",
+  "optionalDependencies": {},
   "readme": "gulp-fncallback\n=============\n\nAdd own callback to streaming\n[![Build Status](https://travis-ci.org/itgalaxy-company/gulp-fncallback.svg?branch=master)](https://travis-ci.org/itgalaxy-company/gulp-fncallback)\n\n## Install\n\n```\nnpm install gulp-fncallback\n```\n\n## Usage transformFunction\n```javascript\nvar less = require('gulp-less');\nvar callback = require('gulp-fncallback');\n\ngulp.task('less', function () {\n  gulp.src('./less/**/*.less')\n    .pipe(less({\n      paths: [ path.join(__dirname, 'less', 'includes') ]\n    }))\n    .pipe(callback(function (file, enc, cb) {\n      console.log(file);\n      cb();\n    }))\n    .pipe(gulp.dest('./public/css'));\n});\n```\n\n## Usage transformFunction and flushFunction\n```javascript\nvar less = require('gulp-less');\nvar callback = require('gulp-fncallback');\n\ngulp.task('less', function () {\n  gulp.src('./less/**/*.less')\n    .pipe(less({\n      paths: [ path.join(__dirname, 'less', 'includes') ]\n    }))\n    .pipe(callback(function (file, enc, cb) {\n      console.log(file);\n      cb();\n    }, function (callback) {\n      callback();\n    }))\n    .pipe(gulp.dest('./public/css'));\n});\n```\n\n## Usage transformFunction with error\n```javascript\nvar less = require('gulp-less');\nvar callback = require('gulp-fncallback');\n\ngulp.task('less', function () {\n  gulp.src('./less/**/*.less')\n    .pipe(less({\n      paths: [ path.join(__dirname, 'less', 'includes') ]\n    }))\n    .pipe(callback(function (file, enc, cb) {\n      console.log(file);\n      cb('error');\n    }))\n    .pipe(gulp.dest('./public/css'));\n});\n```\n\n## Usage transformFunction with new file\n```javascript\nvar less = require('gulp-less');\nvar callback = require('gulp-fncallback');\n\ngulp.task('less', function () {\n  gulp.src('./less/**/*.less')\n    .pipe(less({\n      paths: [ path.join(__dirname, 'less', 'includes') ]\n    }))\n    .pipe(callback(function (file, enc, cb) {\n      var newFile = ...\n      cb(null, newFile);\n    }))\n    .pipe(gulp.dest('./public/css'));\n});\n```\n\n## Usage transformFunction with new file and append old file\n```javascript\nvar less = require('gulp-less');\nvar callback = require('gulp-fncallback');\n\ngulp.task('less', function () {\n  gulp.src('./less/**/*.less')\n    .pipe(less({\n      paths: [ path.join(__dirname, 'less', 'includes') ]\n    }))\n    .pipe(callback(function (file, enc, cb) {\n      var newFile = ...\n      cb(null, newFile, true);\n    }))\n    .pipe(gulp.dest('./public/css'));\n});\n```\n\n## Options\n\nonce - Run callback once\n```javascript\nvar less = require('gulp-less');\nvar callback = require('gulp-fncallback');\n\ngulp.task('less', function () {\n  gulp.src('./less/**/*.less')\n    .pipe(less({\n      paths: [ path.join(__dirname, 'less', 'includes') ]\n    }))\n    .pipe(callback(function (file, enc, cb) {\n      console.log(file);\n      cb();\n    }, {\n      once: true\n    }))\n    .pipe(gulp.dest('./public/css'));\n});\n```\n\n",
   "readmeFilename": "README.md",
-  "_id": "gulp-fncallback@2.0.2",
-  "_shasum": "df355ef2330ce04652a10990653544dc083996c7",
-  "_from": "gerhobbelt/gulp-fncallback#master",
-  "_resolved": "git://github.com/gerhobbelt/gulp-fncallback.git#1badd55e8570255e356f482446024363846c612c"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itgalaxy-company/gulp-fncallback.git"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "version": "2.0.2"
 }

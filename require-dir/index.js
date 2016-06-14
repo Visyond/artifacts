@@ -17,6 +17,8 @@ module.exports = function requireDir(dir, opts) {
     dir = dir || '.';
     opts = opts || {};
 
+    opts.filter = opts.filter || function (file) { return true; };
+
     // resolve the path to an absolute one:
     dir = Path.resolve(parentDir, dir);
 
@@ -94,6 +96,10 @@ module.exports = function requireDir(dir, opts) {
             if (path === parentFile) {
                 continue;
             }
+            // apply file filter:
+            if (!opts.filter(path)) {
+                continue;
+            }
 
             if (FS.statSync(path).isDirectory()) {
                 if (opts.recurse) {
@@ -158,6 +164,12 @@ module.exports = function requireDir(dir, opts) {
             }
 
             map[toCamelCase(base)] = map[base];
+
+            if (opts.removeCase) {
+                if (toCamelCase(base) !== base) {
+                    delete map[base];
+                }
+            }
         }
     }
 

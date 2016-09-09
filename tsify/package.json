@@ -1,0 +1,91 @@
+{
+  "name": "tsify",
+  "version": "1.0.6",
+  "description": "Browserify plugin for compiling Typescript",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "test-peer-range browserify",
+    "test-main": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TypeStrong/tsify.git"
+  },
+  "keywords": [
+    "browserify",
+    "browserify-plugin",
+    "typescript"
+  ],
+  "author": {
+    "name": "Greg Smith"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TypeStrong/tsify/issues"
+  },
+  "homepage": "https://github.com/TypeStrong/tsify",
+  "engines": {
+    "node": ">=0.12"
+  },
+  "dependencies": {
+    "convert-source-map": "^1.1.0",
+    "fs.realpath": "^1.0.0",
+    "semver": "^5.1.0",
+    "through2": "^2.0.0",
+    "tsconfig": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "eslint": "^3.3.1",
+    "event-stream": "^3.3.1",
+    "fs-extra": "^0.30.0",
+    "node-foo": "^0.2.3",
+    "source-map": "^0.5.3",
+    "tape": "^4.0.0",
+    "test-peer-range": "^1.0.1",
+    "typescript": "~1.8.7",
+    "watchify": "^3.2.1"
+  },
+  "peerDependencies": {
+    "browserify": ">= 6.x",
+    "typescript": "*"
+  },
+  "gitHead": "8106ce6fd042506c1dd3ad49c330b5a1b0dc436e",
+  "_id": "tsify@1.0.6",
+  "_shasum": "c16103d424457bf5b4e22352e5ad40f6c2f6f952",
+  "_from": "tsify@latest",
+  "_npmVersion": "3.10.3",
+  "_nodeVersion": "6.5.0",
+  "_npmUser": {
+    "name": "cartant",
+    "email": "nicholas@cartant.com"
+  },
+  "dist": {
+    "shasum": "c16103d424457bf5b4e22352e5ad40f6c2f6f952",
+    "tarball": "https://registry.npmjs.org/tsify/-/tsify-1.0.6.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "basarat",
+      "email": "basaratali@gmail.com"
+    },
+    {
+      "name": "cartant",
+      "email": "nicholas@cartant.com"
+    },
+    {
+      "name": "smrq",
+      "email": "smr.kyu@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/tsify-1.0.6.tgz_1473380676532_0.03965270519256592"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/tsify/-/tsify-1.0.6.tgz",
+  "readme": "ERROR: No README data found!"
+}

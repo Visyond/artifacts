@@ -1,0 +1,127 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "jscodeshift@0.3.28",
+        "scope": null,
+        "escapedName": "jscodeshift",
+        "name": "jscodeshift",
+        "rawSpec": "0.3.28",
+        "spec": "0.3.28",
+        "type": "version"
+      },
+      "/home/doctor/prog/environment_root/server/v2/node_modules/jison"
+    ]
+  ],
+  "_from": "jscodeshift@0.3.28",
+  "_id": "jscodeshift@0.3.28",
+  "_inCache": true,
+  "_location": "/jscodeshift",
+  "_nodeVersion": "5.12.0",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/jscodeshift-0.3.28.tgz_1471278163711_0.24770012288354337"
+  },
+  "_npmUser": {
+    "name": "fkling",
+    "email": "felix.kling@gmx.net"
+  },
+  "_npmVersion": "3.8.6",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "jscodeshift@0.3.28",
+    "scope": null,
+    "escapedName": "jscodeshift",
+    "name": "jscodeshift",
+    "rawSpec": "0.3.28",
+    "spec": "0.3.28",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/jison"
+  ],
+  "_resolved": "https://registry.npmjs.org/jscodeshift/-/jscodeshift-0.3.28.tgz",
+  "_shasum": "8e87be995ba3c9cba36e83808f22c1ac03f8eb87",
+  "_shrinkwrap": null,
+  "_spec": "jscodeshift@0.3.28",
+  "_where": "/home/doctor/prog/environment_root/server/v2/node_modules/jison",
+  "author": {
+    "name": "Felix Kling"
+  },
+  "bin": {
+    "jscodeshift": "./bin/jscodeshift.sh"
+  },
+  "bugs": {
+    "url": "https://github.com/facebook/jscodeshift/issues"
+  },
+  "dependencies": {
+    "async": "^1.5.0",
+    "babel-core": "^5",
+    "babel-plugin-transform-flow-strip-types": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-1": "^6.5.0",
+    "babel-register": "^6.9.0",
+    "babylon": "^6.8.1",
+    "colors": "^1.1.2",
+    "es6-promise": "^3.0.0",
+    "flow-parser": "^0.*",
+    "lodash": "^4.13.1",
+    "micromatch": "^2.3.7",
+    "node-dir": "0.1.8",
+    "nomnom": "^1.8.1",
+    "recast": "^0.11.11",
+    "temp": "^0.8.1"
+  },
+  "description": "A toolkit for JavaScript codemods",
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "eslint": "^3.1.1",
+    "jest-cli": "^12.0.0",
+    "mkdirp": "^0.5.1"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "8e87be995ba3c9cba36e83808f22c1ac03f8eb87",
+    "tarball": "https://registry.npmjs.org/jscodeshift/-/jscodeshift-0.3.28.tgz"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "gitHead": "fe67b121d4c2519c5227a00be3f590e7f7c46d2b",
+  "homepage": "https://github.com/facebook/jscodeshift#readme",
+  "jest": {
+    "testPathDirs": [
+      "src",
+      "bin",
+      "sample"
+    ],
+    "unmockedModulePathPatterns": [
+      "node_modules/"
+    ]
+  },
+  "keywords": [
+    "codemod",
+    "recast"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "fkling",
+      "email": "felix.kling@gmx.net"
+    }
+  ],
+  "name": "jscodeshift",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facebook/jscodeshift.git"
+  },
+  "scripts": {
+    "build": "cp -R src/ dist/",
+    "prepublish": "npm run build && npm run test",
+    "test": "jest --bail"
+  },
+  "version": "0.3.28"
+}

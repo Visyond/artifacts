@@ -1,0 +1,94 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "lex-parser@github:gerhobbelt/lex-parser#master",
+        "scope": null,
+        "escapedName": "lex-parser",
+        "name": "lex-parser",
+        "rawSpec": "github:gerhobbelt/lex-parser#master",
+        "spec": "github:gerhobbelt/lex-parser#master",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:gerhobbelt/lex-parser.git#master",
+          "sshUrl": "git+ssh://git@github.com/gerhobbelt/lex-parser.git#master",
+          "httpsUrl": "git+https://github.com/gerhobbelt/lex-parser.git#master",
+          "gitUrl": "git://github.com/gerhobbelt/lex-parser.git#master",
+          "shortcut": "github:gerhobbelt/lex-parser#master",
+          "directUrl": "https://raw.githubusercontent.com/gerhobbelt/lex-parser/master/package.json"
+        }
+      },
+      "/home/doctor/prog/environment_root/server/v2/node_modules/jison"
+    ]
+  ],
+  "_from": "gerhobbelt/lex-parser#master",
+  "_id": "lex-parser@0.1.4-153",
+  "_inCache": true,
+  "_location": "/lex-parser",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "lex-parser@github:gerhobbelt/lex-parser#master",
+    "scope": null,
+    "escapedName": "lex-parser",
+    "name": "lex-parser",
+    "rawSpec": "github:gerhobbelt/lex-parser#master",
+    "spec": "github:gerhobbelt/lex-parser#master",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:gerhobbelt/lex-parser.git#master",
+      "sshUrl": "git+ssh://git@github.com/gerhobbelt/lex-parser.git#master",
+      "httpsUrl": "git+https://github.com/gerhobbelt/lex-parser.git#master",
+      "gitUrl": "git://github.com/gerhobbelt/lex-parser.git#master",
+      "shortcut": "github:gerhobbelt/lex-parser#master",
+      "directUrl": "https://raw.githubusercontent.com/gerhobbelt/lex-parser/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "/jison",
+    "/jison-lex"
+  ],
+  "_resolved": "git://github.com/gerhobbelt/lex-parser.git#04d4ec07292e9334b13f318961d6d032e36dc0dd",
+  "_shasum": "14dc82154a5dab8f01a80593f383d22db262ba7b",
+  "_shrinkwrap": null,
+  "_spec": "lex-parser@github:gerhobbelt/lex-parser#master",
+  "_where": "/home/doctor/prog/environment_root/server/v2/node_modules/jison",
+  "author": {
+    "name": "Zach Carter",
+    "email": "zach@carter.name",
+    "url": "http://zaa.ch"
+  },
+  "dependencies": {
+    "xregexp": "github:gerhobbelt/xregexp#master"
+  },
+  "description": "A parser for lexical grammars used by jison",
+  "devDependencies": {
+    "jison": "github:gerhobbelt/jison#master",
+    "test": ">=0.6.0"
+  },
+  "engines": {
+    "node": ">=4.0"
+  },
+  "gitHead": "04d4ec07292e9334b13f318961d6d032e36dc0dd",
+  "keywords": [
+    "lexical",
+    "grammar",
+    "parser",
+    "jison"
+  ],
+  "license": "MIT",
+  "main": "lex-parser.js",
+  "name": "lex-parser",
+  "optionalDependencies": {},
+  "readme": "# lex-parser\n\nA parser for lexical grammars used by [jison](http://jison.org) and jison-lex.\n\n## install\n\n    npm install lex-parser\n\n## build\n\nTo build the parser yourself, clone the git repo then run:\n\n    make prep\n    \nto install required packages and then run:\n\n    make\n    \nto run the unit tests.\n\nThis will generate `lex-parser.js`.\n\n\n## usage\n\n    var lexParser = require(\"lex-parser\");\n\n    // parse a lexical grammar and return JSON\n    lexParser.parse(\"%% ... \");\n\n\n## example\n\nThe parser can parse its own lexical grammar, shown below:\n\n```\n\nASCII_LETTER                            [a-zA-z]\n// \\p{Alphabetic} already includes [a-zA-z], hence we don't need to merge with {UNICODE_LETTER}:\nUNICODE_LETTER                          [\\p{Alphabetic}]\nALPHA                                   [{UNICODE_LETTER}_]\nDIGIT                                   [\\p{Number}]\nWHITESPACE                              [\\s\\r\\n\\p{Separator}]\n\nNAME                                    [{ALPHA}](?:[{ALPHA}{DIGIT}-]*[{ALPHA}{DIGIT}])?\nID                                      [{ALPHA}][{ALPHA}{DIGIT}]*\nBR                                      \\r\\n|\\n|\\r\n// WhiteSpace MUST NOT match CR/LF and the regex `\\s` DOES, so we cannot use that one directly. \n// Instead we define the {WS} macro here:\nWS                                      [^\\S\\r\\n]\n\n\n%s indented trail rules macro\n%x code start_condition options conditions action path set\n\n\n// Off Topic\n// ---------\n//\n// Do not specify the xregexp option as we want the XRegExp \\p{...} regex macros converted to \n// native regexes and used as such:\n//\n// %options xregexp\n\n%options easy_keyword_rules\n%options ranges\n\n%%\n\n<action>\"/*\"(.|\\n|\\r)*?\"*/\"             return 'ACTION_BODY';\n<action>\"//\".*                          return 'ACTION_BODY';\n<action>\"/\"[^ /]*?['\"{}'][^ ]*?\"/\"      return 'ACTION_BODY'; // regexp with braces or quotes (and no spaces)\n<action>\\\"(\"\\\\\\\\\"|'\\\"'|[^\"])*\\\"         return 'ACTION_BODY';\n<action>\"'\"(\"\\\\\\\\\"|\"\\'\"|[^'])*\"'\"       return 'ACTION_BODY';\n<action>[/\"'][^{}/\"']+                  return 'ACTION_BODY';\n<action>[^{}/\"']+                       return 'ACTION_BODY';\n<action>\"{\"                             yy.depth++; return '{';\n<action>\"}\"                             if (yy.depth == 0) { this.begin('trail'); } else { yy.depth--; } return '}';\n\n<conditions>{NAME}                      return 'NAME';\n<conditions>\">\"                         this.popState(); return '>';\n<conditions>\",\"                         return ',';\n<conditions>\"*\"                         return '*';\n\n<rules>{BR}+                            /* empty */\n<rules>{WS}+{BR}+                       /* empty */\n<rules>\\s+                              this.begin('indented');\n<rules>\"%%\"                             this.begin('code'); return '%%';\n<rules>[^\\s\\r\\n<>\\[\\](){}.*+?:!=|%\\/\\\\^$,\\'\\\";]+\n                                        %{\n                                            // accept any non-regex, non-lex, non-string-delim,\n                                            // non-escape-starter, non-space character as-is\n                                            return 'CHARACTER_LIT';\n                                        %}\n<options>{NAME}                         return 'NAME';\n<options>\"=\"                            return '=';\n<options>\\\"(\"\\\\\\\\\"|'\\\"'|[^\"])*\\\"        yytext = yytext.substr(1, yytext.length - 2); return 'OPTION_VALUE';\n<options>\"'\"(\"\\\\\\\\\"|\"\\'\"|[^'])*\"'\"      yytext = yytext.substr(1, yytext.length - 2); return 'OPTION_VALUE';\n<options>[^\\s\\r\\n]+                     return 'OPTION_VALUE';\n<options>{BR}+                          this.popState(); return 'OPTIONS_END';\n<options>{WS}+                          /* skip whitespace */\n\n<start_condition>{ID}                   return 'START_COND';\n<start_condition>{BR}+                  this.popState();\n<start_condition>{WS}+                  /* empty */\n\n<trail>{WS}*{BR}+                       this.begin('rules');\n\n<indented>\"{\"                           yy.depth = 0; this.begin('action'); return '{';\n<indented>\"%{\"(.|{BR})*?\"%}\"            this.begin('trail'); yytext = yytext.substr(2, yytext.length - 4); return 'ACTION';\n\"%{\"(.|{BR})*?\"%}\"                      yytext = yytext.substr(2, yytext.length - 4); return 'ACTION';\n<indented>\"%include\"                    %{\n                                            // This is an include instruction in place of an action:\n                                            // thanks to the `<indented>.+` rule immediately below we need to semi-duplicate\n                                            // the `%include` token recognition here vs. the almost-identical rule for the same\n                                            // further below.\n                                            // There's no real harm as we need to do something special in this case anyway:\n                                            // push 2 (two!) conditions.\n                                            //\n                                            // (Anecdotal: to find that we needed to place this almost-copy here to make the test grammar\n                                            // parse correctly took several hours as the debug facilities were - and are - too meager to\n                                            // quickly diagnose the problem while we hadn't. So the code got littered with debug prints\n                                            // and finally it hit me what the *F* went wrong, after which I saw I needed to add *this* rule!)\n\n                                            // first push the 'trail' condition which will be the follow-up after we're done parsing the path parameter...\n                                            this.pushState('trail');\n                                            // then push the immediate need: the 'path' condition.\n                                            this.pushState('path');\n                                            return 'INCLUDE';\n                                        %}\n<indented>.+                            this.begin('rules'); return 'ACTION';\n\n\"/*\"(.|\\n|\\r)*?\"*/\"                     /* ignore */\n\"//\".*                                  /* ignore */\n\n<INITIAL>{ID}                           this.pushState('macro'); return 'NAME';\n<macro>{BR}+                            this.popState('macro');\n\n// Accept any non-regex-special character as a direct literal without the need to put quotes around it:\n<macro>[^\\s\\r\\n<>\\[\\](){}.*+?:!=|%\\/\\\\^$,'\"\"]+\n                                        %{\n                                            // accept any non-regex, non-lex, non-string-delim,\n                                            // non-escape-starter, non-space character as-is\n                                            return 'CHARACTER_LIT';\n                                        %}\n\n{BR}+                                   /* empty */\n\\s+                                     /* empty */\n\n\\\"(\"\\\\\\\\\"|'\\\"'|[^\"])*\\\"                 yytext = yytext.replace(/\\\\\"/g,'\"'); return 'STRING_LIT';\n\"'\"(\"\\\\\\\\\"|\"\\'\"|[^'])*\"'\"               yytext = yytext.replace(/\\\\'/g,\"'\"); return 'STRING_LIT';\n\"[\"                                     this.pushState('set'); return 'REGEX_SET_START';\n\"|\"                                     return '|';\n\"(?:\"                                   return 'SPECIAL_GROUP';\n\"(?=\"                                   return 'SPECIAL_GROUP';\n\"(?!\"                                   return 'SPECIAL_GROUP';\n\"(\"                                     return '(';\n\")\"                                     return ')';\n\"+\"                                     return '+';\n\"*\"                                     return '*';\n\"?\"                                     return '?';\n\"^\"                                     return '^';\n\",\"                                     return ',';\n\"<<EOF>>\"                               return '$';\n\"<\"                                     this.begin('conditions'); return '<';\n\"/!\"                                    return '/!';                    // treated as `(?!atom)`\n\"/\"                                     return '/';                     // treated as `(?=atom)`\n\"\\\\\"([0-7]{1,3}|[rfntvsSbBwWdD\\\\*+()${}|[\\]\\/.^?]|\"c\"[A-Z]|\"x\"[0-9A-F]{2}|\"u\"[a-fA-F0-9]{4})\n                                        return 'ESCAPE_CHAR';\n\"\\\\\".                                   yytext = yytext.replace(/^\\\\/g, ''); return 'ESCAPE_CHAR';\n\"$\"                                     return '$';\n\".\"                                     return '.';\n\"%options\"                              this.begin('options'); return 'OPTIONS';\n\"%s\"                                    this.begin('start_condition'); return 'START_INC';\n\"%x\"                                    this.begin('start_condition'); return 'START_EXC';\n<INITIAL,trail,code>\"%include\"          this.pushState('path'); return 'INCLUDE';\n<INITIAL,rules,trail,code>\"%\"{NAME}[^\\r\\n]+\n                                        %{\n                                            /* ignore unrecognized decl */\n                                            console.warn('ignoring unsupported lexer option: ', yytext + ' while lexing in ' + this.topState() + ' state:', this._input, ' /////// ', this.matched);\n                                            return 'UNKNOWN_DECL';\n                                        %}\n\"%%\"                                    this.begin('rules'); return '%%';\n\"{\"\\d+(\",\"\\s?\\d+|\",\")?\"}\"               return 'RANGE_REGEX';\n\"{\"{ID}\"}\"                              return 'NAME_BRACE';\n<set,options>\"{\"{ID}\"}\"                 return 'NAME_BRACE';\n\"{\"                                     return '{';\n\"}\"                                     return '}';\n\n.                                       throw new Error(\"unsupported input character: \" + yytext + \" @ \" + JSON.stringify(yylloc)); /* b0rk on bad characters */\n\n<*><<EOF>>                              return 'EOF';\n\n\n<set>(?:\"\\\\\\\\\"|\"\\\\]\"|[^\\]{])+           return 'REGEX_SET';\n<set>\"{\"                                return 'REGEX_SET';\n<set>\"]\"                                this.popState('set'); return 'REGEX_SET_END';\n\n\n// in the trailing CODE block, only accept these `%include` macros when they appear at the start of a line\n// and make sure the rest of lexer regexes account for this one so it'll match that way only:\n<code>[^\\r\\n]*(\\r|\\n)+                  return 'CODE';\n<code>[^\\r\\n]+                          return 'CODE';      // the bit of CODE just before EOF...\n\n\n<path>{BR}                              this.popState(); this.unput(yytext);\n<path>\"'\"[^\\r\\n]+\"'\"                    yytext = yytext.substr(1, yyleng - 2); this.popState(); return 'PATH';\n<path>'\"'[^\\r\\n]+'\"'                    yytext = yytext.substr(1, yyleng - 2); this.popState(); return 'PATH';\n<path>{WS}+                             // skip whitespace in the line\n<path>[^\\s\\r\\n]+                        this.popState(); return 'PATH';\n\n<*>.                                    %{\n                                            /* ignore unrecognized decl */\n                                            console.warn('ignoring unsupported lexer input: ', yytext, ' @ ' + JSON.stringify(yylloc) + 'while lexing in ' + this.topState() + ' state:', this._input, ' /////// ', this.matched);\n                                        %}\n\n%%\n```\n\n\n## license\n\nMIT\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "repository": "https://github.com/zaach/lex-parser.git"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "version": "0.1.4-153"
+}

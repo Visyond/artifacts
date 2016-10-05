@@ -1,0 +1,84 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "gulp-compressor@^0.1.0",
+        "scope": null,
+        "escapedName": "gulp-compressor",
+        "name": "gulp-compressor",
+        "rawSpec": "^0.1.0",
+        "spec": ">=0.1.0 <0.2.0",
+        "type": "range"
+      },
+      "/home/doctor/prog/environment_root/server/v2"
+    ]
+  ],
+  "_from": "gulp-compressor@>=0.1.0 <0.2.0",
+  "_id": "gulp-compressor@0.1.0",
+  "_inCache": true,
+  "_location": "/gulp-compressor",
+  "_npmUser": {
+    "name": "steel1990",
+    "email": "lbbsteel@gmail.com"
+  },
+  "_npmVersion": "1.4.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "gulp-compressor@^0.1.0",
+    "scope": null,
+    "escapedName": "gulp-compressor",
+    "name": "gulp-compressor",
+    "rawSpec": "^0.1.0",
+    "spec": ">=0.1.0 <0.2.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gulp-compressor/-/gulp-compressor-0.1.0.tgz",
+  "_shasum": "484af2d36760d33e72e5dee515bca82db27ed6d3",
+  "_shrinkwrap": null,
+  "_spec": "gulp-compressor@^0.1.0",
+  "_where": "/home/doctor/prog/environment_root/server/v2",
+  "author": {
+    "name": "Steel Liao",
+    "email": "lbbsteel@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/steel1990/gulp-compressor/issues"
+  },
+  "dependencies": {
+    "easy-compressor": "*",
+    "through2": "*"
+  },
+  "description": "A gulp plugin for compressor(minify) html,js and css.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "484af2d36760d33e72e5dee515bca82db27ed6d3",
+    "tarball": "http://registry.npmjs.org/gulp-compressor/-/gulp-compressor-0.1.0.tgz"
+  },
+  "engines": {
+    "node": ">= 0.9"
+  },
+  "homepage": "https://github.com/steel1990/gulp-compressor",
+  "keywords": [
+    "gulpplugin"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "steel1990",
+      "email": "lbbsteel@gmail.com"
+    }
+  ],
+  "name": "gulp-compressor",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steel1990/gulp-compressor.git"
+  },
+  "version": "0.1.0"
+}

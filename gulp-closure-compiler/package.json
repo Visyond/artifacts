@@ -1,0 +1,120 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "gulp-closure-compiler@^0.3.1",
+        "scope": null,
+        "escapedName": "gulp-closure-compiler",
+        "name": "gulp-closure-compiler",
+        "rawSpec": "^0.3.1",
+        "spec": ">=0.3.1 <0.4.0",
+        "type": "range"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2"
+    ]
+  ],
+  "_from": "gulp-closure-compiler@>=0.3.1 <0.4.0",
+  "_id": "gulp-closure-compiler@0.3.1",
+  "_inCache": true,
+  "_location": "/gulp-closure-compiler",
+  "_nodeVersion": "0.12.5",
+  "_npmUser": {
+    "name": "zarov",
+    "email": "berthet.a@gmail.com"
+  },
+  "_npmVersion": "3.3.4",
+  "_phantomChildren": {
+    "inflight": "1.0.6",
+    "inherits": "2.0.3",
+    "minimatch": "3.0.3",
+    "once": "1.4.0",
+    "path-is-absolute": "1.0.1"
+  },
+  "_requested": {
+    "raw": "gulp-closure-compiler@^0.3.1",
+    "scope": null,
+    "escapedName": "gulp-closure-compiler",
+    "name": "gulp-closure-compiler",
+    "rawSpec": "^0.3.1",
+    "spec": ">=0.3.1 <0.4.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gulp-closure-compiler/-/gulp-closure-compiler-0.3.1.tgz",
+  "_shasum": "f9a1f13f56f72850a9b8a80cb1bc80b71a31b6e2",
+  "_shrinkwrap": null,
+  "_spec": "gulp-closure-compiler@^0.3.1",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2",
+  "author": {
+    "name": "Daniel Steigerwald",
+    "url": "https://github.com/steida"
+  },
+  "bugs": {
+    "url": "https://github.com/steida/gulp-closure-compiler/issues"
+  },
+  "dependencies": {
+    "glob": "^5.0.14",
+    "graceful-fs": "^4.1.2",
+    "gulp-util": "^3.0.0",
+    "mkdirp": "^0.5.0",
+    "temp-write": "^1.0.0",
+    "through": "^2.3.4",
+    "uuid": "^2.0.1"
+  },
+  "description": "Gulp plugin for Google Closure Compiler",
+  "devDependencies": {
+    "event-stream": "^3.1.0",
+    "gulp": "^3.5.6",
+    "mocha": "*",
+    "vinyl": "^0.5.3"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "f9a1f13f56f72850a9b8a80cb1bc80b71a31b6e2",
+    "tarball": "https://registry.npmjs.org/gulp-closure-compiler/-/gulp-closure-compiler-0.3.1.tgz"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "gitHead": "e41c6e9c34b67ab7a4e1b206e0e6fdbe3971e24c",
+  "homepage": "https://github.com/steida/gulp-closure-compiler#readme",
+  "keywords": [
+    "closure",
+    "compiler",
+    "compress",
+    "google",
+    "gulpplugin",
+    "minify"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    },
+    {
+      "name": "steida",
+      "email": "daniel@steigerwald.cz"
+    },
+    {
+      "name": "zarov",
+      "email": "berthet.a@gmail.com"
+    }
+  ],
+  "name": "gulp-closure-compiler",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steida/gulp-closure-compiler.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "0.3.1"
+}

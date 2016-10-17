@@ -1,0 +1,111 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "typescript-require@^0.2.9",
+        "scope": null,
+        "escapedName": "typescript-require",
+        "name": "typescript-require",
+        "rawSpec": "^0.2.9",
+        "spec": ">=0.2.9 <0.3.0",
+        "type": "range"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2"
+    ]
+  ],
+  "_from": "typescript-require@>=0.2.9 <0.3.0",
+  "_id": "typescript-require@0.2.9",
+  "_inCache": true,
+  "_location": "/typescript-require",
+  "_nodeVersion": "0.10.33",
+  "_npmUser": {
+    "name": "svallory",
+    "email": "me@saulovallory.com"
+  },
+  "_npmVersion": "2.1.11",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "typescript-require@^0.2.9",
+    "scope": null,
+    "escapedName": "typescript-require",
+    "name": "typescript-require",
+    "rawSpec": "^0.2.9",
+    "spec": ">=0.2.9 <0.3.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/typescript-require/-/typescript-require-0.2.9.tgz",
+  "_shasum": "796e0654d6dcd161a4929bb194659882d5675216",
+  "_shrinkwrap": null,
+  "_spec": "typescript-require@^0.2.9",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2",
+  "author": {
+    "name": "Ekin Koc",
+    "email": "ekin@eknkc.com"
+  },
+  "bugs": {
+    "url": "https://github.com/eknkc/typescript-require/issues"
+  },
+  "contributors": [
+    {
+      "name": "Szymon Wygnański",
+      "email": "s@finalclass.net"
+    },
+    {
+      "name": "The Blacksmith",
+      "email": "me@saulovallory.com",
+      "url": "a.k.a Saulo Vallory"
+    }
+  ],
+  "dependencies": {
+    "typescript": ">= 0.8.2"
+  },
+  "description": "Node.JS require extension to load TypeScript modules from JS",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "796e0654d6dcd161a4929bb194659882d5675216",
+    "tarball": "https://registry.npmjs.org/typescript-require/-/typescript-require-0.2.9.tgz"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "gitHead": "169771ca270514f9af580800cf68575202ec4504",
+  "homepage": "https://github.com/eknkc/typescript-require",
+  "keywords": [
+    "typescript",
+    "require"
+  ],
+  "license": "MIT",
+  "main": "./index.js",
+  "maintainers": [
+    {
+      "name": "eknkc",
+      "email": "ekin@eknkc.com"
+    },
+    {
+      "name": "finalclass",
+      "email": "s@finalclass.net"
+    },
+    {
+      "name": "svallory",
+      "email": "me@saulovallory.com"
+    }
+  ],
+  "name": "typescript-require",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/eknkc/typescript-require.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "0.2.9"
+}

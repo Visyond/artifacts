@@ -1,0 +1,112 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "gulp-manifest@^0.1.1",
+        "scope": null,
+        "escapedName": "gulp-manifest",
+        "name": "gulp-manifest",
+        "rawSpec": "^0.1.1",
+        "spec": ">=0.1.1 <0.2.0",
+        "type": "range"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2"
+    ]
+  ],
+  "_from": "gulp-manifest@>=0.1.1 <0.2.0",
+  "_id": "gulp-manifest@0.1.1",
+  "_inCache": true,
+  "_location": "/gulp-manifest",
+  "_npmUser": {
+    "name": "hillmanov",
+    "email": "hillmanov+npm@gmail.com"
+  },
+  "_npmVersion": "1.4.28",
+  "_phantomChildren": {
+    "brace-expansion": "1.1.6",
+    "clone-stats": "0.0.1",
+    "core-util-is": "1.0.2",
+    "dateformat": "1.0.12",
+    "escape-string-regexp": "1.0.5",
+    "inherits": "2.0.3",
+    "lodash._escapehtmlchar": "2.4.1",
+    "lodash._escapestringchar": "2.4.1",
+    "lodash._isnative": "2.4.1",
+    "lodash._reunescapedhtml": "2.4.1",
+    "lodash._shimkeys": "2.4.1",
+    "lodash.defaults": "2.4.1",
+    "lodash.isobject": "2.4.1",
+    "lodash.values": "2.4.1",
+    "multipipe": "0.1.2",
+    "string_decoder": "0.10.31"
+  },
+  "_requested": {
+    "raw": "gulp-manifest@^0.1.1",
+    "scope": null,
+    "escapedName": "gulp-manifest",
+    "name": "gulp-manifest",
+    "rawSpec": "^0.1.1",
+    "spec": ">=0.1.1 <0.2.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gulp-manifest/-/gulp-manifest-0.1.1.tgz",
+  "_shasum": "68a801a5a15c12f7f3f1d34082070b534df9f717",
+  "_shrinkwrap": null,
+  "_spec": "gulp-manifest@^0.1.1",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2",
+  "author": {
+    "name": "Scott Hillman"
+  },
+  "bugs": {
+    "url": "https://github.com/hillmanov/gulp-manifest/issues"
+  },
+  "dependencies": {
+    "gulp-util": "~2.2.6",
+    "minimatch": "~2.0.1",
+    "slash": "^1.0.0",
+    "through": "~2.3.4"
+  },
+  "description": "Generate HTML5 Cache Manifest files",
+  "devDependencies": {
+    "event-stream": "^3.1.7",
+    "gulp": "^3.9.0",
+    "mocha": "~1.16.2",
+    "should": "~2.1.1"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "68a801a5a15c12f7f3f1d34082070b534df9f717",
+    "tarball": "https://registry.npmjs.org/gulp-manifest/-/gulp-manifest-0.1.1.tgz"
+  },
+  "gitHead": "fbb879f058e79644bf8aa06fec4bfa277f2523a6",
+  "homepage": "https://github.com/hillmanov/gulp-manifest",
+  "keywords": [
+    "gulp",
+    "gulpplugin",
+    "html5",
+    "manifest",
+    "appcache"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "hillmanov",
+      "email": "hillmanov+npm@gmail.com"
+    }
+  ],
+  "name": "gulp-manifest",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hillmanov/gulp-manifest.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "0.1.1"
+}

@@ -1,0 +1,116 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "jison@git://github.com/GerHobbelt/jison.git#master",
+        "scope": null,
+        "escapedName": "jison",
+        "name": "jison",
+        "rawSpec": "git://github.com/GerHobbelt/jison.git#master",
+        "spec": "git://github.com/GerHobbelt/jison.git#master",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:GerHobbelt/jison.git#master",
+          "sshUrl": "git+ssh://git@github.com/GerHobbelt/jison.git#master",
+          "httpsUrl": "git+https://github.com/GerHobbelt/jison.git#master",
+          "gitUrl": "git://github.com/GerHobbelt/jison.git#master",
+          "shortcut": "github:GerHobbelt/jison#master",
+          "directUrl": "https://raw.githubusercontent.com/GerHobbelt/jison/master/package.json"
+        }
+      },
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/gulp-jison"
+    ]
+  ],
+  "_from": "git://github.com/GerHobbelt/jison.git#master",
+  "_id": "jison@0.4.18-153",
+  "_inCache": true,
+  "_location": "/jison",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "jison@git://github.com/GerHobbelt/jison.git#master",
+    "scope": null,
+    "escapedName": "jison",
+    "name": "jison",
+    "rawSpec": "git://github.com/GerHobbelt/jison.git#master",
+    "spec": "git://github.com/GerHobbelt/jison.git#master",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:GerHobbelt/jison.git#master",
+      "sshUrl": "git+ssh://git@github.com/GerHobbelt/jison.git#master",
+      "httpsUrl": "git+https://github.com/GerHobbelt/jison.git#master",
+      "gitUrl": "git://github.com/GerHobbelt/jison.git#master",
+      "shortcut": "github:GerHobbelt/jison#master",
+      "directUrl": "https://raw.githubusercontent.com/GerHobbelt/jison/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "/gulp-jison"
+  ],
+  "_resolved": "git://github.com/GerHobbelt/jison.git#94950640b0f0591d16a42d523033d1ec899e37b4",
+  "_shasum": "50bd0dd597b718e2b2a0bc8a90bc39a757b854af",
+  "_shrinkwrap": null,
+  "_spec": "jison@git://github.com/GerHobbelt/jison.git#master",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/gulp-jison",
+  "author": {
+    "name": "Zach Carter",
+    "email": "zach@carter.name",
+    "url": "http://zaa.ch"
+  },
+  "bin": {
+    "jison": "lib/cli.js"
+  },
+  "bugs": {
+    "url": "http://github.com/zaach/jison/issues",
+    "email": "jison@librelist.com"
+  },
+  "dependencies": {
+    "ebnf-parser": "github:gerhobbelt/ebnf-parser#master",
+    "jison-lex": "github:gerhobbelt/jison-lex#master",
+    "jscodeshift": "0.3.28",
+    "json5": "0.5.0",
+    "lex-parser": "github:gerhobbelt/lex-parser#master",
+    "nomnom": "github:gerhobbelt/nomnom#master",
+    "recast": "0.11.14",
+    "xregexp": "github:gerhobbelt/xregexp#master"
+  },
+  "description": "A parser generator with Bison's API",
+  "devDependencies": {
+    "browserify": "13.1.0",
+    "glob": "^7.0.6",
+    "test": "0.6.0",
+    "uglify-js": "2.7.3"
+  },
+  "engines": {
+    "node": ">=4.0"
+  },
+  "gitHead": "94950640b0f0591d16a42d523033d1ec899e37b4",
+  "homepage": "http://jison.org",
+  "keywords": [
+    "jison",
+    "bison",
+    "yacc",
+    "parser",
+    "generator",
+    "lexer",
+    "flex",
+    "tokenizer",
+    "compiler"
+  ],
+  "license": "MIT",
+  "main": "lib/jison",
+  "name": "jison",
+  "optionalDependencies": {},
+  "preferGlobal": true,
+  "readme": "Jison\n=====\n\n* [Issues](http://github.com/zaach/jison/issues)\n* [Discuss](mailto:jison@librelist.com)\n\n[![build status](https://secure.travis-ci.org/zaach/jison.png)](http://travis-ci.org/zaach/jison)\n\nAn API for creating parsers in JavaScript\n-----------------------------------------\n\nJison generates bottom-up parsers in JavaScript. Its API is similar to Bison's, hence the name. It supports many of Bison's major features, plus some of its own. If you are new to parser generators such as Bison, and Context-free Grammars in general, a [good introduction][1] is found in the Bison manual. If you already know Bison, Jison should be easy to pickup.\n\nBriefly, Jison takes a JSON encoded grammar or Bison style grammar and outputs a JavaScript file capable of parsing the language described by that grammar. You can then use the generated script to parse inputs and accept, reject, or perform actions based on the input.\n\nInstallation\n------------\n\nJison can be installed for [Node](http://nodejs.org) using [`npm`](http://github.com/isaacs/npm/)\n\nUsing npm:\n\n    npm install jison -g\n\nUsage from the command line\n---------------------------\n\nClone the github repository for examples:\n\n    git clone git://github.com/zaach/jison.git\n    cd jison/examples\n\nNow you're ready to generate some parsers:\n\n    jison calculator.jison\n\nThis will generate `calculator.js` in your current working directory. This file can be used to parse an input file, like so:\n\n    echo \"2^32 / 1024\" > testcalc\n    node calculator.js testcalc\n\nThis will print out `4194304`.\n\nFull cli option list:\n\n    Usage: jison [file] [lexfile] [options]\n\n    file        file containing a grammar\n    lexfile     file containing a lexical grammar\n\n    Options:\n       -j, --json                    force jison to expect a grammar in JSON format\n       -o FILE, --outfile FILE       Filename and base module name of the generated parser\n       -t, --debug                   Debug mode\n       -m TYPE, --module-type TYPE   The type of module to generate (commonjs, amd, js)\n       -p TYPE, --parser-type TYPE   The type of algorithm to use for the parser (lr0, slr, lalr, lr)\n       -V, --version                 print version and exit\n\n\nUsage from a CommonJS module\n----------------------------\n\nYou can generate parsers programmatically from JavaScript as well. Assuming Jison is in your CommonJS environment's load path:\n\n```javascript\n// mygenerator.js\nvar Parser = require(\"jison\").Parser;\n\n// a grammar in JSON\nvar grammar = {\n    \"lex\": {\n        \"rules\": [\n           [\"\\\\s+\", \"/* skip whitespace */\"],\n           [\"[a-f0-9]+\", \"return 'HEX';\"]\n        ]\n    },\n\n    \"bnf\": {\n        \"hex_strings\" :[ \"hex_strings HEX\",\n                         \"HEX\" ]\n    }\n};\n\n// `grammar` can also be a string that uses jison's grammar format\nvar parser = new Parser(grammar);\n\n// generate source, ready to be written to disk\nvar parserSource = parser.generate();\n\n// you can also use the parser directly from memory\n\n// returns true\nparser.parse(\"adfe34bc e82a\");\n\n// throws lexical error\nparser.parse(\"adfe34bc zxg\");\n```\n\nMore Documentation\n------------------\n\nFor more information on creating grammars and using the generated parsers, read the [documentation](http://jison.org/docs).\n\nHow to contribute\n-----------------\n\nSee [CONTRIBUTING.md](https://github.com/zaach/jison/blob/master/CONTRIBUTING.md) for contribution guidelines, how to run the tests, etc.\n\nProjects using Jison\n--------------------\n\nView them on the [wiki](https://github.com/zaach/jison/wiki/ProjectsUsingJison), or add your own.\n\n\nContributors\n------------\n\n[Githubbers](http://github.com/zaach/jison/contributors)\n\nSpecial thanks to Jarred Ligatti, Manuel E. Bermúdez\n\nLicense\n-------\n\n> Copyright (c) 2009-2016 Zachary Carter\n>\n>  Permission is hereby granted, free of\n> charge, to any person  obtaining a\n> copy of this software and associated\n> documentation  files (the \"Software\"),\n> to deal in the Software without\n> restriction, including without\n> limitation the rights to use,  copy,\n> modify, merge, publish, distribute,\n> sublicense, and/or sell  copies of the\n> Software, and to permit persons to\n> whom the  Software is furnished to do\n> so, subject to the following\n> conditions:\n>\n>  The above copyright notice and this\n> permission notice shall be  included\n> in all copies or substantial portions\n> of the Software.\n>\n>  THE SOFTWARE IS PROVIDED \"AS IS\",\n> WITHOUT WARRANTY OF ANY KIND,  EXPRESS\n> OR IMPLIED, INCLUDING BUT NOT LIMITED\n> TO THE WARRANTIES  OF MERCHANTABILITY,\n> FITNESS FOR A PARTICULAR PURPOSE AND\n> NONINFRINGEMENT. IN NO EVENT SHALL THE\n> AUTHORS OR COPYRIGHT  HOLDERS BE\n> LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n> LIABILITY,  WHETHER IN AN ACTION OF\n> CONTRACT, TORT OR OTHERWISE, ARISING\n> FROM, OUT OF OR IN CONNECTION WITH THE\n> SOFTWARE OR THE USE OR  OTHER DEALINGS\n> IN THE SOFTWARE.\n\n\n  [1]: http://dinosaur.compilertools.net/bison/bison_4.html\n\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zaach/jison.git"
+  },
+  "scripts": {
+    "test": "node tests/all-tests.js"
+  },
+  "version": "0.4.18-153"
+}

@@ -1,0 +1,142 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "selenium-standalone@^5.1.0",
+        "scope": null,
+        "escapedName": "selenium-standalone",
+        "name": "selenium-standalone",
+        "rawSpec": "^5.1.0",
+        "spec": ">=5.1.0 <6.0.0",
+        "type": "range"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2"
+    ]
+  ],
+  "_from": "selenium-standalone@>=5.1.0 <6.0.0",
+  "_id": "selenium-standalone@5.7.2",
+  "_inCache": true,
+  "_location": "/selenium-standalone",
+  "_nodeVersion": "6.5.0",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/selenium-standalone-5.7.2.tgz_1474529616594_0.5126986312679946"
+  },
+  "_npmUser": {
+    "name": "vvo",
+    "email": "vincent.voyer@gmail.com"
+  },
+  "_npmVersion": "3.10.3",
+  "_phantomChildren": {
+    "core-util-is": "1.0.2",
+    "ctype": "0.5.3",
+    "inherits": "2.0.3",
+    "json-stringify-safe": "5.0.1",
+    "node-uuid": "1.4.7",
+    "string_decoder": "0.10.31",
+    "stringstream": "0.0.5",
+    "tough-cookie": "2.3.1",
+    "tunnel-agent": "0.4.3"
+  },
+  "_requested": {
+    "raw": "selenium-standalone@^5.1.0",
+    "scope": null,
+    "escapedName": "selenium-standalone",
+    "name": "selenium-standalone",
+    "rawSpec": "^5.1.0",
+    "spec": ">=5.1.0 <6.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/selenium-standalone/-/selenium-standalone-5.7.2.tgz",
+  "_shasum": "cc7c59172a04b2d28b10ab992fa40f181ab69c81",
+  "_shrinkwrap": null,
+  "_spec": "selenium-standalone@^5.1.0",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2",
+  "author": {
+    "name": "Vincent Voyer",
+    "email": "vincent@zeroload.net"
+  },
+  "bin": {
+    "selenium-standalone": "./bin/selenium-standalone",
+    "start-selenium": "./bin/start-selenium"
+  },
+  "bugs": {
+    "url": "https://github.com/vvo/selenium-standalone/issues"
+  },
+  "contributors": [
+    {
+      "name": "Vincent Voyer",
+      "email": "vincent@zeroload.net"
+    },
+    {
+      "name": "Josh Chisholm",
+      "email": "joshuachisholm@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "async": "1.2.1",
+    "commander": "2.6.0",
+    "lodash": "3.9.3",
+    "minimist": "1.1.0",
+    "mkdirp": "0.5.0",
+    "progress": "1.1.8",
+    "request": "2.51.0",
+    "tar-stream": "1.5.2",
+    "urijs": "1.16.1",
+    "which": "1.1.1",
+    "yauzl": "^2.5.0"
+  },
+  "description": "installs a `selenium-standalone` command line to install and start a standalone selenium server",
+  "devDependencies": {
+    "mocha": "2.1.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "cc7c59172a04b2d28b10ab992fa40f181ab69c81",
+    "tarball": "https://registry.npmjs.org/selenium-standalone/-/selenium-standalone-5.7.2.tgz"
+  },
+  "gitHead": "580e7cc4b46c9f63f80d5faebda617abdd06f12e",
+  "homepage": "https://github.com/vvo/selenium-standalone",
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "azakus",
+      "email": "dfreedm2@gmail.com"
+    },
+    {
+      "name": "c2c",
+      "email": "contact@juliencrouzet.fr"
+    },
+    {
+      "name": "devpaul",
+      "email": "a@devpaul.com"
+    },
+    {
+      "name": "nolanlawson",
+      "email": "nolan@nolanlawson.com"
+    },
+    {
+      "name": "stephenash",
+      "email": "stephenash@gmail.com"
+    },
+    {
+      "name": "vvo",
+      "email": "vincent.voyer@gmail.com"
+    }
+  ],
+  "name": "selenium-standalone",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vvo/selenium-standalone.git"
+  },
+  "scripts": {
+    "test": "./bin/selenium-standalone install && mocha"
+  },
+  "version": "5.7.2"
+}

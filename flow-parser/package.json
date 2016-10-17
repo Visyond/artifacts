@@ -1,0 +1,104 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "flow-parser@^0.*",
+        "scope": null,
+        "escapedName": "flow-parser",
+        "name": "flow-parser",
+        "rawSpec": "^0.*",
+        "spec": ">=0.0.0 <1.0.0",
+        "type": "range"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/jscodeshift"
+    ]
+  ],
+  "_from": "flow-parser@>=0.0.0 <1.0.0",
+  "_id": "flow-parser@0.33.0",
+  "_inCache": true,
+  "_location": "/flow-parser",
+  "_nodeVersion": "4.4.3",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/flow-parser-0.33.0.tgz_1476291693409_0.2652650682721287"
+  },
+  "_npmUser": {
+    "name": "flowtype",
+    "email": "flowtype@fb.com"
+  },
+  "_npmVersion": "2.15.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "flow-parser@^0.*",
+    "scope": null,
+    "escapedName": "flow-parser",
+    "name": "flow-parser",
+    "rawSpec": "^0.*",
+    "spec": ">=0.0.0 <1.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/jscodeshift"
+  ],
+  "_resolved": "https://registry.npmjs.org/flow-parser/-/flow-parser-0.33.0.tgz",
+  "_shasum": "5e15edd3f8888ec257c37589a1f87497e3458ed7",
+  "_shrinkwrap": null,
+  "_spec": "flow-parser@^0.*",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jscodeshift",
+  "author": {
+    "name": "Gabe Levi",
+    "email": "gabe@fb.com"
+  },
+  "bin": {
+    "flowparse": "tools/inspect_ast.js",
+    "flowvalidate": "tools/js_test_files.js"
+  },
+  "dependencies": {
+    "ast-types": "0.8.18",
+    "colors": ">=0.6.2",
+    "minimist": ">=0.2.0"
+  },
+  "description": "JavaScript parser written in OCaml. Produces SpiderMonkey AST",
+  "devDependencies": {
+    "esprima-fb": "15001.1001.0-dev-harmony-fb"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "5e15edd3f8888ec257c37589a1f87497e3458ed7",
+    "tarball": "https://registry.npmjs.org/flow-parser/-/flow-parser-0.33.0.tgz"
+  },
+  "engines": {
+    "node": ">=0.4.0"
+  },
+  "license": "BSD-3-Clause",
+  "main": "flow_parser.js",
+  "maintainers": [
+    {
+      "name": "flowtype",
+      "email": "flowtype+npm@fb.com"
+    },
+    {
+      "name": "gabelevi",
+      "email": "gabelevi@gmail.com"
+    },
+    {
+      "name": "jeffmo",
+      "email": "lbljeffmo@gmail.com"
+    },
+    {
+      "name": "mroch",
+      "email": "marshall@mroch.com"
+    }
+  ],
+  "name": "flow-parser",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "private": true
+  },
+  "scripts": {
+    "prepublish": "make js",
+    "test": "node test/run_tests.js"
+  },
+  "version": "0.33.0"
+}

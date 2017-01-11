@@ -2,7 +2,7 @@
 
 > Documentation generator for TypeScript projects.
 
-[![Build Status](https://travis-ci.org/sebastian-lenz/typedoc.svg?branch=master)](https://travis-ci.org/sebastian-lenz/typedoc) [![NPM version](https://badge.fury.io/js/typedoc.svg)](http://badge.fury.io/js/typedoc)
+[![Build Status](https://travis-ci.org/TypeStrong/typedoc.svg?branch=master)](https://travis-ci.org/TypeStrong/typedoc) [![NPM version](https://badge.fury.io/js/typedoc.svg)](http://badge.fury.io/js/typedoc)
 
 
 ## Installation
@@ -21,17 +21,6 @@ if you install TypeDoc as a global module. The name of the executable is ``typed
 $ npm install typedoc --global
 $ typedoc
 ```
-
-
-## Preview
-
-If you want to know what a documentation created with TypeDoc looks like, head over
-to the homepage of the project. We've setup examples demonstrating the two default
-themes shipped with the package:
-
-[http://typedoc.io/themes/default](http://typedoc.io/themes/default)<br>
-[http://typedoc.io/themes/minimal](http://typedoc.io/themes/minimal)
-
 
 ## Usage
 
@@ -70,12 +59,15 @@ in order to change the behaviour of TypeDoc.
   Define a pattern for files that should be considered being external.
 * `--excludeExternals`<br>
   Prevent externally resolved TypeScript files from being documented.
+* `--excludePrivate`<br>
+  Prevent private members from being included in the generated documentation.
+  
 
 #### TypeScript compiler
-* `--module <commonjs or amd>`<br>
-  Specify module code generation: "commonjs" or "amd"
-* `--target <ES3 or ES5>`<br>
-  Specify ECMAScript target version: "ES3" (default), or "ES5"
+* `--module <commonjs, amd, system or umd>`<br>
+  Specify module code generation: "commonjs", "amd", "system" or "umd".
+* `--target <ES3, ES5, or ES6>`<br>
+  Specify ECMAScript target version: "ES3" (default), "ES5" or "ES6"
 
 #### Theming
 * `--theme <default|minimal|path/to/theme>`<br>
@@ -109,6 +101,11 @@ in order to change the behaviour of TypeDoc.
 * `--help`<br>
   Display a simple cheat sheet.
 
+### Webpack
+
+There is a plugin available to run TypeDoc with Webpack created by Microsoft. You can find it on NPM:<br>
+[https://www.npmjs.com/package/typedoc-webpack-plugin](https://www.npmjs.com/package/typedoc-webpack-plugin)
+
 
 ### Gulp
 
@@ -121,21 +118,24 @@ There is a plugin available to run TypeDoc with Gulp created by Rogier Schouten.
 There is a plugin available to run TypeDoc with Grunt created by Bart van der Schoor. You can find it on NPM:<br>
 [https://www.npmjs.org/package/grunt-typedoc](https://www.npmjs.org/package/grunt-typedoc)
 
+## Plugins
+
+* [External Module Name](https://github.com/christopherthielen/typedoc-plugin-external-module-name) - Set the name of TypeDoc external modules
 
 ## Advanced guides and docs
 
 Visit our homepage for advanced guides and an extensive API documentation:<br>
-[http://typedoc.io](http://typedoc.io)
+[http://typedoc.org](http://typedoc.org)
 
 
 ## Contributing
 
 Contributions are welcome and appreciated. You can find TypeDoc on GitHub, feel free to start
 an issue or create a pull requests:<br>
-[https://github.com/sebastian-lenz/typedoc](https://github.com/sebastian-lenz/typedoc)
+[https://github.com/TypeStrong/typedoc](https://github.com/TypeStrong/typedoc)
 
 
 ## License
 
-Copyright (c) 2015 [Sebastian Lenz](http://www.sebastian-lenz.de).<br>
+Copyright (c) 2015 [Sebastian Lenz](http://typedoc.org).<br>
 Licensed under the Apache License 2.0.

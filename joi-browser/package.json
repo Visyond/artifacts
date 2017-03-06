@@ -1,0 +1,87 @@
+{
+  "name": "joi-browser",
+  "version": "10.0.6",
+  "description": "joi object schema validation bundled for the browser",
+  "main": "./dist/joi-browser.js",
+  "scripts": {
+    "prepublish": "npm run build-webpack",
+    "build-webpack": "webpack && uglifyjs dist/joi-browser.js -c warnings=false -m | ntee dist/joi-browser.min.js | ngzip > dist/joi-browser.min.js.gz"
+  },
+  "author": {
+    "name": "Jeff Barczewski"
+  },
+  "license": "MIT",
+  "babelNotes": {
+    "plugins": "Use loose mode for es2015-classes and proto-to-assign for IE < 11 compatibility. See https://github.com/jeffbski/joi-browser/issues/11"
+  },
+  "babel": {
+    "plugins": [
+      "transform-es2015-modules-commonjs",
+      "transform-object-assign",
+      "transform-proto-to-assign",
+      [
+        "transform-es2015-classes",
+        {
+          "loose": true
+        }
+      ]
+    ],
+    "presets": [
+      "es2015"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jeffbski/joi-browser.git"
+  },
+  "bugs": {
+    "url": "http://github.com/jeffbski/joi-browser/issues"
+  },
+  "devDependencies": {
+    "babel-core": "^6.2.1",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-transform-es2015-classes": "^6.14.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.2.0",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-plugin-transform-proto-to-assign": "^6.9.0",
+    "babel-preset-es2015": "^6.1.18",
+    "joi": "10.0.6",
+    "json-loader": "^0.5.4",
+    "ngzip": "^1.1.3",
+    "ntee": "^1.1.4",
+    "uglify-js": "^2.6.1",
+    "webpack": "^1.12.9"
+  },
+  "dependencies": {},
+  "gitHead": "1a84a9c9b21871aa4ee22e24454cf65bd1fedac6",
+  "homepage": "https://github.com/jeffbski/joi-browser#readme",
+  "_id": "joi-browser@10.0.6",
+  "_shasum": "2079c3fd845a886fc7ec5ce7c3f57422fbbdaa05",
+  "_from": "joi-browser@latest",
+  "_npmVersion": "3.10.9",
+  "_nodeVersion": "7.2.0",
+  "_npmUser": {
+    "name": "jeffbski",
+    "email": "jeff.barczewski@gmail.com"
+  },
+  "dist": {
+    "shasum": "2079c3fd845a886fc7ec5ce7c3f57422fbbdaa05",
+    "tarball": "https://registry.npmjs.org/joi-browser/-/joi-browser-10.0.6.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "jeffbski",
+      "email": "jeff.barczewski@gmail.com"
+    },
+    {
+      "name": "shmuga",
+      "email": "mail.ormark@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/joi-browser-10.0.6.tgz_1481841410633_0.6327360167633742"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/joi-browser/-/joi-browser-10.0.6.tgz"
+}

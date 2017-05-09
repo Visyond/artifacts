@@ -1,0 +1,110 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "gulp-nightwatch@^0.2.9",
+        "scope": null,
+        "escapedName": "gulp-nightwatch",
+        "name": "gulp-nightwatch",
+        "rawSpec": "^0.2.9",
+        "spec": ">=0.2.9 <0.3.0",
+        "type": "range"
+      },
+      "/home/doctor/prog/environment_root/server/v2"
+    ]
+  ],
+  "_from": "gulp-nightwatch@>=0.2.9 <0.3.0",
+  "_id": "gulp-nightwatch@0.2.9",
+  "_inCache": true,
+  "_location": "/gulp-nightwatch",
+  "_nodeVersion": "5.3.0",
+  "_npmOperationalInternal": {
+    "host": "packages-5-east.internal.npmjs.com",
+    "tmp": "tmp/gulp-nightwatch-0.2.9.tgz_1455025245058_0.6252071158960462"
+  },
+  "_npmUser": {
+    "name": "tatsuyafw",
+    "email": "tatsuya7.hoshino7@gmail.com"
+  },
+  "_npmVersion": "3.3.12",
+  "_phantomChildren": {
+    "chai-nightwatch": "0.1.1",
+    "ejs": "0.8.8",
+    "lodash._baseclone": "3.3.0",
+    "lodash._bindcallback": "3.0.1",
+    "lodash._isiterateecall": "3.0.9",
+    "lodash.defaultsdeep": "4.6.0",
+    "lru-cache": "2.7.3",
+    "mkpath": "1.0.0",
+    "mocha-nightwatch": "2.2.7",
+    "optimist": "0.6.1",
+    "proxy-agent": "2.0.0",
+    "q": "1.5.0",
+    "sigmund": "1.0.1"
+  },
+  "_requested": {
+    "raw": "gulp-nightwatch@^0.2.9",
+    "scope": null,
+    "escapedName": "gulp-nightwatch",
+    "name": "gulp-nightwatch",
+    "rawSpec": "^0.2.9",
+    "spec": ">=0.2.9 <0.3.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gulp-nightwatch/-/gulp-nightwatch-0.2.9.tgz",
+  "_shasum": "abd4bee37eaac3ece641f1b1755fc6ec7e487e57",
+  "_shrinkwrap": null,
+  "_spec": "gulp-nightwatch@^0.2.9",
+  "_where": "/home/doctor/prog/environment_root/server/v2",
+  "author": {
+    "name": "Tatsuya Hoshino"
+  },
+  "bugs": {
+    "url": "https://github.com/tatsuyafw/gulp-nightwatch/issues"
+  },
+  "dependencies": {
+    "event-stream": "^3.1.7",
+    "gulp-util": "^3.0.1",
+    "minimist": "^1.1.1",
+    "nightwatch": "^0.8.3",
+    "shell-quote": "^1.4.3"
+  },
+  "description": "gulp plugin for Nightwatch.js",
+  "devDependencies": {
+    "chai": "^2.1.2",
+    "mocha": "^2.2.1"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "abd4bee37eaac3ece641f1b1755fc6ec7e487e57",
+    "tarball": "https://registry.npmjs.org/gulp-nightwatch/-/gulp-nightwatch-0.2.9.tgz"
+  },
+  "gitHead": "4ff035e3e4e9148e244d0cd2a637947fc5f3dbcc",
+  "homepage": "https://github.com/tatsuyafw/gulp-nightwatch",
+  "keywords": [
+    "gulpplugin",
+    "nightwatch"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "tatsuyafw",
+      "email": "tatsuya7.hoshino7@gmail.com"
+    }
+  ],
+  "name": "gulp-nightwatch",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tatsuyafw/gulp-nightwatch.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "0.2.9"
+}

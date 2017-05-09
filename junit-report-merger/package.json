@@ -1,0 +1,105 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "junit-report-merger@0.0.4",
+        "scope": null,
+        "escapedName": "junit-report-merger",
+        "name": "junit-report-merger",
+        "rawSpec": "0.0.4",
+        "spec": "0.0.4",
+        "type": "version"
+      },
+      "/home/doctor/prog/environment_root/server/v2"
+    ]
+  ],
+  "_from": "junit-report-merger@0.0.4",
+  "_id": "junit-report-merger@0.0.4",
+  "_inCache": true,
+  "_location": "/junit-report-merger",
+  "_nodeVersion": "4.2.4",
+  "_npmOperationalInternal": {
+    "host": "packages-5-east.internal.npmjs.com",
+    "tmp": "tmp/junit-report-merger-0.0.4.tgz_1456845683345_0.25066729937680066"
+  },
+  "_npmUser": {
+    "name": "bhovhannes",
+    "email": "bhovhannes@gmail.com"
+  },
+  "_npmVersion": "3.7.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "junit-report-merger@0.0.4",
+    "scope": null,
+    "escapedName": "junit-report-merger",
+    "name": "junit-report-merger",
+    "rawSpec": "0.0.4",
+    "spec": "0.0.4",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/junit-report-merger/-/junit-report-merger-0.0.4.tgz",
+  "_shasum": "78aaf697593315af90dd62671b23a6f7851a2c97",
+  "_shrinkwrap": null,
+  "_spec": "junit-report-merger@0.0.4",
+  "_where": "/home/doctor/prog/environment_root/server/v2",
+  "author": {
+    "name": "Hovhannes Babayan"
+  },
+  "bugs": {
+    "url": "https://github.com/bhovhannes/junit-report-merger/issues"
+  },
+  "dependencies": {
+    "async": "^1.5.2",
+    "xmldom": "^0.1.21"
+  },
+  "description": "Merges multiple JUnit XML reports into one.",
+  "devDependencies": {
+    "async": "^1.5.2",
+    "chai": "~3.5.0",
+    "istanbul": "~0.4.2",
+    "mocha": "~2.4.4"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "78aaf697593315af90dd62671b23a6f7851a2c97",
+    "tarball": "https://registry.npmjs.org/junit-report-merger/-/junit-report-merger-0.0.4.tgz"
+  },
+  "files": [
+    "index.js",
+    "src/**/*.js"
+  ],
+  "gitHead": "8b3501f1f5d35ddf21bd83af6ffdd83eec866682",
+  "homepage": "https://github.com/bhovhannes/junit-report-merger#readme",
+  "keywords": [
+    "junit",
+    "xml",
+    "report",
+    "test",
+    "result",
+    "merge",
+    "combine"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "bhovhannes",
+      "email": "bhovhannes@gmail.com"
+    }
+  ],
+  "name": "junit-report-merger",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhovhannes/junit-report-merger.git"
+  },
+  "scripts": {
+    "cov": "istanbul cover ./node_modules/.bin/_mocha -- test/**/*.spec.js",
+    "test": "_mocha -- test/**/*.spec.js"
+  },
+  "version": "0.0.4"
+}

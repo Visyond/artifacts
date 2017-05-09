@@ -1,0 +1,38 @@
+{
+  "author": {
+    "name": "Zach Carter",
+    "email": "zach@carter.name",
+    "url": "http://zaa.ch"
+  },
+  "name": "ebnf-parser",
+  "version": "0.1.10-178",
+  "description": "A parser for BNF and EBNF grammars used by jison",
+  "main": "ebnf-parser.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zaach/ebnf-parser.git"
+  },
+  "keywords": [
+    "bnf",
+    "ebnf",
+    "grammar",
+    "parser",
+    "jison"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=4.0"
+  },
+  "dependencies": {
+    "lex-parser": "github:GerHobbelt/lex-parser#master",
+    "xregexp": "github:GerHobbelt/xregexp#master"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
+    "jison-gho": "github:GerHobbelt/jison#master",
+    "mocha": "3.2.0"
+  }
+}

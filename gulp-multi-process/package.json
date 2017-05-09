@@ -1,0 +1,95 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "gulp-multi-process@^1.1.1",
+        "scope": null,
+        "escapedName": "gulp-multi-process",
+        "name": "gulp-multi-process",
+        "rawSpec": "^1.1.1",
+        "spec": ">=1.1.1 <2.0.0",
+        "type": "range"
+      },
+      "/home/doctor/prog/environment_root/server/v2"
+    ]
+  ],
+  "_from": "gulp-multi-process@>=1.1.1 <2.0.0",
+  "_id": "gulp-multi-process@1.2.0",
+  "_inCache": true,
+  "_location": "/gulp-multi-process",
+  "_nodeVersion": "6.3.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/gulp-multi-process-1.2.0.tgz_1485802709336_0.9660080508328974"
+  },
+  "_npmUser": {
+    "name": "juanfran",
+    "email": "juanfran.ag@gmail.com"
+  },
+  "_npmVersion": "3.10.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "gulp-multi-process@^1.1.1",
+    "scope": null,
+    "escapedName": "gulp-multi-process",
+    "name": "gulp-multi-process",
+    "rawSpec": "^1.1.1",
+    "spec": ">=1.1.1 <2.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gulp-multi-process/-/gulp-multi-process-1.2.0.tgz",
+  "_shasum": "bb37f5898b828f4e68280ce75d287beaa953d982",
+  "_shrinkwrap": null,
+  "_spec": "gulp-multi-process@^1.1.1",
+  "_where": "/home/doctor/prog/environment_root/server/v2",
+  "author": {
+    "name": "Juanfran Alcántara"
+  },
+  "bugs": {
+    "url": "https://github.com/juanfran/gulp-multi-process/issues"
+  },
+  "dependencies": {},
+  "description": "Run gulp tasks in separate cpu processes",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "gulp": "^3.9.0",
+    "mocha": "^2.3.4"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "bb37f5898b828f4e68280ce75d287beaa953d982",
+    "tarball": "https://registry.npmjs.org/gulp-multi-process/-/gulp-multi-process-1.2.0.tgz"
+  },
+  "gitHead": "ab4d3e2a925d5ace51137557816165f9afc64a9a",
+  "homepage": "http://github.com/juanfran/gulp-multi-process",
+  "keywords": [
+    "gulpplugin",
+    "speed",
+    "performance",
+    "child-process",
+    "multi-process",
+    "threads"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "juanfran",
+      "email": "juanfran.ag@gmail.com"
+    }
+  ],
+  "name": "gulp-multi-process",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/juanfran/gulp-multi-process.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "1.2.0"
+}

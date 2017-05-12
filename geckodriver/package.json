@@ -1,0 +1,62 @@
+{
+  "name": "geckodriver",
+  "version": "1.6.1",
+  "description": "Downloader for https://github.com/mozilla/geckodriver/releases",
+  "scripts": {
+    "test": "ava",
+    "postinstall": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladikoff/node-geckodriver.git"
+  },
+  "author": {
+    "name": "vladikoff",
+    "email": "vlad.filippov@gmail.com",
+    "url": "http://vf.io"
+  },
+  "main": "lib/geckodriver",
+  "bin": {
+    "geckodriver": "./bin/geckodriver"
+  },
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/vladikoff/node-geckodriver/issues"
+  },
+  "homepage": "https://github.com/vladikoff/node-geckodriver#readme",
+  "dependencies": {
+    "adm-zip": "0.4.7",
+    "bluebird": "3.4.6",
+    "got": "5.6.0",
+    "tar.gz": "1.0.5"
+  },
+  "devDependencies": {
+    "ava": "0.15.2"
+  },
+  "gitHead": "8206c47ffa2682f8293ccaf67a3a3ddf9867fb45",
+  "_id": "geckodriver@1.6.1",
+  "_shasum": "06ac68d57faac72345c590c1dd273059df90a9f1",
+  "_from": "geckodriver@latest",
+  "_npmVersion": "2.15.11",
+  "_nodeVersion": "4.8.1",
+  "_npmUser": {
+    "name": "vladikoff",
+    "email": "vlad@vladikoff.com"
+  },
+  "dist": {
+    "shasum": "06ac68d57faac72345c590c1dd273059df90a9f1",
+    "tarball": "https://registry.npmjs.org/geckodriver/-/geckodriver-1.6.1.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "vladikoff",
+      "email": "vlad@vladikoff.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/geckodriver-1.6.1.tgz_1493314618255_0.4426401797682047"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/geckodriver/-/geckodriver-1.6.1.tgz"
+}

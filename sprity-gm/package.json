@@ -1,0 +1,109 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "sprity-gm@^1.0.2",
+        "scope": null,
+        "escapedName": "sprity-gm",
+        "name": "sprity-gm",
+        "rawSpec": "^1.0.2",
+        "spec": ">=1.0.2 <2.0.0",
+        "type": "range"
+      },
+      "/home/doctor/prog/environment_root/server/v2"
+    ]
+  ],
+  "_from": "sprity-gm@>=1.0.2 <2.0.0",
+  "_id": "sprity-gm@1.0.2",
+  "_inCache": true,
+  "_location": "/sprity-gm",
+  "_nodeVersion": "0.10.38",
+  "_npmUser": {
+    "name": "aslansky",
+    "email": "alexander@slansky.net"
+  },
+  "_npmVersion": "2.9.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "sprity-gm@^1.0.2",
+    "scope": null,
+    "escapedName": "sprity-gm",
+    "name": "sprity-gm",
+    "rawSpec": "^1.0.2",
+    "spec": ">=1.0.2 <2.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "http://registry.npmjs.org/sprity-gm/-/sprity-gm-1.0.2.tgz",
+  "_shasum": "5bd96e3dffbbeae6864b669b4fb6c53e59173005",
+  "_shrinkwrap": null,
+  "_spec": "sprity-gm@^1.0.2",
+  "_where": "/home/doctor/prog/environment_root/server/v2",
+  "author": {
+    "name": "Alexander Slansky",
+    "email": "alexander@slansky.net",
+    "url": "http://slansky.net"
+  },
+  "bugs": {
+    "url": "https://github.com/sprity/sprity-gm/issues"
+  },
+  "dependencies": {
+    "bluebird": "^2.9.24",
+    "color": "^0.8.0",
+    "gm": "1.17.0"
+  },
+  "description": "gm image processing engine for sprity",
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "mocha": "^2.2.4"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "5bd96e3dffbbeae6864b669b4fb6c53e59173005",
+    "tarball": "https://registry.npmjs.org/sprity-gm/-/sprity-gm-1.0.2.tgz"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "gitHead": "1cf7b3520cee183787965933ca80975c13a35515",
+  "homepage": "https://github.com/sprity/sprity-gm",
+  "keywords": [
+    "sprites",
+    "sprite",
+    "libgd",
+    "gm",
+    "imagemagick",
+    "graphicsmagick",
+    "css-sprite",
+    "sprity"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/sprity/sprity-gm/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "./index.js",
+  "maintainers": [
+    {
+      "name": "aslansky",
+      "email": "alexander@slansky.net"
+    }
+  ],
+  "name": "sprity-gm",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sprity/sprity-gm.git"
+  },
+  "scripts": {
+    "hint": "eslint index.js",
+    "style": "jscs index.js",
+    "test": "mocha --reporter spec"
+  },
+  "version": "1.0.2"
+}

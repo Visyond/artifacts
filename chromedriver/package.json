@@ -1,0 +1,67 @@
+{
+  "name": "chromedriver",
+  "version": "2.29.0",
+  "keywords": [
+    "chromedriver",
+    "selenium"
+  ],
+  "description": "ChromeDriver for Selenium",
+  "homepage": "https://github.com/giggio/node-chromedriver",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/giggio/node-chromedriver.git"
+  },
+  "licenses": [
+    {
+      "type": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  ],
+  "author": {
+    "name": "Giovanni Bassi",
+    "email": "giggio@giggio.net",
+    "url": "http://www.lambda3.com.br"
+  },
+  "main": "lib/chromedriver",
+  "bin": {
+    "chromedriver": "./bin/chromedriver"
+  },
+  "scripts": {
+    "install": "node install.js"
+  },
+  "dependencies": {
+    "adm-zip": "^0.4.7",
+    "kew": "^0.7.0",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.5.4"
+  },
+  "gitHead": "b4cbf91deb3716b457dc669755f54d0048179c08",
+  "bugs": {
+    "url": "https://github.com/giggio/node-chromedriver/issues"
+  },
+  "_id": "chromedriver@2.29.0",
+  "_shasum": "e3fd8b3c08dce2562b80ef1b0b846597659d0cc3",
+  "_from": "chromedriver@latest",
+  "_npmVersion": "3.10.10",
+  "_nodeVersion": "7.2.1",
+  "_npmUser": {
+    "name": "giggio",
+    "email": "giggio@giggio.net"
+  },
+  "dist": {
+    "shasum": "e3fd8b3c08dce2562b80ef1b0b846597659d0cc3",
+    "tarball": "https://registry.npmjs.org/chromedriver/-/chromedriver-2.29.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "giggio",
+      "email": "giggio@giggio.net"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/chromedriver-2.29.0.tgz_1491515686534_0.10293860733509064"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/chromedriver/-/chromedriver-2.29.0.tgz"
+}

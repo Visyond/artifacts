@@ -37,7 +37,7 @@
     "url": "https://github.com/ferno/base65536/issues"
   },
   "_id": "base65536@1.0.4",
-  "_shasum": "1a658d44f9d9c889e3521267fb15cd85455a1bab",
+  "_shasum": "2fe66da6597d62f295326a59d0446021f31ac1d2",
   "_from": "visyond/base65536#master",
   "_resolved": "git://github.com/visyond/base65536.git#2ad8f51e3729285ba5600685ac12532b97fe1e39"
 }

@@ -711,6 +711,10 @@ declare namespace ts.server.protocol {
          * List of removed files
          */
         removed: string[];
+        /**
+         * List of updated files
+         */
+        updated: string[];
     }
     /**
       * Information found in a configure request.
@@ -729,6 +733,10 @@ declare namespace ts.server.protocol {
          * The format options to use during formatting and other code editing features.
          */
         formatOptions?: FormatCodeSettings;
+        /**
+         * The host's additional supported file extensions
+         */
+        extraFileExtensions?: FileExtensionInfo[];
     }
     /**
       *  Configure request; value of command field is "configure".  Specifies
@@ -1714,12 +1722,14 @@ declare namespace ts.server.protocol {
         insertSpaceAfterCommaDelimiter?: boolean;
         insertSpaceAfterSemicolonInForStatements?: boolean;
         insertSpaceBeforeAndAfterBinaryOperators?: boolean;
+        insertSpaceAfterConstructor?: boolean;
         insertSpaceAfterKeywordsInControlFlowStatements?: boolean;
         insertSpaceAfterFunctionKeywordForAnonymousFunctions?: boolean;
         insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis?: boolean;
         insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets?: boolean;
         insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces?: boolean;
         insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces?: boolean;
+        insertSpaceBeforeFunctionParenthesis?: boolean;
         placeOpenBraceOnNewLineForFunctions?: boolean;
         placeOpenBraceOnNewLineForControlBlocks?: boolean;
     }
@@ -1788,9 +1798,10 @@ declare namespace ts.server.protocol {
     namespace JsxEmit {
         type None = "None";
         type Preserve = "Preserve";
+        type ReactNative = "ReactNative";
         type React = "React";
     }
-    type JsxEmit = JsxEmit.None | JsxEmit.Preserve | JsxEmit.React;
+    type JsxEmit = JsxEmit.None | JsxEmit.Preserve | JsxEmit.React | JsxEmit.ReactNative;
     namespace ModuleKind {
         type None = "None";
         type CommonJS = "CommonJS";
@@ -1846,6 +1857,17 @@ declare namespace ts.server.protocol {
         [option: string]: string[] | boolean | undefined;
     }
 
+    interface FileExtensionInfo {
+        extension: string;
+        scriptKind: ScriptKind;
+        isMixedContent: boolean;
+    }
+
+    /**
+     * Type of objects whose values are all of the same type.
+     * The `in` and `for-in` operators can *not* be safely used,
+     * since `Object.prototype` may be modified by outside code.
+     */
     interface MapLike<T> {
         [index: string]: T;
     }

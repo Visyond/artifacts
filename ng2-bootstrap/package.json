@@ -1,0 +1,66 @@
+{
+  "main": "bundles/ng2-bootstrap.umd.js",
+  "version": "1.6.1",
+  "description": "Native Angular Bootstrap Components",
+  "module": "index.js",
+  "typings": "index.d.ts",
+  "keywords": [
+    "ng",
+    "ng-bootstap",
+    "angular",
+    "angular2",
+    "bootstrap",
+    "twitter-bootstrap"
+  ],
+  "author": {
+    "name": "Dmitriy Shekhovtsov",
+    "email": "valorkin@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/valor-software/ng2-bootstrap.git"
+  },
+  "name": "ng2-bootstrap",
+  "dependencies": {
+    "moment": "2.18.1"
+  },
+  "peerDependencies": {
+    "@angular/common": "^2.3.1 || >=4.0.0",
+    "@angular/compiler": "^2.3.1 || >=4.0.0",
+    "@angular/core": "^2.3.1 || >=4.0.0",
+    "@angular/forms": "^2.3.1 || >=4.0.0"
+  },
+  "_id": "ng2-bootstrap@1.6.1",
+  "devDependencies": {},
+  "bugs": {
+    "url": "https://github.com/valor-software/ng2-bootstrap/issues"
+  },
+  "homepage": "https://github.com/valor-software/ng2-bootstrap#readme",
+  "scripts": {},
+  "_shasum": "661cd3cd59eaf8ec3ccccb72c9d8df93c3f6a513",
+  "_from": "ng2-bootstrap@1.6.1",
+  "_npmVersion": "4.0.5",
+  "_nodeVersion": "7.0.0",
+  "_npmUser": {
+    "name": "valorkin",
+    "email": "valorkin@gmail.com"
+  },
+  "dist": {
+    "shasum": "661cd3cd59eaf8ec3ccccb72c9d8df93c3f6a513",
+    "tarball": "https://registry.npmjs.org/ng2-bootstrap/-/ng2-bootstrap-1.6.1.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "valorkin",
+      "email": "valorkin@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/ng2-bootstrap-1.6.1.tgz_1490895870847_0.7177832487504929"
+  },
+  "deprecated": "DEPRECATED: package was renamed to ngx-bootstrap",
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/ng2-bootstrap/-/ng2-bootstrap-1.6.1.tgz"
+}

@@ -1,0 +1,78 @@
+{
+  "name": "gulp-angular-embed-templates",
+  "version": "2.3.0",
+  "description": "gulp plugin to include the contents of angular templates inside directive's code",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/laxa1986/gulp-angular-embed-templates.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "gulp",
+    "plugin",
+    "angular",
+    "embed",
+    "include",
+    "templates"
+  ],
+  "author": {
+    "name": "Alexey Chekulaev",
+    "email": "chekulaevalexey@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/laxa1986/gulp-angular-embed-templates/issues"
+  },
+  "homepage": "https://github.com/laxa1986/gulp-angular-embed-templates",
+  "dependencies": {
+    "gulp-util": "^3.0.6",
+    "minimize": "^2.0.0",
+    "through2": "^2.0.1",
+    "htmlparser2": "~3.9.1",
+    "object-assign": "4.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.0.2",
+    "chai": "^3.5.0",
+    "chai-string": "^1.2.0"
+  },
+  "files": [
+    "package.json",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "index.js",
+    "lib"
+  ],
+  "directories": {},
+  "_npmVersion": "3.6.0",
+  "_nodeVersion": "5.7.0",
+  "gitHead": "7e1dbe932a1453bbf6cd0149b42253218601e558",
+  "_id": "gulp-angular-embed-templates@2.3.0",
+  "_shasum": "c010efdd594dee945132834537d7923ade840d79",
+  "_from": "gulp-angular-embed-templates@>=2.3.0 <3.0.0",
+  "_npmUser": {
+    "name": "chekulaevalexey",
+    "email": "chekulaevalexey@gmail.com"
+  },
+  "dist": {
+    "shasum": "c010efdd594dee945132834537d7923ade840d79",
+    "tarball": "https://registry.npmjs.org/gulp-angular-embed-templates/-/gulp-angular-embed-templates-2.3.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "chekulaevalexey",
+      "email": "chekulaevalexey@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/gulp-angular-embed-templates-2.3.0.tgz_1470685703232_0.41457725898362696"
+  },
+  "_resolved": "https://registry.npmjs.org/gulp-angular-embed-templates/-/gulp-angular-embed-templates-2.3.0.tgz",
+  "readme": "ERROR: No README data found!"
+}

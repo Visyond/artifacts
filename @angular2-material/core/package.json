@@ -1,0 +1,89 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@angular2-material/core",
+        "scope": "@angular2-material",
+        "escapedName": "@angular2-material%2fcore",
+        "name": "@angular2-material/core",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/private/tmp/old-packages"
+    ]
+  ],
+  "_from": "@angular2-material/core@2.0.0-alpha.8-3",
+  "_id": "@angular2-material/core@2.0.0-alpha.8-3",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/@angular2-material/core",
+  "_nodeVersion": "6.3.1",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/core-2.0.0-alpha.8-3.tgz_1491765742366_0.498063581995666"
+  },
+  "_npmUser": {
+    "name": "angular2-material",
+    "email": "angular-core+npm@google.com"
+  },
+  "_npmVersion": "3.10.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@angular2-material/core",
+    "scope": "@angular2-material",
+    "escapedName": "@angular2-material%2fcore",
+    "name": "@angular2-material/core",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/@angular2-material/core/-/core-2.0.0-alpha.8-3.tgz",
+  "_shasum": "422ce3b939fcf88ba226ac3c9882813d76ab9a6d",
+  "_shrinkwrap": null,
+  "_spec": "@angular2-material/core",
+  "_where": "/private/tmp/old-packages",
+  "bugs": {
+    "url": "https://github.com/angular/material2/issues"
+  },
+  "dependencies": {},
+  "description": "Angular 2 Material core",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "422ce3b939fcf88ba226ac3c9882813d76ab9a6d",
+    "tarball": "https://registry.npmjs.org/@angular2-material/core/-/core-2.0.0-alpha.8-3.tgz"
+  },
+  "homepage": "https://github.com/angular/material2#readme",
+  "keywords": [
+    "angular",
+    "material",
+    "material design",
+    "components"
+  ],
+  "license": "MIT",
+  "main": "./core.umd.js",
+  "maintainers": [
+    {
+      "name": "angular2-material",
+      "email": "angular-core+npm@google.com"
+    }
+  ],
+  "module": "./index.js",
+  "name": "@angular2-material/core",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "@angular/core": "^2.0.0",
+    "@angular/common": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/material2.git"
+  },
+  "scripts": {},
+  "typings": "./index.d.ts",
+  "version": "2.0.0-alpha.8-3"
+}

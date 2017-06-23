@@ -1,58 +1,45 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "dexie@^1.4.1",
-        "scope": null,
-        "escapedName": "dexie",
-        "name": "dexie",
-        "rawSpec": "^1.4.1",
-        "spec": ">=1.4.1 <2.0.0",
-        "type": "range"
-      },
-      "/var/lib/jenkins/workspace/build/server/v2"
+  "name": "dexie",
+  "version": "1.5.1",
+  "description": "A Minimalistic Wrapper for IndexedDB",
+  "main": "dist/dexie.js",
+  "jsnext:main": "dist/dexie.es6.js",
+  "typings": "dist/dexie.d.ts",
+  "jspm": {
+    "format": "cjs",
+    "ignore": [
+      "src/"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dfahlander/Dexie.js.git"
+  },
+  "keywords": [
+    "indexeddb",
+    "browser",
+    "database"
   ],
-  "_from": "dexie@>=1.4.1 <2.0.0",
-  "_id": "dexie@1.5.0",
-  "_inCache": true,
-  "_location": "/dexie",
-  "_nodeVersion": "6.5.0",
-  "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/dexie-1.5.0.tgz_1476364279003_0.10279192659072578"
-  },
-  "_npmUser": {
-    "name": "dfahlander",
-    "email": "david.fahlander@gmail.com"
-  },
-  "_npmVersion": "3.10.6",
-  "_phantomChildren": {},
-  "_requested": {
-    "raw": "dexie@^1.4.1",
-    "scope": null,
-    "escapedName": "dexie",
-    "name": "dexie",
-    "rawSpec": "^1.4.1",
-    "spec": ">=1.4.1 <2.0.0",
-    "type": "range"
-  },
-  "_requiredBy": [
-    "#DEV:/"
-  ],
-  "_resolved": "https://registry.npmjs.org/dexie/-/dexie-1.5.0.tgz",
-  "_shasum": "7b60439dc47d8828dc573f88bd002db56a697e36",
-  "_shrinkwrap": null,
-  "_spec": "dexie@^1.4.1",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2",
   "author": {
     "name": "David Fahlander"
   },
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/dfahlander/Dexie.js/issues"
   },
-  "dependencies": {},
-  "description": "A Minimalistic Wrapper for IndexedDB",
+  "scripts": {
+    "build": "babel-node --presets es2015 --plugins syntax-async-functions,transform-regenerator tools/build.js",
+    "watch": "babel-node --presets es2015 --plugins syntax-async-functions,transform-regenerator tools/watch.js",
+    "test": "npm run eslint && npm run build && npm run test:local",
+    "eslint": "eslint src",
+    "test:local": "karma start test/karma.conf.js --single-run",
+    "test:release": "karma start test/karma.release.conf.js --single-run",
+    "test:debug": "karma start test/karma.conf.js --log-level debug"
+  },
+  "engines": {
+    "node": ">=4.2"
+  },
+  "homepage": "http://dexie.org",
   "devDependencies": {
     "babel-cli": "^6.16.0",
     "babel-core": "^6.17.0",
@@ -88,30 +75,21 @@
     "serve-static": "^1.11.1",
     "uglify-js": "^2.7.3"
   },
-  "directories": {},
+  "dependencies": {},
+  "gitHead": "af57a0ad6ce21eb3f9a4f527b12a63b18326ef70",
+  "_id": "dexie@1.5.1",
+  "_shasum": "ac3ad5a0ebaf7e6e42760db58710418d4a756624",
+  "_from": "dexie@>=1.5.1 <2.0.0",
+  "_npmVersion": "3.10.6",
+  "_nodeVersion": "6.5.0",
+  "_npmUser": {
+    "name": "dfahlander",
+    "email": "david.fahlander@gmail.com"
+  },
   "dist": {
-    "shasum": "7b60439dc47d8828dc573f88bd002db56a697e36",
-    "tarball": "https://registry.npmjs.org/dexie/-/dexie-1.5.0.tgz"
+    "shasum": "ac3ad5a0ebaf7e6e42760db58710418d4a756624",
+    "tarball": "https://registry.npmjs.org/dexie/-/dexie-1.5.1.tgz"
   },
-  "engines": {
-    "node": ">=4.2"
-  },
-  "gitHead": "1c79877bcfd7cabc8d0872c5a1bcea5d7337ecef",
-  "homepage": "http://dexie.org",
-  "jsnext:main": "dist/dexie.es6.js",
-  "jspm": {
-    "format": "cjs",
-    "ignore": [
-      "src/"
-    ]
-  },
-  "keywords": [
-    "indexeddb",
-    "browser",
-    "database"
-  ],
-  "license": "Apache-2.0",
-  "main": "dist/dexie.js",
   "maintainers": [
     {
       "name": "anders.ekdahl",
@@ -122,22 +100,11 @@
       "email": "david.fahlander@gmail.com"
     }
   ],
-  "name": "dexie",
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dfahlander/Dexie.js.git"
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/dexie-1.5.1.tgz_1478006624401_0.7768115825019777"
   },
-  "scripts": {
-    "build": "babel-node --presets es2015 --plugins syntax-async-functions,transform-regenerator tools/build.js",
-    "eslint": "eslint src",
-    "test": "npm run eslint && npm run build && npm run test:local",
-    "test:debug": "karma start test/karma.conf.js --log-level debug",
-    "test:local": "karma start test/karma.conf.js --single-run",
-    "test:release": "karma start test/karma.release.conf.js --single-run",
-    "watch": "babel-node --presets es2015 --plugins syntax-async-functions,transform-regenerator tools/watch.js"
-  },
-  "typings": "dist/dexie.d.ts",
-  "version": "1.5.0"
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/dexie/-/dexie-1.5.1.tgz",
+  "readme": "ERROR: No README data found!"
 }

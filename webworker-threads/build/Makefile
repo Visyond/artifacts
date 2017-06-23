@@ -308,8 +308,8 @@ ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
 endif
 
 quiet_cmd_regen_makefile = ACTION Regenerating $@
-cmd_regen_makefile = cd $(srcdir); /var/lib/jenkins/workspace/build/server/v2/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "--toplevel-dir=." -I/var/lib/jenkins/workspace/build/server/v2/node_modules/webworker-threads/build/config.gypi -I/var/lib/jenkins/workspace/build/server/v2/node_modules/npm/node_modules/node-gyp/addon.gypi -I/var/lib/jenkins/.node-gyp/4.4.4/include/node/common.gypi "--depth=." "-Goutput_dir=." "--generator-output=build" "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/var/lib/jenkins/.node-gyp/4.4.4" "-Dnode_gyp_dir=/var/lib/jenkins/workspace/build/server/v2/node_modules/npm/node_modules/node-gyp" "-Dnode_lib_file=node.lib" "-Dmodule_root_dir=/var/lib/jenkins/workspace/build/server/v2/node_modules/webworker-threads" binding.gyp
-Makefile: $(srcdir)/../npm/node_modules/node-gyp/addon.gypi $(srcdir)/../../../../../../.node-gyp/4.4.4/include/node/common.gypi $(srcdir)/build/config.gypi $(srcdir)/binding.gyp
+cmd_regen_makefile = cd $(srcdir); /opt/nodejs/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "--toplevel-dir=." -I/var/lib/jenkins/workspace/build/server/v2/node_modules/webworker-threads/build/config.gypi -I/opt/nodejs/lib/node_modules/npm/node_modules/node-gyp/addon.gypi -I/var/lib/jenkins/.node-gyp/4.4.4/include/node/common.gypi "--depth=." "-Goutput_dir=." "--generator-output=build" "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/var/lib/jenkins/.node-gyp/4.4.4" "-Dnode_gyp_dir=/opt/nodejs/lib/node_modules/npm/node_modules/node-gyp" "-Dnode_lib_file=node.lib" "-Dmodule_root_dir=/var/lib/jenkins/workspace/build/server/v2/node_modules/webworker-threads" binding.gyp
+Makefile: $(srcdir)/../../../../../../../../../opt/nodejs/lib/node_modules/npm/node_modules/node-gyp/addon.gypi $(srcdir)/../../../../../../.node-gyp/4.4.4/include/node/common.gypi $(srcdir)/build/config.gypi $(srcdir)/binding.gyp
 	$(call do_cmd,regen_makefile)
 
 # "all" is a concatenation of the "all" targets from all the included

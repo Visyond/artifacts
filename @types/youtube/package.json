@@ -1,0 +1,40 @@
+{
+  "name": "@types/youtube",
+  "version": "0.0.28",
+  "description": "TypeScript definitions for YouTube",
+  "license": "MIT",
+  "author": "Daz Wilkin <https://github.com/DazWilkin/>, Ian Obermiller <http://ianobermiller.com>",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+  },
+  "scripts": {},
+  "dependencies": {},
+  "peerDependencies": {},
+  "typings": "index.d.ts",
+  "typesPublisherContentHash": "908ae585d68f1cf43f2594df9145e68c8d4244aec91349729a880f2dfa9251f7",
+  "_id": "@types/youtube@0.0.28",
+  "dist": {
+    "shasum": "f0fee2d89b4303f62b27d6de53044c3a1e6e6a83",
+    "tarball": "https://registry.npmjs.org/@types/youtube/-/youtube-0.0.28.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "types",
+      "email": "ryan.cavanaugh@microsoft.com"
+    }
+  ],
+  "_npmUser": {
+    "name": "types",
+    "email": "ts-npm-types@microsoft.com"
+  },
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/youtube-0.0.28.tgz_1477510177813_0.7491283598355949"
+  },
+  "directories": {},
+  "_shasum": "f0fee2d89b4303f62b27d6de53044c3a1e6e6a83",
+  "_resolved": "https://registry.npmjs.org/@types/youtube/-/youtube-0.0.28.tgz",
+  "_from": "@types/youtube@0.0.28"
+}

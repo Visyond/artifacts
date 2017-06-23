@@ -1,32 +1,27 @@
 
 /* description: Parses end executes mathematical expressions. */
 
-/* lexical grammar */
-%lex
-%%
-
-\s+                   /* skip whitespace */
-[0-9]+("."[0-9]+)?\b  return 'NUMBER'
-"*"                   return '*'
-"/"                   return '/'
-"-"                   return '-'
-"+"                   return '+'
-"^"                   return '^'
-"!"                   return '!'
-"%"                   return '%'
-"("                   return '('
-")"                   return ')'
-"PI"                  return 'PI'
-"E"                   return 'E'
-<<EOF>>               return 'EOF'
-.                     return 'INVALID'
-
-/lex
-
 /* operator associations and precedence */
 
 %{
-var ast = require('./includetest.js')
+        // WARNING: using relative paths in require() statements here is pretty darn dangerous as this file
+        // will generally be compiled to JS in another directory, which would thus alter the '.' relative
+        // path position.
+        //
+        // Ditto for tricks such as `__dirname + 'my-path'` as, again, `__dirname` would be determined
+        // by the time when this grammar file has already been compiled into a JS file elsewhere in
+        // the filesystem.
+        //
+        // We check the 'actual path' by running `require(__dirname + '/fixtures/includetest.js')`,
+        // have it fail and then check what the proper relative path prefix SHOULD have been:
+        // enable the first `require()` statement to start this process; then adjust the second
+        // statement to make that one load the proper file.
+        
+        // var ast = require(__dirname + '/fixtures/includetest.js');  
+        // --> Error: Cannot find module 'W:\Users\Ger\Projects\sites\library.visyond.gov\80\lib\tooling\gulp-jison\node_modules\jison-gho\lib/fixtures/includetest.js'
+        
+        // hence: `../../../test/` as path prefix:
+        var ast = require('../../../test/fixtures/includetest.js');
 %}
 
 %left '+' '-'
@@ -75,3 +70,4 @@ e
         {$$ = Math.PI;}
     ;
 
+%%

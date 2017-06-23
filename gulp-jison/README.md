@@ -16,6 +16,18 @@ gulp.task('jison', function() {
 });
 ```
 
+With a separate lexical grammar file
+
+```javascript
+var jison = require('gulp-jison');
+
+gulp.task('jison', function() {
+    return gulp.src('./src/lang.jison')
+        .pipe(jison({ lexfile: 'lang.jisonlex' }))
+        .pipe(gulp.dest('./src/'));
+});
+```
+
 Errors
 ------
 

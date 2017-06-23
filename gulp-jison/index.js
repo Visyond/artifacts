@@ -2,10 +2,20 @@ var through = require('through2');
 var gutil = require('gulp-util');
 var objectAssign = require('object-assign');
 var PluginError = gutil.PluginError;
-var jison = require('jison');
+var rawJison = require('jison-gho');
+var Generator = rawJison.Generator;
+
+var ebnfParser = require('ebnf-parser');
+var lexParser  = require('lex-parser');
+var fs = require('fs');
 
 const PLUGIN_NAME = 'gulp-jison';
 
+var assert = require('assert');
+
+assert(rawJison);
+assert(rawJison.defaultJisonOptions);
+assert(Generator);
 
 module.exports = function gulp_jison(options) {
     options = options || {};
@@ -31,7 +41,7 @@ module.exports = function gulp_jison(options) {
         }
 
         if (file.isBuffer()) {
-            var fileOpts = objectAssign({}, jison.defaultJisonOptions, options);
+            var fileOpts = objectAssign({}, rawJison.defaultJisonOptions, options);
             
             // special callbacks:
             var preprocessor = mkF(fileOpts.preprocessor, function (file, content, options) {
@@ -54,7 +64,31 @@ module.exports = function gulp_jison(options) {
                 var source_contents = file.contents.toString();
                 source_contents = preprocessor(file, source_contents, fileOpts);
 
-                var gen = jison.Generator(source_contents, fileOpts);
+                try {
+                    // Will throw an error if the input is not JSON.
+                    var json_input = JSON.parse(source_contents);
+
+                    source_contents = json_input;
+                } catch (err) {
+                    // JSON parsing failed, must be a Jison grammar.
+                }
+
+                var lex_source_contents = null;
+                if (options.lexfile) {
+                    var lexfile = fs.readFileSync(options.lexfile, 'utf-8');
+
+                    try {
+                        // Will throw an error if the input is not JSON.
+                        var json_input = JSON.parse(source_contents);
+
+                        lex_source_contents = json_input;
+                    } catch (err) {
+                        // JSON parsing failed, must be a Jison lexer spec.
+                    }
+                    lex_source_contents = lexfile;
+                }
+
+                var gen = Generator(source_contents, lex_source_contents, fileOpts);
                 var dest_contents = gen.generate();
 
                 dest_contents = postprocessor(file, dest_contents, fileOpts);

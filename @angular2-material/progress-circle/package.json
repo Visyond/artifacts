@@ -1,0 +1,90 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@angular2-material/progress-circle",
+        "scope": "@angular2-material",
+        "escapedName": "@angular2-material%2fprogress-circle",
+        "name": "@angular2-material/progress-circle",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/private/tmp/old-packages"
+    ]
+  ],
+  "_from": "@angular2-material/progress-circle@2.0.0-alpha.8-3",
+  "_id": "@angular2-material/progress-circle@2.0.0-alpha.8-3",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/@angular2-material/progress-circle",
+  "_nodeVersion": "6.3.1",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/progress-circle-2.0.0-alpha.8-3.tgz_1491765785954_0.8982425364665687"
+  },
+  "_npmUser": {
+    "name": "angular2-material",
+    "email": "angular-core+npm@google.com"
+  },
+  "_npmVersion": "3.10.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@angular2-material/progress-circle",
+    "scope": "@angular2-material",
+    "escapedName": "@angular2-material%2fprogress-circle",
+    "name": "@angular2-material/progress-circle",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/@angular2-material/progress-circle/-/progress-circle-2.0.0-alpha.8-3.tgz",
+  "_shasum": "d0eb6c1f1cff35bb7a5fd1bde420a3333ee67251",
+  "_shrinkwrap": null,
+  "_spec": "@angular2-material/progress-circle",
+  "_where": "/private/tmp/old-packages",
+  "bugs": {
+    "url": "https://github.com/angular/material2/issues"
+  },
+  "dependencies": {},
+  "description": "Angular 2 Material progress-circle",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "d0eb6c1f1cff35bb7a5fd1bde420a3333ee67251",
+    "tarball": "https://registry.npmjs.org/@angular2-material/progress-circle/-/progress-circle-2.0.0-alpha.8-3.tgz"
+  },
+  "homepage": "https://github.com/angular/material2#readme",
+  "keywords": [
+    "angular",
+    "material",
+    "material design",
+    "components",
+    "progress",
+    "spinner"
+  ],
+  "license": "MIT",
+  "main": "./progress-circle.umd.js",
+  "maintainers": [
+    {
+      "name": "angular2-material",
+      "email": "angular-core+npm@google.com"
+    }
+  ],
+  "module": "./index.js",
+  "name": "@angular2-material/progress-circle",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "@angular2-material/core": "2.0.0-alpha.8-3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/material2.git"
+  },
+  "scripts": {},
+  "typings": "./index.d.ts",
+  "version": "2.0.0-alpha.8-3"
+}

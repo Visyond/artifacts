@@ -1,0 +1,71 @@
+{
+  "name": "tsconfig-glob",
+  "version": "0.4.3",
+  "description": "A lightweight npm package + cli that allows you to specify glob patterns for tsconfig files",
+  "main": "index.js",
+  "bin": {
+    "tsconfig": "cli"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wjohnsto/tsconfig-glob.git"
+  },
+  "keywords": [
+    "tsconfig",
+    "glob",
+    "filesGlob"
+  ],
+  "author": {
+    "name": "Will Johnston",
+    "email": "will@platypi.io"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wjohnsto/tsconfig-glob/issues"
+  },
+  "homepage": "https://github.com/wjohnsto/tsconfig-glob",
+  "dependencies": {
+    "exit": "^0.1.2",
+    "glob": "^7.0.3",
+    "resolve": "^1.1.7",
+    "stable": "^0.1.5"
+  },
+  "devDependencies": {
+    "typescript": "^1.8.9",
+    "typings": "^0.7.9"
+  },
+  "scripts": {
+    "prepublish": "npm run typings && npm run build",
+    "build": "tsc -p .",
+    "cli": "node cli",
+    "test": "npm run build && npm run cli",
+    "typings": "typings install"
+  },
+  "gitHead": "269c92c59e8d1d8795f8f5a7164be476f25c2f66",
+  "_id": "tsconfig-glob@0.4.3",
+  "_shasum": "33dcfc5a76d08d657c6224791c8c2e75784e1bc4",
+  "_from": "tsconfig-glob@0.4.3",
+  "_npmVersion": "3.7.5",
+  "_nodeVersion": "5.7.0",
+  "_npmUser": {
+    "name": "wjohnsto",
+    "email": "will@getplatypi.com"
+  },
+  "maintainers": [
+    {
+      "name": "wjohnsto",
+      "email": "will@getplatypi.com"
+    }
+  ],
+  "dist": {
+    "shasum": "33dcfc5a76d08d657c6224791c8c2e75784e1bc4",
+    "tarball": "https://registry.npmjs.org/tsconfig-glob/-/tsconfig-glob-0.4.3.tgz"
+  },
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/tsconfig-glob-0.4.3.tgz_1459353058865_0.6527344258502126"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/tsconfig-glob/-/tsconfig-glob-0.4.3.tgz",
+  "readme": "ERROR: No README data found!"
+}

@@ -60,7 +60,7 @@ module.exports = function (transformFunction, flushFunction, options) {
             return callback();
         }
 
-        // we dont do streams (yet)
+        // We dont do streams (yet)
         if (file.isStream()) {
             return this.emit('error', new PluginError(PLUGIN_NAME, 'Streaming not supported'));
         }

@@ -1,0 +1,45 @@
+{
+  "name": "@types/core-js",
+  "version": "0.9.36",
+  "description": "TypeScript definitions for core-js",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Ron Buckton",
+      "url": "http://github.com/rbuckton"
+    }
+  ],
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+  },
+  "scripts": {},
+  "dependencies": {},
+  "peerDependencies": {},
+  "typesPublisherContentHash": "2c51f543515fac17e475a67413f2db7c589d6f3638bba4f9dd0d05efb87c9c8d",
+  "typeScriptVersion": "2.0",
+  "_id": "@types/core-js@0.9.36",
+  "dist": {
+    "shasum": "d721e7cc0007d10ce66ad263ebf478a4071c53f4",
+    "tarball": "https://registry.npmjs.org/@types/core-js/-/core-js-0.9.36.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "types",
+      "email": "ryan.cavanaugh@microsoft.com"
+    }
+  ],
+  "_npmUser": {
+    "name": "types",
+    "email": "ts-npm-types@microsoft.com"
+  },
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/core-js-0.9.36.tgz_1489018831278_0.46055264049209654"
+  },
+  "directories": {},
+  "_shasum": "d721e7cc0007d10ce66ad263ebf478a4071c53f4",
+  "_resolved": "https://registry.npmjs.org/@types/core-js/-/core-js-0.9.36.tgz",
+  "_from": "@types/core-js@0.9.36"
+}

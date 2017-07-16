@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/alexei/sprintf.js#readme",
   "_id": "sprintf-js@1.0.4-2",
-  "_shasum": "1ccb1f216a126d5d4a4f2d09468949e45264ba95",
+  "_shasum": "cdebb60ac39512f9aad1965f943db3f251efe64b",
   "_from": "gerhobbelt/sprintf.js#master",
   "_resolved": "git://github.com/gerhobbelt/sprintf.js.git#32a5e7cf3310cb9bd56f5f440f43467eb5129d0b"
 }

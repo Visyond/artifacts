@@ -48,7 +48,7 @@
   },
   "homepage": "https://github.com/jashkenas/docco#readme",
   "_id": "docco@0.6.3",
-  "_shasum": "5fa1a993f0dcac62d7b50b5b00127c2df44ee59a",
+  "_shasum": "fa0a4c7a44c5d2b59ec8fb9d5975e1b8e0f7db80",
   "_from": "gerhobbelt/docco#gh-pages",
   "_resolved": "git://github.com/gerhobbelt/docco.git#9bd5fc81cb0a13e1f56b33a546be3843ad34ec07"
 }

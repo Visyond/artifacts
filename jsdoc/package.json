@@ -63,7 +63,7 @@
   "readmeFilename": "README.md",
   "homepage": "https://github.com/jsdoc3/jsdoc#readme",
   "_id": "jsdoc@3.5.0",
-  "_shasum": "e409597e3112d3aa76f918ae52163a4393a13e07",
+  "_shasum": "b95b31cd1ff401bc053c1396dfd53a5c81e9a2ee",
   "_from": "gerhobbelt/jsdoc#master",
   "_resolved": "git://github.com/gerhobbelt/jsdoc.git#b46f372e69b2baba27b4a1a0962c7d5d993641ff"
 }

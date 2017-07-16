@@ -2,64 +2,23 @@
 
 %lex
 
-
-ASCII_LETTER                            [a-zA-z]
-// \p{Alphabetic} already includes [a-zA-z], hence we don't need to merge with {UNICODE_LETTER}:
-UNICODE_LETTER                          [\p{Alphabetic}]
-ALPHA                                   [{UNICODE_LETTER}_]
-DIGIT                                   [\p{Number}]
-WHITESPACE                              [\s\r\n\p{Separator}]
-
-NAME                                    [{ALPHA}](?:[{ALPHA}{DIGIT}-]*[{ALPHA}{DIGIT}])?
-ID                                      [{ALPHA}][{ALPHA}{DIGIT}]*
-DECIMAL_NUMBER                          [1-9][0-9]*
-HEX_NUMBER                              "0"[xX][0-9a-fA-F]+
-BR                                      \r\n|\n|\r
-// quoted string content: support *escaped* quotes inside strings:
-QUOTED_STRING_CONTENT                   (?:\\"'"|(?!"'").)*
-DOUBLEQUOTED_STRING_CONTENT             (?:\\'"'|(?!'"').)*
-
+id                        [a-zA-Z][a-zA-Z0-9_-]*
 
 %%
+\s+             /* skip whitespace */
+{id}           return 'symbol';
+"["{id}"]"     yytext = yytext.substr(1, yyleng-2); return 'ALIAS';
+"'"[^']*"'"    return 'symbol';
+"."            return 'symbol';
 
-\s+                       /* skip whitespace */
-{ID}                      return 'SYMBOL';
-"$end"                    return 'SYMBOL';
-"$eof"                    return 'SYMBOL';
-"["{ID}"]"                yytext = yytext.substr(1, yyleng - 2); return 'ALIAS';
-
-// Support bison's `%empty` (and our own alias `%epsilon`) to identify an empty rule alt:
-"%empty"                  return 'EPSILON';
-"%epsilon"                return 'EPSILON';
-// See also https://en.wikipedia.org/wiki/Epsilon#Glyph_variants
-"\u0190"                  return 'EPSILON';
-"\u025B"                  return 'EPSILON';
-"\u03B5"                  return 'EPSILON';
-"\u03F5"                  return 'EPSILON';
-
-// Stringified tokens are always `'`-surrounded by the bnf.y grammar unless the token
-// itself contain an `'`.
-//
-// Note: EBNF grammars would barf a hairball or work in very mysterious ways if someone
-// ever decided that the combo of quotes, i.e. `'"` would be a legal token in their grammar,
-// e.g. `rule: A '\'"' B`.
-//
-// And, yes, we assume that the `bnf.y` parser is our regular input source, so we may
-// be a bit stricter here in what we lex than in the userland-facing `bnf.l` lexer.
-"'"{QUOTED_STRING_CONTENT}"'"
-                          return 'SYMBOL';
-'"'{DOUBLEQUOTED_STRING_CONTENT}'"'
-                          return 'SYMBOL';
-"."                       return 'SYMBOL';
-
-"("                       return '(';
-")"                       return ')';
-"*"                       return '*';
-"?"                       return '?';
-"|"                       return '|';
-"+"                       return '+';
-<<EOF>>                   return 'EOF';
-
+bar            return 'bar';
+"("            return '(';
+")"            return ')';
+"*"            return '*';
+"?"            return '?';
+"|"            return '|';
+"+"            return '+';
+<<EOF>>        return 'EOF';
 /lex
 
 %start production
@@ -81,44 +40,26 @@ handle_list
 handle
   :
     { $$ = []; }
-  | EPSILON                       
-    // %epsilon may only be used to signal this is an empty rule alt; 
-    // hence it can only occur by itself 
-    // (with an optional action block, but no alias what-so-ever).
-    { $$ = []; }
-  | rule
-    { $$ = $rule; }
+  | handle expression_suffix
+    { $handle.push($expression_suffix); }
   ;
 
-rule
-  : expression_suffixed
-    { $$ = [$expression_suffixed]; }
-  | rule expression_suffixed
-    { $rule.push($expression_suffixed); }
-  ;
-
-expression_suffixed
+expression_suffix
   : expression suffix ALIAS
     { $$ = ['xalias', $suffix, $expression, $ALIAS]; }
   | expression suffix
-    {
-      if ($suffix) {
-        $$ = [$suffix, $expression];
-      } else {
-        $$ = $expression;
-      }
-    }
+    { if ($suffix) $$ = [$suffix, $expression]; else $$ = $expression; }
   ;
 
 expression
-  : SYMBOL
-    { $$ = ['symbol', $SYMBOL]; }
+  : symbol
+    { $$ = ['symbol', $symbol]; }
   | '(' handle_list ')'
     { $$ = ['()', $handle_list]; }
   ;
 
 suffix
-  :
+  : 
   | '*'
   | '?'
   | '+'

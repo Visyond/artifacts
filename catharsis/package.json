@@ -14,19 +14,19 @@
     ]
   ],
   "_from": "catharsis@>=0.8.7 <0.9.0",
-  "_id": "catharsis@0.8.8",
+  "_id": "catharsis@0.8.9",
   "_inCache": true,
   "_location": "/catharsis",
-  "_nodeVersion": "6.0.0",
+  "_nodeVersion": "6.10.2",
   "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/catharsis-0.8.8.tgz_1461789891623_0.13337185187265277"
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/catharsis-0.8.9.tgz_1499903127213_0.83025440457277"
   },
   "_npmUser": {
     "name": "hegemonic",
     "email": "jeffrey.l.williams@gmail.com"
   },
-  "_npmVersion": "3.8.6",
+  "_npmVersion": "3.10.10",
   "_phantomChildren": {},
   "_requested": {
     "raw": "catharsis@~0.8.7",
@@ -40,8 +40,8 @@
   "_requiredBy": [
     "/jsdoc"
   ],
-  "_resolved": "https://registry.npmjs.org/catharsis/-/catharsis-0.8.8.tgz",
-  "_shasum": "693479f43aac549d806bd73e924cd0d944951a06",
+  "_resolved": "https://registry.npmjs.org/catharsis/-/catharsis-0.8.9.tgz",
+  "_shasum": "98cc890ca652dd2ef0e70b37925310ff9e90fc8b",
   "_shrinkwrap": null,
   "_spec": "catharsis@~0.8.7",
   "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jsdoc",
@@ -64,13 +64,13 @@
   },
   "directories": {},
   "dist": {
-    "shasum": "693479f43aac549d806bd73e924cd0d944951a06",
-    "tarball": "https://registry.npmjs.org/catharsis/-/catharsis-0.8.8.tgz"
+    "shasum": "98cc890ca652dd2ef0e70b37925310ff9e90fc8b",
+    "tarball": "https://registry.npmjs.org/catharsis/-/catharsis-0.8.9.tgz"
   },
   "engines": {
     "node": ">= 0.10"
   },
-  "gitHead": "721af5309a5f6d96b9556efe6ded9dbb4cf920de",
+  "gitHead": "e318f14f6d9b615fb2b90e8fac681b12fd98b03e",
   "homepage": "https://github.com/hegemonic/catharsis#readme",
   "license": "MIT",
   "main": "catharsis.js",
@@ -91,5 +91,5 @@
     "prepublish": "./node_modules/pegjs/bin/pegjs ./lib/parser.pegjs",
     "test": "mocha"
   },
-  "version": "0.8.8"
+  "version": "0.8.9"
 }

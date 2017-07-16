@@ -71,13 +71,6 @@ exports["test comment"] = function () {
     assert.deepEqual(bnf.parse(grammar), expected, "grammar should be parsed correctly");
 };
 
-exports["test multi-line comment"] = function () {
-    var grammar = "/* comment\n comment\n comment */ %% hello: world ;";
-    var expected = {bnf: {hello: ["world"]}};
-
-    assert.deepEqual(bnf.parse(grammar), expected, "grammar should be parsed correctly");
-};
-
 exports["test single line comment"] = function () {
     var grammar = "//comment \n %% hello: world ;";
     var expected = {bnf: {hello: ["world"]}};
@@ -92,28 +85,16 @@ exports["test comment with nested *"] = function () {
     assert.deepEqual(bnf.parse(grammar), expected, "grammar should be parsed correctly");
 };
 
-exports["test comment with nested //"] = function () {
-    var grammar = "/* comment // nested ** not done */ %% hello: /* oh hai */ world ;";
-    var expected = {bnf: {hello: ["world"]}};
-
-    assert.deepEqual(bnf.parse(grammar), expected, "grammar should be parsed correctly");
-
-    var grammar2 = "/* comment \n// nested ** not done */ %% hello: /* oh hai */ world ;";
-
-    assert.deepEqual(bnf.parse(grammar2), expected, "grammar should be parsed correctly");
-};
-
 exports["test token"] = function () {
     var grammar = "%token blah\n%% test: foo bar | baz ; hello: world ;";
-    var expected = {bnf: {test: ["foo bar", "baz"], hello: ["world"]},
-                    extra_tokens: [{id: "blah"}]};
+    var expected = {bnf: {test: ["foo bar", "baz"], hello: ["world"]}};
 
     assert.deepEqual(bnf.parse(grammar), expected, "grammar should be parsed correctly");
 };
 
 exports["test token with type"] = function () {
     var grammar = "%type <type> blah\n%% test: foo bar | baz ; hello: world ;";
-    var expected = {bnf: {test: ["foo bar", "baz"], hello: ["world"]}, unknownDecls: ['%type <type> blah']};
+    var expected = {bnf: {test: ["foo bar", "baz"], hello: ["world"]}};
 
     assert.deepEqual(bnf.parse(grammar), expected, "grammar should be parsed correctly");
 };
@@ -124,32 +105,11 @@ exports["test embedded lexical block"] = function () {
     var expected = {
                         lex: {
                             rules: [
-                               ["foo", "return 'foo';"],
-                               ["bar", "return 'bar';"],
-                               ["baz", "return 'baz';"],
-                               ["world", "return 'world';"]
-                            ]
-                        },
-                        bnf: {test: ["foo bar", "baz"], hello: ["world"]}
-                    };
-
-    assert.deepEqual(bnf.parse(grammar), expected, "grammar should be parsed correctly");
-};
-
-exports["test lexer %options easy_keyword_rules"] = function () {
-    var grammar = "%lex \n%options easy_keyword_rules\n%%\n'foo' return 'foo';\n'bar' {return 'bar';}\n'baz' {return 'baz';}\n'world' {return 'world';}\n/lex\
-                   %% test: foo bar | baz ; hello: world ;";
-    var expected = {
-                        lex: {
-                            rules: [
                                ["foo\\b", "return 'foo';"],
                                ["bar\\b", "return 'bar';"],
                                ["baz\\b", "return 'baz';"],
                                ["world\\b", "return 'world';"]
-                            ],
-                            options: {
-                                easy_keyword_rules: true
-                            }
+                            ]
                         },
                         bnf: {test: ["foo bar", "baz"], hello: ["world"]}
                     };
@@ -234,7 +194,7 @@ exports["test quote in rule"] = function () {
         ["'", "return \"'\""]
       ]
     },
-    bnf: {test: ["foo bar \"'\""]}};
+    bnf: {test: ["foo bar '"]}};
 
     assert.deepEqual(bnf.parse(grammar), expected, "grammar should be parsed correctly");
 };
@@ -253,64 +213,9 @@ exports["test parse params"] = function () {
     assert.deepEqual(bnf.parse(grammar), expected, "grammar should be parsed correctly");
 };
 
-exports["test boolean options"] = function () {
+exports["test options"] = function () {
     var grammar = "%options one two\n%%hello: world;%%";
     var expected = {bnf: {hello: ["world"]}, options: {one: true, two: true}};
 
     assert.deepEqual(bnf.parse(grammar), expected, "grammar should be parsed correctly");
 };
-
-exports["test if %options names with a hyphen are correctly recognized"] = function () {
-    var grammar = '%options bug-a-boo\n%%hello: world;%%';
-    var expected = {
-        bnf: {
-            hello: ["world"]
-        }, 
-        options: {
-            "bug-a-boo": true
-        }
-    };
-
-    assert.deepEqual(bnf.parse(grammar), expected, "grammar should be parsed correctly");
-};
-
-exports["test options with values"] = function () {
-    var grammar = '%options ping=666 bla=blub bool1 s1="s1value" s2=\'s2value\'\n%%hello: world;%%';
-    var expected = {
-        bnf: {
-            hello: ["world"]
-        }, 
-        options: {
-            ping: "666",
-            bla: "blub",
-            bool1: true,
-            s1: "s1value",
-            s2: "s2value"
-        }
-    };
-
-    assert.deepEqual(bnf.parse(grammar), expected, "grammar should be parsed correctly");
-};
-
-exports["test options with string values which have embedded quotes"] = function () {
-    var grammar = '%options s1="s1\\"val\'ue" s2=\'s2\\\\x\\\'val\"ue\'\n%%hello: world;%%';
-    var expected = {
-        bnf: {
-            hello: ["world"]
-        }, 
-        options: {
-            s1: "s1\\\"val'ue",
-            s2: "s2\\\\x\\'val\"ue"
-        }
-    };
-
-    assert.deepEqual(bnf.parse(grammar), expected, "grammar should be parsed correctly");
-};
-
-exports["test unknown decls"] = function () {
-    var grammar = "%foo bar\n%foo baz\n%qux { fizzle }\n%%hello: world;%%";
-    var expected = {bnf: {hello: ["world"]}, unknownDecls: ['%foo bar', '%foo baz', '%qux { fizzle }']};
-
-    assert.deepEqual(bnf.parse(grammar), expected, "grammar should be parsed correctly");
-};
-

@@ -1,6 +1,6 @@
 {
   "name": "gulp-typescript",
-  "version": "3.1.7",
+  "version": "3.2.1",
   "description": "A typescript compiler for gulp with incremental compilation support.",
   "homepage": "https://github.com/ivogabe/gulp-typescript",
   "bugs": {
@@ -80,10 +80,10 @@
     "gulp-sourcemaps": "~1.6.0",
     "merge-stream": "~1.0.0",
     "rimraf": "~2.5.2",
-    "typescript": "2.3.3"
+    "typescript": "2.4.1"
   },
   "peerDependencies": {
-    "typescript": "~2.0.3 || >=2.0.0-dev || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev"
+    "typescript": "~2.0.3 || >=2.0.0-dev || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev"
   },
   "scripts": {
     "test": "gulp"
@@ -92,9 +92,9 @@
     "type": "git",
     "url": "git+https://github.com/ivogabe/gulp-typescript.git"
   },
-  "gitHead": "d0cd5236b887fda799d0524621f77a774c46403b",
-  "_id": "gulp-typescript@3.1.7",
-  "_shasum": "d88600a914153f11c09c9a5ca8c2561ec75a4978",
+  "gitHead": "0f77e6b9eeb075233035f699519fb59de133f342",
+  "_id": "gulp-typescript@3.2.1",
+  "_shasum": "52cd77e9c6844e3b9a8bddd88e884ceb46a5db79",
   "_from": "gulp-typescript@>=3.1.2 <4.0.0",
   "_npmVersion": "3.10.10",
   "_nodeVersion": "6.10.0",
@@ -109,13 +109,13 @@
     }
   ],
   "dist": {
-    "shasum": "d88600a914153f11c09c9a5ca8c2561ec75a4978",
-    "tarball": "https://registry.npmjs.org/gulp-typescript/-/gulp-typescript-3.1.7.tgz"
+    "shasum": "52cd77e9c6844e3b9a8bddd88e884ceb46a5db79",
+    "tarball": "https://registry.npmjs.org/gulp-typescript/-/gulp-typescript-3.2.1.tgz"
   },
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/gulp-typescript-3.1.7.tgz_1495710223139_0.5230644745752215"
+    "tmp": "tmp/gulp-typescript-3.2.1.tgz_1500147410784_0.512242027092725"
   },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/gulp-typescript/-/gulp-typescript-3.1.7.tgz"
+  "_resolved": "https://registry.npmjs.org/gulp-typescript/-/gulp-typescript-3.2.1.tgz"
 }

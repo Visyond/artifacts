@@ -1,5 +1,5 @@
-import { ContextAwareRendererComponent } from "../components";
-import { RendererEvent, MarkdownEvent } from "../events";
+import { ContextAwareRendererComponent } from '../components';
+import { RendererEvent, MarkdownEvent } from '../events';
 export declare class MarkedPlugin extends ContextAwareRendererComponent {
     includeSource: string;
     mediaSource: string;

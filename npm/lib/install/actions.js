@@ -1,14 +1,14 @@
 'use strict'
-var path = require('path')
 var validate = require('aproba')
 var chain = require('slide').chain
 var asyncMap = require('slide').asyncMap
+var limit = require('call-limit')
 var iferr = require('iferr')
+var npm = require('../npm.js')
 var andFinishTracker = require('./and-finish-tracker.js')
 var andAddParentToErrors = require('./and-add-parent-to-errors.js')
 var failedDependency = require('./deps.js').failedDependency
 var moduleName = require('../utils/module-name.js')
-var buildPath = require('./build-path.js')
 var reportOptionalFailure = require('./report-optional-failure.js')
 var isInstallable = require('./validate-args.js').isInstallable
 
@@ -17,11 +17,10 @@ var actions = {}
 actions.fetch = require('./action/fetch.js')
 actions.extract = require('./action/extract.js')
 actions.build = require('./action/build.js')
-actions.test = require('./action/test.js')
 actions.preinstall = require('./action/preinstall.js')
 actions.install = require('./action/install.js')
 actions.postinstall = require('./action/postinstall.js')
-actions.prepublish = require('./action/prepublish.js')
+actions.prepare = require('./action/prepare.js')
 actions.finalize = require('./action/finalize.js')
 actions.remove = require('./action/remove.js')
 actions.move = require('./action/move.js')
@@ -34,8 +33,9 @@ actions['global-link'] = require('./action/global-link.js')
 
 Object.keys(actions).forEach(function (actionName) {
   var action = actions[actionName]
-  actions[actionName] = function (top, buildpath, pkg, log, next) {
-    validate('SSOOF', arguments)
+  actions[actionName] = limit(function (staging, pkg, log, next) {
+  // top, buildpath, pkg, log
+    validate('SOOF', arguments)
     // refuse to run actions for failed packages
     if (pkg.failed) return next()
     if (action.rollback) {
@@ -58,12 +58,12 @@ Object.keys(actions).forEach(function (actionName) {
       }
     }
     function thenRunAction () {
-      action(top, buildpath, pkg, log, andDone(next))
+      action(staging, pkg, log, andDone(next))
     }
     function andDone (cb) {
       return andFinishTracker(log, andAddParentToErrors(pkg.parent, andHandleOptionalDepErrors(pkg, cb)))
     }
-  }
+  }, npm.limit.action)
 })
 
 function markAsFailed (pkg) {
@@ -99,9 +99,7 @@ function prepareAction (staging, log) {
     var cmd = action[0]
     var pkg = action[1]
     if (!actions[cmd]) throw new Error('Unknown decomposed command "' + cmd + '" (is it new?)')
-    var top = path.resolve(staging, '../..')
-    var buildpath = buildPath(staging, pkg)
-    return [actions[cmd], top, buildpath, pkg, log.newGroup(cmd + ':' + moduleName(pkg))]
+    return [actions[cmd], staging, pkg, log.newGroup(cmd + ':' + moduleName(pkg))]
   }
 }
 
@@ -119,12 +117,23 @@ exports.doOne = function (cmd, staging, pkg, log, next) {
   execAction(prepareAction(staging, log)([cmd, pkg]), next)
 }
 
+function time (log) {
+  process.emit('time', 'action:' + log.name)
+}
+function timeEnd (log) {
+  process.emit('timeEnd', 'action:' + log.name)
+}
+
 exports.doSerial = function (type, staging, actionsToRun, log, next) {
   validate('SSAOF', arguments)
   actionsToRun = actionsToRun
     .filter(function (value) { return value[0] === type })
   log.silly('doSerial', '%s %d', type, actionsToRun.length)
-  chain(actionsToRun.map(prepareAction(staging, log)), andFinishTracker(log, next))
+  time(log)
+  chain(actionsToRun.map(prepareAction(staging, log)), andFinishTracker(log, function () {
+    timeEnd(log)
+    next.apply(null, arguments)
+  }))
 }
 
 exports.doReverseSerial = function (type, staging, actionsToRun, log, next) {
@@ -133,13 +142,21 @@ exports.doReverseSerial = function (type, staging, actionsToRun, log, next) {
     .filter(function (value) { return value[0] === type })
     .reverse()
   log.silly('doReverseSerial', '%s %d', type, actionsToRun.length)
-  chain(actionsToRun.map(prepareAction(staging, log)), andFinishTracker(log, next))
+  time(log)
+  chain(actionsToRun.map(prepareAction(staging, log)), andFinishTracker(log, function () {
+    timeEnd(log)
+    next.apply(null, arguments)
+  }))
 }
 
 exports.doParallel = function (type, staging, actionsToRun, log, next) {
   validate('SSAOF', arguments)
   actionsToRun = actionsToRun.filter(function (value) { return value[0] === type })
   log.silly('doParallel', type + ' ' + actionsToRun.length)
+  time(log)
 
-  asyncMap(actionsToRun.map(prepareAction(staging, log)), execAction, andFinishTracker(log, next))
+  asyncMap(actionsToRun.map(prepareAction(staging, log)), execAction, andFinishTracker(log, function () {
+    timeEnd(log)
+    next.apply(null, arguments)
+  }))
 }

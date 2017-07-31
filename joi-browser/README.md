@@ -2,11 +2,11 @@
 
 joi object schema validation bundled for the browser (babelified and bundled)
 
-[![NPM Version Badge](https://img.shields.io/npm/v/joi-browser.svg)](https://www.npmjs.com/package/joi-browser)
+[![Build Status](https://secure.travis-ci.org/jeffbski/joi-browser.png?branch=master)](http://travis-ci.org/jeffbski/joi-browser) [![NPM Version Badge](https://img.shields.io/npm/v/joi-browser.svg)](https://www.npmjs.com/package/joi-browser)
 
 ## Why?
 
-There has been some difficulty in getting a reasonable version of Joi packaged for the browser both due to the size of bundling and now with 7.x.x the switch to ES6 modules has added additional challenges.
+There has been some difficulty in getting a reasonable version of [Joi](https://github.com/hapijs/joi) packaged for the browser both due to the size of bundling and now with 7.x.x the switch to ES6 modules has added additional challenges.
 
 The community is trying to rally to get the Joi package itself setup so that we can generate bundles directly from it, but until this is done, this package will allow you to build a bundled version.
 
@@ -23,6 +23,23 @@ npm install joi-browser
 
 ```javascript
 var Joi = require('joi-browser');
+```
+
+Note: Joi uses the new ES6 features, Promise and Map, so you may need to add polyfills to use with older browsers.
+
+ - To see what browsers support Promise: http://caniuse.com/#search=PROMISE
+ - To check what browsers support Map: http://caniuse.com/#search=MAP
+
+Include the polyfill early in your code before requiring Joi. You can use the parts of `core-js` for the polyfill or use packages `es6-promise` + `es6-map`.
+
+npm install core-js or es6-promise and es6-map
+```bash
+npm install core-js
+```
+
+```js
+require('core-js/fn/map'); // sets up global Map
+require('core-js/fn/promise'); // sets up global Promise
 ```
 
 Note: if you are using webpack with a babel loader you may need to exclude `joi-browser` from being run through babel again.
@@ -55,6 +72,8 @@ So in your code, you just require `joi` and browserify will automatically switch
 var Joi = require('joi');
 ```
 
+See `examples/browserify-basic`
+
 #### Webpack
 
 ```bash
@@ -62,23 +81,16 @@ npm install joi-browser
 npm install joi
 ```
 
-Add the following to your app's package.json which will tell webpack to use joi-browser instead of joi when bundling for the browser.
-
-```json
-  "browser": {
-    "joi": "joi-browser"
-  },
-```
-
-Add the following to your app's webpack.config.js to enable the package aliasing we configured in package.json
+Add the following to your app's webpack.config.js to alias joi to joi-browser
 
 ```javascript
   resolve: {
-    packageAlias: 'browser'
+    alias: {
+      joi: 'joi-browser'
   }
 ```
 
-Note: if you are using webpack with a babel loader you may need to exclude `joi-browser` from being run through babel again.
+Note: if you are using webpack with a babel loader you may need to exclude `joi-browser` (or node_modules) from being run through babel again.
 
 In your webpack.config.js loaders, add an `exclude: [ /joi-browser/ ]`.
 
@@ -89,6 +101,8 @@ So in your code, you just require `joi` and webpack will automatically switch it
 ```javascript
 var Joi = require('joi');
 ```
+
+See `examples/webpack-basic`
 
 ## joi-full
 
@@ -105,6 +119,12 @@ npm install
 npm run prepublish # when you want to rebuild
 ```
 
+### Examples
+
+I have included a few examples of demonstrating how to use with webpack and browserify
+
+ - `examples/browserify-basic`
+ - `examples/webpack-basic`
 
 ## Upgrade notes
 

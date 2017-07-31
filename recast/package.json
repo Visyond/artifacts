@@ -2,50 +2,49 @@
   "_args": [
     [
       {
-        "raw": "recast@0.11.14",
+        "raw": "recast@0.12.3",
         "scope": null,
         "escapedName": "recast",
         "name": "recast",
-        "rawSpec": "0.11.14",
-        "spec": "0.11.14",
+        "rawSpec": "0.12.3",
+        "spec": "0.12.3",
         "type": "version"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-gho"
     ]
   ],
-  "_from": "recast@0.11.14",
-  "_id": "recast@0.11.14",
+  "_from": "recast@0.12.3",
+  "_id": "recast@0.12.3",
   "_inCache": true,
   "_location": "/recast",
-  "_nodeVersion": "4.5.0",
+  "_nodeVersion": "4.8.1",
   "_npmOperationalInternal": {
-    "host": "packages-16-east.internal.npmjs.com",
-    "tmp": "tmp/recast-0.11.14.tgz_1473698150606_0.10585225862450898"
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/recast-0.12.3.tgz_1491408425107_0.021272602723911405"
   },
   "_npmUser": {
     "name": "benjamn",
     "email": "bn@cs.stanford.edu"
   },
-  "_npmVersion": "3.10.7",
+  "_npmVersion": "4.4.4",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "recast@0.11.14",
+    "raw": "recast@0.12.3",
     "scope": null,
     "escapedName": "recast",
     "name": "recast",
-    "rawSpec": "0.11.14",
-    "spec": "0.11.14",
+    "rawSpec": "0.12.3",
+    "spec": "0.12.3",
     "type": "version"
   },
   "_requiredBy": [
-    "/jison",
-    "/jscodeshift"
+    "/jison-gho"
   ],
-  "_resolved": "https://registry.npmjs.org/recast/-/recast-0.11.14.tgz",
-  "_shasum": "3ba11420f9403c66e397c045ce4fe951a56eecb1",
+  "_resolved": "https://registry.npmjs.org/recast/-/recast-0.12.3.tgz",
+  "_shasum": "ce39d41911ea56d69701216d61e350a4d9505d4d",
   "_shrinkwrap": null,
-  "_spec": "recast@0.11.14",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison",
+  "_spec": "recast@0.12.3",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-gho",
   "author": {
     "name": "Ben Newman",
     "email": "bn@cs.stanford.edu"
@@ -57,26 +56,31 @@
     "url": "https://github.com/benjamn/recast/issues"
   },
   "dependencies": {
-    "ast-types": "0.9.0",
-    "esprima": "~3.0.0",
+    "ast-types": "0.9.11",
+    "core-js": "^2.4.1",
+    "esprima": "~3.1.0",
     "private": "~0.1.5",
     "source-map": "~0.5.0"
   },
   "description": "JavaScript syntax tree transformer, nondestructive pretty-printer, and automatic source map generator",
   "devDependencies": {
-    "babylon": "~6.9.1",
+    "babel-core": "^6.23.1",
+    "babel-preset-es2015": "^6.22.0",
+    "babylon": "~6.16.1",
     "esprima-fb": "^15001.1001.0-dev-harmony-fb",
-    "mocha": "~3.0.1"
+    "mocha": "~3.2.0",
+    "reify": "^0.6.2",
+    "semver": "^5.3.0"
   },
   "directories": {},
   "dist": {
-    "shasum": "3ba11420f9403c66e397c045ce4fe951a56eecb1",
-    "tarball": "https://registry.npmjs.org/recast/-/recast-0.11.14.tgz"
+    "shasum": "ce39d41911ea56d69701216d61e350a4d9505d4d",
+    "tarball": "https://registry.npmjs.org/recast/-/recast-0.12.3.tgz"
   },
   "engines": {
     "node": ">= 0.8"
   },
-  "gitHead": "3a0de50f404cd75db5a8a7c34ff1102270d9de82",
+  "gitHead": "5bfd3f2fb9df404c1178e74516eca2bcc691ad43",
   "homepage": "http://github.com/benjamn/recast",
   "keywords": [
     "ast",
@@ -107,5 +111,5 @@
     "debug": "node ./node_modules/mocha/bin/mocha --debug-brk --reporter spec",
     "test": "node ./node_modules/mocha/bin/mocha --reporter spec --full-trace"
   },
-  "version": "0.11.14"
+  "version": "0.12.3"
 }

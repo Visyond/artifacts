@@ -1,4 +1,4 @@
-import { CommentTag } from "./tag";
+import { CommentTag } from './tag';
 export declare class Comment {
     shortText: string;
     text: string;

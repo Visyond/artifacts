@@ -1,9 +1,15 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
 var ts = require("typescript");
 var Util = require("util");
 var LogLevel;
@@ -68,7 +74,7 @@ var Logger = (function () {
     };
     Logger.prototype.log = function (message, level, newLine) {
         if (level === void 0) { level = LogLevel.Info; }
-        if (level == LogLevel.Error) {
+        if (level === LogLevel.Error) {
             this.errorCount += 1;
         }
     };
@@ -105,24 +111,28 @@ exports.Logger = Logger;
 var ConsoleLogger = (function (_super) {
     __extends(ConsoleLogger, _super);
     function ConsoleLogger() {
-        return _super.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     ConsoleLogger.prototype.log = function (message, level, newLine) {
         if (level === void 0) { level = LogLevel.Info; }
-        if (level == LogLevel.Error) {
+        if (level === LogLevel.Error) {
             this.errorCount += 1;
         }
         var output = '';
-        if (level == LogLevel.Error)
+        if (level === LogLevel.Error) {
             output += 'Error: ';
-        if (level == LogLevel.Warn)
+        }
+        if (level === LogLevel.Warn) {
             output += 'Warning: ';
+        }
         output += message;
-        if (newLine || level == LogLevel.Success)
+        if (newLine || level === LogLevel.Success) {
             ts.sys.write(ts.sys.newLine);
+        }
         ts.sys.write(output + ts.sys.newLine);
-        if (level == LogLevel.Success)
+        if (level === LogLevel.Success) {
             ts.sys.write(ts.sys.newLine);
+        }
     };
     return ConsoleLogger;
 }(Logger));
@@ -136,7 +146,7 @@ var CallbackLogger = (function (_super) {
     }
     CallbackLogger.prototype.log = function (message, level, newLine) {
         if (level === void 0) { level = LogLevel.Info; }
-        if (level == LogLevel.Error) {
+        if (level === LogLevel.Error) {
             this.errorCount += 1;
         }
         this.callback(message, level, newLine);

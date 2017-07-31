@@ -2,15 +2,15 @@
   "_args": [
     [
       {
-        "raw": "color@^0.8.0",
+        "raw": "color@0.8.x",
         "scope": null,
         "escapedName": "color",
         "name": "color",
-        "rawSpec": "^0.8.0",
+        "rawSpec": "0.8.x",
         "spec": ">=0.8.0 <0.9.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/sprity"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/colorspace"
     ]
   ],
   "_from": "color@>=0.8.0 <0.9.0",
@@ -25,22 +25,24 @@
   "_npmVersion": "2.5.1",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "color@^0.8.0",
+    "raw": "color@0.8.x",
     "scope": null,
     "escapedName": "color",
     "name": "color",
-    "rawSpec": "^0.8.0",
+    "rawSpec": "0.8.x",
     "spec": ">=0.8.0 <0.9.0",
     "type": "range"
   },
   "_requiredBy": [
-    "/sprity"
+    "/colorspace",
+    "/sprity",
+    "/sprity-gm"
   ],
   "_resolved": "https://registry.npmjs.org/color/-/color-0.8.0.tgz",
   "_shasum": "890c07c3fd4e649537638911cf691e5458b6fca5",
   "_shrinkwrap": null,
-  "_spec": "color@^0.8.0",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/sprity",
+  "_spec": "color@0.8.x",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/colorspace",
   "authors": [
     "Heather Arthur <fayearthur@gmail.com>",
     "Maxime Thirouin"

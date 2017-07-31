@@ -2,6 +2,18 @@
   "_args": [
     [
       {
+        "raw": "camelcase@^2.0.1",
+        "scope": null,
+        "escapedName": "camelcase",
+        "name": "camelcase",
+        "rawSpec": "^2.0.1",
+        "spec": ">=2.0.1 <3.0.0",
+        "type": "range"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/yargs"
+    ],
+    [
+      {
         "raw": "camelcase@^2.0.0",
         "scope": null,
         "escapedName": "camelcase",
@@ -13,7 +25,7 @@
       "/var/lib/jenkins/workspace/build/server/v2/node_modules/camelcase-keys"
     ]
   ],
-  "_from": "camelcase@>=2.0.0 <3.0.0",
+  "_from": "camelcase@^2.0.0",
   "_id": "camelcase@2.1.1",
   "_inCache": true,
   "_location": "/camelcase",

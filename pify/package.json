@@ -10,7 +10,7 @@
         "spec": ">=2.0.0 <3.0.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/load-json-file"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/del"
     ]
   ],
   "_from": "pify@>=2.0.0 <3.0.0",
@@ -34,8 +34,10 @@
     "type": "range"
   },
   "_requiredBy": [
+    "/del",
     "/globby",
     "/load-json-file",
+    "/make-dir",
     "/path-type",
     "/vinyl-file"
   ],
@@ -43,7 +45,7 @@
   "_shasum": "ed141a6ac043a849ea588498e7dca8b15330e90c",
   "_shrinkwrap": null,
   "_spec": "pify@^2.0.0",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/load-json-file",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/del",
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",

@@ -1,15 +1,21 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var Path = require("path");
 var FS = require("fs");
 var _ = require("lodash");
@@ -19,7 +25,7 @@ var declaration_1 = require("../declaration");
 var TypedocReader = TypedocReader_1 = (function (_super) {
     __extends(TypedocReader, _super);
     function TypedocReader() {
-        return _super.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     TypedocReader.prototype.initialize = function () {
         this.listenTo(this.owner, options_1.DiscoverEvent.DISCOVER, this.onDiscover, -100);
@@ -41,15 +47,15 @@ var TypedocReader = TypedocReader_1 = (function (_super) {
             return;
         }
         var data = require(optionFile);
-        if (typeof data == 'function') {
+        if (typeof data === 'function') {
             data = data(this.application);
         }
-        if (!(typeof data == 'object')) {
+        if (!(typeof data === 'object')) {
             event.addError('The option file %s could not be read, it must either export a function or an object.', optionFile);
         }
         else {
             if (data.src) {
-                if (typeof data.src == 'string') {
+                if (typeof data.src === 'string') {
                     event.inputFiles = [data.src];
                 }
                 else if (_.isArray(data.src)) {
@@ -75,7 +81,7 @@ __decorate([
     })
 ], TypedocReader.prototype, "options", void 0);
 TypedocReader = TypedocReader_1 = __decorate([
-    component_1.Component({ name: "options:typedoc" })
+    component_1.Component({ name: 'options:typedoc' })
 ], TypedocReader);
 exports.TypedocReader = TypedocReader;
 var TypedocReader_1;

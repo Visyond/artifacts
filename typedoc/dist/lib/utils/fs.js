@@ -1,10 +1,11 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var ts = require("typescript");
 var _ts = require("../ts-internal");
 var FS = require("fs");
 var existingDirectories = {};
 function normalizePath(path) {
-    return path.replace(/\\/g, "/");
+    return path.replace(/\\/g, '/');
 }
 exports.normalizePath = normalizePath;
 function directoryExists(directoryPath) {
@@ -32,8 +33,9 @@ function writeFile(fileName, data, writeByteOrderMark, onError) {
         ts.sys.writeFile(fileName, data, writeByteOrderMark);
     }
     catch (e) {
-        if (onError)
+        if (onError) {
             onError(e.message);
+        }
     }
 }
 exports.writeFile = writeFile;
@@ -49,20 +51,20 @@ function readFile(file) {
                     buffer[i + 1] = temp;
                     i += 2;
                 }
-                return buffer.toString("ucs2", 2);
+                return buffer.toString('ucs2', 2);
             }
             break;
         case 0xFF:
             if (buffer[1] === 0xFE) {
-                return buffer.toString("ucs2", 2);
+                return buffer.toString('ucs2', 2);
             }
             break;
         case 0xEF:
             if (buffer[1] === 0xBB) {
-                return buffer.toString("utf8", 3);
+                return buffer.toString('utf8', 3);
             }
     }
-    return buffer.toString("utf8", 0);
+    return buffer.toString('utf8', 0);
 }
 exports.readFile = readFile;
 //# sourceMappingURL=fs.js.map

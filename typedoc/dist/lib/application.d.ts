@@ -1,9 +1,9 @@
-import { Converter } from "./converter/index";
-import { Renderer } from "./output/renderer";
-import { ProjectReflection } from "./models/index";
-import { Logger, PluginHost } from "./utils/index";
-import { AbstractComponent, ChildableComponent } from "./utils/component";
-import { Options, IOptionsReadResult } from "./utils/options/index";
+import { Converter } from './converter/index';
+import { Renderer } from './output/renderer';
+import { ProjectReflection } from './models/index';
+import { Logger, PluginHost } from './utils/index';
+import { AbstractComponent, ChildableComponent } from './utils/component';
+import { Options, OptionsReadResult } from './utils/options/index';
 export declare class Application extends ChildableComponent<Application, AbstractComponent<Application>> {
     options: Options;
     converter: Converter;
@@ -15,7 +15,7 @@ export declare class Application extends ChildableComponent<Application, Abstrac
     exclude: string;
     static VERSION: string;
     constructor(options?: Object);
-    protected bootstrap(options?: Object): IOptionsReadResult;
+    protected bootstrap(options?: Object): OptionsReadResult;
     readonly application: Application;
     readonly isCLI: boolean;
     getTypeScriptPath(): string;

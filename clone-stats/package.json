@@ -33,6 +33,7 @@
     "type": "range"
   },
   "_requiredBy": [
+    "/gulp-concat-json/vinyl",
     "/gulp-manifest/vinyl",
     "/gulp-sourcemaps/vinyl",
     "/gulp-spawn/vinyl",

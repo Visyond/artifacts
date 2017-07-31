@@ -23,7 +23,7 @@
   },
   "_npmVersion": "1.4.28",
   "_phantomChildren": {
-    "private": "0.1.6",
+    "private": "0.1.7",
     "source-map": "0.5.6"
   },
   "_requested": {
@@ -36,8 +36,7 @@
     "type": "version"
   },
   "_requiredBy": [
-    "/jscodeshift/babel-core",
-    "/pac-resolver"
+    "/jscodeshift/babel-core"
   ],
   "_resolved": "https://registry.npmjs.org/regenerator/-/regenerator-0.8.40.tgz",
   "_shasum": "a0e457c58ebdbae575c9f8cd75127e93756435d8",

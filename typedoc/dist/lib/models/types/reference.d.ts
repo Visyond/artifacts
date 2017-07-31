@@ -1,5 +1,5 @@
-import { Reflection } from "../reflections/abstract";
-import { Type } from "./abstract";
+import { Reflection } from '../reflections/abstract';
+import { Type } from './abstract';
 export declare class ReferenceType extends Type {
     name: string;
     typeArguments: Type[];

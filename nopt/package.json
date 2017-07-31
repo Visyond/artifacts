@@ -35,7 +35,8 @@
   },
   "_requiredBy": [
     "/js-beautify",
-    "/node-gyp"
+    "/node-gyp",
+    "/weinre"
   ],
   "_resolved": "https://registry.npmjs.org/nopt/-/nopt-3.0.6.tgz",
   "_shasum": "c6465dbf08abcd4db359317f79ac68a646b28ff9",

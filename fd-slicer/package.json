@@ -33,6 +33,7 @@
     "type": "range"
   },
   "_requiredBy": [
+    "/selenium-standalone/yauzl",
     "/yauzl"
   ],
   "_resolved": "https://registry.npmjs.org/fd-slicer/-/fd-slicer-1.0.1.tgz",

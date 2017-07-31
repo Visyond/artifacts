@@ -30,6 +30,8 @@ module.exports = {
     ]
   },
   node: {
+    global: true,
+    Buffer: 'mock',
     crypto: 'empty',
     net: 'empty',
     dns: 'empty'

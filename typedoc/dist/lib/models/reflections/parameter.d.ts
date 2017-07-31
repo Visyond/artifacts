@@ -1,11 +1,11 @@
-import { Type } from "../types/index";
-import { Reflection, IDefaultValueContainer, ITypeContainer, ITraverseCallback } from "./abstract";
-import { SignatureReflection } from "./signature";
-export declare class ParameterReflection extends Reflection implements IDefaultValueContainer, ITypeContainer {
+import { Type } from '../types/index';
+import { Reflection, DefaultValueContainer, TypeContainer, TraverseCallback } from './abstract';
+import { SignatureReflection } from './signature';
+export declare class ParameterReflection extends Reflection implements DefaultValueContainer, TypeContainer {
     parent: SignatureReflection;
     defaultValue: string;
     type: Type;
-    traverse(callback: ITraverseCallback): void;
+    traverse(callback: TraverseCallback): void;
     toObject(): any;
     toString(): string;
 }

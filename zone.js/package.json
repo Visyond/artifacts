@@ -1,40 +1,59 @@
 {
-  "name": "zone.js",
-  "version": "0.7.2",
-  "description": "Zones for JavaScript",
-  "main": "dist/zone-node.js",
-  "browser": "dist/zone.js",
-  "typings": "dist/zone.js.d.ts",
-  "files": [
-    "lib",
-    "dist"
+  "_args": [
+    [
+      {
+        "raw": "zone.js@0.7.2",
+        "scope": null,
+        "escapedName": "zone.js",
+        "name": "zone.js",
+        "rawSpec": "0.7.2",
+        "spec": "0.7.2",
+        "type": "version"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2"
+    ]
   ],
-  "directories": {
-    "lib": "lib",
-    "test": "test"
+  "_from": "zone.js@0.7.2",
+  "_id": "zone.js@0.7.2",
+  "_inCache": true,
+  "_location": "/zone.js",
+  "_nodeVersion": "6.3.1",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/zone.js-0.7.2.tgz_1479951482816_0.24216799926944077"
   },
-  "scripts": {
-    "prepublish": "tsc && gulp build",
-    "ws-server": "node ./test/ws-server.js",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "test": "npm run tsc && concurrently \"npm run tsc:w\" \"npm run ws-server\" \"karma start karma-jasmine.conf.js\"",
-    "test-node": "gulp test/node",
-    "test-mocha": "npm run tsc && concurrently \"npm run tsc:w\" \"npm run ws-server\" \"karma start karma-mocha.conf.js\"",
-    "serve": "python -m SimpleHTTPServer 8000"
+  "_npmUser": {
+    "name": "angularcore",
+    "email": "angular-core+npm@google.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/angular/zone.js.git"
+  "_npmVersion": "3.10.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "zone.js@0.7.2",
+    "scope": null,
+    "escapedName": "zone.js",
+    "name": "zone.js",
+    "rawSpec": "0.7.2",
+    "spec": "0.7.2",
+    "type": "version"
   },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/zone.js/-/zone.js-0.7.2.tgz",
+  "_shasum": "1a62b6be4b24d1b935e4566b0b4386b66966d1a7",
+  "_shrinkwrap": null,
+  "_spec": "zone.js@0.7.2",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2",
   "author": {
     "name": "Brian Ford"
   },
-  "license": "MIT",
+  "browser": "dist/zone.js",
   "bugs": {
     "url": "https://github.com/angular/zone.js/issues"
   },
   "dependencies": {},
+  "description": "Zones for JavaScript",
   "devDependencies": {
     "@types/jasmine": "^2.2.33",
     "@types/node": "^6.0.38",
@@ -68,21 +87,22 @@
     "typescript": "^2.0.2",
     "whatwg-fetch": "git+https://github.com/jimmywarting/fetch.git"
   },
-  "gitHead": "8ddd499d1f4b815675852a7868ca3e64c996dd5d",
-  "homepage": "https://github.com/angular/zone.js#readme",
-  "_id": "zone.js@0.7.2",
-  "_shasum": "1a62b6be4b24d1b935e4566b0b4386b66966d1a7",
-  "_from": "zone.js@0.7.2",
-  "_npmVersion": "3.10.3",
-  "_nodeVersion": "6.3.1",
-  "_npmUser": {
-    "name": "angularcore",
-    "email": "angular-core+npm@google.com"
+  "directories": {
+    "lib": "lib",
+    "test": "test"
   },
   "dist": {
     "shasum": "1a62b6be4b24d1b935e4566b0b4386b66966d1a7",
     "tarball": "https://registry.npmjs.org/zone.js/-/zone.js-0.7.2.tgz"
   },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "gitHead": "8ddd499d1f4b815675852a7868ca3e64c996dd5d",
+  "homepage": "https://github.com/angular/zone.js#readme",
+  "license": "MIT",
+  "main": "dist/zone-node.js",
   "maintainers": [
     {
       "name": "angularcore",
@@ -93,9 +113,23 @@
       "email": "briantford@gmail.com"
     }
   ],
-  "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/zone.js-0.7.2.tgz_1479951482816_0.24216799926944077"
+  "name": "zone.js",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/angular/zone.js.git"
   },
-  "_resolved": "https://registry.npmjs.org/zone.js/-/zone.js-0.7.2.tgz"
+  "scripts": {
+    "prepublish": "tsc && gulp build",
+    "serve": "python -m SimpleHTTPServer 8000",
+    "test": "npm run tsc && concurrently \"npm run tsc:w\" \"npm run ws-server\" \"karma start karma-jasmine.conf.js\"",
+    "test-mocha": "npm run tsc && concurrently \"npm run tsc:w\" \"npm run ws-server\" \"karma start karma-mocha.conf.js\"",
+    "test-node": "gulp test/node",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "ws-server": "node ./test/ws-server.js"
+  },
+  "typings": "dist/zone.js.d.ts",
+  "version": "0.7.2"
 }

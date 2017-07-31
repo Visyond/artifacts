@@ -1,6 +1,6 @@
-import { Reflection, ReflectionKind } from "../../models/reflections/index";
-import { ReflectionGroup } from "../../models/ReflectionGroup";
-import { ConverterComponent } from "../components";
+import { Reflection, ReflectionKind } from '../../models/reflections/index';
+import { ReflectionGroup } from '../../models/ReflectionGroup';
+import { ConverterComponent } from '../components';
 export declare class GroupPlugin extends ConverterComponent {
     static WEIGHTS: ReflectionKind[];
     static SINGULARS: {};

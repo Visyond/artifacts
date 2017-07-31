@@ -2,18 +2,18 @@
   "_args": [
     [
       {
-        "raw": "netmask@~1.0.4",
+        "raw": "netmask@^1.0.6",
         "scope": null,
         "escapedName": "netmask",
         "name": "netmask",
-        "rawSpec": "~1.0.4",
-        "spec": ">=1.0.4 <1.1.0",
+        "rawSpec": "^1.0.6",
+        "spec": ">=1.0.6 <2.0.0",
         "type": "range"
       },
       "/var/lib/jenkins/workspace/build/server/v2/node_modules/pac-resolver"
     ]
   ],
-  "_from": "netmask@>=1.0.4 <1.1.0",
+  "_from": "netmask@>=1.0.6 <2.0.0",
   "_id": "netmask@1.0.6",
   "_inCache": true,
   "_location": "/netmask",
@@ -29,21 +29,22 @@
   "_npmVersion": "3.6.0",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "netmask@~1.0.4",
+    "raw": "netmask@^1.0.6",
     "scope": null,
     "escapedName": "netmask",
     "name": "netmask",
-    "rawSpec": "~1.0.4",
-    "spec": ">=1.0.4 <1.1.0",
+    "rawSpec": "^1.0.6",
+    "spec": ">=1.0.6 <2.0.0",
     "type": "range"
   },
   "_requiredBy": [
+    "/nightwatch/pac-resolver",
     "/pac-resolver"
   ],
   "_resolved": "https://registry.npmjs.org/netmask/-/netmask-1.0.6.tgz",
   "_shasum": "20297e89d86f6f6400f250d9f4f6b4c1945fcd35",
   "_shrinkwrap": null,
-  "_spec": "netmask@~1.0.4",
+  "_spec": "netmask@^1.0.6",
   "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/pac-resolver",
   "author": {
     "name": "Olivier Poitrey",

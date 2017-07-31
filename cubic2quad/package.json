@@ -14,15 +14,19 @@
     ]
   ],
   "_from": "cubic2quad@>=1.0.0 <2.0.0",
-  "_id": "cubic2quad@1.0.0",
+  "_id": "cubic2quad@1.1.1",
   "_inCache": true,
   "_location": "/cubic2quad",
-  "_nodeVersion": "4.2.1",
+  "_nodeVersion": "7.8.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/cubic2quad-1.1.1.tgz_1494237668482_0.27662964700721204"
+  },
   "_npmUser": {
     "name": "vitaly",
     "email": "vitaly@rcdesign.ru"
   },
-  "_npmVersion": "2.14.7",
+  "_npmVersion": "4.2.0",
   "_phantomChildren": {},
   "_requested": {
     "raw": "cubic2quad@^1.0.0",
@@ -36,8 +40,8 @@
   "_requiredBy": [
     "/svg2ttf"
   ],
-  "_resolved": "https://registry.npmjs.org/cubic2quad/-/cubic2quad-1.0.0.tgz",
-  "_shasum": "c9bdfac62bad1b807547897ca6d1998ca29199d4",
+  "_resolved": "https://registry.npmjs.org/cubic2quad/-/cubic2quad-1.1.1.tgz",
+  "_shasum": "69b19c61a3f5b41ecf2f1d5fae8fb03415aa8b15",
   "_shrinkwrap": null,
   "_spec": "cubic2quad@^1.0.0",
   "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/svg2ttf",
@@ -50,21 +54,20 @@
     "ansi": "*",
     "benchmark": "*",
     "coveralls": "~2.11.2",
-    "eslint": "0.19.0",
-    "eslint-plugin-nodeca": "~1.0.3",
-    "istanbul": "*",
-    "mocha": "*"
+    "eslint": "^3.8.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.2"
   },
   "directories": {},
   "dist": {
-    "shasum": "c9bdfac62bad1b807547897ca6d1998ca29199d4",
-    "tarball": "https://registry.npmjs.org/cubic2quad/-/cubic2quad-1.0.0.tgz"
+    "shasum": "69b19c61a3f5b41ecf2f1d5fae8fb03415aa8b15",
+    "tarball": "https://registry.npmjs.org/cubic2quad/-/cubic2quad-1.1.1.tgz"
   },
   "files": [
     "index.js",
     "lib/"
   ],
-  "gitHead": "317f8d4e80fadcd72dc0525f016e988a7dc3443a",
+  "gitHead": "7f3f6b6fd36231084561fb9825a14458a8cdd67c",
   "homepage": "https://github.com/fontello/cubic2quad#readme",
   "keywords": [
     "cubic",
@@ -86,7 +89,11 @@
     "url": "git+https://github.com/fontello/cubic2quad.git"
   },
   "scripts": {
-    "test": "make test"
+    "benchmark": "npm run lint && ./benchmark/benchmark.js",
+    "coverage": "rm -rf coverage && istanbul cover _mocha",
+    "lint": "eslint .",
+    "report-coveralls": "istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
+    "test": "npm run lint && mocha"
   },
-  "version": "1.0.0"
+  "version": "1.1.1"
 }

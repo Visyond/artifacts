@@ -1,7 +1,7 @@
-import * as ts from "typescript";
-import { Logger } from "../utils/loggers";
-import { Reflection, ProjectReflection, Type } from "../models/index";
-import { Converter } from "./converter";
+import * as ts from 'typescript';
+import { Logger } from '../utils/loggers';
+import { Reflection, ProjectReflection, Type } from '../models/index';
+import { Converter } from './converter';
 export declare class Context {
     converter: Converter;
     fileNames: string[];

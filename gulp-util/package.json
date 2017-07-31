@@ -2,43 +2,48 @@
   "_args": [
     [
       {
-        "raw": "gulp-util@^3.0.7",
+        "raw": "gulp-util@^3.0.0",
         "scope": null,
         "escapedName": "gulp-util",
         "name": "gulp-util",
-        "rawSpec": "^3.0.7",
-        "spec": ">=3.0.7 <4.0.0",
+        "rawSpec": "^3.0.0",
+        "spec": ">=3.0.0 <4.0.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/gulp-nunjucks"
     ]
   ],
-  "_from": "gulp-util@>=3.0.7 <4.0.0",
-  "_id": "gulp-util@3.0.7",
+  "_from": "gulp-util@>=3.0.0 <4.0.0",
+  "_id": "gulp-util@3.0.8",
   "_inCache": true,
   "_location": "/gulp-util",
-  "_nodeVersion": "0.10.36",
+  "_nodeVersion": "0.10.41",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/gulp-util-3.0.8.tgz_1482793870401_0.4167847656644881"
+  },
   "_npmUser": {
     "name": "phated",
-    "email": "blaine@iceddev.com"
+    "email": "blaine.bublitz@gmail.com"
   },
-  "_npmVersion": "2.14.3",
+  "_npmVersion": "2.15.2",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "gulp-util@^3.0.7",
+    "raw": "gulp-util@^3.0.0",
     "scope": null,
     "escapedName": "gulp-util",
     "name": "gulp-util",
-    "rawSpec": "^3.0.7",
-    "spec": ">=3.0.7 <4.0.0",
+    "rawSpec": "^3.0.0",
+    "spec": ">=3.0.0 <4.0.0",
     "type": "range"
   },
   "_requiredBy": [
     "#DEV:/",
     "/gulp",
+    "/gulp-angular-embed-templates",
     "/gulp-babel",
+    "/gulp-clean-css",
     "/gulp-closure-compiler",
-    "/gulp-concat",
     "/gulp-exec",
     "/gulp-file-include",
     "/gulp-fncallback",
@@ -48,9 +53,14 @@
     "/gulp-jsdoc3",
     "/gulp-less",
     "/gulp-nightwatch",
+    "/gulp-nunjucks",
+    "/gulp-plumber",
+    "/gulp-sass",
+    "/gulp-sass-lint",
     "/gulp-strip-debug",
     "/gulp-svg2ttf",
     "/gulp-svgicons2svgfont",
+    "/gulp-tslint",
     "/gulp-ttf2eot",
     "/gulp-ttf2woff",
     "/gulp-ttf2woff2",
@@ -58,13 +68,14 @@
     "/gulp-uglify",
     "/gulp-watch",
     "/gulp-wrap",
-    "/gulp-yuicompressor"
+    "/gulp-yuicompressor",
+    "/run-sequence"
   ],
-  "_resolved": "https://registry.npmjs.org/gulp-util/-/gulp-util-3.0.7.tgz",
-  "_shasum": "78925c4b8f8b49005ac01a011c557e6218941cbb",
+  "_resolved": "https://registry.npmjs.org/gulp-util/-/gulp-util-3.0.8.tgz",
+  "_shasum": "0054e1e744502e27c04c187c3ecc505dd54bbb4f",
   "_shrinkwrap": null,
-  "_spec": "gulp-util@^3.0.7",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2",
+  "_spec": "gulp-util@^3.0.0",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/gulp-nunjucks",
   "author": {
     "name": "Fractal",
     "email": "contact@wearefractal.com",
@@ -78,7 +89,7 @@
     "array-uniq": "^1.0.2",
     "beeper": "^1.0.0",
     "chalk": "^1.0.0",
-    "dateformat": "^1.0.11",
+    "dateformat": "^2.0.0",
     "fancy-log": "^1.1.0",
     "gulplog": "^1.0.0",
     "has-gulplog": "^0.1.0",
@@ -108,8 +119,8 @@
   },
   "directories": {},
   "dist": {
-    "shasum": "78925c4b8f8b49005ac01a011c557e6218941cbb",
-    "tarball": "https://registry.npmjs.org/gulp-util/-/gulp-util-3.0.7.tgz"
+    "shasum": "0054e1e744502e27c04c187c3ecc505dd54bbb4f",
+    "tarball": "https://registry.npmjs.org/gulp-util/-/gulp-util-3.0.8.tgz"
   },
   "engines": {
     "node": ">=0.10"
@@ -118,17 +129,21 @@
     "index.js",
     "lib"
   ],
-  "gitHead": "b74a5ff121471ed00b84fb1e73a0e75488d33ccd",
+  "gitHead": "28c2aa2a3f8782a995b47ed051ab52885c705024",
   "homepage": "https://github.com/gulpjs/gulp-util#readme",
   "license": "MIT",
   "maintainers": [
+    {
+      "name": "contra",
+      "email": "contra@wearefractal.com"
+    },
     {
       "name": "fractal",
       "email": "contact@wearefractal.com"
     },
     {
       "name": "phated",
-      "email": "blaine@iceddev.com"
+      "email": "blaine.bublitz@gmail.com"
     }
   ],
   "name": "gulp-util",
@@ -142,5 +157,5 @@
     "coveralls": "istanbul cover _mocha --report lcovonly && istanbul-coveralls",
     "test": "jshint *.js lib/*.js test/*.js && mocha"
   },
-  "version": "3.0.7"
+  "version": "3.0.8"
 }

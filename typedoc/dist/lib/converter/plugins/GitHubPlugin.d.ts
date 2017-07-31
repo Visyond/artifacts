@@ -1,5 +1,5 @@
-import { ConverterComponent } from "../components";
-declare module "shelljs" {
+import { ConverterComponent } from '../components';
+declare module 'shelljs' {
     interface ExecOutputReturnValue {
         stdout: string;
         stderr: string;

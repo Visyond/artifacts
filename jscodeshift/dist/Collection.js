@@ -10,19 +10,24 @@
 
 'use strict';
 
-var assert = require('assert');
-var recast = require('recast');
-var _ = require('lodash');
+const assert = require('assert');
+const recast = require('recast');
+const _ = require('lodash');
 
-var astTypes = recast.types;
+const astTypes = recast.types;
 var types = astTypes.namedTypes;
-var NodePath = astTypes.NodePath;
-var Node = types.Node;
+const NodePath = astTypes.NodePath;
+const Node = types.Node;
 
 /**
  * This represents a generic collection of node paths. It only has a generic
  * API to access and process the elements of the list. It doesn't know anything
  * about AST types.
+ *
+ * @mixes traversalMethods
+ * @mixes mutationMethods
+ * @mixes transformMethods
+ * @mixes globalMethods
  */
 class Collection {
 
@@ -87,15 +92,15 @@ class Collection {
    * @param {Type} type Force the new collection to be of a specific type
    */
   map(callback, type) {
-    var paths = [];
+    const paths = [];
     this.forEach(function(path) {
       /*jshint eqnull:true*/
-      var result = callback.apply(path, arguments);
+      let result = callback.apply(path, arguments);
       if (result == null) return;
       if (!Array.isArray(result)) {
         result = [result];
       }
-      for (var i = 0; i < result.length; i++) {
+      for (let i = 0; i < result.length; i++) {
         if (paths.indexOf(result[i]) === -1) {
           paths.push(result[i]);
         }
@@ -110,6 +115,15 @@ class Collection {
    * @return {number}
    */
   size() {
+    return this.__paths.length;
+  }
+
+  /**
+   * Returns the number of elements in this collection.
+   *
+   * @return {number}
+   */
+  get length() {
     return this.__paths.length;
   }
 
@@ -171,11 +185,11 @@ class Collection {
    * @param {string|number} ...fields
    */
   get() {
-    var path = this.__paths[0];
+    const path = this.__paths[0];
     if (!path) {
       throw Error(
         'You cannot call "get" on a collection with no paths. ' +
-        'Instead, check "size()" first to verify at least 1 path exists.'
+        'Instead, check the "length" property first to verify at least 1 path exists.'
       );
     }
     return path.get.apply(path, arguments);
@@ -204,16 +218,16 @@ class Collection {
 
 /**
  * Given a set of paths, this infers the common types of all paths.
- *
+ * @private
  * @param {Array} paths An array of paths.
  * @return {Type} type An AST type
  */
 function _inferTypes(paths) {
-  var _types = [];
+  let _types = [];
 
   if (paths.length > 0 && Node.check(paths[0].node)) {
-    var nodeType = types[paths[0].node.type];
-    var sameType = paths.length === 1 ||
+    const nodeType = types[paths[0].node.type];
+    const sameType = paths.length === 1 ||
       paths.every(path => nodeType.check(path.node));
 
     if (sameType) {
@@ -255,6 +269,7 @@ function _toTypeArray(value) {
  * element has the same type, a typed collection is created (if it exists),
  * otherwise, a generic collection will be created.
  *
+ * @ignore
  * @param {Array} paths An array of paths
  * @param {Collection} parent A parent collection
  * @param {Type} type An AST type
@@ -275,6 +290,7 @@ function fromPaths(paths, parent, type) {
  *
  *    Collections.fromPaths(paths, parent, type)
  *
+ * @ignore
  * @param {Array} nodes An array of AST nodes
  * @param {Collection} parent A parent collection
  * @param {Type} type An AST type
@@ -292,7 +308,7 @@ function fromNodes(nodes, parent, type) {
   );
 }
 
-var CPt = Collection.prototype;
+const CPt = Collection.prototype;
 
 /**
  * This function adds the provided methods to the prototype of the corresponding
@@ -303,29 +319,29 @@ var CPt = Collection.prototype;
  * @param {Type=} type Optional type to add the methods to
  */
 function registerMethods(methods, type) {
-  for (var methodName in methods) {
+  for (const methodName in methods) {
     if (!methods.hasOwnProperty(methodName)) {
       return;
     }
     if (hasConflictingRegistration(methodName, type)) {
-      var msg = `There is a conflicting registration for method with name "${methodName}".\nYou tried to register an additional method with `;
-      
+      let msg = `There is a conflicting registration for method with name "${methodName}".\nYou tried to register an additional method with `;
+
       if (type) {
         msg += `type "${type.toString()}".`
       } else {
         msg += 'universal type.'
       }
-      
+
       msg += '\nThere are existing registrations for that method with ';
-      
-      var conflictingRegistrations = CPt[methodName].typedRegistrations;
-      
+
+      const conflictingRegistrations = CPt[methodName].typedRegistrations;
+
       if (conflictingRegistrations) {
-        msg += `type ${Object.keys(conflictingRegistrations).join(', ')}.`; 
+        msg += `type ${Object.keys(conflictingRegistrations).join(', ')}.`;
       } else {
         msg += 'universal type.';
       }
-      
+
       throw Error(msg);
     }
     if (!type) {
@@ -342,25 +358,25 @@ function registerMethods(methods, type) {
       });
     }
   }
-} 
+}
 
 function installTypedMethod(methodName) {
   if (CPt.hasOwnProperty(methodName)) {
     throw new Error(`Internal Error: "${methodName}" method is already installed`);
   }
 
-  var registrations = {};
+  const registrations = {};
 
   function typedMethod() {
-    var types = Object.keys(registrations);
-    
-    for (var i = 0; i < types.length; i++) {
-      var currentType = types[i];
+    const types = Object.keys(registrations);
+
+    for (let i = 0; i < types.length; i++) {
+      const currentType = types[i];
       if (registrations[currentType] && this.isOfType(currentType)) {
         return registrations[currentType].apply(this, arguments);
       }
     }
-    
+
     throw Error(
       `You have a collection of type [${this.getTypes()}]. ` +
       `"${methodName}" is only defined for one of [${types.join('|')}].`
@@ -374,28 +390,28 @@ function installTypedMethod(methodName) {
 
 function hasConflictingRegistration(methodName, type) {
   if (!type) {
-    return CPt.hasOwnProperty(methodName); 
+    return CPt.hasOwnProperty(methodName);
   }
 
   if (!CPt.hasOwnProperty(methodName)) {
     return false;
   }
 
-  var registrations = CPt[methodName] && CPt[methodName].typedRegistrations;
-  
+  const registrations = CPt[methodName] && CPt[methodName].typedRegistrations;
+
   if (!registrations) {
     return true;
   }
-  
+
   type = type.toString();
-  
+
   if (registrations.hasOwnProperty(type)) {
     return true;
   }
 
   return astTypes.getSupertypeNames(type.toString()).some(function (name) {
     return !!registrations[name];
-  }); 
+  });
 }
 
 var _defaultType = [];
@@ -405,6 +421,7 @@ var _defaultType = [];
  * empty set of paths and no type is specified, we return a collection of this
  * type.
  *
+ * @ignore
  * @param {Type} type
  */
 function setDefaultCollectionType(type) {

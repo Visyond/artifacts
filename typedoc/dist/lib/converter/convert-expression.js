@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var ts = require("typescript");
 var _ts = require("../ts-internal");
 function convertDefaultValue(node) {

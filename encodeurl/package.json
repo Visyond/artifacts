@@ -10,7 +10,7 @@
         "spec": ">=1.0.1 <1.1.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/live-server/node_modules/send"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/express"
     ]
   ],
   "_from": "encodeurl@>=1.0.1 <1.1.0",
@@ -38,13 +38,19 @@
     "type": "range"
   },
   "_requiredBy": [
-    "/live-server/send"
+    "/browser-sync/send",
+    "/browser-sync/serve-static",
+    "/express",
+    "/finalhandler",
+    "/live-server/send",
+    "/send",
+    "/serve-static"
   ],
   "_resolved": "https://registry.npmjs.org/encodeurl/-/encodeurl-1.0.1.tgz",
   "_shasum": "79e3d58655346909fe6f0f45a5de68103b294d20",
   "_shrinkwrap": null,
   "_spec": "encodeurl@~1.0.1",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/live-server/node_modules/send",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/express",
   "bugs": {
     "url": "https://github.com/pillarjs/encodeurl/issues"
   },

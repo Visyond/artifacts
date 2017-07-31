@@ -1,15 +1,15 @@
-import * as ts from "typescript";
-import { Event } from "../events";
-import { AbstractComponent, ChildableComponent } from "../component";
-import { Application } from "../../application";
-import { OptionDeclaration, IOptionDeclaration, ParameterScope } from "./declaration";
+import * as ts from 'typescript';
+import { Event } from '../events';
+import { AbstractComponent, ChildableComponent } from '../component';
+import { Application } from '../../application';
+import { OptionDeclaration, DeclarationOption, ParameterScope } from './declaration';
 export declare class OptionsComponent extends AbstractComponent<Options> {
 }
 export declare enum OptionsReadMode {
     Prefetch = 0,
     Fetch = 1,
 }
-export interface IOptionsReadResult {
+export interface OptionsReadResult {
     hasErrors: boolean;
     inputFiles: string[];
 }
@@ -27,7 +27,7 @@ export declare class Options extends ChildableComponent<Application, OptionsComp
     private values;
     private compilerOptions;
     initialize(): void;
-    read(data?: any, mode?: OptionsReadMode): IOptionsReadResult;
+    read(data?: any, mode?: OptionsReadMode): OptionsReadResult;
     getValue(name: string): any;
     getRawValues(): any;
     getDeclaration(name: string): OptionDeclaration;
@@ -35,8 +35,8 @@ export declare class Options extends ChildableComponent<Application, OptionsComp
     getCompilerOptions(): ts.CompilerOptions;
     setValue(name: string | OptionDeclaration, value: any, errorCallback?: Function): void;
     setValues(obj: Object, prefix?: string, errorCallback?: Function): void;
-    addDeclaration(declaration: OptionDeclaration | IOptionDeclaration): void;
-    addDeclarations(declarations: (OptionDeclaration | IOptionDeclaration)[]): void;
+    addDeclaration(declaration: OptionDeclaration | DeclarationOption): void;
+    addDeclarations(declarations: (OptionDeclaration | DeclarationOption)[]): void;
     removeDeclaration(declaration: OptionDeclaration): void;
     removeDeclarationByName(name: string): void;
 }

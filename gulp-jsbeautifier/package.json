@@ -14,19 +14,19 @@
     ]
   ],
   "_from": "gulp-jsbeautifier@>=2.0.3 <3.0.0",
-  "_id": "gulp-jsbeautifier@2.0.3",
+  "_id": "gulp-jsbeautifier@2.1.1",
   "_inCache": true,
   "_location": "/gulp-jsbeautifier",
-  "_nodeVersion": "5.10.0",
+  "_nodeVersion": "7.10.0",
   "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/gulp-jsbeautifier-2.0.3.tgz_1459677665889_0.6004363789688796"
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/gulp-jsbeautifier-2.1.1.tgz_1497173976685_0.1614544850308448"
   },
   "_npmUser": {
     "name": "biasso",
-    "email": "simone.biassoni@outlook.com"
+    "email": "biasso.dev@outlook.com"
   },
-  "_npmVersion": "3.8.5",
+  "_npmVersion": "4.2.0",
   "_phantomChildren": {},
   "_requested": {
     "raw": "gulp-jsbeautifier@^2.0.3",
@@ -40,8 +40,8 @@
   "_requiredBy": [
     "#DEV:/"
   ],
-  "_resolved": "https://registry.npmjs.org/gulp-jsbeautifier/-/gulp-jsbeautifier-2.0.3.tgz",
-  "_shasum": "2f28b1492d5a133a65930dc6f7edc39e62c5b44f",
+  "_resolved": "https://registry.npmjs.org/gulp-jsbeautifier/-/gulp-jsbeautifier-2.1.1.tgz",
+  "_shasum": "a05bd0b081535565fddaef86f5108f455b4f770e",
   "_shrinkwrap": null,
   "_spec": "gulp-jsbeautifier@^2.0.3",
   "_where": "/var/lib/jenkins/workspace/build/server/v2",
@@ -52,28 +52,39 @@
   "bugs": {
     "url": "https://github.com/tarunc/gulp-jsbeautifier/issues"
   },
+  "contributors": [
+    {
+      "name": "Simone Biassoni",
+      "url": "https://github.com/biasso"
+    },
+    {
+      "name": "Denny Ayard",
+      "url": "https://github.com/djayard"
+    }
+  ],
   "dependencies": {
-    "gulp-util": "^3.0.7",
-    "js-beautify": "^1.6.2",
-    "lodash": "^4.5.1",
-    "rc": "^1.1.6",
-    "through2": "^2.0.1"
+    "gulp-util": "^3.0.8",
+    "js-beautify": "^1.6.14",
+    "lodash": "^4.17.4",
+    "rc": "^1.2.1",
+    "through2": "^2.0.3"
   },
   "description": "jsbeautifier.org for Gulp",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "coveralls": "^2.11.8",
-    "del": "^2.2.0",
-    "eslint": "^2.3.0",
-    "eslint-config-airbnb": "^6.1.0",
-    "istanbul": "^0.4.2",
-    "mocha": "^2.4.5",
-    "sinon": "^1.17.3"
+    "chai": "^4.0.2",
+    "coveralls": "^2.12.0",
+    "del": "^2.2.2",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-plugin-import": "^2.2.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "sinon": "^2.3.4"
   },
   "directories": {},
   "dist": {
-    "shasum": "2f28b1492d5a133a65930dc6f7edc39e62c5b44f",
-    "tarball": "https://registry.npmjs.org/gulp-jsbeautifier/-/gulp-jsbeautifier-2.0.3.tgz"
+    "shasum": "a05bd0b081535565fddaef86f5108f455b4f770e",
+    "tarball": "https://registry.npmjs.org/gulp-jsbeautifier/-/gulp-jsbeautifier-2.1.1.tgz"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -84,7 +95,7 @@
     "README.md",
     "index.js"
   ],
-  "gitHead": "538a1aa8f7ee09e6b0cd77b900d521387ea75d4f",
+  "gitHead": "e3f98848a6a6510e89c6f1f993155d365511d528",
   "homepage": "https://github.com/tarunc/gulp-jsbeautifier",
   "keywords": [
     "beautify",
@@ -127,8 +138,7 @@
     "cover": "istanbul cover _mocha",
     "coveralls": "istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
     "lint": "eslint . --ignore-path .gitignore",
-    "pretest": "npm run lint",
     "test": "mocha"
   },
-  "version": "2.0.3"
+  "version": "2.1.1"
 }

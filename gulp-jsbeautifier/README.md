@@ -1,10 +1,10 @@
 # gulp-jsbeautifier
-[![Build Status](https://travis-ci.org/tarunc/gulp-jsbeautifier.png?branch=master)](https://travis-ci.org/tarunc/gulp-jsbeautifier)
-[![NPM version](https://badge.fury.io/js/gulp-jsbeautifier.png)](http://badge.fury.io/js/gulp-jsbeautifier)
-[![Coverage Status](https://coveralls.io/repos/tarunc/gulp-jsbeautifier/badge.png)](https://coveralls.io/r/tarunc/gulp-jsbeautifier)
-[![Code Climate](https://codeclimate.com/github/tarunc/gulp-jsbeautifier.png)](https://codeclimate.com/github/tarunc/gulp-jsbeautifier)
-[![Dependencies](https://david-dm.org/tarunc/gulp-jsbeautifier.png)](https://david-dm.org/tarunc/gulp-jsbeautifier)
-[![devDependency Status](https://david-dm.org/tarunc/gulp-jsbeautifier/dev-status.png)](https://david-dm.org/tarunc/gulp-jsbeautifier#info=devDependencies)
+[![Build Status](https://travis-ci.org/tarunc/gulp-jsbeautifier.svg?branch=master)](https://travis-ci.org/tarunc/gulp-jsbeautifier)
+[![npm version](https://badge.fury.io/js/gulp-jsbeautifier.svg)](https://badge.fury.io/js/gulp-jsbeautifier)
+[![Coverage Status](https://coveralls.io/repos/github/tarunc/gulp-jsbeautifier/badge.svg?branch=master)](https://coveralls.io/github/tarunc/gulp-jsbeautifier?branch=master)
+[![Code Climate](https://codeclimate.com/github/tarunc/gulp-jsbeautifier/badges/gpa.svg)](https://codeclimate.com/github/tarunc/gulp-jsbeautifier)
+[![Dependency Status](https://david-dm.org/tarunc/gulp-jsbeautifier.svg)](https://david-dm.org/tarunc/gulp-jsbeautifier)
+[![devDependency Status](https://david-dm.org/tarunc/gulp-jsbeautifier/dev-status.svg)](https://david-dm.org/tarunc/gulp-jsbeautifier#info=devDependencies)
 
 > Prettify JavaScript, JSON, HTML and CSS.  
 [jsbeautifier.org](http://jsbeautifier.org/) for gulp.
@@ -114,9 +114,9 @@ All "beautifier options" placed in the root, are applied to CSS, HTML and JavaSc
 gulp.task('prettify', function() {
   gulp.src(['./*.css', './*.html', './*.js'])
     .pipe(prettify({
-      indent_level: 4,
+      indent_size: 4,
       js: {
-        indent_level: 2
+        indent_size: 2
       }
     }))
     .pipe(gulp.dest('./dist'));
@@ -154,8 +154,26 @@ gulp.task('prettify', function() {
     .pipe(gulp.dest('./'));
 });
 ```
+
+## Validate
+Checks if it is possible to beautify some files.
+The reporter is responsible for displaying the validate results and will emit an error before
+the stream ends if a file could be beautified.
+
+```javascript
+var gulp = require('gulp');
+var prettify = require('gulp-jsbeautifier');
+
+gulp.task('validate', function() {
+  return gulp.src(['./*.css', './*.html', './*.js'])
+    .pipe(prettify.validate())
+    .pipe(prettify.reporter())
+});
+```
+
 ## Reporter
-Lists files that have been beautified, those already beautified and those that cannot be beautified.
+Lists files that have been beautified, those already beautified, and those that can not be beautified.  
+If the [validate](#validate) feature is used, the reporter lists files that can be beautified and emits an error before the stream ends if such a file was detected.
 
 ```javascript
 var gulp = require('gulp');
@@ -169,49 +187,28 @@ gulp.task('prettify', function() {
 });
 ```
 
-## Other
-Older options `mode` and `showDiff` are deprecated.  
-Their functions are made available by [gulp-diff](https://www.npmjs.com/package/gulp-diff).
+### Reporter options
+#### `verbosity`
+Type: `number`  
+Default value: `prettify.report.BEAUTIFIED`  
+Other values: `prettify.report.ALL`
+
+With BEAUTIFIED value, the reporter lists only beautified files (or those that can be beautified in the case of validate).  
+With ALL value, the reporter also lists the other files.
 
 ```javascript
 var gulp = require('gulp');
 var prettify = require('gulp-jsbeautifier');
-var diff = require('gulp-diff');
 
-// This is the equivalent of older "mode: 'VERIFY_ONLY'" with "showDiff: true".
-// The task will fail if at least one file can be beautified.
-gulp.task('git-pre-commit', function() {
-  gulp.src(['./dist/*.js'])
+gulp.task('prettify', function() {
+  gulp.src(['./*.css', './*.html', './*.js'])
     .pipe(prettify())
-    .pipe(diff())
-    .pipe(diff.reporter({
-      quiet: false,  // if 'true', is the equivalent of "showDiff: false"
-      fail: true
-    }));
+    .pipe(prettify.reporter({
+      verbosity: prettify.report.ALL
+    }))
+    .pipe(gulp.dest('./'));
 });
 ```
 
 ## License
-
-(The MIT License)
-
-Copyright (c) 2015-2016 Tarun Chaudhry &lt;opensource@chaudhry.co&gt;
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+`gulp-jsbeautifier` is released under the [MIT License](./LICENSE.md).

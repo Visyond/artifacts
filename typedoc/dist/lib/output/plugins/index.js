@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var AssetsPlugin_1 = require("./AssetsPlugin");
 exports.AssetsPlugin = AssetsPlugin_1.AssetsPlugin;
 var JavascriptIndexPlugin_1 = require("./JavascriptIndexPlugin");

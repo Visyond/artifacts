@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var FS = require("fs");
 var Path = require("path");
 var Util = require("util");
@@ -27,10 +28,11 @@ var ResourceOrigin = (function () {
     }
     ResourceOrigin.prototype.mergeResources = function (target) {
         var resources = this.resources;
-        for (var name in resources) {
-            if (name in target)
+        for (var name_1 in resources) {
+            if (name_1 in target) {
                 continue;
-            target[name] = resources[name];
+            }
+            target[name_1] = resources[name_1];
         }
     };
     ResourceOrigin.prototype.hasResource = function (name) {
@@ -51,8 +53,9 @@ var ResourceOrigin = (function () {
         var resourceClass = this.stack.getResourceClass();
         var ressourceRegExp = this.stack.getRessourceRegExp();
         var path = this.path;
-        if (dir)
+        if (dir) {
             path = Path.join(path, dir);
+        }
         for (var _i = 0, _a = FS.readdirSync(path); _i < _a.length; _i++) {
             var fileName = _a[_i];
             var fullName = Path.join(path, fileName);
@@ -60,8 +63,8 @@ var ResourceOrigin = (function () {
                 this.findResources(dir ? Path.join(dir, fileName) : fileName);
             }
             else if (ressourceRegExp.test(fileName)) {
-                var name = normalizeName(dir ? Path.join(dir, fileName) : fileName);
-                this.resources[name] = new resourceClass(this, name, fullName);
+                var name_2 = normalizeName(dir ? Path.join(dir, fileName) : fileName);
+                this.resources[name_2] = new resourceClass(this, name_2, fullName);
             }
         }
     };
@@ -75,14 +78,16 @@ var ResourceStack = (function () {
         this.ressourceRegExp = ressourceRegExp || /.*/;
     }
     ResourceStack.prototype.activate = function () {
-        if (this.isActive)
+        if (this.isActive) {
             return false;
+        }
         this.isActive = true;
         return true;
     };
     ResourceStack.prototype.deactivate = function () {
-        if (!this.isActive)
+        if (!this.isActive) {
             return false;
+        }
         this.isActive = false;
         return true;
     };
@@ -95,7 +100,7 @@ var ResourceStack = (function () {
                 return origin.getResource(normalizedName);
             }
         }
-        throw new Error(Util.format("Cannot find resource `%s`.", name));
+        throw new Error(Util.format('Cannot find resource `%s`.', name));
     };
     ResourceStack.prototype.getAllResources = function () {
         var resources = {};
@@ -114,7 +119,7 @@ var ResourceStack = (function () {
     ResourceStack.prototype.getOrigin = function (name) {
         for (var _i = 0, _a = this.origins; _i < _a.length; _i++) {
             var origin = _a[_i];
-            if (origin.getName() == name) {
+            if (origin.getName() === name) {
                 return origin;
             }
         }
@@ -125,21 +130,21 @@ var ResourceStack = (function () {
     };
     ResourceStack.prototype.addOrigin = function (name, path, ignoreErrors) {
         if (this.isActive) {
-            throw new Error("Cannot add origins while the resource is active.");
+            throw new Error('Cannot add origins while the resource is active.');
         }
         if (this.hasOrigin(name)) {
-            throw new Error(Util.format("The origin `%s` is already registered.", name));
+            throw new Error(Util.format('The origin `%s` is already registered.', name));
         }
         path = Path.resolve(path);
         if (!FS.existsSync(path)) {
             if (!ignoreErrors) {
-                throw new Error(Util.format("The resource path `%s` does not exist.", path));
+                throw new Error(Util.format('The resource path `%s` does not exist.', path));
             }
             return;
         }
         if (!FS.statSync(path).isDirectory()) {
             if (!ignoreErrors) {
-                throw new Error(Util.format("The resource path `%s` is not a directory.", path));
+                throw new Error(Util.format('The resource path `%s` is not a directory.', path));
             }
             return;
         }
@@ -147,7 +152,7 @@ var ResourceStack = (function () {
     };
     ResourceStack.prototype.removeOrigin = function (name) {
         if (this.isActive) {
-            throw new Error("Cannot remove origins while the resource is active.");
+            throw new Error('Cannot remove origins while the resource is active.');
         }
         var index = 0, count = this.origins.length;
         while (index < count) {
@@ -163,7 +168,7 @@ var ResourceStack = (function () {
     };
     ResourceStack.prototype.removeAllOrigins = function () {
         if (this.isActive) {
-            throw new Error("Cannot remove origins while the resource is active.");
+            throw new Error('Cannot remove origins while the resource is active.');
         }
         this.origins = [];
     };

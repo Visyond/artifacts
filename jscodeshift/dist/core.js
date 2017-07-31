@@ -9,16 +9,16 @@
  */
 
 'use strict';
-var Collection = require('./Collection');
+const Collection = require('./Collection');
 
-var collections = require('./collections');
-var getParser = require('./getParser');
-var matchNode = require('./matchNode');
-var recast = require('recast');
-var template = require('./template');
+const collections = require('./collections');
+const getParser = require('./getParser');
+const matchNode = require('./matchNode');
+const recast = require('recast');
+const template = require('./template');
 
-var Node = recast.types.namedTypes.Node;
-var NodePath = recast.types.NodePath;
+const Node = recast.types.namedTypes.Node;
+const NodePath = recast.types.NodePath;
 
 // Register all built-in collections
 for (var name in collections) {
@@ -36,6 +36,7 @@ for (var name in collections) {
  * - an array of nodes
  * - an array of node paths
  *
+ * @exports jscodeshift
  * @param {Node|NodePath|Array|string} source
  * @param {Object} options Options to pass to Recast when passing source code
  * @return {Collection}
@@ -50,6 +51,7 @@ function core(source, options) {
  * Returns a collection from a node, node path, array of nodes or array of node
  * paths.
  *
+ * @ignore
  * @param {Node|NodePath|Array} source
  * @return {Collection}
  */
@@ -84,7 +86,8 @@ function fromSource(source, options) {
 
 /**
  * Utility function to match a node against a pattern.
- *
+ * @augments core
+ * @static
  * @param {Node|NodePath|Object} path
  * @parma {Object} filter
  * @return boolean
@@ -100,7 +103,7 @@ function match(path, filter) {
   return matchNode(path.value, filter);
 }
 
-var plugins = [];
+const plugins = [];
 
 /**
  * Utility function for registering plugins.
@@ -109,6 +112,8 @@ var plugins = [];
  * They should extend jscodeshift by calling `registerMethods`, etc.
  * This method guards against repeated registrations (the plugin callback will only be called once).
  *
+ * @augments core
+ * @static
  * @param {Function} plugin
  */
 function use(plugin) {
@@ -121,6 +126,9 @@ function use(plugin) {
 /**
  * Returns a version of the core jscodeshift function "bound" to a specific
  * parser.
+ *
+ * @augments core
+ * @static
  */
 function withParser(parser) {
   if (typeof parser === 'string') {
@@ -139,11 +147,21 @@ function withParser(parser) {
   return enrichCore(newCore, parser);
 }
 
+/**
+* The ast-types library
+* @external astTypes
+* @see {@link https://github.com/benjamn/ast-types}
+*/
+
 function enrichCore(core, parser) {
   // add builders and types to the function for simple access
   Object.assign(core, recast.types.namedTypes);
   Object.assign(core, recast.types.builders);
   core.registerMethods = Collection.registerMethods;
+  /**
+  * @augments core
+  * @type external:astTypes
+  */
   core.types = recast.types;
   core.match = match;
   core.template = template(parser);
@@ -151,7 +169,7 @@ function enrichCore(core, parser) {
   // add mappings and filters to function
   core.filters = {};
   core.mappings = {};
-  for (var name in collections) {
+  for (const name in collections) {
     if (collections[name].filters) {
       core.filters[name] = collections[name].filters;
     }

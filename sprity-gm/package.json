@@ -10,7 +10,7 @@
         "spec": ">=1.0.2 <2.0.0",
         "type": "range"
       },
-      "/home/doctor/prog/environment_root/server/v2"
+      "/var/lib/jenkins/workspace/build/server/v2"
     ]
   ],
   "_from": "sprity-gm@>=1.0.2 <2.0.0",
@@ -34,14 +34,13 @@
     "type": "range"
   },
   "_requiredBy": [
-    "#DEV:/",
-    "#USER"
+    "#DEV:/"
   ],
-  "_resolved": "http://registry.npmjs.org/sprity-gm/-/sprity-gm-1.0.2.tgz",
+  "_resolved": "https://registry.npmjs.org/sprity-gm/-/sprity-gm-1.0.2.tgz",
   "_shasum": "5bd96e3dffbbeae6864b669b4fb6c53e59173005",
   "_shrinkwrap": null,
   "_spec": "sprity-gm@^1.0.2",
-  "_where": "/home/doctor/prog/environment_root/server/v2",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2",
   "author": {
     "name": "Alexander Slansky",
     "email": "alexander@slansky.net",

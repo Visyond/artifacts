@@ -1,5 +1,5 @@
-import * as ts from "typescript";
-declare module "typescript" {
+import * as ts from 'typescript';
+declare module 'typescript' {
     interface Symbol {
         id?: number;
         parent?: ts.Symbol;
@@ -17,6 +17,8 @@ export declare function normalizeSlashes(path: string): string;
 export declare function getRootLength(path: string): number;
 export declare function getDirectoryPath(path: ts.Path): ts.Path;
 export declare function getDirectoryPath(path: string): string;
+export declare function normalizePath(path: string): string;
+export declare function combinePaths(path1: string, path2: string): string;
 export declare function getSourceFileOfNode(node: ts.Node): ts.SourceFile;
 export declare function getTextOfNode(node: ts.Node, includeTrivia?: boolean): string;
 export declare function declarationNameToString(name: ts.DeclarationName): string;

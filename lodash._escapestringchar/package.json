@@ -10,7 +10,7 @@
         "spec": ">=2.4.1 <2.5.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/gulp-spawn/node_modules/lodash.template"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/gulp-concat-json/node_modules/lodash.template"
     ]
   ],
   "_from": "lodash._escapestringchar@>=2.4.1 <2.5.0",
@@ -33,6 +33,7 @@
     "type": "range"
   },
   "_requiredBy": [
+    "/gulp-concat-json/lodash.template",
     "/gulp-manifest/lodash.template",
     "/gulp-spawn/lodash.template"
   ],
@@ -40,7 +41,7 @@
   "_shasum": "ecfe22618a2ade50bfeea43937e51df66f0edb72",
   "_shrinkwrap": null,
   "_spec": "lodash._escapestringchar@~2.4.1",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/gulp-spawn/node_modules/lodash.template",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/gulp-concat-json/node_modules/lodash.template",
   "author": {
     "name": "John-David Dalton",
     "email": "john.david.dalton@gmail.com",

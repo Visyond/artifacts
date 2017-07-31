@@ -1,7 +1,50 @@
 {
-  "name": "buffer",
-  "description": "Node.js Buffer API, for the browser",
-  "version": "5.0.6",
+  "_args": [
+    [
+      {
+        "raw": "buffer@^5.0.6",
+        "scope": null,
+        "escapedName": "buffer",
+        "name": "buffer",
+        "rawSpec": "^5.0.6",
+        "spec": ">=5.0.6 <6.0.0",
+        "type": "range"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2"
+    ]
+  ],
+  "_from": "buffer@>=5.0.6 <6.0.0",
+  "_id": "buffer@5.0.6",
+  "_inCache": true,
+  "_location": "/buffer",
+  "_nodeVersion": "7.8.0",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/buffer-5.0.6.tgz_1491419123937_0.48741885321214795"
+  },
+  "_npmUser": {
+    "name": "feross",
+    "email": "feross@feross.org"
+  },
+  "_npmVersion": "4.4.4",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "buffer@^5.0.6",
+    "scope": null,
+    "escapedName": "buffer",
+    "name": "buffer",
+    "rawSpec": "^5.0.6",
+    "spec": ">=5.0.6 <6.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/buffer/-/buffer-5.0.6.tgz",
+  "_shasum": "2ea669f7eec0b6eda05b08f8b5ff661b28573588",
+  "_shrinkwrap": null,
+  "_spec": "buffer@^5.0.6",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2",
   "author": {
     "name": "Feross Aboukhadijeh",
     "email": "feross@feross.org",
@@ -24,6 +67,7 @@
     "base64-js": "^1.0.2",
     "ieee754": "^1.1.4"
   },
+  "description": "Node.js Buffer API, for the browser",
   "devDependencies": {
     "benchmark": "^2.0.0",
     "browserify": "^14.0.0",
@@ -38,6 +82,12 @@
     "uglify-js": "^2.7.3",
     "zuul": "^3.0.0"
   },
+  "directories": {},
+  "dist": {
+    "shasum": "2ea669f7eec0b6eda05b08f8b5ff661b28573588",
+    "tarball": "https://registry.npmjs.org/buffer/-/buffer-5.0.6.tgz"
+  },
+  "gitHead": "cf0c27e9bc645fdcfeefaac9f8da0172475a5277",
   "homepage": "https://github.com/feross/buffer",
   "jspm": {
     "map": {
@@ -57,6 +107,15 @@
   ],
   "license": "MIT",
   "main": "index.js",
+  "maintainers": [
+    {
+      "name": "feross",
+      "email": "feross@feross.org"
+    }
+  ],
+  "name": "buffer",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git://github.com/feross/buffer.git"
@@ -80,31 +139,5 @@
       "perf/**/*.js"
     ]
   },
-  "gitHead": "cf0c27e9bc645fdcfeefaac9f8da0172475a5277",
-  "_id": "buffer@5.0.6",
-  "_shasum": "2ea669f7eec0b6eda05b08f8b5ff661b28573588",
-  "_from": "buffer@>=5.0.6 <6.0.0",
-  "_npmVersion": "4.4.4",
-  "_nodeVersion": "7.8.0",
-  "_npmUser": {
-    "name": "feross",
-    "email": "feross@feross.org"
-  },
-  "dist": {
-    "shasum": "2ea669f7eec0b6eda05b08f8b5ff661b28573588",
-    "tarball": "https://registry.npmjs.org/buffer/-/buffer-5.0.6.tgz"
-  },
-  "maintainers": [
-    {
-      "name": "feross",
-      "email": "feross@feross.org"
-    }
-  ],
-  "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/buffer-5.0.6.tgz_1491419123937_0.48741885321214795"
-  },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/buffer/-/buffer-5.0.6.tgz",
-  "readme": "ERROR: No README data found!"
+  "version": "5.0.6"
 }

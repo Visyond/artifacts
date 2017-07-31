@@ -2,18 +2,18 @@
   "_args": [
     [
       {
-        "raw": "string.fromcodepoint@^0.2.1",
+        "raw": "string.fromcodepoint@",
         "scope": null,
         "escapedName": "string.fromcodepoint",
         "name": "string.fromcodepoint",
-        "rawSpec": "^0.2.1",
-        "spec": ">=0.2.1 <0.3.0",
-        "type": "range"
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/svgicons2svgfont"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/base65536"
     ]
   ],
-  "_from": "string.fromcodepoint@>=0.2.1 <0.3.0",
+  "_from": "string.fromcodepoint@latest",
   "_id": "string.fromcodepoint@0.2.1",
   "_inCache": true,
   "_location": "/string.fromcodepoint",
@@ -24,22 +24,23 @@
   "_npmVersion": "1.4.15",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "string.fromcodepoint@^0.2.1",
+    "raw": "string.fromcodepoint@",
     "scope": null,
     "escapedName": "string.fromcodepoint",
     "name": "string.fromcodepoint",
-    "rawSpec": "^0.2.1",
-    "spec": ">=0.2.1 <0.3.0",
-    "type": "range"
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
   },
   "_requiredBy": [
+    "/base65536",
     "/svgicons2svgfont"
   ],
   "_resolved": "https://registry.npmjs.org/string.fromcodepoint/-/string.fromcodepoint-0.2.1.tgz",
   "_shasum": "8d978333c0bc92538f50f383e4888f3e5619d653",
   "_shrinkwrap": null,
-  "_spec": "string.fromcodepoint@^0.2.1",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/svgicons2svgfont",
+  "_spec": "string.fromcodepoint@",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/base65536",
   "author": {
     "name": "Mathias Bynens",
     "url": "http://mathiasbynens.be/"

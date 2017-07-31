@@ -1,9 +1,15 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
 var _ = require("lodash");
 var events_1 = require("./events");
 var childMappings = [];
@@ -30,8 +36,9 @@ function Component(options) {
         if (name && !internal) {
             for (var _i = 0, childMappings_1 = childMappings; _i < childMappings_1.length; _i++) {
                 var childMapping = childMappings_1[_i];
-                if (!(proto instanceof childMapping.child))
+                if (!(proto instanceof childMapping.child)) {
                     continue;
+                }
                 var host = childMapping.host;
                 var defaults = host._defaultComponents || (host._defaultComponents = {});
                 defaults[name] = target;
@@ -122,8 +129,8 @@ var ChildableComponent = (function (_super) {
     __extends(ChildableComponent, _super);
     function ChildableComponent(owner) {
         var _this = _super.call(this, owner) || this;
-        for (var name in _this._defaultComponents) {
-            _this.addComponent(name, _this._defaultComponents[name]);
+        for (var name_1 in _this._defaultComponents) {
+            _this.addComponent(name_1, _this._defaultComponents[name_1]);
         }
         return _this;
     }
@@ -149,16 +156,17 @@ var ChildableComponent = (function (_super) {
             throw new Error('The component `%s` has already been added.');
         }
         else {
-            var component = typeof componentClass == "function" ? new componentClass(this) : componentClass;
-            var event = new ComponentEvent(ComponentEvent.ADDED, this, component);
-            this.bubble(event);
+            var component = typeof componentClass === 'function' ? new componentClass(this) : componentClass;
+            var event_1 = new ComponentEvent(ComponentEvent.ADDED, this, component);
+            this.bubble(event_1);
             this._componentChildren[name] = component;
             return component;
         }
     };
     ChildableComponent.prototype.removeComponent = function (name) {
-        if (!this._componentChildren)
+        if (!this._componentChildren) {
             return null;
+        }
         var component = this._componentChildren[name];
         if (component) {
             delete this._componentChildren[name];
@@ -171,10 +179,11 @@ var ChildableComponent = (function (_super) {
         }
     };
     ChildableComponent.prototype.removeAllComponents = function () {
-        if (!this._componentChildren)
+        if (!this._componentChildren) {
             return;
-        for (var name in this._componentChildren) {
-            this._componentChildren[name].stopListening();
+        }
+        for (var name_2 in this._componentChildren) {
+            this._componentChildren[name_2].stopListening();
         }
         this._componentChildren = {};
     };

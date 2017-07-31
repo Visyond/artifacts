@@ -1,9 +1,15 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
 var Path = require("path");
 var FS = require("fs");
 var theme_1 = require("../theme");
@@ -19,20 +25,24 @@ var DefaultTheme = (function (_super) {
         return _this;
     }
     DefaultTheme.prototype.isOutputDirectory = function (path) {
-        if (!FS.existsSync(Path.join(path, 'index.html')))
+        if (!FS.existsSync(Path.join(path, 'index.html'))) {
             return false;
-        if (!FS.existsSync(Path.join(path, 'assets')))
+        }
+        if (!FS.existsSync(Path.join(path, 'assets'))) {
             return false;
-        if (!FS.existsSync(Path.join(path, 'assets', 'js', 'main.js')))
+        }
+        if (!FS.existsSync(Path.join(path, 'assets', 'js', 'main.js'))) {
             return false;
-        if (!FS.existsSync(Path.join(path, 'assets', 'images', 'icons.png')))
+        }
+        if (!FS.existsSync(Path.join(path, 'assets', 'images', 'icons.png'))) {
             return false;
+        }
         return true;
     };
     DefaultTheme.prototype.getUrls = function (project) {
         var urls = [];
         var entryPoint = this.getEntryPoint(project);
-        if (this.application.options.getValue('readme') == 'none') {
+        if (this.application.options.getValue('readme') === 'none') {
             entryPoint.url = 'index.html';
             urls.push(new UrlMapping_1.UrlMapping('index.html', entryPoint, 'reflection.hbs'));
         }
@@ -70,18 +80,21 @@ var DefaultTheme = (function (_super) {
     };
     DefaultTheme.prototype.getNavigation = function (project) {
         function containsExternals(modules) {
-            for (var index = 0, length = modules.length; index < length; index++) {
-                if (modules[index].flags.isExternal)
+            for (var index = 0, length_1 = modules.length; index < length_1; index++) {
+                if (modules[index].flags.isExternal) {
                     return true;
+                }
             }
             return false;
         }
         function sortReflections(modules) {
             modules.sort(function (a, b) {
-                if (a.flags.isExternal && !b.flags.isExternal)
+                if (a.flags.isExternal && !b.flags.isExternal) {
                     return 1;
-                if (!a.flags.isExternal && b.flags.isExternal)
+                }
+                if (!a.flags.isExternal && b.flags.isExternal) {
                     return -1;
+                }
                 return a.getFullName() < b.getFullName() ? -1 : 1;
             });
         }
@@ -90,8 +103,9 @@ var DefaultTheme = (function (_super) {
                 for (var key in reflection.children) {
                     var child = reflection.children[key];
                     if (child.hasOwnDocument && !child.kindOf(index_1.ReflectionKind.SomeModule)) {
-                        if (!item.dedicatedUrls)
+                        if (!item.dedicatedUrls) {
                             item.dedicatedUrls = [];
+                        }
                         item.dedicatedUrls.push(child.url);
                         walk(child);
                     }
@@ -114,35 +128,38 @@ var DefaultTheme = (function (_super) {
             var hasExternals = containsExternals(reflections);
             sortReflections(reflections);
             reflections.forEach(function (reflection) {
-                if (hasExternals && !reflection.flags.isExternal && state != 1) {
-                    new NavigationItem_1.NavigationItem('Internals', null, parent, "tsd-is-external");
+                if (hasExternals && !reflection.flags.isExternal && state !== 1) {
+                    new NavigationItem_1.NavigationItem('Internals', null, parent, 'tsd-is-external');
                     state = 1;
                 }
-                else if (hasExternals && reflection.flags.isExternal && state != 2) {
-                    new NavigationItem_1.NavigationItem('Externals', null, parent, "tsd-is-external");
+                else if (hasExternals && reflection.flags.isExternal && state !== 2) {
+                    new NavigationItem_1.NavigationItem('Externals', null, parent, 'tsd-is-external');
                     state = 2;
                 }
                 var item = NavigationItem_1.NavigationItem.create(reflection, parent);
                 includeDedicatedUrls(reflection, item);
-                if (callback)
+                if (callback) {
                     callback(reflection, item);
+                }
             });
         }
         function build(hasSeparateGlobals) {
             var root = new NavigationItem_1.NavigationItem('Index', 'index.html');
-            if (entryPoint == project) {
+            if (entryPoint === project) {
                 var globals = new NavigationItem_1.NavigationItem('Globals', hasSeparateGlobals ? 'globals.html' : 'index.html', root);
                 globals.isGlobals = true;
             }
             var modules = [];
             project.getReflectionsByKind(index_1.ReflectionKind.SomeModule).forEach(function (someModule) {
                 var target = someModule.parent;
-                var inScope = (someModule == entryPoint);
+                var inScope = (someModule === entryPoint);
                 while (target) {
-                    if (target.kindOf(index_1.ReflectionKind.ExternalModule))
+                    if (target.kindOf(index_1.ReflectionKind.ExternalModule)) {
                         return;
-                    if (entryPoint == target)
+                    }
+                    if (entryPoint === target) {
                         inScope = true;
+                    }
                     target = target.parent;
                 }
                 if (inScope && someModule instanceof index_1.DeclarationReflection) {
@@ -158,7 +175,7 @@ var DefaultTheme = (function (_super) {
             return root;
         }
         var entryPoint = this.getEntryPoint(project);
-        return build(this.application.options.getValue('readme') != 'none');
+        return build(this.application.options.getValue('readme') !== 'none');
     };
     DefaultTheme.prototype.onRendererBegin = function (event) {
         if (event.project.groups) {
@@ -177,9 +194,10 @@ var DefaultTheme = (function (_super) {
     DefaultTheme.getUrl = function (reflection, relative, separator) {
         if (separator === void 0) { separator = '.'; }
         var url = reflection.getAlias();
-        if (reflection.parent && reflection.parent != relative &&
-            !(reflection.parent instanceof index_1.ProjectReflection))
+        if (reflection.parent && reflection.parent !== relative &&
+            !(reflection.parent instanceof index_1.ProjectReflection)) {
             url = DefaultTheme.getUrl(reflection.parent, relative, separator) + separator + url;
+        }
         return url;
     };
     DefaultTheme.getMapping = function (reflection) {
@@ -229,7 +247,8 @@ var DefaultTheme = (function (_super) {
     };
     DefaultTheme.applyReflectionClasses = function (reflection) {
         var classes = [];
-        if (reflection.kind == index_1.ReflectionKind.Accessor) {
+        var kind;
+        if (reflection.kind === index_1.ReflectionKind.Accessor) {
             if (!reflection.getSignature) {
                 classes.push('tsd-kind-set-signature');
             }
@@ -241,47 +260,60 @@ var DefaultTheme = (function (_super) {
             }
         }
         else {
-            var kind = index_1.ReflectionKind[reflection.kind];
+            kind = index_1.ReflectionKind[reflection.kind];
             classes.push(DefaultTheme.toStyleClass('tsd-kind-' + kind));
         }
         if (reflection.parent && reflection.parent instanceof index_1.DeclarationReflection) {
             kind = index_1.ReflectionKind[reflection.parent.kind];
-            classes.push(DefaultTheme.toStyleClass('tsd-parent-kind-' + kind));
+            classes.push(DefaultTheme.toStyleClass("tsd-parent-kind-" + kind));
         }
         var hasTypeParameters = !!reflection.typeParameters;
         reflection.getAllSignatures().forEach(function (signature) {
             hasTypeParameters = hasTypeParameters || !!signature.typeParameters;
         });
-        if (hasTypeParameters)
+        if (hasTypeParameters) {
             classes.push('tsd-has-type-parameter');
-        if (reflection.overwrites)
+        }
+        if (reflection.overwrites) {
             classes.push('tsd-is-overwrite');
-        if (reflection.inheritedFrom)
+        }
+        if (reflection.inheritedFrom) {
             classes.push('tsd-is-inherited');
-        if (reflection.flags.isPrivate)
+        }
+        if (reflection.flags.isPrivate) {
             classes.push('tsd-is-private');
-        if (reflection.flags.isProtected)
+        }
+        if (reflection.flags.isProtected) {
             classes.push('tsd-is-protected');
-        if (reflection.flags.isStatic)
+        }
+        if (reflection.flags.isStatic) {
             classes.push('tsd-is-static');
-        if (reflection.flags.isExternal)
+        }
+        if (reflection.flags.isExternal) {
             classes.push('tsd-is-external');
-        if (!reflection.flags.isExported)
+        }
+        if (!reflection.flags.isExported) {
             classes.push('tsd-is-not-exported');
+        }
         reflection.cssClasses = classes.join(' ');
     };
     DefaultTheme.applyGroupClasses = function (group) {
         var classes = [];
-        if (group.allChildrenAreInherited)
+        if (group.allChildrenAreInherited) {
             classes.push('tsd-is-inherited');
-        if (group.allChildrenArePrivate)
+        }
+        if (group.allChildrenArePrivate) {
             classes.push('tsd-is-private');
-        if (group.allChildrenAreProtectedOrPrivate)
+        }
+        if (group.allChildrenAreProtectedOrPrivate) {
             classes.push('tsd-is-private-protected');
-        if (group.allChildrenAreExternal)
+        }
+        if (group.allChildrenAreExternal) {
             classes.push('tsd-is-external');
-        if (!group.someChildrenAreExported)
+        }
+        if (!group.someChildrenAreExported) {
             classes.push('tsd-is-not-exported');
+        }
         group.cssClasses = classes.join(' ');
     };
     DefaultTheme.toStyleClass = function (str) {

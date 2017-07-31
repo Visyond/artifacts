@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var abstract_1 = require("./abstract");
 exports.Type = abstract_1.Type;
 var intrinsic_1 = require("./intrinsic");

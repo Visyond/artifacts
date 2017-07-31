@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var REFLECTION_ID = 0;
 function resetReflectionID() {
     REFLECTION_ID = 0;
@@ -105,20 +106,20 @@ var Reflection = (function () {
     Reflection.prototype.setFlag = function (flag, value) {
         if (value === void 0) { value = true; }
         var name, index;
-        if (relevantFlags.indexOf(flag) != -1) {
+        if (relevantFlags.indexOf(flag) !== -1) {
             name = ReflectionFlag[flag];
             name = name.replace(/(.)([A-Z])/g, function (m, a, b) { return a + ' ' + b.toLowerCase(); });
             index = this.flags.indexOf(name);
         }
         if (value) {
             this.flags.flags |= flag;
-            if (name && index == -1) {
+            if (name && index === -1) {
                 this.flags.push(name);
             }
         }
         else {
             this.flags.flags &= ~flag;
-            if (name && index != -1) {
+            if (name && index !== -1) {
                 this.flags.splice(index, 1);
             }
         }
@@ -170,17 +171,18 @@ var Reflection = (function () {
     Reflection.prototype.getAlias = function () {
         if (!this._alias) {
             var alias = this.name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-            if (alias == '') {
+            if (alias === '') {
                 alias = 'reflection-' + this.id;
             }
             var target = this;
             while (target.parent && !target.parent.isProject() && !target.hasOwnDocument) {
                 target = target.parent;
             }
-            if (!target._aliases)
+            if (!target._aliases) {
                 target._aliases = [];
+            }
             var suffix = '', index = 0;
-            while (target._aliases.indexOf(alias + suffix) != -1) {
+            while (target._aliases.indexOf(alias + suffix) !== -1) {
                 suffix = '-' + (++index).toString();
             }
             alias += suffix;
@@ -200,7 +202,7 @@ var Reflection = (function () {
         var name = names[0];
         var result = null;
         this.traverse(function (child) {
-            if (child.name == name) {
+            if (child.name === name) {
                 if (names.length <= 1) {
                     result = child;
                 }
@@ -233,17 +235,19 @@ var Reflection = (function () {
             kindString: this.kindString,
             flags: {}
         };
-        if (this.originalName != this.name) {
+        if (this.originalName !== this.name) {
             result.originalName = this.originalName;
         }
         if (this.comment) {
             result.comment = this.comment.toObject();
         }
         for (var key in this.flags) {
-            if (parseInt(key) == key || key == 'flags')
+            if (parseInt(key, 10) == key || key === 'flags') {
                 continue;
-            if (this.flags[key])
+            }
+            if (this.flags[key]) {
                 result.flags[key] = true;
+            }
         }
         if (this.decorates) {
             result.decorates = this.decorates.map(function (type) { return type.toObject(); });
@@ -251,20 +255,24 @@ var Reflection = (function () {
         if (this.decorators) {
             result.decorators = this.decorators.map(function (decorator) {
                 var result = { name: decorator.name };
-                if (decorator.type)
+                if (decorator.type) {
                     result.type = decorator.type.toObject();
-                if (decorator.arguments)
+                }
+                if (decorator.arguments) {
                     result.arguments = decorator.arguments;
+                }
                 return result;
             });
         }
         this.traverse(function (child, property) {
-            if (property == TraverseProperty.TypeLiteral)
+            if (property === TraverseProperty.TypeLiteral) {
                 return;
+            }
             var name = TraverseProperty[property];
             name = name.substr(0, 1).toLowerCase() + name.substr(1);
-            if (!result[name])
+            if (!result[name]) {
                 result[name] = [];
+            }
             result[name].push(child.toObject());
         });
         return result;

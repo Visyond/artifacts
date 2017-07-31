@@ -14,6 +14,7 @@ const EventEmitter = require('events').EventEmitter;
 
 const async = require('async');
 const fs = require('fs');
+const writeFileAtomic = require('write-file-atomic');
 const getParser = require('./getParser');
 
 const jscodeshift = require('./core');
@@ -95,8 +96,8 @@ function trimStackTrace(trace) {
     return '';
   }
   // Remove this file from the stack trace of an error thrown in the transformer
-  var lines = trace.split('\n');
-  var result = [];
+  const lines = trace.split('\n');
+  const result = [];
   lines.every(function(line) {
     if (line.indexOf(__filename) === -1) {
       result.push(line);
@@ -107,8 +108,8 @@ function trimStackTrace(trace) {
 }
 
 function run(data) {
-  var files = data.files;
-  var options = data.options || {};
+  const files = data.files;
+  const options = data.options || {};
   if (!files.length) {
     finish();
     return;
@@ -124,13 +125,15 @@ function run(data) {
         }
         source = source.toString();
         try {
-          var out = transform(
+          const jscodeshift = prepareJscodeshift(options);
+          const out = transform(
             {
               path: file,
               source: source,
             },
             {
-              jscodeshift: prepareJscodeshift(options),
+              j: jscodeshift,
+              jscodeshift: jscodeshift,
               stats: options.dry ? stats : empty
             },
             options
@@ -144,7 +147,7 @@ function run(data) {
             console.log(out); // eslint-disable-line no-console
           }
           if (!options.dry) {
-            fs.writeFile(file, out, function(err) {
+            writeFileAtomic(file, out, function(err) {
               if (err) {
                 updateStatus('error', file, 'File writer error: ' + err);
               } else {

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var alias_1 = require("./alias");
 exports.AliasConverter = alias_1.AliasConverter;
 var array_1 = require("./array");
@@ -15,6 +16,8 @@ var string_literal_1 = require("./string-literal");
 exports.StringLiteralConverter = string_literal_1.StringLiteralConverter;
 var reference_1 = require("./reference");
 exports.ReferenceConverter = reference_1.ReferenceConverter;
+var this_1 = require("./this");
+exports.ThisConverter = this_1.ThisConverter;
 var tuple_1 = require("./tuple");
 exports.TupleConverter = tuple_1.TupleConverter;
 var type_parameter_1 = require("./type-parameter");

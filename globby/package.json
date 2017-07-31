@@ -10,7 +10,7 @@
         "spec": ">=4.0.0 <5.0.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/tsconfig"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/del"
     ]
   ],
   "_from": "globby@>=4.0.0 <5.0.0",
@@ -30,7 +30,7 @@
   "_phantomChildren": {
     "inflight": "1.0.6",
     "inherits": "2.0.3",
-    "minimatch": "3.0.3",
+    "minimatch": "3.0.4",
     "once": "1.4.0",
     "path-is-absolute": "1.0.1"
   },
@@ -44,13 +44,14 @@
     "type": "range"
   },
   "_requiredBy": [
+    "/del",
     "/tsconfig"
   ],
   "_resolved": "https://registry.npmjs.org/globby/-/globby-4.1.0.tgz",
   "_shasum": "080f54549ec1b82a6c60e631fc82e1211dbe95f8",
   "_shrinkwrap": null,
   "_spec": "globby@^4.0.0",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/tsconfig",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/del",
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",

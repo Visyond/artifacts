@@ -10,7 +10,7 @@
         "spec": ">=0.5.1 <0.6.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/babel-register"
     ]
   ],
   "_from": "mkdirp@>=0.5.1 <0.6.0",
@@ -35,24 +35,34 @@
   },
   "_requiredBy": [
     "#DEV:/",
+    "/babel-loader",
     "/babel-register",
+    "/chromedriver",
     "/commoner",
+    "/eslint",
+    "/find-cache-dir",
     "/fstream",
     "/gulp-closure-compiler",
     "/gulp-typescript/vinyl-fs",
     "/js-beautify",
     "/less",
+    "/nightwatch/mocha-nightwatch",
     "/node-gyp",
+    "/node-sass",
     "/output-file-sync",
+    "/portfinder",
     "/sprity/vinyl-fs",
+    "/systemjs-builder",
     "/temp-write",
-    "/vinyl-fs"
+    "/utile",
+    "/vinyl-fs",
+    "/write"
   ],
   "_resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz",
   "_shasum": "30057438eac6cf7f8c4767f38648d6697d75c903",
   "_shrinkwrap": null,
   "_spec": "mkdirp@^0.5.1",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/babel-register",
   "author": {
     "name": "James Halliday",
     "email": "mail@substack.net",

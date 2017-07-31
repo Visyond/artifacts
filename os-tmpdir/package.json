@@ -39,6 +39,7 @@
   },
   "_requiredBy": [
     "/home-or-tmp",
+    "/jscodeshift/home-or-tmp",
     "/osenv",
     "/temp",
     "/temp-write",

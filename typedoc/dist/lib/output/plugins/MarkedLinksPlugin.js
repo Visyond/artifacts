@@ -1,30 +1,43 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var Util = require("util");
 var components_1 = require("../components");
 var events_1 = require("../events");
+var component_1 = require("../../utils/component");
+var declaration_1 = require("../../utils/options/declaration");
 var MarkedLinksPlugin = MarkedLinksPlugin_1 = (function (_super) {
     __extends(MarkedLinksPlugin, _super);
     function MarkedLinksPlugin() {
-        var _this = _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.brackets = /\[\[([^\]]+)\]\]/g;
         _this.inlineTag = /(?:\[(.+?)\])?\{@(link|linkcode|linkplain)\s+((?:.|\n)+?)\}/gi;
         _this.urlPrefix = /^(http|ftp)s?:\/\//;
+        _this.warnings = [];
         return _this;
     }
     MarkedLinksPlugin.prototype.initialize = function () {
         _super.prototype.initialize.call(this);
-        this.listenTo(this.owner, events_1.MarkdownEvent.PARSE, this.onParseMarkdown, 100);
+        this.listenTo(this.owner, (_a = {},
+            _a[events_1.MarkdownEvent.PARSE] = this.onParseMarkdown,
+            _a[events_1.RendererEvent.END] = this.onEndRenderer,
+            _a), null, 100);
+        var _a;
     };
     MarkedLinksPlugin.prototype.replaceBrackets = function (text) {
         var _this = this;
@@ -40,10 +53,12 @@ var MarkedLinksPlugin = MarkedLinksPlugin_1 = (function (_super) {
             var target = split.target;
             var caption = leading || split.caption;
             var monospace;
-            if (tagName == 'linkcode')
+            if (tagName === 'linkcode') {
                 monospace = true;
-            if (tagName == 'linkplain')
+            }
+            if (tagName === 'linkplain') {
                 monospace = false;
+            }
             return _this.buildLink(match, target, caption, monospace);
         });
     };
@@ -53,7 +68,7 @@ var MarkedLinksPlugin = MarkedLinksPlugin_1 = (function (_super) {
             attributes = ' class="external"';
         }
         else {
-            var reflection;
+            var reflection = void 0;
             if (this.reflection) {
                 reflection = this.reflection.findReflectionByName(target);
             }
@@ -64,6 +79,8 @@ var MarkedLinksPlugin = MarkedLinksPlugin_1 = (function (_super) {
                 target = this.getRelativeUrl(reflection.url);
             }
             else {
+                reflection = this.reflection || this.project;
+                this.warnings.push("In " + reflection.getFullName() + ": " + original);
                 return original;
             }
         }
@@ -74,6 +91,17 @@ var MarkedLinksPlugin = MarkedLinksPlugin_1 = (function (_super) {
     };
     MarkedLinksPlugin.prototype.onParseMarkdown = function (event) {
         event.parsedText = this.replaceInlineTags(this.replaceBrackets(event.parsedText));
+    };
+    MarkedLinksPlugin.prototype.onEndRenderer = function (event) {
+        if (this.listInvalidSymbolLinks && this.warnings.length > 0) {
+            this.application.logger.write('');
+            this.application.logger.warn('[MarkedLinksPlugin]: Found invalid symbol reference(s) in JSDocs, ' +
+                'they will not render as links in the generated documentation.');
+            for (var _i = 0, _a = this.warnings; _i < _a.length; _i++) {
+                var warning = _a[_i];
+                this.application.logger.write('  ' + warning);
+            }
+        }
     };
     MarkedLinksPlugin.splitLinkText = function (text) {
         var splitIndex = text.indexOf('|');
@@ -95,8 +123,15 @@ var MarkedLinksPlugin = MarkedLinksPlugin_1 = (function (_super) {
     };
     return MarkedLinksPlugin;
 }(components_1.ContextAwareRendererComponent));
+__decorate([
+    component_1.Option({
+        name: 'listInvalidSymbolLinks',
+        help: 'Emits a list of broken symbol [[navigation]] links after documentation generation',
+        type: declaration_1.ParameterType.Boolean
+    })
+], MarkedLinksPlugin.prototype, "listInvalidSymbolLinks", void 0);
 MarkedLinksPlugin = MarkedLinksPlugin_1 = __decorate([
-    components_1.Component({ name: "marked-links" })
+    components_1.Component({ name: 'marked-links' })
 ], MarkedLinksPlugin);
 exports.MarkedLinksPlugin = MarkedLinksPlugin;
 var MarkedLinksPlugin_1;

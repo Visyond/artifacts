@@ -1,10 +1,10 @@
-import * as ts from "typescript";
-import { Application } from "../application";
-import { Reflection, Type, ProjectReflection } from "../models/index";
-import { Context } from "./context";
-import { ConverterComponent } from "./components";
-import { ChildableComponent, IComponentClass } from "../utils/component";
-export interface IConverterResult {
+import * as ts from 'typescript';
+import { Application } from '../application';
+import { Reflection, Type, ProjectReflection } from '../models/index';
+import { Context } from './context';
+import { ConverterComponent } from './components';
+import { ChildableComponent, ComponentClass } from '../utils/component';
+export interface ConverterResult {
     errors: ts.Diagnostic[];
     project: ProjectReflection;
 }
@@ -31,14 +31,14 @@ export declare class Converter extends ChildableComponent<Application, Converter
     static EVENT_RESOLVE: string;
     static EVENT_RESOLVE_END: string;
     initialize(): void;
-    addComponent(name: string, componentClass: IComponentClass<ConverterComponent>): ConverterComponent;
+    addComponent(name: string, componentClass: ComponentClass<ConverterComponent>): ConverterComponent;
     private addNodeConverter(converter);
     private addTypeConverter(converter);
     removeComponent(name: string): ConverterComponent;
     private removeNodeConverter(converter);
     private removeTypeConverter(converter);
     removeAllComponents(): void;
-    convert(fileNames: string[]): IConverterResult;
+    convert(fileNames: string[]): ConverterResult;
     convertNode(context: Context, node: ts.Node): Reflection;
     convertType(context: Context, node?: ts.Node, type?: ts.Type): Type;
     private compile(context);

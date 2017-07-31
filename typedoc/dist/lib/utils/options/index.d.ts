@@ -1,3 +1,3 @@
-export { Options, OptionsReadMode, IOptionsReadResult } from "./options";
-import "./readers/index";
-import "./sources/index";
+export { Options, OptionsReadMode, OptionsReadResult } from './options';
+import './readers/index';
+import './sources/index';

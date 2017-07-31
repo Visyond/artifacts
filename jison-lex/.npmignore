@@ -2,8 +2,12 @@
 node_modules/
 npm-debug.log
 
-# Editor bak files
-*~
+# Editor backup files
 *.bak
-*.orig
+*~
 
+# scratch space
+/tmp/
+
+# Ignore build/publish scripts, etc.
+Makefile

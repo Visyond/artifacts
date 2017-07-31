@@ -1,21 +1,27 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var component_1 = require("../../component");
 var options_1 = require("../options");
 var ComponentSource = (function (_super) {
     __extends(ComponentSource, _super);
     function ComponentSource() {
-        return _super.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     ComponentSource.prototype.initialize = function () {
         this.knownComponents = [];
@@ -29,7 +35,7 @@ var ComponentSource = (function (_super) {
     ComponentSource.prototype.addComponent = function (component) {
         var name = component.componentName;
         if (!name) {
-            this.application.logger.error("Component without name found.");
+            this.application.logger.error('Component without name found.');
             return;
         }
         if (this.knownComponents.indexOf(name) === -1) {
@@ -46,7 +52,7 @@ var ComponentSource = (function (_super) {
     ComponentSource.prototype.removeComponent = function (component) {
         var name = component.componentName;
         var index = this.knownComponents.indexOf(name);
-        if (index != -1) {
+        if (index !== -1) {
             this.knownComponents.slice(index, 1);
             for (var _i = 0, _a = component.getOptionDeclarations(); _i < _a.length; _i++) {
                 var declaration = _a[_i];
@@ -73,7 +79,7 @@ var ComponentSource = (function (_super) {
     return ComponentSource;
 }(options_1.OptionsComponent));
 ComponentSource = __decorate([
-    component_1.Component({ name: "options:component" })
+    component_1.Component({ name: 'options:component' })
 ], ComponentSource);
 exports.ComponentSource = ComponentSource;
 //# sourceMappingURL=component.js.map

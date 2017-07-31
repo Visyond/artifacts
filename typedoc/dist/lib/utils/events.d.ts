@@ -1,8 +1,8 @@
-export interface IEventCallback extends Function {
+export interface EventCallback extends Function {
     _callback?: Function;
 }
-export interface IEventMap {
-    [name: string]: IEventCallback;
+export interface EventMap {
+    [name: string]: EventCallback;
 }
 export declare class Event {
     private _name;
@@ -20,12 +20,18 @@ export declare class EventDispatcher {
     private _listeningTo;
     private _listeners;
     private _listenId;
-    on(name: IEventMap | string, callback: IEventCallback, context?: any, priority?: number): this;
+    on(eventMap: EventMap, context?: any): any;
+    on(eventMap: EventMap, callback?: EventCallback, context?: any, priority?: number): any;
+    on(name: string, callback: EventCallback, context?: any, priority?: number): any;
     private internalOn(name, callback, context?, priority?, listening?);
-    once(name: IEventMap | string, callback: IEventCallback, context?: any, priority?: number): this;
-    off(name: IEventMap | string, callback: IEventCallback, context?: any): this;
-    listenTo(obj: EventDispatcher, name: IEventMap | string, callback?: IEventCallback, priority?: number): this;
-    listenToOnce(obj: EventDispatcher, name: IEventMap | string, callback: IEventCallback, priority?: number): this;
-    stopListening(obj?: EventDispatcher, name?: IEventMap | string, callback?: IEventCallback): this;
-    trigger(name: Event | IEventMap | string, ...args: any[]): this;
+    once(eventMap: EventMap, context?: any): any;
+    once(name: string, callback: EventCallback, context?: any, priority?: any): any;
+    off(): any;
+    off(eventMap: EventMap, context?: any): any;
+    off(name: string, callback?: EventCallback, context?: any): any;
+    listenTo(obj: EventDispatcher, name: EventMap | string, callback?: EventCallback, priority?: number): this;
+    listenToOnce(obj: EventDispatcher, eventMap: EventMap): any;
+    listenToOnce(obj: EventDispatcher, name: string, callback: EventCallback, priority?: number): any;
+    stopListening(obj?: EventDispatcher, name?: EventMap | string, callback?: EventCallback): this;
+    trigger(name: Event | EventMap | string, ...args: any[]): this;
 }

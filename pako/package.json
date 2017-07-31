@@ -1,14 +1,54 @@
 {
-  "name": "pako",
-  "description": "zlib port to javascript - fast, modularized, with browser support",
-  "version": "1.0.5",
-  "keywords": [
-    "zlib",
-    "deflate",
-    "inflate",
-    "gzip"
+  "_args": [
+    [
+      {
+        "raw": "pako@^1.0.4",
+        "scope": null,
+        "escapedName": "pako",
+        "name": "pako",
+        "rawSpec": "^1.0.4",
+        "spec": ">=1.0.4 <2.0.0",
+        "type": "range"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2"
+    ]
   ],
-  "homepage": "https://github.com/nodeca/pako",
+  "_from": "pako@>=1.0.4 <2.0.0",
+  "_id": "pako@1.0.5",
+  "_inCache": true,
+  "_location": "/pako",
+  "_nodeVersion": "6.9.4",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/pako-1.0.5.tgz_1490543279075_0.5095277389045805"
+  },
+  "_npmUser": {
+    "name": "vitaly",
+    "email": "vitaly@rcdesign.ru"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "pako@^1.0.4",
+    "scope": null,
+    "escapedName": "pako",
+    "name": "pako",
+    "rawSpec": "^1.0.4",
+    "spec": ">=1.0.4 <2.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/",
+    "/ttf2woff"
+  ],
+  "_resolved": "https://registry.npmjs.org/pako/-/pako-1.0.5.tgz",
+  "_shasum": "d2205dfe5b9da8af797e7c163db4d1f84e4600bc",
+  "_shrinkwrap": null,
+  "_spec": "pako@^1.0.4",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2",
+  "bugs": {
+    "url": "https://github.com/nodeca/pako/issues"
+  },
   "contributors": [
     {
       "name": "Andrei Tuputcyn",
@@ -33,16 +73,8 @@
       "name": "Mark Adler"
     }
   ],
-  "files": [
-    "index.js",
-    "dist/",
-    "lib/"
-  ],
-  "license": "(MIT AND Zlib)",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nodeca/pako.git"
-  },
+  "dependencies": {},
+  "description": "zlib port to javascript - fast, modularized, with browser support",
   "devDependencies": {
     "ansi": "*",
     "async": "*",
@@ -63,35 +95,38 @@
     "uglify-js": "*",
     "zlibjs": "^0.2.0"
   },
+  "directories": {},
+  "dist": {
+    "shasum": "d2205dfe5b9da8af797e7c163db4d1f84e4600bc",
+    "tarball": "https://registry.npmjs.org/pako/-/pako-1.0.5.tgz"
+  },
+  "files": [
+    "index.js",
+    "dist/",
+    "lib/"
+  ],
   "gitHead": "588a4376d24f24b3bae4167b4a5c8cd43761a5cd",
-  "bugs": {
-    "url": "https://github.com/nodeca/pako/issues"
-  },
-  "_id": "pako@1.0.5",
-  "scripts": {},
-  "_shasum": "d2205dfe5b9da8af797e7c163db4d1f84e4600bc",
-  "_from": "pako@>=1.0.4 <2.0.0",
-  "_npmVersion": "3.10.10",
-  "_nodeVersion": "6.9.4",
-  "_npmUser": {
-    "name": "vitaly",
-    "email": "vitaly@rcdesign.ru"
-  },
+  "homepage": "https://github.com/nodeca/pako",
+  "keywords": [
+    "zlib",
+    "deflate",
+    "inflate",
+    "gzip"
+  ],
+  "license": "(MIT AND Zlib)",
   "maintainers": [
     {
       "name": "vitaly",
       "email": "vitaly@rcdesign.ru"
     }
   ],
-  "dist": {
-    "shasum": "d2205dfe5b9da8af797e7c163db4d1f84e4600bc",
-    "tarball": "https://registry.npmjs.org/pako/-/pako-1.0.5.tgz"
+  "name": "pako",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodeca/pako.git"
   },
-  "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/pako-1.0.5.tgz_1490543279075_0.5095277389045805"
-  },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/pako/-/pako-1.0.5.tgz",
-  "readme": "ERROR: No README data found!"
+  "scripts": {},
+  "version": "1.0.5"
 }

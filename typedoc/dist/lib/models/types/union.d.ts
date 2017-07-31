@@ -1,4 +1,4 @@
-import { Type } from "./abstract";
+import { Type } from './abstract';
 export declare class UnionType extends Type {
     types: Type[];
     constructor(types: Type[]);

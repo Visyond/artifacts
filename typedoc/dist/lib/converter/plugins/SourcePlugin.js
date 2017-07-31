@@ -1,15 +1,21 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var Path = require("path");
 var ts = require("typescript");
 var _ts = require("../../ts-internal");
@@ -21,7 +27,7 @@ var converter_1 = require("../converter");
 var SourcePlugin = (function (_super) {
     __extends(SourcePlugin, _super);
     function SourcePlugin() {
-        var _this = _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.basePath = new base_path_1.BasePath();
         _this.fileMappings = {};
         return _this;
@@ -51,15 +57,17 @@ var SourcePlugin = (function (_super) {
         this.fileMappings = {};
     };
     SourcePlugin.prototype.onBeginDocument = function (context, reflection, node) {
-        if (!node)
+        if (!node) {
             return;
+        }
         var fileName = node.fileName;
         this.basePath.add(fileName);
         this.getSourceFile(fileName, context.project);
     };
     SourcePlugin.prototype.onDeclaration = function (context, reflection, node) {
-        if (!node)
+        if (!node) {
             return;
+        }
         var sourceFile = _ts.getSourceFileOfNode(node);
         var fileName = sourceFile.fileName;
         var file = this.getSourceFile(fileName, context.project);
@@ -70,8 +78,9 @@ var SourcePlugin = (function (_super) {
         else {
             position = ts.getLineAndCharacterOfPosition(sourceFile, node.pos);
         }
-        if (!reflection.sources)
+        if (!reflection.sources) {
             reflection.sources = [];
+        }
         if (reflection instanceof index_1.DeclarationReflection) {
             file.reflections.push(reflection);
         }
@@ -91,8 +100,9 @@ var SourcePlugin = (function (_super) {
     };
     SourcePlugin.prototype.onResolve = function (context, reflection) {
         var _this = this;
-        if (!reflection.sources)
+        if (!reflection.sources) {
             return;
+        }
         reflection.sources.forEach(function (source) {
             source.fileName = _this.basePath.trim(source.fileName);
         });
@@ -107,12 +117,12 @@ var SourcePlugin = (function (_super) {
             });
             var directory = home;
             var path = Path.dirname(file.fileName);
-            if (path != '.') {
-                path.split('/').forEach(function (path) {
-                    if (!directory.directories[path]) {
-                        directory.directories[path] = new index_2.SourceDirectory(path, directory);
+            if (path !== '.') {
+                path.split('/').forEach(function (pathPiece) {
+                    if (!Object.prototype.hasOwnProperty.call(directory.directories, pathPiece)) {
+                        directory.directories[pathPiece] = new index_2.SourceDirectory(pathPiece, directory);
                     }
-                    directory = directory.directories[path];
+                    directory = directory.directories[pathPiece];
                 });
             }
             directory.files.push(file);

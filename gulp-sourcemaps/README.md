@@ -1,5 +1,12 @@
 ## gulp-sourcemaps  [![NPM version][npm-image]][npm-url] [![build status][travis-image]][travis-url] [![Test coverage][coveralls-image]][coveralls-url]
 
+### Branching
+
+- master: is latest currently (2.X) - node > 4.X
+- 1.X: is node 0.X - only issues appear to be es6
+
+Preferably, we would like move on from node 0.X as much as possible as some of the dependencies are doing so as well. Meaning for features please target master for PRs. If bugs are found to be relvant to both 1.X and master then please target PRs for the 1.X branch to make git merging easier.
+
 ### Usage
 
 #### Write inline source maps
@@ -109,6 +116,27 @@ gulp.src(['src/test.js', 'src/testdir/test2.js'], { base: 'src' })
 });
 ```
 
+#### Alter `sources` property on sourcemaps
+
+The exported `mapSources` method gives full control over the source paths. It takes a function that is called for every source and receives the default source path as a parameter and the original vinyl file.
+
+Example:
+```javascript
+gulp.task('javascript', function() {
+  var stream = gulp.src('src/**/*.js')
+    .pipe(sourcemaps.init())
+      .pipe(plugin1())
+      .pipe(plugin2())
+      // be careful with the sources returned otherwise contents might not be loaded properly
+      .pipe(sourcemaps.mapSources(function(sourcePath, file) {
+        // source paths are prefixed with '../src/'
+        return '../src/' + sourcePath;
+      }))
+    .pipe(sourcemaps.write('../maps')
+    .pipe(gulp.dest('public/scripts'));
+});
+```
+
 
 
 ### Init Options
@@ -127,9 +155,6 @@ gulp.src(['src/test.js', 'src/testdir/test2.js'], { base: 'src' })
   for Javascript and CSS) instead of the default empty source map (no mappings, fast).
   Use this option if you get missing or incorrect mappings, e.g. when debugging.
 
-- `debug`
-
-  Set this to `true` to output debug messages (e.g. about missing source content).
 
 ### Write Options
 
@@ -264,7 +289,7 @@ gulp.src(['src/test.js', 'src/testdir/test2.js'], { base: 'src' })
       .pipe(sourcemaps.write('../maps', {
         mapFile: function(mapFilePath) {
           // source map files are named *.map instead of *.js.map
-          return mapFile.replace('.js.map', '.map');
+          return mapFilePath.replace('.js.map', '.map');
         }
       }))
       .pipe(gulp.dest('public/scripts'));
@@ -273,32 +298,15 @@ gulp.src(['src/test.js', 'src/testdir/test2.js'], { base: 'src' })
 
 - `mapSources`
 
-  This option gives full control over the source paths. It takes a function that is called for every source and receives the default source path as a parameter.
-
-  Example:
-  ```javascript
-  gulp.task('javascript', function() {
-    var stream = gulp.src('src/**/*.js')
-      .pipe(sourcemaps.init())
-        .pipe(plugin1())
-        .pipe(plugin2())
-      .pipe(sourcemaps.write('../maps', {
-        mapSources: function(sourcePath) {
-          // source paths are prefixed with '../src/'
-          return '../src/' + sourcePath;
-        }
-      }))
-      .pipe(gulp.dest('public/scripts'));
-  });
-  ```
-
-- `debug`
-
-  Set this to `true` to output debug messages (e.g. about missing source content).
+  __This option is deprecated. Upgrade to use our [`sourcemap.mapSources`](#alter-sources-property-on-sourcemaps) API.__
 
 - `charset`
 
   Sets the charset for inline source maps. Default: `utf8`
+
+- `clone`
+
+  Clones the original file for creation of the map file. Could be important if file history is important. See [file.clone()](https://github.com/gulpjs/vinyl#filecloneoptions) for possible options. Default: `{deep:false, contents:false}`
 
 ### Plugin developers only:
 
@@ -362,6 +370,22 @@ gulp.src(['src/test.js', 'src/testdir/test2.js'], { base: 'src' })
   init.write(new gutil.File(...));
   init.end();
   ```
+
+### Debugging
+
+All debugging output relys on [visionmedia/debug](https://github.com/visionmedia/debug). Fllow the directions to set the
+environment variable ``$DEBUG`.
+
+For a few examples of debug you could use:
+
+```sh
+  DEBUG='gulp-sourcemaps:*' #everything
+  DEBUG='gulp-sourcemaps:init' #init/index.js
+  DEBUG='gulp-sourcemaps:init:*' #init/index.internals.js
+  DEBUG='gulp-sourcemaps:write:' #write/index.js
+  DEBUG='gulp-sourcemaps:write:*' #write/index.internals.js
+  DEBUG='gulp-sourcemaps:write:,gulp-sourcemaps:init:**' #write/index.internals.js and init/index.internals.js
+```
 
 [npm-image]: https://img.shields.io/npm/v/gulp-sourcemaps.svg
 [npm-url]: https://www.npmjs.com/package/gulp-sourcemaps

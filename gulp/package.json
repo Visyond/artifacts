@@ -27,7 +27,9 @@
     "email": "blaine@iceddev.com"
   },
   "_npmVersion": "2.14.14",
-  "_phantomChildren": {},
+  "_phantomChildren": {
+    "escape-string-regexp": "1.0.5"
+  },
   "_requested": {
     "raw": "gulp@^3.9.1",
     "scope": null,

@@ -1,4 +1,4 @@
-import { Type } from "./abstract";
+import { Type } from './abstract';
 export declare class TypeParameterType extends Type {
     name: string;
     constraint: Type;

@@ -30,14 +30,16 @@
   "_phantomChildren": {
     "chai-nightwatch": "0.1.1",
     "ejs": "0.8.8",
-    "lodash.clone": "3.0.3",
+    "lodash._baseclone": "3.3.0",
+    "lodash._bindcallback": "3.0.1",
+    "lodash._isiterateecall": "3.0.9",
     "lodash.defaultsdeep": "4.6.0",
     "lru-cache": "2.7.3",
     "mkpath": "1.0.0",
     "mocha-nightwatch": "2.2.7",
     "optimist": "0.6.1",
-    "proxy-agent": "2.0.0",
-    "q": "1.4.1",
+    "proxy-agent": "2.1.0",
+    "q": "1.5.0",
     "sigmund": "1.0.1"
   },
   "_requested": {

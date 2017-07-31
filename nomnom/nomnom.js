@@ -1,4 +1,4 @@
-var _ = require("underscore"), chalk = require('chalk');
+var _ = require("underscore"), chalk = require('chalk'), exit = require('exit');
 
 
 var retArgs = function (s) {
@@ -34,7 +34,7 @@ function ArgParser() {
 
 ArgParser.prototype = {
   /* Add a command to the expected commands */
-  command : function(name) {
+  command : function (name) {
     var command;
     if (name) {
       command = this.commands[name] = {
@@ -50,27 +50,27 @@ ArgParser.prototype = {
 
     // facilitates command('name').options().cb().help()
     var chain = {
-      options : function(specs) {
+      options : function (specs) {
         command.specs = specs;
         return chain;
       },
-      opts : function(specs) {
+      opts : function (specs) {
         // old API
         return this.options(specs);
       },
-      option : function(name, spec) {
+      option : function (name, spec) {
         command.specs[name] = spec;
         return chain;
       },
-      callback : function(cb) {
+      callback : function (cb) {
         command.cb = cb;
         return chain;
       },
-      help : function(help) {
+      help : function (help) {
         command.help = help;
         return chain;
       },
-      usage : function(usage) {
+      usage : function (usage) {
         command._usage = usage;
         return chain;
       }
@@ -78,102 +78,124 @@ ArgParser.prototype = {
     return chain;
   },
 
-  nocommand : function() {
+  nocommand : function () {
     return this.command();
   },
 
-  options : function(specs) {
+  options : function (specs) {
     this.specs = specs;
     return this;
   },
 
-  opts : function(specs) {
+  opts : function (specs) {
     // old API
     return this.options(specs);
   },
 
-  globalOpts : function(specs) {
+  globalOpts : function (specs) {
     // old API
     return this.options(specs);
   },
 
-  option : function(name, spec) {
+  option : function (name, spec) {
     this.specs[name] = spec;
+    return this;
+  },
+
+  _unknownOptionTreatment: true,
+
+  unknownOptionTreatment : function (enable) {
+    if (typeof enable === "function") {
+      this._unknownOptionTreatment = enable;
+    } else if (enable) {
+      this._unknownOptionTreatment = function __treatUnknownOption__(options, name, value) {
+        return {
+          name: name,
+          value: value
+        };
+      };
+    } else {
+      this._unknownOptionTreatment = function __treatUnknownOption__(options, name, value) {
+        this.print("ERROR: unknown option '" + name + "' specified.", 1);
+      };
+    }
     return this;
   },
 
   _autoShowUsage: true,
 
-  autoShowUsage : function(enable) {
-    this._autoShowUsage = (enable !== false);
+  autoShowUsage : function (enable) {
+    this._autoShowUsage = (arguments.length === 0 || !!enable);
     return this;
   },
 
-  usage : function(usage) {
+  usage : function (usage) {
     this._usage = usage;
     return this;
   },
 
-  printer : function(print) {
+  printer : function (print) {
     this.print = print;
     return this;
   },
 
-  script : function(script) {
+  script : function (script) {
     this._script = script;
     return this;
   },
 
-  scriptName : function(script) {
+  scriptName : function (script) {
     // old API
     return this.script(script);
   },
 
-  help : function(help) {
+  help : function (help) {
     this._help = help;
     return this;
   },
 
-  colors: function() {
+  colors: function () {
     // deprecated - colors are on by default now
     return this;
   },
 
   _colorConfig: _.extend({}, defaultColorConfig),
 
-  setColors: function(colorConfig) {
+  setColors: function (colorConfig) {
     this._colorConfig = _.extend({}, defaultColorConfig, colorConfig);
     return this;
   },
 
-  nocolors : function() {
+  nocolors : function () {
     this._colorConfig = _.extend({}, noColorConfig);
     return this;
   },
 
-  parseArgs : function(argv) {
+  parseArgs : function (argv) {
     // old API
     return this.parse(argv);
   },
 
-  nom : function(argv) {
+  nom : function (argv) {
     return this.parse(argv);
   },
 
-  parse : function(argv) {
-    this.print = this.print || function(str, code) {
+  parse : function (argv) {
+    var that = this;
+    this.print = this.print || function (str, code) {
       if (code > 0) {
         console.error(str);
-        process.exit(code);
+        exit(code);
       } else {
         console.log(str);
-        process.exit(0);
+        exit(0);
       }
     };
     this._help = this._help || "";
     this._script = this._script || process.argv[0] + " "
           + require('path').basename(process.argv[1]);
     this.specs = this.specs || {};
+    this.unknownOptionTreatment(this._unknownOptionTreatment);
 
     argv = argv || process.argv.slice(2);
 
@@ -208,17 +230,17 @@ ArgParser.prototype = {
        else {
           // no command but command expected e.g. 'git -v'
           var helpStringBuilder = {
-            list : function() {
+            list : function () {
                return 'one of: ' + _(this.commands).keys().join(", ");
             },
-            twoColumn : function() {
+            twoColumn : function () {
               // find the longest command name to ensure horizontal alignment
               var maxLength = _(this.commands).max(function (cmd) {
                 return cmd.name.length;
               }).name.length;
 
               // create the two column text strings
-              var cmdHelp = _.map(this.commands, function(cmd, name) {
+              var cmdHelp = _.map(this.commands, function (cmd, name) {
                 var diff = maxLength - name.length;
                 var pad = new Array(diff + 4).join(" ");
                 return "  " + [ name, pad, cmd.help ].join(" ");
@@ -254,13 +276,17 @@ ArgParser.prototype = {
 
     if (this.specs.length === undefined) {
       // specs is a hash not an array
-      this.specs = _(this.specs).map(function(opt, name) {
+      this.specs = _(this.specs).map(function (opt, name) {
         opt.name = name;
         return opt;
       });
     }
-    this.specs = this.specs.map(function(opt) {
-      return Opt(opt);
+    this.specs = this.specs.map(function (opt) {
+      var o = Opt(opt);
+      if (o.full && /^no-/.test(o.full)) {
+        that.print("ERROR: nomnom options MUST NOT start their 'full option name' with 'no-', such as '" + o.full + "'", 1);
+      }
+      return o;
     });
 
     if (argv.indexOf("--help") >= 0 || argv.indexOf("-h") >= 0) {
@@ -269,7 +295,7 @@ ArgParser.prototype = {
 
     var options = {};
 
-    var args = argv.map(function(arg) {
+    var args = argv.map(function (arg) {
       return Arg(arg);
     });
 
@@ -290,49 +316,62 @@ ArgParser.prototype = {
     var positionals = [];
 
     /* parse the args */
-    var that = this;
-    args.reduce(function(arg, val) {
+    args.reduce(function (arg, val) {
       var opt;
 
       /* positional */
       if (arg.isValue) {
-        positionals.push(arg.value);
+        if (arg.str in that.commands &&
+            commandExpected &&
+            !command &&
+            !that.fallback) {
+          that.print("commands can not be interspersed with arguments\n\n" + that.getUsage(), 1);
+        } else {
+          positionals.push(arg.value);
+        }
       }
       else if (arg.chars) {
-        var last = arg.chars.pop();
+        var last;
         var flagValue = (arg.value === undefined ? true : arg.value);
 
-        /* -cfv */
-        arg.chars.forEach(function (ch) {
-          that.setOption(options, ch, true);
-        });
+        /* -cfv / ...; always check each of the abbreviated options, if there's one or many: */
+        for (var i = 0, last = arg.chars.length - 1; i <= last; i++) {
+          var c = arg.chars[i];
 
-        /* -v key */
-        opt = that.opt(last);
-        if (!opt.flag) {
-           if (val.isValue)  {
-              that.setOption(options, last, val.value);
+          if (i === last) {
+            flagValue = (arg.value === undefined ? true : arg.value);
+          }
+          else {
+            flagValue = true;
+          }
+
+          /* -v key */
+          opt = that.opt(c);
+          if (!opt.flag) {
+            if (val.isValue && last === 0 /* -v key */) {
+              that.setOption(options, c, val.value);
               return Arg(); // skip next turn - swallow arg
-           }
-           else if (opt.__nomnom_dummy__) {
+            }
+            else if (opt.__nomnom_dummy__) {
               // unspecified options which have no value are considered to be *flag* options:
-              that.setOption(options, last, flagValue);
-           }
-           else {
-              that.print("'-" + (opt.name || last) + "'"
+              that.setOption(options, c, flagValue);
+            }
+            else {
+              that.print("'-" + (opt.name || c) + "'"
                 + " expects a value\n\n" + that.getUsage(), 1);
-           }
-        }
-        else {
-          /* -v with optional '+' or '-' */
-          that.setOption(options, last, flagValue);
+            }
+          }
+          else {
+            /* -v with optional '+' or '-' */
+            that.setOption(options, c, flagValue);
+          }
         }
       }
       else if (arg.full) {
         var value = arg.value;
 
         /* --key */
-        if (value === undefined) {
+        if (value === true) {
           /* --key value */
           opt = that.opt(arg.full);
           if (!opt.flag) {
@@ -342,7 +381,7 @@ ArgParser.prototype = {
             }
             else if (opt.__nomnom_dummy__) {
               // unspecified options which have no value are considered to be *flag* options:
-              value = true;
+              that.setOption(options, arg.full, true);
             }
             else {
               that.print("'--" + (opt.name || arg.full) + "'"
@@ -350,35 +389,37 @@ ArgParser.prototype = {
             }
           }
           else {
-            /* --flag */
-            value = true;
+            /* --flag / --no-flag */
+            that.setOption(options, arg.full, value);
           }
+        } 
+        else {
+          that.setOption(options, arg.full, value);
         }
-        that.setOption(options, arg.full, value);
       }
       return val;
     });
 
-    positionals.forEach(function(pos, index) {
+    positionals.forEach(function (pos, index) {
       this.setOption(options, index, pos);
     }, this);
 
     options._ = positionals;
 
-    this.specs.forEach(function(opt) {
+    this.specs.forEach(function (opt) {
       if (opt.default !== undefined && options[opt.name] === undefined) {
         options[opt.name] = opt.default;
       }
     }, this);
 
     // exit if required arg isn't present
-    this.specs.forEach(function(opt) {
+    this.specs.forEach(function (opt) {
       if (opt.required && options[opt.name] === undefined) {
-         var msg = opt.name + " argument is required";
-         msg = this._colorConfig.requiredArgColor(msg);
-         //msg = this._nocolors ? msg : chalk.red(msg);
+        var msg = opt.name + " argument is required";
+        msg = this._colorConfig.requiredArgColor(msg);
+        //msg = this._nocolors ? msg : chalk.red(msg);
 
-         this.print("\n" + msg + "\n" + this.getUsage(), 1);
+        this.print("\n" + msg + "\n" + this.getUsage(), 1);
       }
     }, this);
 
@@ -392,7 +433,7 @@ ArgParser.prototype = {
     return options;
   },
 
-  getUsage : function() {
+  getUsage : function () {
     if (this.command && this.command._usage) {
       return this.command._usage;
     }
@@ -410,22 +451,21 @@ ArgParser.prototype = {
     str += this._colorConfig.usageStringColor(" " + this._script);
 
 
-    var positionals = _(this.specs).select(function(opt) {
+    var positionals = _(this.specs).select(function (opt) {
       return opt.position !== undefined;
     });
-    positionals = _(positionals).sortBy(function(opt) {
+    positionals = _(positionals).sortBy(function (opt) {
       return opt.position;
     });
-    var options = _(this.specs).select(function(opt) {
+    var options = _(this.specs).select(function (opt) {
       return opt.position === undefined;
     });
-    var showOptions = _(options).reject(function(opt) {
+    var showOptions = _(options).reject(function (opt) {
       return opt.hidden;
     }).toString();
 
     // assume there are no gaps in the specified pos. args
-    positionals.forEach(function(pos) {
-
+    positionals.forEach(function (pos) {
       str += this._colorConfig.usageStringColor(" ");
 
       var posStr = pos.string;
@@ -458,11 +498,11 @@ ArgParser.prototype = {
       }
       return s;
     }
-    var longest = positionals.reduce(function(max, pos) {
+    var longest = positionals.reduce(function (max, pos) {
       return pos.name.length > max ? pos.name.length : max;
     }, 0);
 
-    positionals.forEach(function(pos) {
+    positionals.forEach(function (pos) {
       var posStr = pos.string || pos.name;
       str += this._colorConfig.usageStringColor(posStr + spaces(longest - posStr.length) + "     ");
 
@@ -478,11 +518,11 @@ ArgParser.prototype = {
       str += this._colorConfig.optionsHeaderColor("Options:");
       str += this._colorConfig.usageStringColor("\n");
 
-      longest = options.reduce(function(max, opt) {
+      longest = options.reduce(function (max, opt) {
         return opt.string.length > max && !opt.hidden ? opt.string.length : max;
       }, 0);
 
-      options.forEach(function(opt) {
+      options.forEach(function (opt) {
         if (!opt.hidden) {
           str += this._colorConfig.usageStringColor("   " + opt.string + spaces(longest - opt.string.length) + "   ");
 
@@ -501,10 +541,10 @@ ArgParser.prototype = {
   }
 };
 
-ArgParser.prototype.opt = function(arg) {
+ArgParser.prototype.opt = function (arg) {
   // get the specified opt for this parsed arg
   var match = Opt({ __nomnom_dummy__: true });
-  this.specs.forEach(function(opt) {
+  this.specs.forEach(function (opt) {
     if (opt.matches(arg)) {
        match = opt;
     }
@@ -512,8 +552,19 @@ ArgParser.prototype.opt = function(arg) {
   return match;
 };
 
-ArgParser.prototype.setOption = function(options, arg, value) {
+ArgParser.prototype.setOption = function (options, arg, value) {
   var option = this.opt(arg);
+
+  if (option.__nomnom_dummy__ && typeof arg === "string" && arg !== "--") {
+    // unspecified options receive special treatment:
+    var opt = this._unknownOptionTreatment(options, arg, value);
+    if (!opt) {
+      return;
+    }
+    arg = opt.name;
+    value = opt.value;
+  } 
+
   if (option.callback) {
     var message = option.callback(value);
 
@@ -556,15 +607,19 @@ ArgParser.prototype.setOption = function(options, arg, value) {
 /* an arg is an item that's actually parsed from the command line
    e.g. "-l", "-l+", "log.txt", or "--logfile=log.txt" */
 var Arg = function (str) {
-  var abbrRegex = /^\-(\w+?)([+-]?)$/,
-      fullRegex = /^\-\-(no\-)?(.+?)(?:=(.+))?$/,
+  var abbrRegex = /^-(\w+?)([+-]?)$/,
+      fullRegex1 = /^--(no-)?(\w+(?:[^=+]*?[^=+\-])?)$/,     // --no-long-flag-name-123, --long-flag-name-123
+      fullRegex2 = /^--(\w+(?:[^=+]*?[^=+\-])?)([+\-])$/,    // --long-flag-name-123-, --long-flag-name-123+
+      fullRegex3 = /^--(\w+(?:[^=+]*?[^=+\-])?)=(.+)$/,      // --long-flag-name-123=value
       valRegex = /^[^\-].*/;
 
   var charMatch = abbrRegex.exec(str),
       chars = charMatch && charMatch[1].split("");
 
-  var fullMatch = fullRegex.exec(str),
-      full = fullMatch && fullMatch[2];
+  var fullMatch1 = fullRegex1.exec(str),
+      fullMatch2 = fullRegex2.exec(str),
+      fullMatch3 = fullRegex3.exec(str),
+      full = fullMatch1 ? fullMatch1[2] : fullMatch2 ? fullMatch2[1] : fullMatch3 ? fullMatch3[1] : null;
 
   var isValue = str !== undefined && (str === "" || valRegex.test(str));
   var value;
@@ -572,7 +627,7 @@ var Arg = function (str) {
     value = str;
   }
   else if (full) {
-    value = fullMatch[1] ? false : fullMatch[3];
+    value = fullMatch1 ? !fullMatch1[1] : fullMatch2 ? (fullMatch2[2] === "+") : fullMatch3 ? fullMatch3[2] : false;
   }
   else if (chars && chars.length === 1) {
     // Only allow `-v-` or `-v+` when option `-v` is alone. Do *not* allow `-cfv-` or `-cfv+`!
@@ -633,7 +688,7 @@ var Opt = function (opt) {
     abbr: abbr,
     full: full,
     metavar: metavar,
-    matches: function(arg) {
+    matches: function (arg) {
       return opt.full === arg || opt.abbr === arg || opt.position == arg
         || opt.name === arg || (opt.list && arg >= opt.position);
     }
@@ -642,7 +697,7 @@ var Opt = function (opt) {
 };
 
 
-var createParser = function() {
+var createParser = function () {
   return new ArgParser();
 };
 

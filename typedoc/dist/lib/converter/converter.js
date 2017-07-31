@@ -1,15 +1,21 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var ts = require("typescript");
 var _ts = require("../ts-internal");
 var _ = require("lodash");
@@ -22,7 +28,7 @@ var fs_1 = require("../utils/fs");
 var Converter = Converter_1 = (function (_super) {
     __extends(Converter, _super);
     function Converter() {
-        return _super.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Converter.prototype.initialize = function () {
         this.compilerHost = new compiler_host_1.CompilerHost(this);
@@ -47,11 +53,11 @@ var Converter = Converter_1 = (function (_super) {
         }
     };
     Converter.prototype.addTypeConverter = function (converter) {
-        if ("supportsNode" in converter && "convertNode" in converter) {
+        if ('supportsNode' in converter && 'convertNode' in converter) {
             this.typeNodeConverters.push(converter);
             this.typeNodeConverters.sort(function (a, b) { return (b.priority || 0) - (a.priority || 0); });
         }
-        if ("supportsType" in converter && "convertType" in converter) {
+        if ('supportsType' in converter && 'convertType' in converter) {
             this.typeTypeConverters.push(converter);
             this.typeTypeConverters.sort(function (a, b) { return (b.priority || 0) - (a.priority || 0); });
         }
@@ -78,11 +84,11 @@ var Converter = Converter_1 = (function (_super) {
     };
     Converter.prototype.removeTypeConverter = function (converter) {
         var index = this.typeNodeConverters.indexOf(converter);
-        if (index != -1) {
+        if (index !== -1) {
             this.typeTypeConverters.splice(index, 1);
         }
         index = this.typeNodeConverters.indexOf(converter);
-        if (index != -1) {
+        if (index !== -1) {
             this.typeNodeConverters.splice(index, 1);
         }
     };
@@ -109,7 +115,7 @@ var Converter = Converter_1 = (function (_super) {
         };
     };
     Converter.prototype.convertNode = function (context, node) {
-        if (context.visitStack.indexOf(node) != -1) {
+        if (context.visitStack.indexOf(node) !== -1) {
             return null;
         }
         var oldVisitStack = context.visitStack;
@@ -148,25 +154,30 @@ var Converter = Converter_1 = (function (_super) {
             _this.convertNode(context, sourceFile);
         });
         var diagnostics = program.getOptionsDiagnostics();
-        if (diagnostics.length)
+        if (diagnostics.length) {
             return diagnostics;
+        }
         diagnostics = program.getSyntacticDiagnostics();
-        if (diagnostics.length)
+        if (diagnostics.length) {
             return diagnostics;
+        }
         diagnostics = program.getGlobalDiagnostics();
-        if (diagnostics.length)
+        if (diagnostics.length) {
             return diagnostics;
+        }
         diagnostics = program.getSemanticDiagnostics();
-        if (diagnostics.length)
+        if (diagnostics.length) {
             return diagnostics;
+        }
         return [];
     };
     Converter.prototype.resolve = function (context) {
         this.trigger(Converter_1.EVENT_RESOLVE_BEGIN, context);
         var project = context.project;
         for (var id in project.reflections) {
-            if (!project.reflections.hasOwnProperty(id))
+            if (!project.reflections.hasOwnProperty(id)) {
                 continue;
+            }
             this.trigger(Converter_1.EVENT_RESOLVE, context, project.reflections[id]);
         }
         this.trigger(Converter_1.EVENT_RESOLVE_END, context);
@@ -190,46 +201,46 @@ Converter.EVENT_RESOLVE = 'resolveReflection';
 Converter.EVENT_RESOLVE_END = 'resolveEnd';
 __decorate([
     component_1.Option({
-        name: "name",
-        help: "Set the name of the project that will be used in the header of the template."
+        name: 'name',
+        help: 'Set the name of the project that will be used in the header of the template.'
     })
 ], Converter.prototype, "name", void 0);
 __decorate([
     component_1.Option({
-        name: "externalPattern",
+        name: 'externalPattern',
         help: 'Define a pattern for files that should be considered being external.'
     })
 ], Converter.prototype, "externalPattern", void 0);
 __decorate([
     component_1.Option({
-        name: "includeDeclarations",
+        name: 'includeDeclarations',
         help: 'Turn on parsing of .d.ts declaration files.',
         type: declaration_1.ParameterType.Boolean
     })
 ], Converter.prototype, "includeDeclarations", void 0);
 __decorate([
     component_1.Option({
-        name: "excludeExternals",
+        name: 'excludeExternals',
         help: 'Prevent externally resolved TypeScript files from being documented.',
         type: declaration_1.ParameterType.Boolean
     })
 ], Converter.prototype, "excludeExternals", void 0);
 __decorate([
     component_1.Option({
-        name: "excludeNotExported",
+        name: 'excludeNotExported',
         help: 'Prevent symbols that are not exported from being documented.',
         type: declaration_1.ParameterType.Boolean
     })
 ], Converter.prototype, "excludeNotExported", void 0);
 __decorate([
     component_1.Option({
-        name: "excludePrivate",
+        name: 'excludePrivate',
         help: 'Ignores private variables and methods',
         type: declaration_1.ParameterType.Boolean
     })
 ], Converter.prototype, "excludePrivate", void 0);
 Converter = Converter_1 = __decorate([
-    component_1.Component({ name: "converter", internal: true, childClass: components_1.ConverterComponent })
+    component_1.Component({ name: 'converter', internal: true, childClass: components_1.ConverterComponent })
 ], Converter);
 exports.Converter = Converter;
 var Converter_1;

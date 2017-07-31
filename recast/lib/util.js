@@ -156,10 +156,17 @@ util.fixFaultyLocations = function(node, lines) {
     }
   }
 
-  if (node.type === "TemplateLiteral") {
-    fixTemplateLiteral(node, lines);
+  if (node.type === "File") {
+    // Babylon returns File nodes whose .loc.{start,end} do not include
+    // leading or trailing whitespace.
+    loc.start = lines.firstPos();
+    loc.end = lines.lastPos();
+  }
 
-  } else if (loc && node.decorators) {
+  fixForLoopHead(node, lines);
+  fixTemplateLiteral(node, lines);
+
+  if (loc && node.decorators) {
     // Expand the .loc of the node responsible for printing the decorators
     // (here, the decorated node) so that it includes node.decorators.
     node.decorators.forEach(function (decorator) {
@@ -213,8 +220,37 @@ util.fixFaultyLocations = function(node, lines) {
   }
 };
 
+function fixForLoopHead(node, lines) {
+  if (node.type !== "ForStatement") {
+    return;
+  }
+
+  function fix(child) {
+    var loc = child && child.loc;
+    var start = loc && loc.start;
+    var end = loc && copyPos(loc.end);
+
+    while (start && end && comparePos(start, end) < 0) {
+      lines.prevPos(end);
+      if (lines.charAt(end) === ";") {
+        // Update child.loc.end to *exclude* the ';' character.
+        loc.end.line = end.line;
+        loc.end.column = end.column;
+      } else {
+        break;
+      }
+    }
+  }
+
+  fix(node.init);
+  fix(node.test);
+  fix(node.update);
+}
+
 function fixTemplateLiteral(node, lines) {
-  assert.strictEqual(node.type, "TemplateLiteral");
+  if (node.type !== "TemplateLiteral") {
+    return;
+  }
 
   if (node.quasis.length === 0) {
     // If there are no quasi elements, then there is nothing to fix.
@@ -295,4 +331,12 @@ util.getParentExportDeclaration = function (path) {
   }
 
   return null;
+};
+
+util.isTrailingCommaEnabled = function(options, context) {
+  var trailingComma = options.trailingComma;
+  if (typeof trailingComma === "object") {
+    return !!trailingComma[context];
+  }
+  return !!trailingComma;
 };

@@ -1,5 +1,5 @@
-import { Options } from "./options";
-export interface IParameterHelp {
+import { Options } from './options';
+export interface ParameterHelp {
     names: string[];
     helps: string[];
     margin: number;

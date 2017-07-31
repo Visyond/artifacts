@@ -1,7 +1,7 @@
-import { Reflection } from "../reflections/abstract";
-import { ReflectionGroup } from "../ReflectionGroup";
-import { SourceDirectory } from "./directory";
-export interface ISourceReference {
+import { Reflection } from '../reflections/abstract';
+import { ReflectionGroup } from '../ReflectionGroup';
+import { SourceDirectory } from './directory';
+export interface SourceReference {
     file?: SourceFile;
     fileName: string;
     line: number;

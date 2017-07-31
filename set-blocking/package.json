@@ -38,6 +38,7 @@
     "type": "range"
   },
   "_requiredBy": [
+    "/browser-sync/yargs",
     "/npmlog",
     "/yargs"
   ],

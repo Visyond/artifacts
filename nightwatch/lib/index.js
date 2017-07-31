@@ -14,8 +14,6 @@ var Utils = require('./util/utils.js');
 function Nightwatch(options) {
   events.EventEmitter.call(this);
 
-  this.locateStrategy = 'css selector';
-
   this.api = {
     capabilities : {},
     globals : options && options.persist_globals && options.globals || {},
@@ -96,9 +94,7 @@ Nightwatch.prototype.setOptions = function(options) {
     };
   }
 
-  if (this.options.use_xpath) {
-    this.locateStrategy = 'xpath';
-  }
+  this.setLocateStrategy();
 
   if (this.options.silent) {
     Logger.disable();
@@ -113,10 +109,11 @@ Nightwatch.prototype.setOptions = function(options) {
 
   this.api.options.log_screenshot_data = this.options.log_screenshot_data ||
     (typeof this.options.log_screenshot_data == 'undefined');
-  var seleniumPort = this.options.seleniumPort || this.options.selenium_port;
-  var seleniumHost = this.options.seleniumHost || this.options.selenium_host;
-  var useSSL       = this.options.useSsl || this.options.use_ssl;
-  var proxy        = this.options.proxy;
+  var seleniumPort     = this.options.seleniumPort || this.options.selenium_port;
+  var seleniumHost     = this.options.seleniumHost || this.options.selenium_host;
+  var useSSL           = this.options.useSsl || this.options.use_ssl;
+  var proxy            = this.options.proxy;
+  var timeoutOptions   = this.options.request_timeout_options || {};
 
   if (seleniumPort) {
     HttpRequest.setSeleniumPort(seleniumPort);
@@ -129,6 +126,12 @@ Nightwatch.prototype.setOptions = function(options) {
   }
   if (proxy) {
     HttpRequest.setProxy(proxy);
+  }
+  if (typeof timeoutOptions.timeout != 'undefined') {
+    HttpRequest.setTimeout(timeoutOptions.timeout);
+  }
+  if (typeof timeoutOptions.retry_attempts != 'undefined') {
+    HttpRequest.setRetryAttempts(timeoutOptions.retry_attempts);
   }
 
   if (typeof this.options.default_path_prefix == 'string') {
@@ -176,6 +179,11 @@ Nightwatch.prototype.setCapabilities = function() {
     }
   }
   this.api.options.desiredCapabilities = this.desiredCapabilities;
+  return this;
+};
+
+Nightwatch.prototype.setLocateStrategy = function () {
+  this.locateStrategy = this.options.use_xpath ? 'xpath' : 'css selector';
   return this;
 };
 

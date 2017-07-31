@@ -1,3 +1,33 @@
+# 5.11.2 (2017-01-26)
+
+* Fix support for Node.JS v0.12
+
+# 5.11.1 (2017-01-17)
+
+* Update `request` and `mocha` dependencies.
+
+# 5.11.0 (2017-01-17)
+
+* update geckodriver to v0.13.0
+
+# 5.10.0 (2017-01-16)
+
+* update chromedriver version to 2.27
+* --config file option
+
+# 5.9.1 (2017-01-07)
+
+* Fix incorrect download urls for Firefox drivers (#251)
+
+# 5.9.0 (2016-12-04)
+
+* update geckodriver to v0.11.1
+
+# 5.8.0 (2016-10-26)
+
+* update chrome driver to 2.25 #240
+* add `opts.javaArgs` #234
+
 # 5.7.2 (2016-09-22)
 
   * fix expectedRequest when less drivers given than usual

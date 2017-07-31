@@ -2,25 +2,25 @@
   "_args": [
     [
       {
-        "raw": "jscodeshift@0.3.28",
+        "raw": "jscodeshift@0.3.30",
         "scope": null,
         "escapedName": "jscodeshift",
         "name": "jscodeshift",
-        "rawSpec": "0.3.28",
-        "spec": "0.3.28",
+        "rawSpec": "0.3.30",
+        "spec": "0.3.30",
         "type": "version"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-gho"
     ]
   ],
-  "_from": "jscodeshift@0.3.28",
-  "_id": "jscodeshift@0.3.28",
+  "_from": "jscodeshift@0.3.30",
+  "_id": "jscodeshift@0.3.30",
   "_inCache": true,
   "_location": "/jscodeshift",
   "_nodeVersion": "5.12.0",
   "_npmOperationalInternal": {
-    "host": "packages-16-east.internal.npmjs.com",
-    "tmp": "tmp/jscodeshift-0.3.28.tgz_1471278163711_0.24770012288354337"
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/jscodeshift-0.3.30.tgz_1477419141293_0.8033463300671428"
   },
   "_npmUser": {
     "name": "fkling",
@@ -28,7 +28,8 @@
   },
   "_npmVersion": "3.8.6",
   "_phantomChildren": {
-    "amdefine": "1.0.0",
+    "amdefine": "1.0.1",
+    "ast-types": "0.9.6",
     "babel-plugin-constant-folding": "1.0.1",
     "babel-plugin-dead-code-elimination": "1.0.2",
     "babel-plugin-eval": "1.0.1",
@@ -44,49 +45,48 @@
     "babel-plugin-runtime": "1.0.7",
     "babel-plugin-undeclared-variables-check": "1.0.2",
     "babel-plugin-undefined-to-void": "1.1.6",
-    "bluebird": "2.11.0",
-    "brace-expansion": "1.1.6",
-    "chalk": "1.1.3",
-    "convert-source-map": "1.3.0",
-    "debug": "2.2.0",
-    "detect-indent": "3.0.1",
+    "brace-expansion": "1.1.8",
+    "convert-source-map": "1.5.0",
+    "debug": "2.6.8",
+    "escape-string-regexp": "1.0.5",
     "esutils": "2.0.2",
     "fs-readdir-recursive": "0.1.2",
-    "home-or-tmp": "1.0.0",
-    "is-integer": "1.0.6",
-    "json5": "0.4.0",
+    "get-stdin": "4.0.1",
+    "has-color": "0.1.7",
+    "is-finite": "1.0.2",
+    "is-integer": "1.0.7",
+    "os-tmpdir": "1.0.2",
     "output-file-sync": "1.1.2",
-    "path-exists": "1.0.0",
     "path-is-absolute": "1.0.1",
-    "private": "0.1.6",
+    "private": "0.1.7",
     "regenerator": "0.8.40",
     "regexpu": "1.3.0",
-    "repeating": "1.1.3",
-    "resolve": "1.1.7",
+    "resolve": "1.4.0",
     "shebang-regex": "1.0.0",
     "slash": "1.0.0",
     "source-map": "0.5.6",
-    "to-fast-properties": "1.0.2",
+    "to-fast-properties": "1.0.3",
     "trim-right": "1.0.1",
-    "try-resolve": "1.0.1"
+    "try-resolve": "1.0.1",
+    "user-home": "1.1.1"
   },
   "_requested": {
-    "raw": "jscodeshift@0.3.28",
+    "raw": "jscodeshift@0.3.30",
     "scope": null,
     "escapedName": "jscodeshift",
     "name": "jscodeshift",
-    "rawSpec": "0.3.28",
-    "spec": "0.3.28",
+    "rawSpec": "0.3.30",
+    "spec": "0.3.30",
     "type": "version"
   },
   "_requiredBy": [
-    "/jison"
+    "/jison-gho"
   ],
-  "_resolved": "https://registry.npmjs.org/jscodeshift/-/jscodeshift-0.3.28.tgz",
-  "_shasum": "8e87be995ba3c9cba36e83808f22c1ac03f8eb87",
+  "_resolved": "https://registry.npmjs.org/jscodeshift/-/jscodeshift-0.3.30.tgz",
+  "_shasum": "73f459d8fc3b3a80841991aeb7d24809cef6dfc5",
   "_shrinkwrap": null,
-  "_spec": "jscodeshift@0.3.28",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison",
+  "_spec": "jscodeshift@0.3.30",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-gho",
   "author": {
     "name": "Felix Kling"
   },
@@ -112,33 +112,32 @@
     "node-dir": "0.1.8",
     "nomnom": "^1.8.1",
     "recast": "^0.11.11",
-    "temp": "^0.8.1"
+    "temp": "^0.8.1",
+    "write-file-atomic": "^1.2.0"
   },
   "description": "A toolkit for JavaScript codemods",
   "devDependencies": {
     "babel-eslint": "^6.1.2",
     "eslint": "^3.1.1",
-    "jest-cli": "^12.0.0",
+    "jest": "^15.1.1",
+    "jsdoc": "^3.4.0",
     "mkdirp": "^0.5.1"
   },
   "directories": {},
   "dist": {
-    "shasum": "8e87be995ba3c9cba36e83808f22c1ac03f8eb87",
-    "tarball": "https://registry.npmjs.org/jscodeshift/-/jscodeshift-0.3.28.tgz"
+    "shasum": "73f459d8fc3b3a80841991aeb7d24809cef6dfc5",
+    "tarball": "https://registry.npmjs.org/jscodeshift/-/jscodeshift-0.3.30.tgz"
   },
   "engines": {
     "node": ">=4"
   },
-  "gitHead": "fe67b121d4c2519c5227a00be3f590e7f7c46d2b",
+  "gitHead": "eb9a30ba2e39d6324a9af698862677ce182e848a",
   "homepage": "https://github.com/facebook/jscodeshift#readme",
   "jest": {
     "testPathDirs": [
       "src",
       "bin",
       "sample"
-    ],
-    "unmockedModulePathPatterns": [
-      "node_modules/"
     ]
   },
   "keywords": [
@@ -162,8 +161,9 @@
   },
   "scripts": {
     "build": "cp -R src/ dist/",
+    "docs": "rm -rf docs && jsdoc -d docs -R README.md src/collections/* src/core.js src/Collection.js",
     "prepublish": "npm run build && npm run test",
     "test": "jest --bail"
   },
-  "version": "0.3.28"
+  "version": "0.3.30"
 }

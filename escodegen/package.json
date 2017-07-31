@@ -28,7 +28,7 @@
   },
   "_npmVersion": "3.10.3",
   "_phantomChildren": {
-    "amdefine": "1.0.0"
+    "amdefine": "1.0.1"
   },
   "_requested": {
     "raw": "escodegen@^1.6.1",

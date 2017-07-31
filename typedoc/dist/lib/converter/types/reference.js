@@ -1,15 +1,21 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var ts = require("typescript");
 var index_1 = require("../../models/types/index");
 var index_2 = require("../../models/reflections/index");
@@ -19,7 +25,7 @@ var converter_1 = require("../converter");
 var ReferenceConverter = (function (_super) {
     __extends(ReferenceConverter, _super);
     function ReferenceConverter() {
-        var _this = _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.priority = -50;
         return _this;
     }
@@ -62,8 +68,8 @@ var ReferenceConverter = (function (_super) {
         for (var _i = 0, _a = symbol.declarations; _i < _a.length; _i++) {
             var declaration_1 = _a[_i];
             if (context.visitStack.indexOf(declaration_1) !== -1) {
-                if (declaration_1.kind == ts.SyntaxKind.TypeLiteral ||
-                    declaration_1.kind == ts.SyntaxKind.ObjectLiteralExpression) {
+                if (declaration_1.kind === ts.SyntaxKind.TypeLiteral ||
+                    declaration_1.kind === ts.SyntaxKind.ObjectLiteralExpression) {
                     return index_3.createReferenceType(context, declaration_1.parent.symbol);
                 }
                 else {

@@ -1,15 +1,21 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var index_1 = require("../../models/reflections/index");
 var index_2 = require("../../models/types/index");
 var components_1 = require("../components");
@@ -17,7 +23,7 @@ var converter_1 = require("../converter");
 var ImplementsPlugin = (function (_super) {
     __extends(ImplementsPlugin, _super);
     function ImplementsPlugin() {
-        return _super.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     ImplementsPlugin.prototype.initialize = function () {
         this.listenTo(this.owner, converter_1.Converter.EVENT_RESOLVE, this.onResolve, -10);
@@ -32,12 +38,17 @@ var ImplementsPlugin = (function (_super) {
                 return;
             }
             var classMember;
+            if (!classReflection.children) {
+                return;
+            }
             for (var index = 0, count = classReflection.children.length; index < count; index++) {
                 var child = classReflection.children[index];
-                if (child.name != interfaceMember.name)
+                if (child.name !== interfaceMember.name) {
                     continue;
-                if (child.flags.isStatic != interfaceMember.flags.isStatic)
+                }
+                if (child.flags.isStatic !== interfaceMember.flags.isStatic) {
                     continue;
+                }
                 classMember = child;
                 break;
             }

@@ -1,4 +1,4 @@
-import { Reflection, ReflectionKind } from "./reflections/abstract";
+import { Reflection, ReflectionKind } from './reflections/abstract';
 export declare class ReflectionGroup {
     title: string;
     kind: ReflectionKind;

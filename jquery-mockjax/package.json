@@ -1,0 +1,141 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "jquery-mockjax@^2.2.0",
+        "scope": null,
+        "escapedName": "jquery-mockjax",
+        "name": "jquery-mockjax",
+        "rawSpec": "^2.2.0",
+        "spec": ">=2.2.0 <3.0.0",
+        "type": "range"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/orgchart"
+    ]
+  ],
+  "_from": "jquery-mockjax@>=2.2.0 <3.0.0",
+  "_id": "jquery-mockjax@2.2.2",
+  "_inCache": true,
+  "_location": "/jquery-mockjax",
+  "_nodeVersion": "6.10.3",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/jquery-mockjax-2.2.2.tgz_1497890242585_0.8806374066043645"
+  },
+  "_npmUser": {
+    "name": "jakerella",
+    "email": "jordan@jordankasper.com"
+  },
+  "_npmVersion": "5.0.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "jquery-mockjax@^2.2.0",
+    "scope": null,
+    "escapedName": "jquery-mockjax",
+    "name": "jquery-mockjax",
+    "rawSpec": "^2.2.0",
+    "spec": ">=2.2.0 <3.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/orgchart"
+  ],
+  "_resolved": "https://registry.npmjs.org/jquery-mockjax/-/jquery-mockjax-2.2.2.tgz",
+  "_shasum": "9c7d2b103a44cf61c99cc78a9ee7878504b60907",
+  "_shrinkwrap": null,
+  "_spec": "jquery-mockjax@^2.2.0",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/orgchart",
+  "author": {
+    "name": "Jonathan Sharp",
+    "url": "http://jdsharp.com"
+  },
+  "bugs": {
+    "url": "http://github.com/jakerella/jquery-mockjax/issues"
+  },
+  "contributors": [
+    {
+      "name": "Doug Neiner"
+    },
+    {
+      "name": "Jonathan Creamer"
+    },
+    {
+      "name": "Jordan Kasper"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.5.2"
+  },
+  "description": "The jQuery Mockjax Plugin provides a simple and extremely flexible interface for mocking or simulating ajax requests and responses.",
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-qunit": "^1.2.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-mocha-test": "^0.12.7",
+    "jsdom": "~4.2.0",
+    "load-grunt-tasks": "^0.6.0",
+    "mocha": "^2.2.4",
+    "sinon": "^1.17.4",
+    "xmlhttprequest": "^1.7.0"
+  },
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-stVgUln5bo7g14KjeU45c31nAYlBHAUVBo4JbdoDYIJ3i6Nzlu8mkjKcAviwad9AU1dBEHHpuzA7R6mKcWgvZA==",
+    "shasum": "9c7d2b103a44cf61c99cc78a9ee7878504b60907",
+    "tarball": "https://registry.npmjs.org/jquery-mockjax/-/jquery-mockjax-2.2.2.tgz"
+  },
+  "gitHead": "e8eee6b7e65e4b698342c1a75a6e5f8942fd364f",
+  "homepage": "https://github.com/jakerella/jquery-mockjax",
+  "keywords": [
+    "ajax",
+    "mock",
+    "unit",
+    "testing",
+    "jquery-plugin",
+    "ecosystem:jquery"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    },
+    {
+      "type": "GPLv2",
+      "url": "http://www.gnu.org/licenses/gpl-2.0.html"
+    }
+  ],
+  "main": "./src/jquery.mockjax.js",
+  "maintainers": [
+    {
+      "name": "dirkbonhomme",
+      "email": "dirk@bytelogic.be"
+    },
+    {
+      "name": "appendto",
+      "email": "github@appendto.com"
+    },
+    {
+      "name": "jakerella",
+      "email": "jordan@jordankasper.com"
+    }
+  ],
+  "name": "jquery-mockjax",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakerella/jquery-mockjax.git"
+  },
+  "scripts": {
+    "test": "grunt test:all"
+  },
+  "title": "jQuery Mockjax",
+  "url": "https://github.com/jakerella/jquery-mockjax",
+  "version": "2.2.2"
+}

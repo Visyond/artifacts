@@ -1,4 +1,4 @@
-import { OptionsComponent } from "../options";
+import { OptionsComponent } from '../options';
 export declare class ComponentSource extends OptionsComponent {
     private knownComponents;
     protected initialize(): void;

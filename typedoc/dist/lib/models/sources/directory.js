@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var SourceDirectory = (function () {
     function SourceDirectory(name, parent) {
         this.parent = null;
@@ -16,8 +17,9 @@ var SourceDirectory = (function () {
         if (indent === void 0) { indent = ''; }
         var res = indent + this.name;
         for (var key in this.directories) {
-            if (!this.directories.hasOwnProperty(key))
+            if (!this.directories.hasOwnProperty(key)) {
                 continue;
+            }
             res += '\n' + this.directories[key].toString(indent + '  ');
         }
         this.files.forEach(function (file) {

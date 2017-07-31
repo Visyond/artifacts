@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var _ = require("lodash");
 var eventSplitter = /\s+/;
 function eventsApi(iteratee, events, name, callback, options) {
@@ -24,13 +25,14 @@ function eventsApi(iteratee, events, name, callback, options) {
 function onApi(events, name, callback, options) {
     if (callback) {
         var handlers = events[name] || (events[name] = []);
-        var context = options.context, ctx = options.ctx, listening = options.listening, priority = options.priority;
-        if (listening)
+        var context_1 = options.context, ctx = options.ctx, listening = options.listening, priority = options.priority;
+        if (listening) {
             listening.count++;
+        }
         handlers.push({
             callback: callback,
-            context: context,
-            ctx: context || ctx,
+            context: context_1,
+            ctx: context_1 || ctx,
             listening: listening,
             priority: priority
         });
@@ -39,8 +41,9 @@ function onApi(events, name, callback, options) {
     return events;
 }
 function offApi(events, name, callback, options) {
-    if (!events)
+    if (!events) {
         return;
+    }
     var i = 0, listening;
     var context = options.context, listeners = options.listeners;
     if (!name && !callback && !context) {
@@ -56,8 +59,9 @@ function offApi(events, name, callback, options) {
     for (; i < names.length; i++) {
         name = names[i];
         var handlers = events[name];
-        if (!handlers)
+        if (!handlers) {
             break;
+        }
         var remaining = [];
         for (var j = 0; j < handlers.length; j++) {
             var handler = handlers[j];
@@ -87,11 +91,11 @@ function offApi(events, name, callback, options) {
 }
 function onceMap(map, name, callback, offer) {
     if (callback) {
-        var once = map[name] = _.once(function () {
-            offer(name, once);
+        var once_1 = map[name] = _.once(function () {
+            offer(name, once_1);
             callback.apply(this, arguments);
         });
-        once._callback = callback;
+        once_1._callback = callback;
     }
     return map;
 }
@@ -100,12 +104,15 @@ function triggerApi(objEvents, name, callback, args, triggerer) {
     if (objEvents) {
         var events = objEvents[name];
         var allEvents = objEvents['all'];
-        if (events && allEvents)
+        if (events && allEvents) {
             allEvents = allEvents.slice();
-        if (events)
+        }
+        if (events) {
             triggerer(events, args);
-        if (allEvents)
+        }
+        if (allEvents) {
             triggerer(allEvents, [name].concat(args));
+        }
     }
     return objEvents;
 }
@@ -113,24 +120,29 @@ function triggerEvents(events, args) {
     var ev, i = -1, l = events.length, a1 = args[0], a2 = args[1], a3 = args[2];
     switch (args.length) {
         case 0:
-            while (++i < l)
+            while (++i < l) {
                 (ev = events[i]).callback.call(ev.ctx);
+            }
             return;
         case 1:
-            while (++i < l)
+            while (++i < l) {
                 (ev = events[i]).callback.call(ev.ctx, a1);
+            }
             return;
         case 2:
-            while (++i < l)
+            while (++i < l) {
                 (ev = events[i]).callback.call(ev.ctx, a1, a2);
+            }
             return;
         case 3:
-            while (++i < l)
+            while (++i < l) {
                 (ev = events[i]).callback.call(ev.ctx, a1, a2, a3);
+            }
             return;
         default:
-            while (++i < l)
+            while (++i < l) {
                 (ev = events[i]).callback.apply(ev.ctx, args);
+            }
             return;
     }
 }
@@ -171,8 +183,8 @@ exports.Event = Event;
 var EventDispatcher = (function () {
     function EventDispatcher() {
     }
-    EventDispatcher.prototype.on = function (name, callback, context, priority) {
-        this.internalOn(name, callback, context, priority);
+    EventDispatcher.prototype.on = function (nameOrMap, callback, context, priority) {
+        this.internalOn(nameOrMap, callback, context, priority);
         return this;
     };
     EventDispatcher.prototype.internalOn = function (name, callback, context, priority, listening) {
@@ -193,8 +205,9 @@ var EventDispatcher = (function () {
         return this.on(events, void 0, context, priority);
     };
     EventDispatcher.prototype.off = function (name, callback, context) {
-        if (!this._events)
+        if (!this._events) {
             return this;
+        }
         this._events = eventsApi(offApi, this._events, name, callback, {
             context: context,
             listeners: this._listeners
@@ -202,8 +215,9 @@ var EventDispatcher = (function () {
         return this;
     };
     EventDispatcher.prototype.listenTo = function (obj, name, callback, priority) {
-        if (!obj)
+        if (!obj) {
             return this;
+        }
         var id = obj._listenId || (obj._listenId = _.uniqueId('l'));
         var listeningTo = this._listeningTo || (this._listeningTo = {});
         var listening = listeningTo[id];
@@ -226,17 +240,20 @@ var EventDispatcher = (function () {
     };
     EventDispatcher.prototype.stopListening = function (obj, name, callback) {
         var listeningTo = this._listeningTo;
-        if (!listeningTo)
+        if (!listeningTo) {
             return this;
+        }
         var ids = obj ? [obj._listenId] : _.keys(listeningTo);
         for (var i = 0; i < ids.length; i++) {
             var listening = listeningTo[ids[i]];
-            if (!listening)
+            if (!listening) {
                 break;
+            }
             listening.obj.off(name, callback, this);
         }
-        if (_.isEmpty(listeningTo))
+        if (_.isEmpty(listeningTo)) {
             this._listeningTo = void 0;
+        }
         return this;
     };
     EventDispatcher.prototype.trigger = function (name) {
@@ -244,14 +261,16 @@ var EventDispatcher = (function () {
         for (var _i = 1; _i < arguments.length; _i++) {
             args[_i - 1] = arguments[_i];
         }
-        if (!this._events)
+        if (!this._events) {
             return this;
+        }
         if (name instanceof Event) {
             triggerApi(this._events, name.name, void 0, [name], function (events, args) {
                 var ev, i = -1, l = events.length;
                 while (++i < l) {
-                    if (name.isPropagationStopped)
+                    if (name.isPropagationStopped) {
                         return;
+                    }
                     ev = events[i];
                     ev.callback.apply(ev.ctx, args);
                 }

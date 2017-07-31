@@ -33,6 +33,7 @@
     "type": "range"
   },
   "_requiredBy": [
+    "/gulp-concat-json/lodash.keys",
     "/gulp-manifest/lodash.keys",
     "/gulp-spawn/lodash.keys",
     "/lodash._reunescapedhtml/lodash.keys",

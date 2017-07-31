@@ -1,7 +1,7 @@
-import { ISourceReference } from "../sources/file";
-import { Type } from "../types/index";
-import { Comment } from "../comments/comment";
-import { TypeParameterReflection } from "./type-parameter";
+import { SourceReference } from '../sources/file';
+import { Type } from '../types/index';
+import { Comment } from '../comments/comment';
+import { TypeParameterReflection } from './type-parameter';
 export declare function resetReflectionID(): void;
 export declare enum ReflectionKind {
     Global = 0,
@@ -47,7 +47,7 @@ export declare enum ReflectionFlag {
     Rest = 512,
     ConstructorProperty = 1024,
 }
-export interface IReflectionFlags extends Array<string> {
+export interface ReflectionFlags extends Array<string> {
     flags?: ReflectionFlag;
     isPrivate?: boolean;
     isProtected?: boolean;
@@ -60,13 +60,13 @@ export interface IReflectionFlags extends Array<string> {
     hasExportAssignment?: boolean;
     isConstructorProperty?: boolean;
 }
-export interface IDefaultValueContainer extends Reflection {
+export interface DefaultValueContainer extends Reflection {
     defaultValue: string;
 }
-export interface ITypeContainer extends Reflection {
+export interface TypeContainer extends Reflection {
     type: Type;
 }
-export interface ITypeParameterContainer extends Reflection {
+export interface TypeParameterContainer extends Reflection {
     typeParameters: TypeParameterReflection[];
 }
 export declare enum TraverseProperty {
@@ -79,10 +79,10 @@ export declare enum TraverseProperty {
     GetSignature = 6,
     SetSignature = 7,
 }
-export interface ITraverseCallback {
+export interface TraverseCallback {
     (reflection: Reflection, property: TraverseProperty): void;
 }
-export interface IDecorator {
+export interface Decorator {
     name: string;
     type?: Type;
     arguments?: any;
@@ -93,11 +93,11 @@ export declare abstract class Reflection {
     originalName: string;
     kind: ReflectionKind;
     kindString: string;
-    flags: IReflectionFlags;
+    flags: ReflectionFlags;
     parent: Reflection;
     comment: Comment;
-    sources: ISourceReference[];
-    decorators: IDecorator[];
+    sources: SourceReference[];
+    decorators: Decorator[];
     decorates: Type[];
     url: string;
     anchor: string;
@@ -118,7 +118,7 @@ export declare abstract class Reflection {
     isProject(): boolean;
     findReflectionByName(name: string): Reflection;
     findReflectionByName(names: string[]): Reflection;
-    traverse(callback: ITraverseCallback): void;
+    traverse(callback: TraverseCallback): void;
     toObject(): any;
     toString(): string;
     toStringHierarchy(indent?: string): string;

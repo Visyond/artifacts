@@ -1,5 +1,5 @@
-import { Application } from "./application";
-import { IOptionsReadResult } from "./utils/options/options";
+import { Application } from './application';
+import { OptionsReadResult } from './utils/options/options';
 export declare const enum ExitCode {
     OptionError = 1,
     NoInputFiles = 2,
@@ -12,6 +12,6 @@ export declare class CliApplication extends Application {
     json: string;
     version: boolean;
     help: boolean;
-    protected bootstrap(options?: Object): IOptionsReadResult;
+    protected bootstrap(options?: Object): OptionsReadResult;
     readonly isCLI: boolean;
 }

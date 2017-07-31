@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var ts = require("typescript");
 var index_1 = require("../../models/index");
 var converter_1 = require("../converter");

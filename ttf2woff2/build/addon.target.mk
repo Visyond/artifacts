@@ -4,6 +4,9 @@ TOOLSET := target
 TARGET := addon
 DEFS_Debug := \
 	'-DNODE_GYP_MODULE_NAME=addon' \
+	'-DUSING_UV_SHARED=1' \
+	'-DUSING_V8_SHARED=1' \
+	'-DV8_DEPRECATION_WARNINGS=1' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
 	'-DBUILDING_NODE_EXTENSION' \
@@ -35,14 +38,17 @@ CFLAGS_CC_Debug := \
 	-std=c++11
 
 INCS_Debug := \
-	-I/var/lib/jenkins/.node-gyp/4.4.4/include/node \
-	-I/var/lib/jenkins/.node-gyp/4.4.4/src \
-	-I/var/lib/jenkins/.node-gyp/4.4.4/deps/uv/include \
-	-I/var/lib/jenkins/.node-gyp/4.4.4/deps/v8/include \
+	-I/var/lib/jenkins/.node-gyp/6.11.1/include/node \
+	-I/var/lib/jenkins/.node-gyp/6.11.1/src \
+	-I/var/lib/jenkins/.node-gyp/6.11.1/deps/uv/include \
+	-I/var/lib/jenkins/.node-gyp/6.11.1/deps/v8/include \
 	-I$(srcdir)/../nan
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=addon' \
+	'-DUSING_UV_SHARED=1' \
+	'-DUSING_V8_SHARED=1' \
+	'-DV8_DEPRECATION_WARNINGS=1' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
 	'-DBUILDING_NODE_EXTENSION'
@@ -58,8 +64,6 @@ CFLAGS_Release := \
 	-std=c++11 \
 	-std=c++11 -w \
 	-O3 \
-	-ffunction-sections \
-	-fdata-sections \
 	-fno-omit-frame-pointer
 
 # Flags passed to only C files.
@@ -74,10 +78,10 @@ CFLAGS_CC_Release := \
 	-std=c++11
 
 INCS_Release := \
-	-I/var/lib/jenkins/.node-gyp/4.4.4/include/node \
-	-I/var/lib/jenkins/.node-gyp/4.4.4/src \
-	-I/var/lib/jenkins/.node-gyp/4.4.4/deps/uv/include \
-	-I/var/lib/jenkins/.node-gyp/4.4.4/deps/v8/include \
+	-I/var/lib/jenkins/.node-gyp/6.11.1/include/node \
+	-I/var/lib/jenkins/.node-gyp/6.11.1/src \
+	-I/var/lib/jenkins/.node-gyp/6.11.1/deps/uv/include \
+	-I/var/lib/jenkins/.node-gyp/6.11.1/deps/v8/include \
 	-I$(srcdir)/../nan
 
 OBJS := \

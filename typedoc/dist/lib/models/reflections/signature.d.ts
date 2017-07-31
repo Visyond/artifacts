@@ -1,9 +1,9 @@
-import { Type } from "../types/index";
-import { Reflection, ITypeContainer, ITypeParameterContainer, ITraverseCallback } from "./abstract";
-import { ContainerReflection } from "./container";
-import { ParameterReflection } from "./parameter";
-import { TypeParameterReflection } from "./type-parameter";
-export declare class SignatureReflection extends Reflection implements ITypeContainer, ITypeParameterContainer {
+import { Type } from '../types/index';
+import { Reflection, TypeContainer, TypeParameterContainer, TraverseCallback } from './abstract';
+import { ContainerReflection } from './container';
+import { ParameterReflection } from './parameter';
+import { TypeParameterReflection } from './type-parameter';
+export declare class SignatureReflection extends Reflection implements TypeContainer, TypeParameterContainer {
     parent: ContainerReflection;
     parameters: ParameterReflection[];
     typeParameters: TypeParameterReflection[];
@@ -12,7 +12,7 @@ export declare class SignatureReflection extends Reflection implements ITypeCont
     inheritedFrom: Type;
     implementationOf: Type;
     getParameterTypes(): Type[];
-    traverse(callback: ITraverseCallback): void;
+    traverse(callback: TraverseCallback): void;
     toObject(): any;
     toString(): string;
 }

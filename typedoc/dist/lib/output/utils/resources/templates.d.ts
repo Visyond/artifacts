@@ -1,5 +1,5 @@
 /// <reference types="handlebars" />
-import { ResourceStack, Resource } from "./stack";
+import { ResourceStack, Resource } from './stack';
 export declare class Template extends Resource {
     private template;
     getTemplate(): HandlebarsTemplateDelegate;

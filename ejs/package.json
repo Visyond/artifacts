@@ -33,8 +33,7 @@
     "type": "range"
   },
   "_requiredBy": [
-    "/gulp-nightwatch/nightwatch",
-    "/nightwatch"
+    "/gulp-nightwatch/nightwatch"
   ],
   "_resolved": "https://registry.npmjs.org/ejs/-/ejs-0.8.8.tgz",
   "_shasum": "ffdc56dcc35d02926dd50ad13439bbc54061d598",

@@ -35,6 +35,8 @@
   "_requiredBy": [
     "/cheerio",
     "/dom-serializer",
+    "/gulp-angular-embed-templates/htmlparser2",
+    "/minimize/htmlparser2",
     "/sanitize-html/htmlparser2"
   ],
   "_resolved": "https://registry.npmjs.org/entities/-/entities-1.1.1.tgz",

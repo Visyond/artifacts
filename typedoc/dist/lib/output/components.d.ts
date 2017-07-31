@@ -1,7 +1,7 @@
-import { Component, AbstractComponent } from "../utils/component";
-import { ProjectReflection, DeclarationReflection } from "../models/reflections/index";
-import { Renderer } from "./renderer";
-import { RendererEvent, PageEvent } from "./events";
+import { Component, AbstractComponent } from '../utils/component';
+import { ProjectReflection, DeclarationReflection } from '../models/reflections/index';
+import { Renderer } from './renderer';
+import { RendererEvent, PageEvent } from './events';
 export { Component };
 export declare abstract class RendererComponent extends AbstractComponent<Renderer> {
 }

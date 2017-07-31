@@ -33,7 +33,9 @@
     "type": "range"
   },
   "_requiredBy": [
-    "/svg2ttf"
+    "/svg2ttf",
+    "/ttf2eot",
+    "/ttf2woff"
   ],
   "_resolved": "https://registry.npmjs.org/microbuffer/-/microbuffer-1.0.0.tgz",
   "_shasum": "8b3832ed40c87d51f47bb234913a698a756d19d2",

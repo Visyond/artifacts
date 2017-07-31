@@ -24,9 +24,8 @@
   },
   "_npmVersion": "2.9.1",
   "_phantomChildren": {
-    "jsonfile": "2.4.0",
     "natives": "1.1.0",
-    "rimraf": "2.5.4"
+    "rimraf": "2.6.1"
   },
   "_requested": {
     "raw": "sprity-css@^1.0.2",

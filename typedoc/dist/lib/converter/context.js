@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var minimatch_1 = require("minimatch");
 var index_1 = require("../models/index");
 var type_parameter_1 = require("./factories/type-parameter");
@@ -45,10 +46,12 @@ var Context = (function () {
         return this.converter.application.logger;
     };
     Context.prototype.getSymbolID = function (symbol) {
-        if (!symbol)
+        if (!symbol) {
             return null;
-        if (!symbol.id)
+        }
+        if (!symbol.id) {
             symbol.id = this.symbolID--;
+        }
         return symbol.id;
     };
     Context.prototype.registerReflection = function (reflection, node, symbol) {
@@ -62,9 +65,8 @@ var Context = (function () {
         this.converter.trigger(name, this, reflection, node);
     };
     Context.prototype.withSourceFile = function (node, callback) {
-        var options = this.converter.application.options;
         var externalPattern = this.externalPattern;
-        var isExternal = this.fileNames.indexOf(node.fileName) == -1;
+        var isExternal = this.fileNames.indexOf(node.fileName) === -1;
         if (externalPattern) {
             isExternal = isExternal || externalPattern.match(node.fileName);
         }
@@ -74,7 +76,7 @@ var Context = (function () {
         var isDeclaration = node.isDeclarationFile;
         if (isDeclaration) {
             var lib = this.converter.getDefaultLib();
-            var isLib = node.fileName.substr(-lib.length) == lib;
+            var isLib = node.fileName.substr(-lib.length) === lib;
             if (!this.converter.includeDeclarations || isLib) {
                 return;
             }
@@ -91,8 +93,9 @@ var Context = (function () {
         for (var _i = 1; _i < arguments.length; _i++) {
             args[_i - 1] = arguments[_i];
         }
-        if (!scope || !args.length)
+        if (!scope || !args.length) {
             return;
+        }
         var callback = args.pop();
         var parameters = args.shift();
         var oldScope = this.scope;
@@ -121,7 +124,7 @@ var Context = (function () {
         }
         if (baseNode.symbol) {
             var id = this.getSymbolID(baseNode.symbol);
-            if (this.inheritedChildren && this.inheritedChildren.indexOf(id) != -1) {
+            if (this.inheritedChildren && this.inheritedChildren.indexOf(id) !== -1) {
                 return target;
             }
             else {
@@ -156,8 +159,9 @@ var Context = (function () {
         var typeParameters = {};
         if (preserve) {
             for (var key in this.typeParameters) {
-                if (!this.typeParameters.hasOwnProperty(key))
+                if (!this.typeParameters.hasOwnProperty(key)) {
                     continue;
+                }
                 typeParameters[key] = this.typeParameters[key];
             }
         }

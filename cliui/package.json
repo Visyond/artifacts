@@ -35,8 +35,7 @@
   },
   "_requiredBy": [
     "/defs/yargs",
-    "/gulp-uglify/yargs",
-    "/uglify-js/yargs"
+    "/gulp-uglify/yargs"
   ],
   "_resolved": "https://registry.npmjs.org/cliui/-/cliui-2.1.0.tgz",
   "_shasum": "4b475760ff80264c762c3a1719032e91c7fea0d1",

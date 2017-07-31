@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var abstract_1 = require("./abstract");
 exports.Reflection = abstract_1.Reflection;
 exports.ReflectionKind = abstract_1.ReflectionKind;

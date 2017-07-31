@@ -40,7 +40,25 @@ selenium-standalone start -- -role hub
 selenium-standalone start -- -role node -hub http://localhost:4444/grid/register
 selenium-standalone start -- -role node -hub http://localhost:4444/grid/register -port 5556
 
+# If you have a complex configuration with numerous options or if you want to keep a clear configuration changes history,
+# you can specify the options in a configuration file :
+selenium-standalone install --config=/path/to/config.json
+selenium-standalone start --config=./config/seleniumConfig.js
 
+```
+
+Config file can be a JSON file or a [module file](https://nodejs.org/api/modules.html#modules_file_modules) that exports options as an object:
+
+```js
+module.exports = {
+  drivers: {
+    chrome: {
+      version: '2.23',
+      arch: process.arch,
+      baseURL: 'https://chromedriver.storage.googleapis.com'
+    },
+  },
+}
 ```
 
 ## Application Programming Interface (API)
@@ -131,6 +149,8 @@ as `selenium.install`.
 By default all drivers are loaded, you only control and change the versions or archs.
 
 `opts.spawnOptions` [spawn options](https://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options) for the selenium server. Defaults to `undefined`
+
+`opts.javaArgs` array of arguments for the JVM, included between `java` and `-jar` in the command line invocation. Use this option to set properties like `-Xmx=512M` or `-Djava.util.logging.config.file=logging.properties`, for instance. Defaults to `[]`.
 
 `opts.seleniumArgs` array of arguments for the selenium server, passed directly to [child_process.spawn](https://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options). Defaults to `[]`.
 

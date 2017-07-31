@@ -1,4 +1,4 @@
-import { Type } from "./abstract";
+import { Type } from './abstract';
 export declare class StringLiteralType extends Type {
     value: string;
     constructor(value: string);

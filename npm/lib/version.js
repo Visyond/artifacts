@@ -89,7 +89,9 @@ function persistVersion (newVersion, silent, data, localData, cb_) {
     localData = {}
   }
 
-  if (data.version === newVersion) return cb_(new Error('Version not changed'))
+  if (!npm.config.get('allow-same-version') && data.version === newVersion) {
+    return cb_(new Error('Version not changed, might want --allow-same-version'))
+  }
   data.version = newVersion
   var lifecycleData = Object.create(data)
   lifecycleData._id = data.name + '@' + newVersion
@@ -263,7 +265,7 @@ function _commit (version, localData, cb) {
   chain(
     [
       git.chainableExec([ 'add', packagePath ], options),
-      localData.hasShrinkwrap && git.chainableExec([ 'add', 'npm-shrinkwrap.json' ], options),
+      localData.hasShrinkwrap && git.chainableExec([ 'add', path.join(npm.localPrefix, 'npm-shrinkwrap.json') ], options),
       git.chainableExec([ 'commit', '-m', message ], options),
       !localData.existingTag && git.chainableExec([
         'tag',

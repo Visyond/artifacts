@@ -28,7 +28,12 @@
   },
   "_npmVersion": "2.15.1",
   "_phantomChildren": {
-    "wrappy": "1.0.2"
+    "core-util-is": "1.0.2",
+    "inherits": "2.0.3",
+    "once": "1.4.0",
+    "process-nextick-args": "1.0.7",
+    "safe-buffer": "5.1.1",
+    "util-deprecate": "1.0.2"
   },
   "_requested": {
     "raw": "tar-stream@1.5.2",

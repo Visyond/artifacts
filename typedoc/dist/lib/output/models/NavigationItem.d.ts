@@ -1,4 +1,4 @@
-import { Reflection } from "../../models/reflections/abstract";
+import { Reflection } from '../../models/reflections/abstract';
 export declare class NavigationItem {
     title: string;
     url: string;

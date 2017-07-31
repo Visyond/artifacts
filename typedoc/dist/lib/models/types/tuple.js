@@ -1,9 +1,15 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
 var abstract_1 = require("./abstract");
 var TupleType = (function (_super) {
     __extends(TupleType, _super);
@@ -18,10 +24,12 @@ var TupleType = (function (_super) {
         return clone;
     };
     TupleType.prototype.equals = function (type) {
-        if (!(type instanceof TupleType))
+        if (!(type instanceof TupleType)) {
             return false;
-        if (type.isArray != this.isArray)
+        }
+        if (type.isArray !== this.isArray) {
             return false;
+        }
         return abstract_1.Type.isTypeListEqual(type.elements, this.elements);
     };
     TupleType.prototype.toObject = function () {

@@ -19,11 +19,11 @@
           "directUrl": "https://raw.githubusercontent.com/gerhobbelt/jison-lex/master/package.json"
         }
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-gho"
     ]
   ],
   "_from": "gerhobbelt/jison-lex#master",
-  "_id": "jison-lex@0.3.4-153",
+  "_id": "jison-lex@0.3.4-185",
   "_inCache": true,
   "_location": "/jison-lex",
   "_phantomChildren": {},
@@ -46,33 +46,35 @@
     }
   },
   "_requiredBy": [
-    "/jison"
+    "/jison-gho"
   ],
-  "_resolved": "git://github.com/gerhobbelt/jison-lex.git#b16d04c20b1b80e5132559192dca89cc7ba697a8",
-  "_shasum": "e3e767c77cfbdfd5831f89ae577bd81f46da18db",
+  "_resolved": "git://github.com/gerhobbelt/jison-lex.git#f5664dea5bfa8f54f865e17019450f0b3c5f9676",
+  "_shasum": "5349468dd8ac35633f7aa37a81d2bfb73537d831",
   "_shrinkwrap": null,
   "_spec": "jison-lex@github:gerhobbelt/jison-lex#master",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-gho",
   "author": {
     "name": "Zach Carter",
     "email": "zach@carter.name",
     "url": "http://zaa.ch"
   },
   "bin": {
-    "jison-lex": "cli.js"
+    "jison-lex": "./cli.js"
   },
   "bugs": {
     "url": "http://github.com/zaach/jison-lex/issues",
     "email": "jison@librelist.com"
   },
   "dependencies": {
+    "json5": "0.5.1",
     "lex-parser": "github:gerhobbelt/lex-parser#master",
-    "nomnom": ">=1.8.1",
+    "nomnom": "github:gerhobbelt/nomnom#master",
     "xregexp": "github:gerhobbelt/xregexp#master"
   },
   "description": "lexical analyzer generator used by jison",
   "devDependencies": {
-    "test": ">=0.6.0"
+    "chai": "4.1.0",
+    "mocha": "3.4.2"
   },
   "directories": {
     "lib": "lib",
@@ -81,7 +83,7 @@
   "engines": {
     "node": ">=4.0"
   },
-  "gitHead": "b16d04c20b1b80e5132559192dca89cc7ba697a8",
+  "gitHead": "f5664dea5bfa8f54f865e17019450f0b3c5f9676",
   "homepage": "http://jison.org",
   "keywords": [
     "jison",
@@ -92,17 +94,18 @@
     "tokenizer"
   ],
   "license": "MIT",
-  "main": "regexp-lexer",
+  "main": "./regexp-lexer.js",
   "name": "jison-lex",
   "optionalDependencies": {},
-  "readme": "# jison-lex\n\nA lexical analyzer generator used by [jison](http://jison.org). It takes a lexical grammar definition (either in JSON or Bison's lexical grammar format) and outputs a JavaScript lexer.\n\n\n## install\n\nnpm install jison-lex\n\n\n## build\n\nTo build the lexer generator yourself, clone the git repo then run:\n\n    make prep\n    \nto install required packages and then run:\n\n    make\n    \nto run the unit tests.\n\n\n## usage\n\n```\nUsage: jison-lex [file] [options]\n\nfile     file containing a lexical grammar\n\nOptions:\n   -o FILE, --outfile FILE       Filename and base module name of the generated parser\n   -t TYPE, --module-type TYPE   The type of module to generate (commonjs, js)\n   --version                     print version and exit\n```\n\n\n## programmatic usage\n\n```\nvar JisonLex = require('jison-lex');\n\nvar grammar = {\n  rules: [\n    [\"x\", \"return 'X';\" ],\n    [\"y\", \"return 'Y';\" ],\n    [\"$\", \"return 'EOF';\" ]\n  ]\n};\n\n// or load from a file\n// var grammar = fs.readFileSync('mylexer.l', 'utf8');\n\n// generate source\nvar lexerSource = JisonLex.generate(grammar);\n\n// or create a parser in memory\nvar lexer = new JisonLex(grammar);\nlexer.setInput('xyxxy');\nlexer.lex();\n// => 'X'\nlexer.lex();\n// => 'Y'\n\n\n## license\n\nMIT\n",
+  "readme": "# jison-lex\n\n\n[![build status](https://secure.travis-ci.org/GerHobbelt/jison-lex.png)](http://travis-ci.org/GerHobbelt/jison-lex)\n\n\nA lexical analyzer generator used by [jison](http://jison.org). It takes a lexical grammar definition (either in JSON or Bison's lexical grammar format) and outputs a JavaScript lexer.\n\n\n## install\n\nnpm install jison-lex\n\n\n## build\n\nTo build the lexer generator yourself, clone the git repo then run:\n\n    make prep\n    \nto install required packages and then run:\n\n    make\n    \nto run the unit tests.\n\n\n## usage\n\n```\nUsage: jison-lex [file] [options]\n\nfile     file containing a lexical grammar\n\nOptions:\n   -o FILE, --outfile FILE       Filename and base module name of the generated parser\n   -t TYPE, --module-type TYPE   The type of module to generate (commonjs, js)\n   --version                     print version and exit\n```\n\n\n## programmatic usage\n\n```\nvar JisonLex = require('jison-lex');\n\nvar grammar = {\n  rules: [\n    [\"x\", \"return 'X';\" ],\n    [\"y\", \"return 'Y';\" ],\n    [\"$\", \"return 'EOF';\" ]\n  ]\n};\n\n// or load from a file\n// var grammar = fs.readFileSync('mylexer.l', 'utf8');\n\n// generate source\nvar lexerSource = JisonLex.generate(grammar);\n\n// or create a parser in memory\nvar lexer = new JisonLex(grammar);\nlexer.setInput('xyxxy');\nlexer.lex();\n// => 'X'\nlexer.lex();\n// => 'Y'\n\n\n## license\n\nMIT\n",
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git://github.com/zaach/jison-lex.git"
   },
   "scripts": {
-    "test": "node tests/all-tests.js"
+    "build": "make",
+    "test": "make test"
   },
-  "version": "0.3.4-153"
+  "version": "0.3.4-185"
 }

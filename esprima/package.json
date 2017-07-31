@@ -38,9 +38,7 @@
     "type": "range"
   },
   "_requiredBy": [
-    "/degenerator",
     "/escodegen",
-    "/js-yaml",
     "/regexpu",
     "/rocambole"
   ],

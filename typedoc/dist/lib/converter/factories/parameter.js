@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var _ts = require("../../ts-internal");
 var index_1 = require("../../models/reflections/index");
 var converter_1 = require("../converter");
@@ -22,8 +23,9 @@ function createParameter(context, node) {
         parameter.setFlag(index_1.ReflectionFlag.Optional, !!node.questionToken);
         parameter.setFlag(index_1.ReflectionFlag.Rest, !!node.dotDotDotToken);
         parameter.setFlag(index_1.ReflectionFlag.DefaultValue, !!parameter.defaultValue);
-        if (!signature.parameters)
+        if (!signature.parameters) {
             signature.parameters = [];
+        }
         signature.parameters.push(parameter);
     });
     context.trigger(converter_1.Converter.EVENT_CREATE_PARAMETER, parameter, node);

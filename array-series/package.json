@@ -10,7 +10,7 @@
         "spec": ">=0.1.0 <0.2.0",
         "type": "range"
       },
-      "/home/doctor/prog/environment_root/server/v2/node_modules/gm"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/gm"
     ]
   ],
   "_from": "array-series@>=0.1.0 <0.2.0",
@@ -35,11 +35,11 @@
   "_requiredBy": [
     "/gm"
   ],
-  "_resolved": "http://registry.npmjs.org/array-series/-/array-series-0.1.5.tgz",
+  "_resolved": "https://registry.npmjs.org/array-series/-/array-series-0.1.5.tgz",
   "_shasum": "df5d37bfc5c2ef0755e2aa4f92feae7d4b5a972f",
   "_shrinkwrap": null,
   "_spec": "array-series@~0.1.0",
-  "_where": "/home/doctor/prog/environment_root/server/v2/node_modules/gm",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/gm",
   "author": {
     "name": "Jonathan Ong",
     "email": "me@jongleberry.com",

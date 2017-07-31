@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function ifCond(v1, operator, v2, options) {
     switch (operator) {
         case '==':

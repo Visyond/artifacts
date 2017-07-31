@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var ts = require("typescript");
 var _ts = require("../../ts-internal");
 var declaration_1 = require("./declaration");
@@ -12,22 +13,24 @@ function getParameterHelp(options, scope) {
     var margin = 0;
     for (var i = 0; i < parameters.length; i++) {
         var parameter = parameters[i];
-        if (!parameter.help)
+        if (!parameter.help) {
             continue;
-        var name = " ";
-        if (parameter.short) {
-            name += "-" + parameter.short;
-            if (typeof parameter.hint != 'undefined') {
-                name += ' ' + declaration_1.ParameterHint[parameter.hint].toUpperCase();
-            }
-            name += ", ";
         }
-        name += "--" + parameter.name;
-        if (parameter.hint)
-            name += ' ' + declaration_1.ParameterHint[parameter.hint].toUpperCase();
-        names.push(name);
+        var name_1 = ' ';
+        if (parameter.short) {
+            name_1 += '-' + parameter.short;
+            if (typeof parameter.hint !== 'undefined') {
+                name_1 += ' ' + declaration_1.ParameterHint[parameter.hint].toUpperCase();
+            }
+            name_1 += ', ';
+        }
+        name_1 += '--' + parameter.name;
+        if (parameter.hint) {
+            name_1 += ' ' + declaration_1.ParameterHint[parameter.hint].toUpperCase();
+        }
+        names.push(name_1);
         helps.push(parameter.help);
-        margin = Math.max(name.length, margin);
+        margin = Math.max(name_1.length, margin);
     }
     return { names: names, helps: helps, margin: margin };
 }
@@ -52,7 +55,7 @@ function getOptionsHelp(options) {
         }
     }
     function padding(length) {
-        return Array(length + 1).join(" ");
+        return Array(length + 1).join(' ');
     }
 }
 exports.getOptionsHelp = getOptionsHelp;

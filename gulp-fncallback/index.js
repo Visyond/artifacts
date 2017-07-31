@@ -7,9 +7,9 @@ const PLUGIN_NAME = 'gulp-callback';
 
 // options:
 // - `once` (boolean) : invoke the `transformFunction` only once at the start.
-// 
+//
 // Note:
-// 
+//
 // The `callback` function passed to `transformFunction(chunk, encoding, callback)` as an argument
 // extends the regular `through2` interface for this by offering a third argument `doNotCopy` (boolean)
 // which the userland code may use to signal that the default `gulp-callback` action (copying the
@@ -67,7 +67,7 @@ module.exports = function (transformFunction, flushFunction, options) {
 
         // This extends the `callback` function interface compared to
         // https://github.com/rvagg/through2#transformfunction
-        // 
+        //
         // See also the note further above where this gulp plugin's options
         // are described.
         var transformСallback = function (error, newFile, append) {
@@ -105,3 +105,4 @@ module.exports = function (transformFunction, flushFunction, options) {
         }
     });
 };
+

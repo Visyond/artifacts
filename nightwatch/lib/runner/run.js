@@ -31,6 +31,8 @@ function processListener() {
 
     if (finishCallback) {
       finishCallback(err);
+    } else {
+      console.log(err);
     }
   });
 }
@@ -54,6 +56,10 @@ function Runner(testSource, opts, additionalOpts, doneCb) {
 
   this.setOptions();
 }
+
+Runner.setFinishCallback = function(cb) {
+  finishCallback = cb;
+};
 
 Runner.prototype.setOptions = function() {
   this.options.parallelMode = process.env.__NIGHTWATCH_PARALLEL_MODE == '1';
@@ -87,7 +93,7 @@ Runner.prototype.runTestModule = function(modulePath, fullPaths) {
 
   return this.currentTestSuite
     .on('testcase:finished', function(results, errors, time) {
-      this.globalResults.modules[moduleKey].completed[this.currentTestSuite.currentTest] = {
+      var tests = this.globalResults.modules[moduleKey].completed[this.currentTestSuite.currentTest] = {
         passed  : results.passed,
         failed  : results.failed,
         errors  : results.errors,
@@ -115,10 +121,12 @@ Runner.prototype.runTestModule = function(modulePath, fullPaths) {
       ) {
         this.currentTestSuite.printResult(time);
       } else if (this.options.output && !this.options.detailed_output) {
+
         var error = (results.failed > 0 || results.errors > 0) ? new Error('') : null;
         console.log(Reporter.getTestOutput(error, this.currentTestSuite.currentTest, time));
+
         if (error !== null) {
-          Reporter.printAssertions(results.tests);
+          Reporter.printAssertions(tests);
         }
       }
 
@@ -139,6 +147,9 @@ Runner.prototype.runTestModule = function(modulePath, fullPaths) {
         }
       });
 
+      if (testResults.errmessages) {
+        this.globalResults.errmessages = this.globalResults.errmessages.concat(testResults.errmessages);
+      }
       testSuiteResult.errmessages = testResults.errmessages || [];
       testSuiteResult.failures = failures;
       testSuiteResult.errors = errors;
@@ -254,6 +265,7 @@ Runner.prototype.run = function runner() {
                 try {
                   self.doneCb(null, self.globalResults);
                   deferred.resolve(self.globalResults);
+                  self.globalResults.errmessages.length = 0;
                 } catch (err) {
                   deferred.reject(err);
                 }

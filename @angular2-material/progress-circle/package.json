@@ -11,6 +11,18 @@
         "type": "tag"
       },
       "/private/tmp/old-packages"
+    ],
+    [
+      {
+        "raw": "@angular2-material/progress-circle@2.0.0-alpha.8-3",
+        "scope": "@angular2-material",
+        "escapedName": "@angular2-material%2fprogress-circle",
+        "name": "@angular2-material/progress-circle",
+        "rawSpec": "2.0.0-alpha.8-3",
+        "spec": "2.0.0-alpha.8-3",
+        "type": "version"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2"
     ]
   ],
   "_from": "@angular2-material/progress-circle@2.0.0-alpha.8-3",
@@ -30,22 +42,22 @@
   "_npmVersion": "3.10.3",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "@angular2-material/progress-circle",
+    "raw": "@angular2-material/progress-circle@2.0.0-alpha.8-3",
     "scope": "@angular2-material",
     "escapedName": "@angular2-material%2fprogress-circle",
     "name": "@angular2-material/progress-circle",
-    "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
+    "rawSpec": "2.0.0-alpha.8-3",
+    "spec": "2.0.0-alpha.8-3",
+    "type": "version"
   },
   "_requiredBy": [
-    "#USER"
+    "#DEV:/"
   ],
   "_resolved": "https://registry.npmjs.org/@angular2-material/progress-circle/-/progress-circle-2.0.0-alpha.8-3.tgz",
   "_shasum": "d0eb6c1f1cff35bb7a5fd1bde420a3333ee67251",
   "_shrinkwrap": null,
-  "_spec": "@angular2-material/progress-circle",
-  "_where": "/private/tmp/old-packages",
+  "_spec": "@angular2-material/progress-circle@2.0.0-alpha.8-3",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2",
   "bugs": {
     "url": "https://github.com/angular/material2/issues"
   },
@@ -80,6 +92,7 @@
   "peerDependencies": {
     "@angular2-material/core": "2.0.0-alpha.8-3"
   },
+  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/angular/material2.git"

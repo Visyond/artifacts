@@ -1,15 +1,21 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
 var Path = require("path");
 var events_1 = require("../utils/events");
 var RendererEvent = (function (_super) {
     __extends(RendererEvent, _super);
     function RendererEvent() {
-        return _super.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     RendererEvent.prototype.createPageEvent = function (mapping) {
         var event = new PageEvent(PageEvent.BEGIN);
@@ -29,7 +35,7 @@ exports.RendererEvent = RendererEvent;
 var PageEvent = (function (_super) {
     __extends(PageEvent, _super);
     function PageEvent() {
-        return _super.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     return PageEvent;
 }(events_1.Event));
@@ -39,7 +45,7 @@ exports.PageEvent = PageEvent;
 var MarkdownEvent = (function (_super) {
     __extends(MarkdownEvent, _super);
     function MarkdownEvent() {
-        return _super.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     return MarkdownEvent;
 }(events_1.Event));

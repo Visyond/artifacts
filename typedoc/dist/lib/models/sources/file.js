@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Path = require("path");
 var SourceFile = (function () {
     function SourceFile(fullFileName) {

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var FS = require("fs");
 var Path = require("path");
 var Util = require("util");
@@ -16,16 +17,18 @@ var Resources = (function () {
         this.addDirectory('theme', theme.basePath);
     }
     Resources.prototype.activate = function () {
-        if (this.isActive)
+        if (this.isActive) {
             return false;
+        }
         this.isActive = true;
         this.partials.activate();
         this.helpers.activate();
         return true;
     };
     Resources.prototype.deactivate = function () {
-        if (!this.isActive)
+        if (!this.isActive) {
             return false;
+        }
         this.isActive = false;
         this.partials.deactivate();
         this.helpers.deactivate();
@@ -36,14 +39,14 @@ var Resources = (function () {
     };
     Resources.prototype.addDirectory = function (name, path) {
         if (this.isActive) {
-            throw new Error("Cannot add directories while the resource is active.");
+            throw new Error('Cannot add directories while the resource is active.');
         }
         path = Path.resolve(path);
         if (!FS.existsSync(path)) {
-            throw new Error(Util.format("The theme path `%s` does not exist.", path));
+            throw new Error(Util.format('The theme path `%s` does not exist.', path));
         }
         if (!FS.statSync(path).isDirectory()) {
-            throw new Error(Util.format("The theme path `%s` is not a directory.", path));
+            throw new Error(Util.format('The theme path `%s` is not a directory.', path));
         }
         this.templates.addOrigin(name, Path.join(path, 'templates'), true);
         this.layouts.addOrigin(name, Path.join(path, 'layouts'), true);
@@ -52,7 +55,7 @@ var Resources = (function () {
     };
     Resources.prototype.removeDirectory = function (name) {
         if (this.isActive) {
-            throw new Error("Cannot remove directories while the resource is active.");
+            throw new Error('Cannot remove directories while the resource is active.');
         }
         this.templates.removeOrigin(name);
         this.layouts.removeOrigin(name);
@@ -61,7 +64,7 @@ var Resources = (function () {
     };
     Resources.prototype.removeAllDirectories = function () {
         if (this.isActive) {
-            throw new Error("Cannot remove directories while the resource is active.");
+            throw new Error('Cannot remove directories while the resource is active.');
         }
         this.templates.removeAllOrigins();
         this.layouts.removeAllOrigins();

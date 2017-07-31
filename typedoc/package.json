@@ -1,33 +1,68 @@
 {
-  "name": "typedoc",
-  "description": "Create api documentations for typescript projects.",
-  "version": "0.5.3",
-  "homepage": "http://typedoc.org",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "bin": {
-    "typedoc": "bin/typedoc"
+  "_args": [
+    [
+      {
+        "raw": "typedoc@^0.5.1",
+        "scope": null,
+        "escapedName": "typedoc",
+        "name": "typedoc",
+        "rawSpec": "^0.5.1",
+        "spec": ">=0.5.1 <0.6.0",
+        "type": "range"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2"
+    ]
+  ],
+  "_from": "typedoc@>=0.5.1 <0.6.0",
+  "_id": "typedoc@0.5.10",
+  "_inCache": true,
+  "_location": "/typedoc",
+  "_nodeVersion": "7.3.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/typedoc-0.5.10.tgz_1491252867244_0.4076927893329412"
   },
+  "_npmUser": {
+    "name": "blakeembrey",
+    "email": "hello@blakeembrey.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {
+    "amdefine": "1.0.1",
+    "async": "1.5.2",
+    "glob": "7.1.2",
+    "graceful-fs": "4.1.11",
+    "interpret": "1.0.3",
+    "optimist": "0.6.1",
+    "rechoir": "0.6.2",
+    "uglify-js": "2.8.29"
+  },
+  "_requested": {
+    "raw": "typedoc@^0.5.1",
+    "scope": null,
+    "escapedName": "typedoc",
+    "name": "typedoc",
+    "rawSpec": "^0.5.1",
+    "spec": ">=0.5.1 <0.6.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/typedoc/-/typedoc-0.5.10.tgz",
+  "_shasum": "4bd60c53c423811931fc519ffb36e58338824335",
+  "_shrinkwrap": null,
+  "_spec": "typedoc@^0.5.1",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2",
   "author": {
     "name": "Sebastian Lenz",
     "url": "http://www.sebastian-lenz.de/"
   },
-  "license": "Apache-2.0",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/TypeStrong/TypeDoc.git"
+  "bin": {
+    "typedoc": "bin/typedoc"
   },
   "bugs": {
     "url": "https://github.com/TypeStrong/TypeDoc/issues"
-  },
-  "licenses": [
-    {
-      "type": "Apache-2.0",
-      "url": "https://github.com/TypeStrong/TypeDoc/blob/master/LICENSE"
-    }
-  ],
-  "engines": {
-    "node": ">= 4"
   },
   "dependencies": {
     "@types/fs-extra": "0.0.33",
@@ -37,7 +72,7 @@
     "@types/marked": "0.0.28",
     "@types/minimatch": "^2.0.29",
     "@types/shelljs": "^0.3.32",
-    "fs-extra": "^0.30.0",
+    "fs-extra": "^2.0.0",
     "handlebars": "4.0.5",
     "highlight.js": "^9.0.0",
     "lodash": "^4.13.1",
@@ -45,51 +80,56 @@
     "minimatch": "^3.0.0",
     "progress": "^1.1.8",
     "shelljs": "^0.7.0",
-    "typedoc-default-themes": "^0.4.0",
-    "typescript": "2.1.4"
+    "typedoc-default-themes": "^0.4.2",
+    "typescript": "2.2.2"
   },
+  "description": "Create api documentations for typescript projects.",
   "devDependencies": {
+    "@types/mocha": "^2.2.39",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-mocha-istanbul": "^5.0.1",
     "grunt-string-replace": "^1.2.0",
     "grunt-ts": "^5.5.1",
+    "grunt-tslint": "^4.0.1",
     "istanbul": "^0.4.1",
-    "mocha": "^3.0.2"
+    "mocha": "^3.0.2",
+    "tslint": "^4.4.2"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "4bd60c53c423811931fc519ffb36e58338824335",
+    "tarball": "https://registry.npmjs.org/typedoc/-/typedoc-0.5.10.tgz"
+  },
+  "engines": {
+    "node": ">= 4.2.0"
   },
   "files": [
     "bin",
     "dist",
+    "!dist/test",
     "tasks",
     "LICENSE"
   ],
-  "scripts": {
-    "test": "mocha",
-    "build": "grunt build_and_test",
-    "prepublish": "npm run build"
-  },
+  "gitHead": "f70291e74e981c76782033cbdd38764361c770bd",
+  "homepage": "http://typedoc.org",
   "keywords": [
     "typescript",
     "documentation",
     "generator",
     "gruntplugin"
   ],
-  "gitHead": "8a9234f6d0eadcca827c0986dccec3120fd9c149",
-  "_id": "typedoc@0.5.3",
-  "_shasum": "83d9d42017f41c0406deb2e25fc5c7ba6d7672c0",
-  "_from": "typedoc@>=0.5.1 <0.6.0",
-  "_npmVersion": "3.10.10",
-  "_nodeVersion": "7.3.0",
-  "_npmUser": {
-    "name": "blakeembrey",
-    "email": "hello@blakeembrey.com"
-  },
-  "dist": {
-    "shasum": "83d9d42017f41c0406deb2e25fc5c7ba6d7672c0",
-    "tarball": "https://registry.npmjs.org/typedoc/-/typedoc-0.5.3.tgz"
-  },
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "https://github.com/TypeStrong/TypeDoc/blob/master/LICENSE"
+    }
+  ],
+  "main": "dist/index.js",
   "maintainers": [
     {
       "name": "blakeembrey",
@@ -100,11 +140,18 @@
       "email": "npm@sebastian-lenz.de"
     }
   ],
-  "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/typedoc-0.5.3.tgz_1482877269519_0.6893023578450084"
+  "name": "typedoc",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TypeStrong/TypeDoc.git"
   },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/typedoc/-/typedoc-0.5.3.tgz",
-  "readme": "ERROR: No README data found!"
+  "scripts": {
+    "build": "grunt build_and_test",
+    "prepublish": "npm run build",
+    "test": "mocha -t 4000 dist/test"
+  },
+  "typings": "dist/index.d.ts",
+  "version": "0.5.10"
 }

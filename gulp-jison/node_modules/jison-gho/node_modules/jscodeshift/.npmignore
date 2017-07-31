@@ -1,8 +1,0 @@
-/src/
-/sample/
-.gitignore
-.eslintrc
-.eslintrc.yaml
-.jshintrc
-.module-cache
-__tests__

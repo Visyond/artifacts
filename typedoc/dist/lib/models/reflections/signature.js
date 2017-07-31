@@ -1,19 +1,26 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
 var index_1 = require("../types/index");
 var abstract_1 = require("./abstract");
 var SignatureReflection = (function (_super) {
     __extends(SignatureReflection, _super);
     function SignatureReflection() {
-        return _super.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     SignatureReflection.prototype.getParameterTypes = function () {
-        if (!this.parameters)
+        if (!this.parameters) {
             return [];
+        }
         return this.parameters.map(function (parameter) { return parameter.type; });
     };
     SignatureReflection.prototype.traverse = function (callback) {
@@ -47,9 +54,9 @@ var SignatureReflection = (function (_super) {
     SignatureReflection.prototype.toString = function () {
         var result = _super.prototype.toString.call(this);
         if (this.typeParameters) {
-            var parameters = [];
-            this.typeParameters.forEach(function (parameter) { return parameters.push(parameter.name); });
-            result += '<' + parameters.join(', ') + '>';
+            var parameters_1 = [];
+            this.typeParameters.forEach(function (parameter) { return parameters_1.push(parameter.name); });
+            result += '<' + parameters_1.join(', ') + '>';
         }
         if (this.type) {
             result += ':' + this.type.toString();

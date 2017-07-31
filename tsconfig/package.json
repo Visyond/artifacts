@@ -23,7 +23,9 @@
     "email": "hello@blakeembrey.com"
   },
   "_npmVersion": "3.3.6",
-  "_phantomChildren": {},
+  "_phantomChildren": {
+    "is-utf8": "0.2.1"
+  },
   "_requested": {
     "raw": "tsconfig@^2.2.0",
     "scope": null,

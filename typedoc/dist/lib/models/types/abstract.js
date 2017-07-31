@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Type = (function () {
     function Type() {
         this.isArray = false;
@@ -18,21 +19,24 @@ var Type = (function () {
         return 'void';
     };
     Type.isTypeListSimiliar = function (a, b) {
-        if (a.length != b.length)
+        if (a.length !== b.length) {
             return false;
+        }
         outerLoop: for (var an = 0, count = a.length; an < count; an++) {
             var at = a[an];
             for (var bn = 0; bn < count; bn++) {
-                if (b[bn].equals(at))
+                if (b[bn].equals(at)) {
                     continue outerLoop;
+                }
             }
             return false;
         }
         return true;
     };
     Type.isTypeListEqual = function (a, b) {
-        if (a.length != b.length)
+        if (a.length !== b.length) {
             return false;
+        }
         for (var index = 0, count = a.length; index < count; index++) {
             if (!a[index].equals(b[index])) {
                 return false;

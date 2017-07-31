@@ -10,16 +10,19 @@
 
 'use strict';
 
-var _ = require('lodash');
-var Collection = require('../Collection');
+const _ = require('lodash');
+const Collection = require('../Collection');
 
-var matchNode = require('../matchNode');
-var recast = require('recast');
+const matchNode = require('../matchNode');
+const recast = require('recast');
 
-var Node = recast.types.namedTypes.Node;
+const Node = recast.types.namedTypes.Node;
 var types = recast.types.namedTypes;
 
-var traversalMethods = {
+/**
+* @mixin
+*/
+const traversalMethods = {
 
   /**
    * Find nodes of a specific type within the nodes of this collection.
@@ -29,10 +32,10 @@ var traversalMethods = {
    * @return {Collection}
    */
   find: function(type, filter) {
-    var paths = [];
-    var visitorMethodName = 'visit' + type;
+    const paths = [];
+    const visitorMethodName = 'visit' + type;
 
-    var visitor = {};
+    const visitor = {};
     function visit(path) {
       /*jshint validthis:true */
       if (!filter || matchNode(path.value, filter)) {
@@ -41,7 +44,7 @@ var traversalMethods = {
       this.traverse(path);
     }
     this.__paths.forEach(function(p, i) {
-      var self = this;
+      const self = this;
       visitor[visitorMethodName] = function(path) {
         if (self.__paths[i] === path) {
           this.traverse(path);
@@ -74,7 +77,7 @@ var traversalMethods = {
    */
   closest: function(type, filter) {
     return this.map(function(path) {
-      var parent = path.parent;
+      let parent = path.parent;
       while (
         parent &&
         !(
@@ -102,17 +105,17 @@ var traversalMethods = {
   getVariableDeclarators: function(nameGetter) {
     return this.map(function(path) {
       /*jshint curly:false*/
-      var scope = path.scope;
+      let scope = path.scope;
       if (!scope) return;
-      var name = nameGetter.apply(path, arguments);
+      const name = nameGetter.apply(path, arguments);
       if (!name) return;
       scope = scope.lookup(name);
       if (!scope) return;
-      var bindings = scope.getBindings()[name];
+      const bindings = scope.getBindings()[name];
       if (!bindings) return;
-      var decl = Collection.fromPaths(bindings)
+      const decl = Collection.fromPaths(bindings)
         .closest(types.VariableDeclarator);
-      if (decl.size() === 1) {
+      if (decl.length === 1) {
         return decl.paths()[0];
       }
     }, types.VariableDeclarator);
@@ -123,7 +126,10 @@ function toArray(value) {
   return Array.isArray(value) ? value : [value];
 }
 
-var mutationMethods = {
+/**
+* @mixin
+*/
+const mutationMethods = {
   /**
    * Simply replaces the selected nodes with the provided node. If a function
    * is provided it is executed for every node and the node is replaced with the
@@ -134,7 +140,7 @@ var mutationMethods = {
    */
   replaceWith: function(nodes) {
     return this.forEach(function(path, i) {
-      var newNodes =
+      const newNodes =
         (typeof nodes === 'function') ? nodes.call(path, path, i) : nodes;
       path.replace.apply(path, toArray(newNodes));
     });
@@ -148,7 +154,7 @@ var mutationMethods = {
    */
   insertBefore: function(insert) {
     return this.forEach(function(path, i) {
-      var newNodes =
+      const newNodes =
         (typeof insert === 'function') ? insert.call(path, path, i) : insert;
       path.insertBefore.apply(path, toArray(newNodes));
     });
@@ -162,7 +168,7 @@ var mutationMethods = {
    */
   insertAfter: function(insert) {
     return this.forEach(function(path, i) {
-      var newNodes =
+      const newNodes =
         (typeof insert === 'function') ? insert.call(path, path, i) : insert;
       path.insertAfter.apply(path, toArray(newNodes));
     });

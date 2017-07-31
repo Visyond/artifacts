@@ -14,19 +14,19 @@
     ]
   ],
   "_from": "node-gyp@>=3.0.3 <4.0.0",
-  "_id": "node-gyp@3.4.0",
+  "_id": "node-gyp@3.6.2",
   "_inCache": true,
   "_location": "/node-gyp",
-  "_nodeVersion": "6.2.1",
+  "_nodeVersion": "7.10.0",
   "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/node-gyp-3.4.0.tgz_1467079381888_0.1804589256644249"
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/node-gyp-3.6.2.tgz_1496355328153_0.5960033773444593"
   },
   "_npmUser": {
     "name": "rvagg",
     "email": "rod@vagg.org"
   },
-  "_npmVersion": "3.9.3",
+  "_npmVersion": "4.2.0",
   "_phantomChildren": {},
   "_requested": {
     "raw": "node-gyp@^3.0.3",
@@ -38,10 +38,11 @@
     "type": "range"
   },
   "_requiredBy": [
+    "/node-sass",
     "/ttf2woff2"
   ],
-  "_resolved": "https://registry.npmjs.org/node-gyp/-/node-gyp-3.4.0.tgz",
-  "_shasum": "dda558393b3ecbbe24c9e6b8703c71194c63fa36",
+  "_resolved": "https://registry.npmjs.org/node-gyp/-/node-gyp-3.6.2.tgz",
+  "_shasum": "9bfbe54562286284838e750eac05295853fa1c60",
   "_shrinkwrap": null,
   "_spec": "node-gyp@^3.0.3",
   "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/ttf2woff2",
@@ -63,12 +64,11 @@
     "minimatch": "^3.0.2",
     "mkdirp": "^0.5.0",
     "nopt": "2 || 3",
-    "npmlog": "0 || 1 || 2 || 3",
+    "npmlog": "0 || 1 || 2 || 3 || 4",
     "osenv": "0",
-    "path-array": "^1.0.0",
     "request": "2",
     "rimraf": "2",
-    "semver": "2.x || 3.x || 4 || 5",
+    "semver": "~5.3.0",
     "tar": "^2.0.0",
     "which": "1"
   },
@@ -81,13 +81,13 @@
   },
   "directories": {},
   "dist": {
-    "shasum": "dda558393b3ecbbe24c9e6b8703c71194c63fa36",
-    "tarball": "https://registry.npmjs.org/node-gyp/-/node-gyp-3.4.0.tgz"
+    "shasum": "9bfbe54562286284838e750eac05295853fa1c60",
+    "tarball": "https://registry.npmjs.org/node-gyp/-/node-gyp-3.6.2.tgz"
   },
   "engines": {
     "node": ">= 0.8.0"
   },
-  "gitHead": "d460084b241c427655497a1de4ed351a13ffb47f",
+  "gitHead": "b5b52f7bffb55064a623e2478252a8939259cf3f",
   "homepage": "https://github.com/nodejs/node-gyp#readme",
   "installVersion": 9,
   "keywords": [
@@ -103,8 +103,8 @@
   "main": "./lib/node-gyp.js",
   "maintainers": [
     {
-      "name": "TooTallNate",
-      "email": "nathan@tootallnate.net"
+      "name": "nodejs-foundation",
+      "email": "build@iojs.org"
     },
     {
       "name": "bnoordhuis",
@@ -115,16 +115,8 @@
       "email": "fishrock123@rocketmail.com"
     },
     {
-      "name": "isaacs",
-      "email": "i@izs.me"
-    },
-    {
       "name": "rvagg",
       "email": "rod@vagg.org"
-    },
-    {
-      "name": "tootallnate",
-      "email": "nathan@tootallnate.net"
     }
   ],
   "name": "node-gyp",
@@ -138,5 +130,5 @@
   "scripts": {
     "test": "tape test/test-*"
   },
-  "version": "3.4.0"
+  "version": "3.6.2"
 }

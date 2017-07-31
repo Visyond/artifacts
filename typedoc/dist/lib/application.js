@@ -1,15 +1,21 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var Path = require("path");
 var FS = require("fs");
 var typescript = require("typescript");
@@ -36,10 +42,10 @@ var Application = Application_1 = (function (_super) {
     Application.prototype.bootstrap = function (options) {
         this.options.read(options, index_4.OptionsReadMode.Prefetch);
         var logger = this.loggerType;
-        if (typeof logger == 'function') {
+        if (typeof logger === 'function') {
             this.logger = new index_3.CallbackLogger(logger);
         }
-        else if (logger == 'none') {
+        else if (logger === 'none') {
             this.logger = new index_3.Logger();
         }
         this.plugins.load();
@@ -86,8 +92,9 @@ var Application = Application_1 = (function (_super) {
     };
     Application.prototype.generateDocs = function (input, out) {
         var project = input instanceof index_2.ProjectReflection ? input : this.convert(input);
-        if (!project)
+        if (!project) {
             return false;
+        }
         out = Path.resolve(out);
         this.renderer.render(project, out);
         if (this.logger.hasErrors()) {
@@ -100,8 +107,9 @@ var Application = Application_1 = (function (_super) {
     };
     Application.prototype.generateJson = function (input, out) {
         var project = input instanceof index_2.ProjectReflection ? input : this.convert(input);
-        if (!project)
+        if (!project) {
             return false;
+        }
         out = Path.resolve(out);
         index_3.writeFile(out, JSON.stringify(project.toObject(), null, '\t'), false);
         this.logger.success('JSON written to %s', out);
@@ -131,7 +139,7 @@ var Application = Application_1 = (function (_super) {
             if (FS.statSync(file).isDirectory()) {
                 add(file);
             }
-            else {
+            else if (!exclude || !exclude.match(file)) {
                 files.push(file);
             }
         });
@@ -147,13 +155,13 @@ var Application = Application_1 = (function (_super) {
     };
     return Application;
 }(component_1.ChildableComponent));
-Application.VERSION = '{{ VERSION }}';
+Application.VERSION = '0.5.10';
 __decorate([
     component_1.Option({
         name: 'logger',
         help: 'Specify the logger that should be used, \'none\' or \'console\'',
         defaultValue: 'console',
-        type: declaration_1.ParameterType.Mixed,
+        type: declaration_1.ParameterType.Mixed
     })
 ], Application.prototype, "loggerType", void 0);
 __decorate([
@@ -171,7 +179,7 @@ __decorate([
     })
 ], Application.prototype, "exclude", void 0);
 Application = Application_1 = __decorate([
-    component_1.Component({ name: "application", internal: true })
+    component_1.Component({ name: 'application', internal: true })
 ], Application);
 exports.Application = Application;
 var Application_1;

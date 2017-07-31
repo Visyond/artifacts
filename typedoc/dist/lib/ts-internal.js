@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var ts = require("typescript");
 var tsany = ts;
 function createCompilerDiagnostic() {
@@ -21,6 +22,14 @@ function getDirectoryPath() {
     return tsany.getDirectoryPath.apply(this, arguments);
 }
 exports.getDirectoryPath = getDirectoryPath;
+function normalizePath(path) {
+    return tsany.normalizePath(path);
+}
+exports.normalizePath = normalizePath;
+function combinePaths(path1, path2) {
+    return tsany.combinePaths(path1, path2);
+}
+exports.combinePaths = combinePaths;
 function getSourceFileOfNode(node) {
     return tsany.getSourceFileOfNode.apply(this, arguments);
 }

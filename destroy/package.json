@@ -10,7 +10,7 @@
         "spec": ">=1.0.4 <1.1.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/live-server/node_modules/send"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/send"
     ]
   ],
   "_from": "destroy@>=1.0.4 <1.1.0",
@@ -33,13 +33,15 @@
     "type": "range"
   },
   "_requiredBy": [
-    "/live-server/send"
+    "/browser-sync/send",
+    "/live-server/send",
+    "/send"
   ],
   "_resolved": "https://registry.npmjs.org/destroy/-/destroy-1.0.4.tgz",
   "_shasum": "978857442c44749e4206613e37946205826abd80",
   "_shrinkwrap": null,
   "_spec": "destroy@~1.0.4",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/live-server/node_modules/send",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/send",
   "author": {
     "name": "Jonathan Ong",
     "email": "me@jongleberry.com",

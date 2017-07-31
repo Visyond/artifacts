@@ -1,30 +1,40 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
 var abstract_1 = require("./abstract");
 var index_1 = require("../types/index");
 var container_1 = require("./container");
 var DeclarationReflection = (function (_super) {
     __extends(DeclarationReflection, _super);
     function DeclarationReflection() {
-        return _super.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     DeclarationReflection.prototype.hasGetterOrSetter = function () {
         return !!this.getSignature || !!this.setSignature;
     };
     DeclarationReflection.prototype.getAllSignatures = function () {
         var result = [];
-        if (this.signatures)
+        if (this.signatures) {
             result = result.concat(this.signatures);
-        if (this.indexSignature)
+        }
+        if (this.indexSignature) {
             result.push(this.indexSignature);
-        if (this.getSignature)
+        }
+        if (this.getSignature) {
             result.push(this.getSignature);
-        if (this.setSignature)
+        }
+        if (this.setSignature) {
             result.push(this.setSignature);
+        }
         return result;
     };
     DeclarationReflection.prototype.traverse = function (callback) {
@@ -82,11 +92,11 @@ var DeclarationReflection = (function (_super) {
     DeclarationReflection.prototype.toString = function () {
         var result = _super.prototype.toString.call(this);
         if (this.typeParameters) {
-            var parameters = [];
+            var parameters_1 = [];
             this.typeParameters.forEach(function (parameter) {
-                parameters.push(parameter.name);
+                parameters_1.push(parameter.name);
             });
-            result += '<' + parameters.join(', ') + '>';
+            result += '<' + parameters_1.join(', ') + '>';
         }
         if (this.type) {
             result += ':' + this.type.toString();

@@ -1,14 +1,14 @@
-import { IDefaultValueContainer, ITypeContainer, ITypeParameterContainer, ITraverseCallback } from "./abstract";
-import { Type } from "../types/index";
-import { ContainerReflection } from "./container";
-import { SignatureReflection } from "./signature";
-import { TypeParameterReflection } from "./type-parameter";
-export interface IDeclarationHierarchy {
+import { DefaultValueContainer, TypeContainer, TypeParameterContainer, TraverseCallback } from './abstract';
+import { Type } from '../types/index';
+import { ContainerReflection } from './container';
+import { SignatureReflection } from './signature';
+import { TypeParameterReflection } from './type-parameter';
+export interface DeclarationHierarchy {
     types: Type[];
-    next?: IDeclarationHierarchy;
+    next?: DeclarationHierarchy;
     isTarget?: boolean;
 }
-export declare class DeclarationReflection extends ContainerReflection implements IDefaultValueContainer, ITypeContainer, ITypeParameterContainer {
+export declare class DeclarationReflection extends ContainerReflection implements DefaultValueContainer, TypeContainer, TypeParameterContainer {
     type: Type;
     typeParameters: TypeParameterReflection[];
     signatures: SignatureReflection[];
@@ -23,10 +23,10 @@ export declare class DeclarationReflection extends ContainerReflection implement
     extendedBy: Type[];
     implementedTypes: Type[];
     implementedBy: Type[];
-    typeHierarchy: IDeclarationHierarchy;
+    typeHierarchy: DeclarationHierarchy;
     hasGetterOrSetter(): boolean;
     getAllSignatures(): SignatureReflection[];
-    traverse(callback: ITraverseCallback): void;
+    traverse(callback: TraverseCallback): void;
     toObject(): any;
     toString(): string;
 }

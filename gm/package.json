@@ -10,7 +10,7 @@
         "spec": "1.17.0",
         "type": "version"
       },
-      "/home/doctor/prog/environment_root/server/v2/node_modules/sprity-gm"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/sprity-gm"
     ]
   ],
   "_from": "gm@1.17.0",
@@ -35,11 +35,11 @@
   "_requiredBy": [
     "/sprity-gm"
   ],
-  "_resolved": "http://registry.npmjs.org/gm/-/gm-1.17.0.tgz",
+  "_resolved": "https://registry.npmjs.org/gm/-/gm-1.17.0.tgz",
   "_shasum": "27a261e0bdfee3d373d24b5a27bd249057355068",
   "_shrinkwrap": null,
   "_spec": "gm@1.17.0",
-  "_where": "/home/doctor/prog/environment_root/server/v2/node_modules/sprity-gm",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/sprity-gm",
   "author": {
     "name": "Aaron Heckmann",
     "email": "aaron.heckmann+github@gmail.com"

@@ -1,4 +1,4 @@
-import * as ts from "typescript";
+import * as ts from 'typescript';
 export declare enum LogLevel {
     Verbose = 0,
     Info = 1,

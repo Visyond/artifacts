@@ -8,12 +8,13 @@ export declare enum ParameterType {
     Boolean = 2,
     Map = 3,
     Mixed = 4,
+    Array = 5,
 }
 export declare enum ParameterScope {
     TypeDoc = 0,
     TypeScript = 1,
 }
-export interface IOptionDeclaration {
+export interface DeclarationOption {
     name: string;
     component?: string;
     short?: string;
@@ -35,11 +36,11 @@ export declare class OptionDeclaration {
     type: ParameterType;
     hint: ParameterHint;
     scope: ParameterScope;
-    map: Object;
+    protected map: Object | Map<string, any> | 'object';
     mapError: string;
     isArray: boolean;
     defaultValue: any;
-    constructor(data: IOptionDeclaration);
+    constructor(data: DeclarationOption);
     getNames(): string[];
     convert(value: any, errorCallback?: Function): any;
 }

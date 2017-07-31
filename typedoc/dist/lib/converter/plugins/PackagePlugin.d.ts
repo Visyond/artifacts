@@ -1,4 +1,4 @@
-import { ConverterComponent } from "../components";
+import { ConverterComponent } from '../components';
 export declare class PackagePlugin extends ConverterComponent {
     readme: string;
     private readmeFile;

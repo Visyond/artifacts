@@ -35,9 +35,16 @@
   },
   "_requiredBy": [
     "/JSONStream",
+    "/cssauron",
     "/event-stream",
+    "/gm",
     "/gulp-closure-compiler",
+    "/gulp-concat-json",
+    "/gulp-live-server/event-stream",
     "/gulp-manifest",
+    "/gulp-tslint",
+    "/inquirer",
+    "/live-server/event-stream",
     "/pause-stream",
     "/regenerator",
     "/split"

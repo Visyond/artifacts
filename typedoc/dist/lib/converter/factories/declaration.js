@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var ts = require("typescript");
 var index_1 = require("../../models/index");
 var converter_1 = require("../converter");
@@ -32,10 +33,10 @@ function createDeclaration(context, node, kind, name) {
     else {
         isExported = container.flags.isExported;
     }
-    if (kind == index_1.ReflectionKind.ExternalModule) {
+    if (kind === index_1.ReflectionKind.ExternalModule) {
         isExported = true;
     }
-    else if (node.parent && node.parent.kind == ts.SyntaxKind.VariableDeclarationList) {
+    else if (node.parent && node.parent.kind === ts.SyntaxKind.VariableDeclarationList) {
         var parentModifiers = ts.getCombinedModifierFlags(node.parent.parent);
         isExported = isExported || !!(parentModifiers & ts.ModifierFlags.Export);
     }
@@ -51,13 +52,13 @@ function createDeclaration(context, node, kind, name) {
     }
     var isConstructorProperty = false;
     var isStatic = false;
-    if (nonStaticKinds.indexOf(kind) == -1) {
+    if (nonStaticKinds.indexOf(kind) === -1) {
         isStatic = !!(modifiers & ts.ModifierFlags.Static);
-        if (container.kind == index_1.ReflectionKind.Class) {
-            if (node.parent && node.parent.kind == ts.SyntaxKind.Constructor) {
+        if (container.kind === index_1.ReflectionKind.Class) {
+            if (node.parent && node.parent.kind === ts.SyntaxKind.Constructor) {
                 isConstructorProperty = true;
             }
-            else if (!node.parent || node.parent.kind != ts.SyntaxKind.ClassDeclaration) {
+            else if (!node.parent || node.parent.kind !== ts.SyntaxKind.ClassDeclaration) {
                 isStatic = true;
             }
         }
@@ -65,8 +66,9 @@ function createDeclaration(context, node, kind, name) {
     var child;
     var children = container.children = container.children || [];
     children.forEach(function (n) {
-        if (n.name == name && n.flags.isStatic == isStatic)
+        if (n.name === name && n.flags.isStatic === isStatic) {
             child = n;
+        }
     });
     if (!child) {
         child = new index_1.DeclarationReflection(container, name, kind);
@@ -96,7 +98,7 @@ function setupDeclaration(context, reflection, node) {
     reflection.setFlag(index_1.ReflectionFlag.Public, !!(modifiers & ts.ModifierFlags.Public));
     reflection.setFlag(index_1.ReflectionFlag.Optional, !!(node['questionToken']));
     if (context.isInherit &&
-        (node.parent == context.inheritParent || reflection.flags.isConstructorProperty)) {
+        (node.parent === context.inheritParent || reflection.flags.isConstructorProperty)) {
         if (!reflection.inheritedFrom) {
             reflection.inheritedFrom = reference_1.createReferenceType(context, node.symbol, true);
             reflection.getAllSignatures().forEach(function (signature) {
@@ -107,7 +109,7 @@ function setupDeclaration(context, reflection, node) {
     return reflection;
 }
 function mergeDeclarations(context, reflection, node, kind) {
-    if (reflection.kind != kind) {
+    if (reflection.kind !== kind) {
         var weights = [index_1.ReflectionKind.Module, index_1.ReflectionKind.Enum, index_1.ReflectionKind.Class];
         var kindWeight = weights.indexOf(kind);
         var childKindWeight = weights.indexOf(reflection.kind);
@@ -116,8 +118,8 @@ function mergeDeclarations(context, reflection, node, kind) {
         }
     }
     if (context.isInherit &&
-        context.inherited.indexOf(reflection.name) != -1 &&
-        (node.parent == context.inheritParent || reflection.flags.isConstructorProperty)) {
+        context.inherited.indexOf(reflection.name) !== -1 &&
+        (node.parent === context.inheritParent || reflection.flags.isConstructorProperty)) {
         if (!reflection.overwrites) {
             reflection.overwrites = reference_1.createReferenceType(context, node.symbol, true);
             reflection.getAllSignatures().forEach(function (signature) {

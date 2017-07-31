@@ -1,36 +1,40 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
 var ts = require("typescript");
 var _ts = require("../../ts-internal");
-var Path = require("path");
 var components_1 = require("../components");
-var fs_1 = require("../../utils/fs");
 var ERROR_UNSUPPORTED_FILE_ENCODING = -2147024809;
 var CompilerHost = (function (_super) {
     __extends(CompilerHost, _super);
     function CompilerHost() {
-        return _super.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     CompilerHost.prototype.getSourceFile = function (filename, languageVersion, onError) {
+        var text;
         try {
-            var text = ts.sys.readFile(filename, this.application.options.getCompilerOptions().charset);
+            text = ts.sys.readFile(filename, this.application.options.getCompilerOptions().charset);
         }
         catch (e) {
             if (onError) {
                 onError(e.number === ERROR_UNSUPPORTED_FILE_ENCODING ? 'Unsupported file encoding' : e.message);
             }
-            text = "";
+            text = '';
         }
         return text !== undefined ? ts.createSourceFile(filename, text, languageVersion) : undefined;
     };
     CompilerHost.prototype.getDefaultLibFileName = function (options) {
-        var lib = this.owner.getDefaultLib();
-        var path = _ts.getDirectoryPath(fs_1.normalizePath(require.resolve('typescript')));
-        return Path.join(path, lib);
+        var libLocation = _ts.getDirectoryPath(_ts.normalizePath(ts.sys.getExecutingFilePath()));
+        return _ts.combinePaths(libLocation, ts.getDefaultLibFileName(options));
     };
     CompilerHost.prototype.getDirectories = function (path) {
         return ts.sys.getDirectories(path);
@@ -43,6 +47,9 @@ var CompilerHost = (function (_super) {
     };
     CompilerHost.prototype.fileExists = function (fileName) {
         return ts.sys.fileExists(fileName);
+    };
+    CompilerHost.prototype.directoryExists = function (directoryName) {
+        return ts.sys.directoryExists(directoryName);
     };
     CompilerHost.prototype.readFile = function (fileName) {
         return ts.sys.readFile(fileName);

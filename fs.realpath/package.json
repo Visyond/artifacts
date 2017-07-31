@@ -39,6 +39,7 @@
   },
   "_requiredBy": [
     "/glob",
+    "/nightwatch/glob",
     "/tsify"
   ],
   "_resolved": "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz",

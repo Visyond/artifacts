@@ -10,10 +10,22 @@
         "spec": ">=3.2.0 <4.0.0",
         "type": "range"
       },
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/yargs"
+    ],
+    [
+      {
+        "raw": "y18n@^3.2.0",
+        "scope": null,
+        "escapedName": "y18n",
+        "name": "y18n",
+        "rawSpec": "^3.2.0",
+        "spec": ">=3.2.0 <4.0.0",
+        "type": "range"
+      },
       "/var/lib/jenkins/workspace/build/server/v2/node_modules/defs/node_modules/yargs"
     ]
   ],
-  "_from": "y18n@>=3.2.0 <4.0.0",
+  "_from": "y18n@^3.2.0",
   "_id": "y18n@3.2.1",
   "_inCache": true,
   "_location": "/y18n",
@@ -38,7 +50,9 @@
     "type": "range"
   },
   "_requiredBy": [
+    "/browser-sync/yargs",
     "/defs/yargs",
+    "/localtunnel/yargs",
     "/yargs"
   ],
   "_resolved": "https://registry.npmjs.org/y18n/-/y18n-3.2.1.tgz",

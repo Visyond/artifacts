@@ -14,19 +14,22 @@
     ]
   ],
   "_from": "svg-pathdata@>=1.0.1 <2.0.0",
-  "_id": "svg-pathdata@1.0.3",
+  "_id": "svg-pathdata@1.0.4",
   "_inCache": true,
   "_location": "/svg-pathdata",
-  "_nodeVersion": "5.0.0",
-  "_npmUser": {
-    "name": "nfroidure",
-    "email": "nfroidure@elitwork.com"
+  "_nodeVersion": "6.9.1",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/svg-pathdata-1.0.4.tgz_1478531956899_0.05541544244624674"
   },
-  "_npmVersion": "3.3.6",
+  "_npmUser": {
+    "name": "huerlisi",
+    "email": "simon.huerlimann@cyt.ch"
+  },
+  "_npmVersion": "3.10.5",
   "_phantomChildren": {
     "core-util-is": "1.0.2",
     "inherits": "2.0.3",
-    "isarray": "1.0.0",
     "process-nextick-args": "1.0.7",
     "string_decoder": "0.10.31",
     "util-deprecate": "1.0.2"
@@ -43,8 +46,8 @@
   "_requiredBy": [
     "/svgicons2svgfont"
   ],
-  "_resolved": "https://registry.npmjs.org/svg-pathdata/-/svg-pathdata-1.0.3.tgz",
-  "_shasum": "2e31e35a468b54844cf27634defca082f175884a",
+  "_resolved": "https://registry.npmjs.org/svg-pathdata/-/svg-pathdata-1.0.4.tgz",
+  "_shasum": "7a681342aac7effd8d52afba7999910c9da3b959",
   "_shrinkwrap": null,
   "_spec": "svg-pathdata@^1.0.1",
   "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/svgicons2svgfont",
@@ -71,13 +74,13 @@
   },
   "directories": {},
   "dist": {
-    "shasum": "2e31e35a468b54844cf27634defca082f175884a",
-    "tarball": "https://registry.npmjs.org/svg-pathdata/-/svg-pathdata-1.0.3.tgz"
+    "shasum": "7a681342aac7effd8d52afba7999910c9da3b959",
+    "tarball": "https://registry.npmjs.org/svg-pathdata/-/svg-pathdata-1.0.4.tgz"
   },
   "engines": {
     "node": ">= 0.10.0"
   },
-  "gitHead": "d52943d3aa4ef339f8e29fb321e5a23fb415c8c0",
+  "gitHead": "bb3beb7fe18cf933254dd02ca22677bc95e4c993",
   "homepage": "https://github.com/nfroidure/SVGPathData#readme",
   "keywords": [
     "svg",
@@ -93,6 +96,10 @@
   "license": "MIT",
   "main": "src/SVGPathData.js",
   "maintainers": [
+    {
+      "name": "huerlisi",
+      "email": "simon.huerlimann@cyt.ch"
+    },
     {
       "name": "nfroidure",
       "email": "nfroidure@elitwork.com"
@@ -114,5 +121,5 @@
     "preversion": "npm test",
     "test": "mocha tests/*.mocha.js"
   },
-  "version": "1.0.3"
+  "version": "1.0.4"
 }

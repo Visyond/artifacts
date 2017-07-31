@@ -1,4 +1,5 @@
 var util = require('util');
+var http = require('http');
 var events = require('events');
 var Q = require('q');
 var Nightwatch = require('../index.js');
@@ -49,9 +50,17 @@ ClientManager.prototype.start = function(done) {
   });
 
   this['@client'].once('error', function(error, data) {
+    var errorMsg = error || data;
+    if (errorMsg instanceof http.IncomingMessage) {
+      errorMsg = {
+        statusCode : error.statusCode,
+        headers : error.headers
+      };
+    }
+
     var result = {
       message: 'Connection refused! Is selenium server started?\n',
-      data : error || data
+      data : errorMsg
     };
 
     self.emit('error', result, false);
@@ -133,6 +142,10 @@ ClientManager.prototype.terminate = function() {
   return this;
 };
 
+ClientManager.prototype.setLocateStrategy = function() {
+  this['@client'].setLocateStrategy();
+  return this;
+};
 
 ClientManager.prototype.resetTerminated = function() {
   this['@client'].resetTerminated();

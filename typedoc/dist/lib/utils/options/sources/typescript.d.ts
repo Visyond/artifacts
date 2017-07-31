@@ -1,9 +1,9 @@
-import { OptionsComponent } from "../options";
-import { IOptionDeclaration } from "../declaration";
+import { OptionsComponent } from '../options';
+import { DeclarationOption } from '../declaration';
 export declare class TypeScriptSource extends OptionsComponent {
     private declarations;
     static IGNORED: string[];
     initialize(): void;
-    getOptionDeclarations(): IOptionDeclaration[];
+    getOptionDeclarations(): DeclarationOption[];
     private addTSOption(option);
 }

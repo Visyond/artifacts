@@ -2,48 +2,54 @@
   "_args": [
     [
       {
-        "raw": "module-deps@^4.0.2",
+        "raw": "module-deps@^4.0.8",
         "scope": null,
         "escapedName": "module-deps",
         "name": "module-deps",
-        "rawSpec": "^4.0.2",
-        "spec": ">=4.0.2 <5.0.0",
+        "rawSpec": "^4.0.8",
+        "spec": ">=4.0.8 <5.0.0",
         "type": "range"
       },
       "/var/lib/jenkins/workspace/build/server/v2/node_modules/browserify"
     ]
   ],
-  "_from": "module-deps@>=4.0.2 <5.0.0",
-  "_id": "module-deps@4.0.7",
+  "_from": "module-deps@>=4.0.8 <5.0.0",
+  "_id": "module-deps@4.1.1",
   "_inCache": true,
   "_location": "/module-deps",
-  "_nodeVersion": "4.2.1",
+  "_nodeVersion": "6.3.1",
   "_npmOperationalInternal": {
-    "host": "packages-16-east.internal.npmjs.com",
-    "tmp": "tmp/module-deps-4.0.7.tgz_1464307872366_0.7613312255125493"
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/module-deps-4.1.1.tgz_1487056761669_0.6252274899743497"
   },
   "_npmUser": {
-    "name": "ahdinosaur",
-    "email": "michael.williams@enspiral.com"
+    "name": "substack",
+    "email": "substack@gmail.com"
   },
-  "_npmVersion": "3.3.8",
-  "_phantomChildren": {},
+  "_npmVersion": "3.10.5",
+  "_phantomChildren": {
+    "core-util-is": "1.0.2",
+    "inherits": "2.0.3",
+    "process-nextick-args": "1.0.7",
+    "safe-buffer": "5.1.1",
+    "util-deprecate": "1.0.2"
+  },
   "_requested": {
-    "raw": "module-deps@^4.0.2",
+    "raw": "module-deps@^4.0.8",
     "scope": null,
     "escapedName": "module-deps",
     "name": "module-deps",
-    "rawSpec": "^4.0.2",
-    "spec": ">=4.0.2 <5.0.0",
+    "rawSpec": "^4.0.8",
+    "spec": ">=4.0.8 <5.0.0",
     "type": "range"
   },
   "_requiredBy": [
     "/browserify"
   ],
-  "_resolved": "https://registry.npmjs.org/module-deps/-/module-deps-4.0.7.tgz",
-  "_shasum": "edfeb3937be7359bc14a6672c22ef124887f6ed2",
+  "_resolved": "https://registry.npmjs.org/module-deps/-/module-deps-4.1.1.tgz",
+  "_shasum": "23215833f1da13fd606ccb8087b44852dcb821fd",
   "_shrinkwrap": null,
-  "_spec": "module-deps@^4.0.2",
+  "_spec": "module-deps@^4.0.8",
   "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/browserify",
   "author": {
     "name": "James Halliday",
@@ -59,6 +65,7 @@
   "dependencies": {
     "JSONStream": "^1.0.3",
     "browser-resolve": "^1.7.0",
+    "cached-path-relative": "^1.0.0",
     "concat-stream": "~1.5.0",
     "defined": "^1.0.0",
     "detective": "^4.0.0",
@@ -79,13 +86,13 @@
   },
   "directories": {},
   "dist": {
-    "shasum": "edfeb3937be7359bc14a6672c22ef124887f6ed2",
-    "tarball": "https://registry.npmjs.org/module-deps/-/module-deps-4.0.7.tgz"
+    "shasum": "23215833f1da13fd606ccb8087b44852dcb821fd",
+    "tarball": "https://registry.npmjs.org/module-deps/-/module-deps-4.1.1.tgz"
   },
   "engines": {
     "node": ">= 0.6"
   },
-  "gitHead": "f5aa07c691cf60809ec6e0c3fd0d32ff6d6ada22",
+  "gitHead": "4cce7975e909b91775411731a28e9d7e123e7079",
   "homepage": "https://github.com/substack/module-deps",
   "keywords": [
     "dependency",
@@ -106,6 +113,10 @@
     {
       "name": "jmm",
       "email": "npm-public@jessemccarthy.net"
+    },
+    {
+      "name": "leichtgewicht",
+      "email": "martin.heidegger@gmail.com"
     },
     {
       "name": "mellowmelon",
@@ -138,5 +149,5 @@
   "scripts": {
     "test": "tap test/*.js"
   },
-  "version": "4.0.7"
+  "version": "4.1.1"
 }

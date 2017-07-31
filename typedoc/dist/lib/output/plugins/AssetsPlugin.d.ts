@@ -1,4 +1,4 @@
-import { RendererComponent } from "../components";
+import { RendererComponent } from '../components';
 export declare class AssetsPlugin extends RendererComponent {
     copyDefaultAssets: boolean;
     initialize(): void;

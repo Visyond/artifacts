@@ -32,6 +32,8 @@
     "type": "range"
   },
   "_requiredBy": [
+    "/ajv/json-stable-stringify",
+    "/eslint/json-stable-stringify",
     "/gulp-typescript/json-stable-stringify",
     "/json-stable-stringify",
     "/shell-quote",

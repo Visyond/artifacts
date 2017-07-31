@@ -2,18 +2,18 @@
   "_args": [
     [
       {
-        "raw": "string.prototype.codepointat@^0.2.0",
+        "raw": "string.prototype.codepointat@",
         "scope": null,
         "escapedName": "string.prototype.codepointat",
         "name": "string.prototype.codepointat",
-        "rawSpec": "^0.2.0",
-        "spec": ">=0.2.0 <0.3.0",
-        "type": "range"
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/svgicons2svgfont"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/base65536"
     ]
   ],
-  "_from": "string.prototype.codepointat@>=0.2.0 <0.3.0",
+  "_from": "string.prototype.codepointat@latest",
   "_id": "string.prototype.codepointat@0.2.0",
   "_inCache": true,
   "_location": "/string.prototype.codepointat",
@@ -24,22 +24,23 @@
   "_npmVersion": "1.4.3",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "string.prototype.codepointat@^0.2.0",
+    "raw": "string.prototype.codepointat@",
     "scope": null,
     "escapedName": "string.prototype.codepointat",
     "name": "string.prototype.codepointat",
-    "rawSpec": "^0.2.0",
-    "spec": ">=0.2.0 <0.3.0",
-    "type": "range"
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
   },
   "_requiredBy": [
+    "/base65536",
     "/svgicons2svgfont"
   ],
   "_resolved": "https://registry.npmjs.org/string.prototype.codepointat/-/string.prototype.codepointat-0.2.0.tgz",
   "_shasum": "6b26e9bd3afcaa7be3b4269b526de1b82000ac78",
   "_shrinkwrap": null,
-  "_spec": "string.prototype.codepointat@^0.2.0",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/svgicons2svgfont",
+  "_spec": "string.prototype.codepointat@",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/base65536",
   "author": {
     "name": "Mathias Bynens",
     "url": "http://mathiasbynens.be/"

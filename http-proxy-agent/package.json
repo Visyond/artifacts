@@ -34,6 +34,8 @@
     "type": "range"
   },
   "_requiredBy": [
+    "/nightwatch/pac-proxy-agent",
+    "/nightwatch/proxy-agent",
     "/pac-proxy-agent",
     "/proxy-agent"
   ],

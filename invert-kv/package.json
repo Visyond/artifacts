@@ -11,9 +11,21 @@
         "type": "range"
       },
       "/var/lib/jenkins/workspace/build/server/v2/node_modules/lcid"
+    ],
+    [
+      {
+        "raw": "invert-kv@^1.0.0",
+        "scope": null,
+        "escapedName": "invert-kv",
+        "name": "invert-kv",
+        "rawSpec": "^1.0.0",
+        "spec": ">=1.0.0 <2.0.0",
+        "type": "range"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/lcid"
     ]
   ],
-  "_from": "invert-kv@>=1.0.0 <2.0.0",
+  "_from": "invert-kv@^1.0.0",
   "_id": "invert-kv@1.0.0",
   "_inCache": true,
   "_location": "/invert-kv",

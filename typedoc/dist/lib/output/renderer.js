@@ -1,18 +1,24 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var Path = require("path");
 var FS = require("fs-extra");
-var ProgressBar = require("progress");
+var ProgressBar = require('progress');
 var events_1 = require("./events");
 var fs_1 = require("../utils/fs");
 var DefaultTheme_1 = require("./themes/DefaultTheme");
@@ -22,7 +28,7 @@ var declaration_1 = require("../utils/options/declaration");
 var Renderer = Renderer_1 = (function (_super) {
     __extends(Renderer, _super);
     function Renderer() {
-        return _super.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Renderer.prototype.initialize = function () {
     };
@@ -80,7 +86,7 @@ var Renderer = Renderer_1 = (function (_super) {
                     return false;
                 }
             }
-            this.theme = this.addComponent("theme", new DefaultTheme_1.DefaultTheme(this, path));
+            this.theme = this.addComponent('theme', new DefaultTheme_1.DefaultTheme(this, path));
         }
         this.theme.resources.activate();
         return true;
@@ -94,7 +100,7 @@ var Renderer = Renderer_1 = (function (_super) {
             if (this.disableOutputCheck) {
                 return true;
             }
-            if (FS.readdirSync(directory).length == 0) {
+            if (FS.readdirSync(directory).length === 0) {
                 return true;
             }
             if (!this.theme.isOutputDirectory(directory)) {
@@ -170,8 +176,15 @@ __decorate([
         type: declaration_1.ParameterType.String
     })
 ], Renderer.prototype, "entryPoint", void 0);
+__decorate([
+    component_1.Option({
+        name: 'toc',
+        help: 'Specifies the top level table of contents.',
+        type: declaration_1.ParameterType.Array
+    })
+], Renderer.prototype, "toc", void 0);
 Renderer = Renderer_1 = __decorate([
-    component_1.Component({ name: "renderer", internal: true, childClass: components_1.RendererComponent })
+    component_1.Component({ name: 'renderer', internal: true, childClass: components_1.RendererComponent })
 ], Renderer);
 exports.Renderer = Renderer;
 require("./plugins");

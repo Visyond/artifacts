@@ -24,8 +24,7 @@
   },
   "_npmVersion": "2.14.4",
   "_phantomChildren": {
-    "ast-types": "0.8.15",
-    "private": "0.1.6",
+    "private": "0.1.7",
     "source-map": "0.5.6"
   },
   "_requested": {

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var UrlMapping = (function () {
     function UrlMapping(url, model, template) {
         this.url = url;

@@ -1,4 +1,4 @@
-import { OptionsComponent, DiscoverEvent } from "../options";
+import { OptionsComponent, DiscoverEvent } from '../options';
 export declare class TSConfigReader extends OptionsComponent {
     options: string;
     private static OPTIONS_KEY;

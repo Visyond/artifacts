@@ -27,9 +27,7 @@
     "email": "i.am.qix@gmail.com"
   },
   "_npmVersion": "5.0.0",
-  "_phantomChildren": {
-    "color-name": "1.1.1"
-  },
+  "_phantomChildren": {},
   "_requested": {
     "raw": "chalk@^2.0.1",
     "scope": null,
@@ -41,6 +39,7 @@
   },
   "_requiredBy": [
     "#DEV:/",
+    "/boxen",
     "/gulp-task-listing",
     "/run-sequence"
   ],

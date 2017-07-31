@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var ReflectionGroup = (function () {
     function ReflectionGroup(title, kind) {
         var _this = this;
@@ -20,11 +21,11 @@ var ReflectionGroup = (function () {
             kind: this.kind
         };
         if (this.children) {
-            var children = [];
+            var children_1 = [];
             this.children.forEach(function (child) {
-                children.push(child.id);
+                children_1.push(child.id);
             });
-            result['children'] = children;
+            result['children'] = children_1;
         }
         return result;
     };

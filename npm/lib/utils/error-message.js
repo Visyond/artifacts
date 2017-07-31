@@ -33,17 +33,8 @@ function errorMessage (er) {
         '',
         [
           '',
-          'Failed at the ' + er.pkgid + ' ' + er.stage + " script '" + er.script + "'.",
-          'Make sure you have the latest version of node.js and npm installed.',
-          'If you do, this is most likely a problem with the ' + er.pkgname + ' package,',
-          'not with npm itself.',
-          'Tell the author that this fails on your system:',
-          '    ' + er.script,
-          'You can get information on how to open an issue for this project with:',
-          '    npm bugs ' + er.pkgname,
-          'Or if that isn\'t available, you can get their info via:',
-          '    npm owner ls ' + er.pkgname,
-          'There is likely additional logging output above.'
+          'Failed at the ' + er.pkgid + ' ' + er.stage + ' script.',
+          'This is probably not a problem with npm. There is likely additional logging output above.'
         ].join('\n')]
       )
       break
@@ -268,7 +259,6 @@ function errorMessage (er) {
       detail.push([
         'enoent',
         [
-          er.message,
           'This is most likely not a problem with npm itself',
           'and is related to npm not being able to find a file.',
           er.file ? "\nCheck if the file '" + er.file + "' is present." : ''
@@ -304,14 +294,6 @@ function errorMessage (er) {
 
     default:
       short.push(['', er.message || er])
-      detail.push([
-        '',
-        [
-          '',
-          'If you need help, you may report this error at:',
-          '    <https://github.com/npm/npm/issues>'
-        ].join('\n')
-      ])
       break
   }
   if (er.optional) {

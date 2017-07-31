@@ -1,5 +1,5 @@
-import * as ts from "typescript";
-import { ConverterComponent } from "../components";
+import * as ts from 'typescript';
+import { ConverterComponent } from '../components';
 export declare class CompilerHost extends ConverterComponent implements ts.CompilerHost {
     private currentDirectory;
     getSourceFile(filename: string, languageVersion: ts.ScriptTarget, onError?: (message: string) => void): ts.SourceFile;
@@ -8,6 +8,7 @@ export declare class CompilerHost extends ConverterComponent implements ts.Compi
     getCurrentDirectory(): string;
     useCaseSensitiveFileNames(): boolean;
     fileExists(fileName: string): boolean;
+    directoryExists(directoryName: string): boolean;
     readFile(fileName: string): string;
     getCanonicalFileName(fileName: string): string;
     getNewLine(): string;

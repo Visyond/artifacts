@@ -34,9 +34,10 @@
     "type": "range"
   },
   "_requiredBy": [
-    "/lodash.clone",
+    "/gulp-nightwatch/lodash.clone",
     "/lodash.create",
-    "/lodash.template"
+    "/lodash.template",
+    "/nightwatch/lodash.clone"
   ],
   "_resolved": "https://registry.npmjs.org/lodash._isiterateecall/-/lodash._isiterateecall-3.0.9.tgz",
   "_shasum": "5203ad7ba425fae842460e696db9cf3e6aac057c",

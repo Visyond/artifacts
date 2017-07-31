@@ -37,8 +37,8 @@
     "/editorconfig",
     "/globule/minimatch",
     "/gulp-nightwatch/minimatch",
-    "/mocha-nightwatch/minimatch",
-    "/nightwatch/minimatch"
+    "/jasmine/minimatch",
+    "/mocha-nightwatch/minimatch"
   ],
   "_resolved": "https://registry.npmjs.org/sigmund/-/sigmund-1.0.1.tgz",
   "_shasum": "3ff21f198cad2175f9f3b781853fd94d0d19b590",

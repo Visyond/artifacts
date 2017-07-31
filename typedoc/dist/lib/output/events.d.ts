@@ -1,8 +1,8 @@
 /// <reference types="handlebars" />
-import { Event } from "../utils/events";
-import { ProjectReflection } from "../models/reflections/project";
-import { UrlMapping } from "./models/UrlMapping";
-import { NavigationItem } from "./models/NavigationItem";
+import { Event } from '../utils/events';
+import { ProjectReflection } from '../models/reflections/project';
+import { UrlMapping } from './models/UrlMapping';
+import { NavigationItem } from './models/NavigationItem';
 export declare class RendererEvent extends Event {
     project: ProjectReflection;
     settings: any;

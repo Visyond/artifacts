@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var accessor_1 = require("./accessor");
 exports.AccessorConverter = accessor_1.AccessorConverter;
 var alias_1 = require("./alias");

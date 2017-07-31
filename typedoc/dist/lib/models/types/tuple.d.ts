@@ -1,4 +1,4 @@
-import { Type } from "./abstract";
+import { Type } from './abstract';
 export declare class TupleType extends Type {
     elements: Type[];
     constructor(elements: Type[]);

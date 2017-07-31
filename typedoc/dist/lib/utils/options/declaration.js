@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var ParameterHint;
 (function (ParameterHint) {
     ParameterHint[ParameterHint["File"] = 0] = "File";
@@ -11,6 +12,7 @@ var ParameterType;
     ParameterType[ParameterType["Boolean"] = 2] = "Boolean";
     ParameterType[ParameterType["Map"] = 3] = "Map";
     ParameterType[ParameterType["Mixed"] = 4] = "Mixed";
+    ParameterType[ParameterType["Array"] = 5] = "Array";
 })(ParameterType = exports.ParameterType || (exports.ParameterType = {}));
 var ParameterScope;
 (function (ParameterScope) {
@@ -35,21 +37,34 @@ var OptionDeclaration = (function () {
     OptionDeclaration.prototype.convert = function (value, errorCallback) {
         switch (this.type) {
             case ParameterType.Number:
-                value = parseInt(value);
+                value = parseInt(value, 10);
                 break;
             case ParameterType.Boolean:
                 value = (typeof value === void 0 ? true : !!value);
                 break;
             case ParameterType.String:
-                value = value || "";
+                value = value || '';
+                break;
+            case ParameterType.Array:
+                if (!value) {
+                    value = [];
+                }
+                else if (typeof value === 'string') {
+                    value = value.split(',');
+                }
                 break;
             case ParameterType.Map:
-                if (this.map !== 'object') {
-                    var key = value ? (value + "").toLowerCase() : '';
-                    if (key in this.map) {
-                        value = this.map[key];
+                var map_1 = this.map;
+                if (map_1 !== 'object') {
+                    var key = value ? (value + '').toLowerCase() : '';
+                    var values = Object.keys(map_1).map(function (key) { return map_1[key]; });
+                    if (map_1 instanceof Map) {
+                        value = map_1.has(key) ? map_1.get(key) : value;
                     }
-                    else if (errorCallback) {
+                    else if (key in map_1) {
+                        value = map_1[key];
+                    }
+                    else if (values.indexOf(value) === -1 && errorCallback) {
                         if (this.mapError) {
                             errorCallback(this.mapError);
                         }

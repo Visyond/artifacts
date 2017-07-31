@@ -1,23 +1,87 @@
 {
-  "name": "gulp-tslint",
-  "preferGlobal": false,
-  "version": "7.1.0",
+  "_args": [
+    [
+      {
+        "raw": "gulp-tslint@^7.0.0",
+        "scope": null,
+        "escapedName": "gulp-tslint",
+        "name": "gulp-tslint",
+        "rawSpec": "^7.0.0",
+        "spec": ">=7.0.0 <8.0.0",
+        "type": "range"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2"
+    ]
+  ],
+  "_from": "gulp-tslint@>=7.0.0 <8.0.0",
+  "_id": "gulp-tslint@7.1.0",
+  "_inCache": true,
+  "_location": "/gulp-tslint",
+  "_nodeVersion": "6.4.0",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/gulp-tslint-7.1.0.tgz_1486136902186_0.41137930867262185"
+  },
+  "_npmUser": {
+    "name": "nawitus",
+    "email": "panu.horsmalahti@iki.fi"
+  },
+  "_npmVersion": "3.10.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "gulp-tslint@^7.0.0",
+    "scope": null,
+    "escapedName": "gulp-tslint",
+    "name": "gulp-tslint",
+    "rawSpec": "^7.0.0",
+    "spec": ">=7.0.0 <8.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gulp-tslint/-/gulp-tslint-7.1.0.tgz",
+  "_shasum": "9bd3ff4fbc16d4cbd9abb08ff786db89b563e93d",
+  "_shrinkwrap": null,
+  "_spec": "gulp-tslint@^7.0.0",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2",
+  "analyze": true,
   "author": {
     "name": "Panu Horsmalahti",
     "email": "panu.horsmalahti@iki.fi"
   },
-  "description": "TypeScript linter Gulp plugin",
+  "bugs": {
+    "url": "https://github.com/panuhorsmalahti/gulp-tslint/issues"
+  },
   "contributors": [
     {
       "name": "Panu Horsmalahti",
       "email": "panu.horsmalahti@iki.fi"
     }
   ],
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/panuhorsmalahti/gulp-tslint.git"
+  "dependencies": {
+    "gulp-util": "~3.0.8",
+    "map-stream": "~0.1.0",
+    "through": "~2.3.8"
   },
+  "description": "TypeScript linter Gulp plugin",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-typescript": "^3.1.4",
+    "tslint": "^4",
+    "typescript": "^2"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "9bd3ff4fbc16d4cbd9abb08ff786db89b563e93d",
+    "tarball": "https://registry.npmjs.org/gulp-tslint/-/gulp-tslint-7.1.0.tgz"
+  },
+  "engines": {
+    "node": ">= 4"
+  },
+  "gitHead": "59db005d295582aa5f373c23abe0613eede7c315",
+  "homepage": "https://github.com/panuhorsmalahti/gulp-tslint",
   "keywords": [
     "gulp",
     "typescript",
@@ -29,57 +93,26 @@
     "linter",
     "lint"
   ],
-  "dependencies": {
-    "gulp-util": "~3.0.8",
-    "map-stream": "~0.1.0",
-    "through": "~2.3.8"
-  },
-  "analyze": true,
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-typescript": "^3.1.4",
-    "tslint": "^4",
-    "typescript": "^2"
-  },
-  "peerDependencies": {
-    "tslint": ">=4.0.0-dev"
-  },
   "license": "MIT",
-  "engines": {
-    "node": ">= 4"
-  },
-  "bugs": {
-    "url": "https://github.com/panuhorsmalahti/gulp-tslint/issues"
-  },
-  "homepage": "https://github.com/panuhorsmalahti/gulp-tslint",
-  "typings": "index",
-  "gitHead": "59db005d295582aa5f373c23abe0613eede7c315",
-  "_id": "gulp-tslint@7.1.0",
-  "scripts": {},
-  "_shasum": "9bd3ff4fbc16d4cbd9abb08ff786db89b563e93d",
-  "_from": "gulp-tslint@>=7.0.0 <8.0.0",
-  "_npmVersion": "3.10.3",
-  "_nodeVersion": "6.4.0",
-  "_npmUser": {
-    "name": "nawitus",
-    "email": "panu.horsmalahti@iki.fi"
-  },
-  "dist": {
-    "shasum": "9bd3ff4fbc16d4cbd9abb08ff786db89b563e93d",
-    "tarball": "https://registry.npmjs.org/gulp-tslint/-/gulp-tslint-7.1.0.tgz"
-  },
+  "main": "index.js",
   "maintainers": [
     {
       "name": "nawitus",
       "email": "panu.horsmalahti@iki.fi"
     }
   ],
-  "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/gulp-tslint-7.1.0.tgz_1486136902186_0.41137930867262185"
+  "name": "gulp-tslint",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "tslint": ">=4.0.0-dev"
   },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/gulp-tslint/-/gulp-tslint-7.1.0.tgz",
-  "readme": "ERROR: No README data found!"
+  "preferGlobal": false,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/panuhorsmalahti/gulp-tslint.git"
+  },
+  "scripts": {},
+  "typings": "index",
+  "version": "7.1.0"
 }

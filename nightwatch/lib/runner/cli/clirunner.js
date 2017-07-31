@@ -85,7 +85,7 @@ CliRunner.prototype = {
     // reading the settings file
     try {
       this.settings = require(this.argv.config);
-      this.replaceEnvVariables();
+      this.replaceEnvVariables(this.settings);
 
       this.manageSelenium = !this.isParallelMode() && this.settings.selenium &&
         this.settings.selenium.start_process || false;
@@ -109,16 +109,15 @@ CliRunner.prototype = {
    * @param {Object} [target]
    */
   replaceEnvVariables : function(target) {
-    target = target || this.settings;
     for (var key in target) {
       switch(typeof target[key]) {
-      case 'object':
-        this.replaceEnvVariables(target[key]);
+        case 'object':
+          this.replaceEnvVariables(target[key]);
         break;
-      case 'string':
-        target[key] = target[key].replace(/\$\{(\w+)\}/g, function(match, varName) {
-          return process.env[varName] || '${' + varName + '}';
-        });
+        case 'string':
+          target[key] = target[key].replace(/\$\{(\w+)\}/g, function(match, varName) {
+            return process.env[varName] || '${' + varName + '}';
+          });
         break;
       }
     }
@@ -392,6 +391,7 @@ CliRunner.prototype = {
     var handleError = ErrorHandler.handle;
 
     this.startSelenium(function() {
+
       self.runner(function(err, results) {
         self.stopSelenium().then(function() {
           if (self.isTestWorker()) {
@@ -451,6 +451,7 @@ CliRunner.prototype = {
         var mocha = new MochaNightwatch(mochaOpts);
         var nightwatch = require('../../index.js');
 
+        Runner.setFinishCallback(fn);
         Runner.readPaths(source, this.test_settings, function(error, modulePaths) {
           if (error) {
             fn(error, {});

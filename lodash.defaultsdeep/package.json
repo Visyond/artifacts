@@ -38,8 +38,7 @@
     "type": "range"
   },
   "_requiredBy": [
-    "/gulp-nightwatch/nightwatch",
-    "/nightwatch"
+    "/gulp-nightwatch/nightwatch"
   ],
   "_resolved": "https://registry.npmjs.org/lodash.defaultsdeep/-/lodash.defaultsdeep-4.6.0.tgz",
   "_shasum": "bec1024f85b1bd96cbea405b23c14ad6443a6f81",

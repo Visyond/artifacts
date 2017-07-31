@@ -1,15 +1,21 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var ts = require("typescript");
 var _ts = require("../../../ts-internal");
 var component_1 = require("../../component");
@@ -18,7 +24,7 @@ var declaration_1 = require("../declaration");
 var ArgumentsReader = (function (_super) {
     __extends(ArgumentsReader, _super);
     function ArgumentsReader() {
-        return _super.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     ArgumentsReader.prototype.initialize = function () {
         this.listenTo(this.owner, options_1.DiscoverEvent.DISCOVER, this.onDiscover);
@@ -71,15 +77,18 @@ var ArgumentsReader = (function (_super) {
         var args = [];
         var pos = 0;
         while (true) {
-            while (pos < text.length && text.charCodeAt(pos) <= _ts.CharacterCodes.space)
+            while (pos < text.length && text.charCodeAt(pos) <= _ts.CharacterCodes.space) {
                 pos++;
-            if (pos >= text.length)
+            }
+            if (pos >= text.length) {
                 break;
+            }
             var start = pos;
             if (text.charCodeAt(start) === _ts.CharacterCodes.doubleQuote) {
                 pos++;
-                while (pos < text.length && text.charCodeAt(pos) !== _ts.CharacterCodes.doubleQuote)
+                while (pos < text.length && text.charCodeAt(pos) !== _ts.CharacterCodes.doubleQuote) {
                     pos++;
+                }
                 if (pos < text.length) {
                     args.push(text.substring(start + 1, pos));
                     pos++;
@@ -90,8 +99,9 @@ var ArgumentsReader = (function (_super) {
                 }
             }
             else {
-                while (text.charCodeAt(pos) > _ts.CharacterCodes.space)
+                while (text.charCodeAt(pos) > _ts.CharacterCodes.space) {
                     pos++;
+                }
                 args.push(text.substring(start, pos));
             }
         }
@@ -100,7 +110,7 @@ var ArgumentsReader = (function (_super) {
     return ArgumentsReader;
 }(options_1.OptionsComponent));
 ArgumentsReader = __decorate([
-    component_1.Component({ name: "options:arguments" })
+    component_1.Component({ name: 'options:arguments' })
 ], ArgumentsReader);
 exports.ArgumentsReader = ArgumentsReader;
 //# sourceMappingURL=arguments.js.map

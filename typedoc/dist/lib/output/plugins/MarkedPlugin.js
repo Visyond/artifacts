@@ -1,15 +1,21 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var FS = require("fs-extra");
 var Path = require("path");
 var Marked = require("marked");
@@ -22,7 +28,7 @@ var declaration_1 = require("../../utils/options/declaration");
 var MarkedPlugin = (function (_super) {
     __extends(MarkedPlugin, _super);
     function MarkedPlugin() {
-        var _this = _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.includePattern = /\[\[include:([^\]]+?)\]\]/g;
         _this.mediaPattern = /media:\/\/([^ "\)\]\}]+)/g;
         return _this;
@@ -59,7 +65,7 @@ var MarkedPlugin = (function (_super) {
                 path = Path.join(_this.includes, path.trim());
                 if (FS.existsSync(path) && FS.statSync(path).isFile()) {
                     var contents = FS.readFileSync(path, 'utf-8');
-                    if (path.substr(-4).toLocaleLowerCase() == '.hbs') {
+                    if (path.substr(-4).toLocaleLowerCase() === '.hbs') {
                         var template = Handlebars.compile(contents);
                         return template(context);
                     }
@@ -132,7 +138,7 @@ __decorate([
     })
 ], MarkedPlugin.prototype, "mediaSource", void 0);
 MarkedPlugin = __decorate([
-    components_1.Component({ name: "marked" })
+    components_1.Component({ name: 'marked' })
 ], MarkedPlugin);
 exports.MarkedPlugin = MarkedPlugin;
 //# sourceMappingURL=MarkedPlugin.js.map

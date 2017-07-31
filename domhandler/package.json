@@ -34,7 +34,9 @@
     "type": "range"
   },
   "_requiredBy": [
+    "/gulp-angular-embed-templates/htmlparser2",
     "/htmlparser2",
+    "/minimize/htmlparser2",
     "/sanitize-html/htmlparser2"
   ],
   "_resolved": "https://registry.npmjs.org/domhandler/-/domhandler-2.3.0.tgz",

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Path = require("path");
 var BasePath = (function () {
     function BasePath() {
@@ -11,7 +12,7 @@ var BasePath = (function () {
             var basePath = this.basePaths[n].split('/');
             var mMax = Math.min(basePath.length, filePath.length);
             for (var m = 0; m < mMax; m++) {
-                if (basePath[m] == filePath[m]) {
+                if (basePath[m] === filePath[m]) {
                     continue;
                 }
                 if (m < 1) {
@@ -33,7 +34,7 @@ var BasePath = (function () {
         fileName = BasePath.normalize(fileName);
         for (var n = 0, c = this.basePaths.length; n < c; n++) {
             var basePath = this.basePaths[n];
-            if (fileName.substr(0, basePath.length) == basePath) {
+            if (fileName.substr(0, basePath.length) === basePath) {
                 return fileName.substr(basePath.length + 1);
             }
         }

@@ -1,15 +1,21 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var index_1 = require("../../models/reflections/index");
 var ReflectionGroup_1 = require("../../models/ReflectionGroup");
 var components_1 = require("../components");
@@ -17,7 +23,7 @@ var converter_1 = require("../converter");
 var GroupPlugin = GroupPlugin_1 = (function (_super) {
     __extends(GroupPlugin, _super);
     function GroupPlugin() {
-        return _super.apply(this, arguments) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     GroupPlugin.prototype.initialize = function () {
         this.listenTo(this.owner, (_a = {},
@@ -27,7 +33,6 @@ var GroupPlugin = GroupPlugin_1 = (function (_super) {
         var _a;
     };
     GroupPlugin.prototype.onResolve = function (context, reflection) {
-        var reflection = reflection;
         reflection.kindString = GroupPlugin_1.getKindSingular(reflection.kind);
         if (reflection instanceof index_1.ContainerReflection) {
             var container = reflection;
@@ -41,8 +46,9 @@ var GroupPlugin = GroupPlugin_1 = (function (_super) {
         function walkDirectory(directory) {
             directory.groups = GroupPlugin_1.getReflectionGroups(directory.getAllReflections());
             for (var key in directory.directories) {
-                if (!directory.directories.hasOwnProperty(key))
+                if (!directory.directories.hasOwnProperty(key)) {
                     continue;
+                }
                 walkDirectory(directory.directories[key]);
             }
         }
@@ -60,11 +66,11 @@ var GroupPlugin = GroupPlugin_1 = (function (_super) {
         var groups = [];
         reflections.forEach(function (child) {
             for (var i = 0; i < groups.length; i++) {
-                var group = groups[i];
-                if (group.kind != child.kind) {
+                var group_1 = groups[i];
+                if (group_1.kind !== child.kind) {
                     continue;
                 }
-                group.children.push(child);
+                group_1.children.push(child);
                 return;
             }
             var group = new ReflectionGroup_1.ReflectionGroup(GroupPlugin_1.getKindPlural(child.kind), child.kind);
@@ -117,17 +123,21 @@ var GroupPlugin = GroupPlugin_1 = (function (_super) {
     GroupPlugin.sortCallback = function (a, b) {
         var aWeight = GroupPlugin_1.WEIGHTS.indexOf(a.kind);
         var bWeight = GroupPlugin_1.WEIGHTS.indexOf(b.kind);
-        if (aWeight == bWeight) {
-            if (a.flags.isStatic && !b.flags.isStatic)
+        if (aWeight === bWeight) {
+            if (a.flags.isStatic && !b.flags.isStatic) {
                 return 1;
-            if (!a.flags.isStatic && b.flags.isStatic)
+            }
+            if (!a.flags.isStatic && b.flags.isStatic) {
                 return -1;
-            if (a.name == b.name)
+            }
+            if (a.name === b.name) {
                 return 0;
+            }
             return a.name > b.name ? 1 : -1;
         }
-        else
+        else {
             return aWeight - bWeight;
+        }
     };
     return GroupPlugin;
 }(components_1.ConverterComponent));
@@ -155,7 +165,7 @@ GroupPlugin.WEIGHTS = [
     index_1.ReflectionKind.ConstructorSignature,
     index_1.ReflectionKind.IndexSignature,
     index_1.ReflectionKind.GetSignature,
-    index_1.ReflectionKind.SetSignature,
+    index_1.ReflectionKind.SetSignature
 ];
 GroupPlugin.SINGULARS = (function () {
     var singulars = {};

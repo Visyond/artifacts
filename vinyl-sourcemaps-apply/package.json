@@ -35,7 +35,9 @@
   },
   "_requiredBy": [
     "/gulp-babel",
+    "/gulp-clean-css",
     "/gulp-less",
+    "/gulp-sass",
     "/gulp-uglify"
   ],
   "_resolved": "https://registry.npmjs.org/vinyl-sourcemaps-apply/-/vinyl-sourcemaps-apply-0.2.1.tgz",

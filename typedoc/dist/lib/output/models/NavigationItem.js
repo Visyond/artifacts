@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var NavigationItem = (function () {
     function NavigationItem(title, url, parent, cssClasses) {
         this.title = title || '';
@@ -9,8 +10,9 @@ var NavigationItem = (function () {
             this.isLabel = true;
         }
         if (this.parent) {
-            if (!this.parent.children)
+            if (!this.parent.children) {
                 this.parent.children = [];
+            }
             this.parent.children.push(this);
         }
     }
@@ -23,8 +25,8 @@ var NavigationItem = (function () {
             name = reflection.getFullName();
         }
         name = name.trim();
-        if (name == '') {
-            name = '<em>' + reflection.kindString + '</em>';
+        if (name === '') {
+            name = "<em>" + reflection.kindString + "</em>";
         }
         return new NavigationItem(name, reflection.url, parent, reflection.cssClasses);
     };

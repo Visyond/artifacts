@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var CommentPlugin_1 = require("./CommentPlugin");
 exports.CommentPlugin = CommentPlugin_1.CommentPlugin;
 var DecoratorPlugin_1 = require("./DecoratorPlugin");

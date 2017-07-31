@@ -7,12 +7,14 @@ var format = util.format;
 
 module.exports = (function() {
   var Settings = {
-    selenium_host : 'localhost',
-    selenium_port : 4444,
-    default_path  : '/wd/hub',
-    credentials   : null,
-    use_ssl       : false,
-    proxy         : null
+    selenium_host  : 'localhost',
+    selenium_port  : 4444,
+    default_path   : '/wd/hub',
+    credentials    : null,
+    use_ssl        : false,
+    proxy          : null,
+    timeout        : 60000,
+    retry_attempts : 0
   };
 
   var DO_NOT_LOG_ERRORS = [
@@ -29,11 +31,13 @@ module.exports = (function() {
   util.inherits(HttpRequest, events.EventEmitter);
 
   HttpRequest.prototype.setOptions = function(options) {
-    this.data          = options.data && jsonStringify(options.data) || '';
-    this.contentLength = this.data.length;
-    this.reqOptions    = this.createOptions(options);
-    this.hostname      = formatHostname(this.reqOptions.host, this.reqOptions.port);
-    this.request       = null;
+    this.data           = options.data && jsonStringify(options.data) || '';
+    this.contentLength  = this.data.length;
+    this.reqOptions     = this.createOptions(options);
+    this.hostname       = formatHostname(this.reqOptions.host, this.reqOptions.port);
+    this.request        = null;
+    this.timeout        = Settings.timeout;
+    this.retryAttempts  = Settings.retry_attempts;
 
     return this;
   };
@@ -90,6 +94,8 @@ module.exports = (function() {
   HttpRequest.prototype.send = function() {
     var self = this;
     var startTime = new Date();
+    var isAborted = false;
+
     this.request = (Settings.use_ssl ? https: http).request(this.reqOptions, function (response) {
       response.setEncoding('utf8');
       var redirected = false;
@@ -154,6 +160,9 @@ module.exports = (function() {
         }
 
         if (response.statusCode.toString().indexOf('2') === 0 || redirected) {
+          if (isAborted) {
+            return;
+          }
           self.emit('success', result, response, redirected);
         } else {
           self.emit('error', result, response, screenshotContent);
@@ -163,6 +172,17 @@ module.exports = (function() {
 
     this.request.on('error', function(response) {
       self.emit('error', {}, response);
+    });
+
+    this.request.setTimeout(this.timeout, function() {
+      if (self.retryAttempts) {
+        self.request.socket.unref();
+        isAborted = true; // prevent emitting of the success event multiple times.
+        self.retryAttempts = self.retryAttempts - 1;
+        self.send();
+      } else {
+        self.request.abort();
+      }
     });
 
     Logger.info('Request: ' + this.reqOptions.method + ' ' + this.hostname + this.reqOptions.path,
@@ -204,6 +224,12 @@ module.exports = (function() {
   };
   HttpRequest.setDefaultPathPrefix = function(path) {
     Settings.default_path = path;
+  };
+  HttpRequest.setTimeout = function(timeout) {
+    Settings.timeout = timeout;
+  };
+  HttpRequest.setRetryAttempts = function(retryAttempts) {
+    Settings.retry_attempts = retryAttempts;
   };
 
   ///////////////////////////////////////////////////////////

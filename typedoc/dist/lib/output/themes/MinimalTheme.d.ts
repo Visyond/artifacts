@@ -1,8 +1,8 @@
-import { DefaultTheme } from "./DefaultTheme";
-import { Renderer } from "../renderer";
-import { UrlMapping } from "../models/UrlMapping";
-import { DeclarationReflection, ProjectReflection } from "../../models/reflections/index";
-import { NavigationItem } from "../models/NavigationItem";
+import { DefaultTheme } from './DefaultTheme';
+import { Renderer } from '../renderer';
+import { UrlMapping } from '../models/UrlMapping';
+import { DeclarationReflection, ProjectReflection } from '../../models/reflections/index';
+import { NavigationItem } from '../models/NavigationItem';
 export declare class MinimalTheme extends DefaultTheme {
     constructor(renderer: Renderer, basePath: string);
     isOutputDirectory(path: string): boolean;

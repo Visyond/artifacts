@@ -54,6 +54,7 @@
     "/concurrently/chalk",
     "/eslint/chalk",
     "/figures",
+    "/google-closure-compiler/chalk",
     "/gulp-concat-json/chalk",
     "/gulp-live-server/chalk",
     "/gulp-manifest/chalk",

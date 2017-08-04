@@ -32,7 +32,7 @@
     "clone-stats": "0.0.1",
     "convert-source-map": "1.5.0",
     "core-util-is": "1.0.2",
-    "duplexify": "3.5.0",
+    "duplexify": "3.5.1",
     "extend": "3.0.1",
     "graceful-fs": "4.1.11",
     "inflight": "1.0.6",

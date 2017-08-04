@@ -49,7 +49,7 @@
     "#DEV:/"
   ],
   "_resolved": "git://github.com/gerhobbelt/requireDir.git#8a413b2feb5bf85e80ba29964d952e6e10465c95",
-  "_shasum": "adeeda433c2e22499f4d42868116b494addada88",
+  "_shasum": "1854f1c4cf2e421acfe30039fa8b3222264f98d7",
   "_shrinkwrap": null,
   "_spec": "require-dir@github:gerhobbelt/requireDir#master",
   "_where": "/var/lib/jenkins/workspace/build/server/v2",

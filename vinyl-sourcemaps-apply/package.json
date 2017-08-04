@@ -34,6 +34,7 @@
     "type": "range"
   },
   "_requiredBy": [
+    "/google-closure-compiler",
     "/gulp-babel",
     "/gulp-clean-css",
     "/gulp-less",

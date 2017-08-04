@@ -39,6 +39,7 @@
   },
   "_requiredBy": [
     "#DEV:/",
+    "/google-closure-compiler",
     "/gulp",
     "/gulp-angular-embed-templates",
     "/gulp-babel",

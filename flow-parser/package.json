@@ -14,13 +14,13 @@
     ]
   ],
   "_from": "flow-parser@>=0.0.0 <1.0.0",
-  "_id": "flow-parser@0.51.1",
+  "_id": "flow-parser@0.52.0",
   "_inCache": true,
   "_location": "/flow-parser",
-  "_nodeVersion": "6.11.1",
+  "_nodeVersion": "6.11.2",
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/flow-parser-0.51.1.tgz_1501189363809_0.9027466962579638"
+    "tmp": "tmp/flow-parser-0.52.0.tgz_1501702155240_0.6898759810719639"
   },
   "_npmUser": {
     "name": "flowtype",
@@ -40,8 +40,8 @@
   "_requiredBy": [
     "/jscodeshift"
   ],
-  "_resolved": "https://registry.npmjs.org/flow-parser/-/flow-parser-0.51.1.tgz",
-  "_shasum": "145d3bdce13857a72ec72938a9a700b534055b32",
+  "_resolved": "https://registry.npmjs.org/flow-parser/-/flow-parser-0.52.0.tgz",
+  "_shasum": "6ddd081ac486b7eb30a5129db24b9a274ccf8e3d",
   "_shrinkwrap": null,
   "_spec": "flow-parser@^0.*",
   "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jscodeshift",
@@ -62,8 +62,8 @@
   },
   "directories": {},
   "dist": {
-    "shasum": "145d3bdce13857a72ec72938a9a700b534055b32",
-    "tarball": "https://registry.npmjs.org/flow-parser/-/flow-parser-0.51.1.tgz"
+    "shasum": "6ddd081ac486b7eb30a5129db24b9a274ccf8e3d",
+    "tarball": "https://registry.npmjs.org/flow-parser/-/flow-parser-0.52.0.tgz"
   },
   "engines": {
     "node": ">=0.4.0"
@@ -111,5 +111,5 @@
     "prepublish": "make js",
     "test": "node test/run_tests.js"
   },
-  "version": "0.51.1"
+  "version": "0.52.0"
 }

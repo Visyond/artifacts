@@ -52,7 +52,7 @@
     "/jison-lex"
   ],
   "_resolved": "git://github.com/gerhobbelt/nomnom.git#aa46a7e4df34a2812cfe1447d4292ec5b3ccdf3e",
-  "_shasum": "7b7345ac44d2e42cc68d96b8e66283a558ee4a5a",
+  "_shasum": "134fe5a4adfed0ac492b67f5b388ec07dd8c1909",
   "_shrinkwrap": null,
   "_spec": "nomnom@github:gerhobbelt/nomnom#master",
   "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-gho",

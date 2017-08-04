@@ -9,10 +9,17 @@ var tempWrite = require('temp-write');
 var through = require('through');
 var tmpdir = require('os').tmpdir();
 var uuid = require('uuid');
+var CC = require('google-closure-compiler').compiler;
 
 const PLUGIN_NAME = 'gulp-closure-compiler';
 
 module.exports = function(opt, execFile_opt) {
+  // As fileName is the only required option, it is the default first argument
+  if ( typeof opt == 'string' ) {
+    opt = {
+        fileName: opt
+    };
+  }
   opt = opt || {};
   opt.maxBuffer = opt.maxBuffer || 1000;
   opt.continueWithWarnings = opt.continueWithWarnings || false;
@@ -71,23 +78,23 @@ module.exports = function(opt, execFile_opt) {
   function endStream() {
     if (!files.length) return this.emit('end');
     var firstFile = files[0];
-    var outputFilePath = tempWrite.sync('');
-    var args;
-    if (opt.compilerPath) {
+    var flagFile;
+    var args = [];
+    var compilerPath = opt.compilerPath || CC.jar_path;
+
+    if (compilerPath) {
       args = [
         '-jar',
         // For faster compilation. It's supported everywhere from Java 1.7+.
         opt.tieredCompilation ? '-XX:+TieredCompilation' : '-XX:-TieredCompilation',
-        opt.compilerPath,
-        // To prevent maximum length of command line string exceeded error.
-        '--flagfile="' + getFlagFilePath(files) + '"'
-      ];
-    } else {
-      args = [
-        // To prevent maximum length of command line string exceeded error.
-        '--flagfile="' + getFlagFilePath(files) + '"'
+        compilerPath
       ];
     }
+
+  	// To prevent maximum length of command line string exceeded error.
+    flagFile = getFlagFilePath(files);
+    args.push('--flagfile="' + flagFile + '"');
+
     args = args.concat(flagsToArgs(opt.compilerFlags));
 
     var javaFlags = opt.javaFlags || [];
@@ -102,8 +109,11 @@ module.exports = function(opt, execFile_opt) {
     }
 
     // Enable custom max buffer to fix "stderr maxBuffer exceeded" error. Default is 1000*1024.
-    var executable = opt.compilerPath ? 'java' : 'closure-compiler';
+    var executable = compilerPath ? 'java' : 'closure-compiler';
+    args.unshift("-Xmx1024m");
     var jar = execFile(executable, args, { maxBuffer: opt.maxBuffer*1024 }, function(error, stdout, stderr) {
+    	fs.unlinkSync(flagFile);
+
       if (error || (stderr && !opt.continueWithWarnings)) {
         this.emit('error', new gutil.PluginError(PLUGIN_NAME, error || stderr));
         return;

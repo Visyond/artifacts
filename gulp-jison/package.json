@@ -49,7 +49,7 @@
     "#DEV:/"
   ],
   "_resolved": "git://github.com/gerhobbelt/gulp-jison.git#7197b902a802c40271a1f6dbcad612c5e7ddb58a",
-  "_shasum": "4655be0585aa18d05c87494e37c5c85d24119940",
+  "_shasum": "57b5ca443c8cef6776f5ec253dc9ce2bd4cdccb1",
   "_shrinkwrap": null,
   "_spec": "gulp-jison@github:gerhobbelt/gulp-jison#master",
   "_where": "/var/lib/jenkins/workspace/build/server/v2",

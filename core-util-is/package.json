@@ -81,6 +81,7 @@
     "/tar-stream/readable-stream",
     "/ternary-stream/readable-stream",
     "/through2/readable-stream",
+    "/verror",
     "/vinyl-file/readable-stream",
     "/vinyl-fs/readable-stream"
   ],

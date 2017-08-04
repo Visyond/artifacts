@@ -49,7 +49,7 @@
     "/jison-gho"
   ],
   "_resolved": "git://github.com/gerhobbelt/jison-lex.git#f5664dea5bfa8f54f865e17019450f0b3c5f9676",
-  "_shasum": "5349468dd8ac35633f7aa37a81d2bfb73537d831",
+  "_shasum": "4054535f3030e7231469b95831a66adb9eaa7d74",
   "_shrinkwrap": null,
   "_spec": "jison-lex@github:gerhobbelt/jison-lex#master",
   "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-gho",

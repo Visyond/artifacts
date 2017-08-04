@@ -49,7 +49,7 @@
     "#DEV:/"
   ],
   "_resolved": "git://github.com/gerhobbelt/sprintf.js.git#32a5e7cf3310cb9bd56f5f440f43467eb5129d0b",
-  "_shasum": "ad12351b44fdc1ce5e37726ef6a896fa4de9b1f5",
+  "_shasum": "5c41f48efcf4091ff3093161ea66c854950257e4",
   "_shrinkwrap": null,
   "_spec": "sprintf-js@github:gerhobbelt/sprintf.js#master",
   "_where": "/var/lib/jenkins/workspace/build/server/v2",

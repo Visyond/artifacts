@@ -23,10 +23,7 @@ var closureCompiler = require('gulp-closure-compiler');
 
 gulp.task('default', function() {
   return gulp.src('src/*.js')
-    .pipe(closureCompiler({
-      compilerPath: 'bower_components/closure-compiler/lib/vendor/compiler.jar',
-      fileName: 'build.js'
-    }))
+    .pipe(closureCompiler('build.js'))
     .pipe(gulp.dest('dist'));
 });
 ```
@@ -42,7 +39,8 @@ var closureCompiler = require('gulp-closure-compiler');
 gulp.task('default', function() {
   return gulp.src('src/*.js')
     .pipe(closureCompiler({
-      compilerPath: 'bower_components/closure-compiler/lib/vendor/compiler.jar',
+      // compilerPath is optional, since google-closure-compiler is a dependency
+      // compilerPath: 'bower_components/closure-compiler/lib/vendor/compiler.jar', 
       fileName: 'build.js',
       compilerFlags: {
         closure_entry_point: 'app.main',
@@ -105,7 +103,6 @@ Generated file name.
 ##### compilerPath
 
 Type: `String`  
-Required
 
 Path to compiler.jar
 
@@ -134,6 +131,8 @@ Type: `boolean`
 Ignore the warnings and continue with the compiler.  This adds flexiblity to some projects that can't work around certain warnings.  Default value is false.
 
 ## How to download [Closure Compiler](https://developers.google.com/closure/compiler/)
+
+Note: This step isn't required any more as of v0.4.0!
 
 Use [Bower](http://bower.io/).
 

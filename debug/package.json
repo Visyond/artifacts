@@ -40,8 +40,10 @@
   "_requiredBy": [
     "/babel-core",
     "/babel-traverse",
+    "/connect",
     "/debug-fabulous",
     "/eslint",
+    "/finalhandler",
     "/get-uri",
     "/gulp-jsdoc3",
     "/gulp-live-server",

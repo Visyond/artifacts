@@ -28,7 +28,7 @@
     "brace-expansion": "1.1.8",
     "clone-stats": "0.0.1",
     "core-util-is": "1.0.2",
-    "duplexify": "3.5.0",
+    "duplexify": "3.5.1",
     "gaze": "0.5.2",
     "glob2base": "0.0.12",
     "has-color": "0.1.7",

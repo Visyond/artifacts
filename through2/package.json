@@ -50,6 +50,7 @@
     "/browserify",
     "/cloneable-readable",
     "/deps-sort",
+    "/google-closure-compiler",
     "/gulp-angular-embed-templates",
     "/gulp-babel",
     "/gulp-clean-css",

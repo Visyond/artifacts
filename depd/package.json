@@ -41,6 +41,7 @@
     "/body-parser",
     "/browser-sync/send",
     "/express",
+    "/http-errors",
     "/live-server/send",
     "/morgan",
     "/send"

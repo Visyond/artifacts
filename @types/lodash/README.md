@@ -8,7 +8,7 @@ This package contains type definitions for Lo-Dash (http://lodash.com/).
 Files were exported from https://www.github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/lodash
 
 Additional Details
- * Last updated: Sat, 22 Jul 2017 19:03:51 GMT
+ * Last updated: Tue, 15 Aug 2017 18:11:20 GMT
  * Dependencies: none
  * Global values: _
 

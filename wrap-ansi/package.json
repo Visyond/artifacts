@@ -22,7 +22,7 @@
         "spec": ">=2.0.0 <3.0.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/yargs/node_modules/cliui"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/cliui"
     ]
   ],
   "_from": "wrap-ansi@^2.0.0",
@@ -50,15 +50,13 @@
     "type": "range"
   },
   "_requiredBy": [
-    "/browser-sync/cliui",
-    "/localtunnel/cliui",
-    "/yargs/cliui"
+    "/cliui"
   ],
   "_resolved": "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-2.1.0.tgz",
   "_shasum": "d8fc3d284dd05794fe84973caecdd1cf824fdd85",
   "_shrinkwrap": null,
   "_spec": "wrap-ansi@^2.0.0",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/yargs/node_modules/cliui",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/cliui",
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",

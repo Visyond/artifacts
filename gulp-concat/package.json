@@ -30,7 +30,7 @@
   "_phantomChildren": {
     "clone-buffer": "1.0.0",
     "cloneable-readable": "1.0.0",
-    "remove-trailing-separator": "1.0.2"
+    "remove-trailing-separator": "1.1.0"
   },
   "_requested": {
     "raw": "gulp-concat@^2.6.0",

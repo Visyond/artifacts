@@ -26,7 +26,23 @@
   "_id": "jison-lex@0.3.4-185",
   "_inCache": true,
   "_location": "/jison-lex",
-  "_phantomChildren": {},
+  "_phantomChildren": {
+    "cliui": "3.2.0",
+    "decamelize": "1.2.0",
+    "get-caller-file": "1.0.2",
+    "graceful-fs": "4.1.11",
+    "locate-path": "2.0.0",
+    "normalize-package-data": "2.4.0",
+    "os-locale": "2.1.0",
+    "parse-json": "2.2.0",
+    "pify": "2.3.0",
+    "require-directory": "2.1.1",
+    "require-main-filename": "1.0.1",
+    "set-blocking": "2.0.0",
+    "which-module": "2.0.0",
+    "y18n": "3.2.1",
+    "yargs-parser": "7.0.0"
+  },
   "_requested": {
     "raw": "jison-lex@github:gerhobbelt/jison-lex#master",
     "scope": null,
@@ -48,8 +64,8 @@
   "_requiredBy": [
     "/jison-gho"
   ],
-  "_resolved": "git://github.com/gerhobbelt/jison-lex.git#f5664dea5bfa8f54f865e17019450f0b3c5f9676",
-  "_shasum": "4054535f3030e7231469b95831a66adb9eaa7d74",
+  "_resolved": "git://github.com/gerhobbelt/jison-lex.git#52a7a8b65c39b4de5dab14e4e0529d465951e3dc",
+  "_shasum": "758c95ed2e3b42eab12382962023d2d060d9fdda",
   "_shrinkwrap": null,
   "_spec": "jison-lex@github:gerhobbelt/jison-lex#master",
   "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-gho",
@@ -66,7 +82,7 @@
     "email": "jison@librelist.com"
   },
   "dependencies": {
-    "json5": "0.5.1",
+    "json5": "github:gerhobbelt/json5#master",
     "lex-parser": "github:gerhobbelt/lex-parser#master",
     "nomnom": "github:gerhobbelt/nomnom#master",
     "xregexp": "github:gerhobbelt/xregexp#master"
@@ -74,7 +90,7 @@
   "description": "lexical analyzer generator used by jison",
   "devDependencies": {
     "chai": "4.1.0",
-    "mocha": "3.4.2"
+    "mocha": "3.5.0"
   },
   "directories": {
     "lib": "lib",
@@ -83,7 +99,7 @@
   "engines": {
     "node": ">=4.0"
   },
-  "gitHead": "f5664dea5bfa8f54f865e17019450f0b3c5f9676",
+  "gitHead": "52a7a8b65c39b4de5dab14e4e0529d465951e3dc",
   "homepage": "http://jison.org",
   "keywords": [
     "jison",
@@ -101,7 +117,7 @@
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
-    "url": "git://github.com/zaach/jison-lex.git"
+    "url": "git://github.com/GerHobbelt/jison-lex.git"
   },
   "scripts": {
     "build": "make",

@@ -49,7 +49,7 @@
     "#DEV:/"
   ],
   "_resolved": "git://github.com/gerhobbelt/gulp-fncallback.git#a8bf10f5f799be4523f507d4c3350c94ffb80aad",
-  "_shasum": "e16ae77cba71f2e5f24b40dd28f4ccbc45f2f9ae",
+  "_shasum": "afa82e9c1b3b9e94beea1cc7d8ac89be9499bf86",
   "_shrinkwrap": null,
   "_spec": "gulp-fncallback@github:gerhobbelt/gulp-fncallback#master",
   "_where": "/var/lib/jenkins/workspace/build/server/v2",

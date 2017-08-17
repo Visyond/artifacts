@@ -41,6 +41,7 @@
     "/browser-sync/yargs",
     "/defs/yargs",
     "/gulp-uglify/yargs",
+    "/jison-lex/yargs",
     "/localtunnel/yargs",
     "/meow",
     "/uglify-js/yargs",

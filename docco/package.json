@@ -49,7 +49,7 @@
     "#DEV:/"
   ],
   "_resolved": "git://github.com/gerhobbelt/docco.git#9bd5fc81cb0a13e1f56b33a546be3843ad34ec07",
-  "_shasum": "84431609910a6fac354ebf8ed6b628338865d290",
+  "_shasum": "893cc7ffdf8a8beea808ae010cd89b13b192cdc1",
   "_shrinkwrap": null,
   "_spec": "docco@github:gerhobbelt/docco#gh-pages",
   "_where": "/var/lib/jenkins/workspace/build/server/v2",

@@ -36,6 +36,8 @@
   "_requiredBy": [
     "/del",
     "/globby",
+    "/jison-lex/load-json-file",
+    "/jison-lex/path-type",
     "/load-json-file",
     "/make-dir",
     "/path-type",

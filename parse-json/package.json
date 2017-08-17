@@ -35,6 +35,7 @@
   },
   "_requiredBy": [
     "/got",
+    "/jison-lex/load-json-file",
     "/load-json-file",
     "/tsconfig"
   ],

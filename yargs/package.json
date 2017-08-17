@@ -28,8 +28,7 @@
   },
   "_npmVersion": "4.5.0",
   "_phantomChildren": {
-    "string-width": "1.0.2",
-    "wrap-ansi": "2.1.0"
+    "lcid": "1.0.0"
   },
   "_requested": {
     "raw": "yargs@^7.0.2",

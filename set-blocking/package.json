@@ -39,6 +39,7 @@
   },
   "_requiredBy": [
     "/browser-sync/yargs",
+    "/jison-lex/yargs",
     "/npmlog",
     "/yargs"
   ],

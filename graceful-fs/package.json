@@ -50,6 +50,7 @@
     "/gulp-sourcemaps",
     "/gulp-typescript/gulp-sourcemaps",
     "/gulp-typescript/vinyl-fs",
+    "/jison-lex/load-json-file",
     "/jsonfile",
     "/klaw",
     "/less",

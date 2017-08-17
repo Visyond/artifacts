@@ -38,6 +38,7 @@
     "type": "range"
   },
   "_requiredBy": [
+    "/jison-lex/read-pkg",
     "/meow",
     "/read-pkg"
   ],

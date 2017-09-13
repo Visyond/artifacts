@@ -1,0 +1,94 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "base32768",
+        "scope": null,
+        "escapedName": "base32768",
+        "name": "base32768",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/var/lib/jenkins/workspace/checkbranch/node_modules"
+    ]
+  ],
+  "_from": "base32768@latest",
+  "_id": "base32768@0.0.3",
+  "_inCache": true,
+  "_location": "/base32768",
+  "_nodeVersion": "7.4.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/base32768-0.0.3.tgz_1495386122749_0.38442541658878326"
+  },
+  "_npmUser": {
+    "name": "ferno",
+    "email": "ferno.code@gmail.com"
+  },
+  "_npmVersion": "4.0.5",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "base32768",
+    "scope": null,
+    "escapedName": "base32768",
+    "name": "base32768",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/base32768/-/base32768-0.0.3.tgz",
+  "_shasum": "2e91598dbbfccf7e106b6c1607d83a45646bdbd1",
+  "_shrinkwrap": null,
+  "_spec": "base32768",
+  "_where": "/var/lib/jenkins/workspace/checkbranch/node_modules",
+  "author": {
+    "name": "qntm"
+  },
+  "bugs": {
+    "url": "https://github.com/qntm/base32768/issues"
+  },
+  "dependencies": {},
+  "description": "Binary-to-text encoding highly optimised for UTF-16",
+  "devDependencies": {
+    "glob": "^7.1.1"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "2e91598dbbfccf7e106b6c1607d83a45646bdbd1",
+    "tarball": "https://registry.npmjs.org/base32768/-/base32768-0.0.3.tgz"
+  },
+  "gitHead": "31380e1d0c27384bc3bfbeeec4a3fdc010c5ee00",
+  "homepage": "https://github.com/qntm/base32768",
+  "keywords": [
+    "base64",
+    "base32768",
+    "encoding",
+    "unicode",
+    "text",
+    "decoding",
+    "efficiency"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "ferno",
+      "email": "ferno.code@gmail.com"
+    }
+  ],
+  "name": "base32768",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/qntm/base32768.git"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "version": "0.0.3"
+}

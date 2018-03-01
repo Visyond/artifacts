@@ -10,7 +10,7 @@
         "spec": ">=0.2.0 <0.3.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/strip-bom"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/vinyl-fs/node_modules/strip-bom"
     ]
   ],
   "_from": "is-utf8@>=0.2.0 <0.3.0",
@@ -34,19 +34,22 @@
     "type": "range"
   },
   "_requiredBy": [
+    "/browser-sync/strip-bom",
     "/gulp-sourcemaps/strip-bom",
     "/gulp-typescript/strip-bom",
-    "/load-json-file/strip-bom",
-    "/strip-bom",
+    "/meow/strip-bom",
+    "/sprity/strip-bom",
     "/strip-bom-stream/strip-bom",
     "/tsconfig/strip-bom",
-    "/vinyl-file/strip-bom"
+    "/vinyl-file/strip-bom",
+    "/vinyl-fs/strip-bom",
+    "/yargs/strip-bom"
   ],
   "_resolved": "https://registry.npmjs.org/is-utf8/-/is-utf8-0.2.1.tgz",
   "_shasum": "4b0da1442104d1b336340e80797e865cf39f7d72",
   "_shrinkwrap": null,
   "_spec": "is-utf8@^0.2.0",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/strip-bom",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/vinyl-fs/node_modules/strip-bom",
   "author": {
     "name": "wayfind"
   },

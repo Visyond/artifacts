@@ -39,9 +39,8 @@
   },
   "_requiredBy": [
     "/babel-core",
-    "/commoner/glob",
+    "/del/glob",
     "/glob",
-    "/globby/glob",
     "/gulp-closure-compiler/glob",
     "/gulp-typescript/glob",
     "/node-gyp",
@@ -50,6 +49,7 @@
     "/resp-modifier",
     "/sass-lint/globule",
     "/traceur/glob",
+    "/tsconfig/glob",
     "/tslint/findup-sync/glob",
     "/typedoc"
   ],

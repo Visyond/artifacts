@@ -40,6 +40,7 @@
   "_requiredBy": [
     "/array-union",
     "/gulp-util",
+    "/srcset",
     "/tsconfig"
   ],
   "_resolved": "https://registry.npmjs.org/array-uniq/-/array-uniq-1.0.3.tgz",

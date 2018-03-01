@@ -10,7 +10,9 @@ const Stream = require('stream')
 const PassThrough = Stream.PassThrough
 const slice = Array.prototype.slice
 
-module.exports = function merge2 () {
+module.exports = merge2
+
+function merge2 () {
   const streamsQueue = []
   let merging = false
   let args = slice.call(arguments)
@@ -37,7 +39,10 @@ module.exports = function merge2 () {
     merging = true
 
     let streams = streamsQueue.shift()
-    if (!streams) return endStream()
+    if (!streams) {
+      process.nextTick(endStream)
+      return
+    }
     if (!Array.isArray(streams)) streams = [streams]
 
     let pipesCount = streams.length + 1
@@ -51,7 +56,6 @@ module.exports = function merge2 () {
     function pipe (stream) {
       function onend () {
         stream.removeListener('merge2UnpipeEnd', onend)
-        stream.removeListener('finish', onend)
         stream.removeListener('end', onend)
         next()
       }
@@ -59,7 +63,6 @@ module.exports = function merge2 () {
       if (stream._readableState.endEmitted) return next()
 
       stream.on('merge2UnpipeEnd', onend)
-      stream.on('finish', onend)
       stream.on('end', onend)
       stream.pipe(mergedStream, {end: false})
       // compatible for old stream

@@ -24,7 +24,17 @@
   },
   "_npmVersion": "3.3.6",
   "_phantomChildren": {
-    "is-utf8": "0.2.1"
+    "array-union": "1.0.2",
+    "arrify": "1.0.1",
+    "inflight": "1.0.6",
+    "inherits": "2.0.3",
+    "is-utf8": "0.2.1",
+    "minimatch": "3.0.4",
+    "object-assign": "4.1.1",
+    "once": "1.4.0",
+    "path-is-absolute": "1.0.1",
+    "pify": "2.3.0",
+    "pinkie-promise": "2.0.1"
   },
   "_requested": {
     "raw": "tsconfig@^2.2.0",

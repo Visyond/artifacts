@@ -14,13 +14,13 @@
     ]
   ],
   "_from": "jquery-mockjax@>=2.2.0 <3.0.0",
-  "_id": "jquery-mockjax@2.2.2",
+  "_id": "jquery-mockjax@2.3.0",
   "_inCache": true,
   "_location": "/jquery-mockjax",
   "_nodeVersion": "6.10.3",
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/jquery-mockjax-2.2.2.tgz_1497890242585_0.8806374066043645"
+    "tmp": "tmp/jquery-mockjax-2.3.0.tgz_1515351869005_0.14888733508996665"
   },
   "_npmUser": {
     "name": "jakerella",
@@ -40,8 +40,8 @@
   "_requiredBy": [
     "/orgchart"
   ],
-  "_resolved": "https://registry.npmjs.org/jquery-mockjax/-/jquery-mockjax-2.2.2.tgz",
-  "_shasum": "9c7d2b103a44cf61c99cc78a9ee7878504b60907",
+  "_resolved": "https://registry.npmjs.org/jquery-mockjax/-/jquery-mockjax-2.3.0.tgz",
+  "_shasum": "e55eb65626d44bf35b3990dc56ef94a64c6b5c1f",
   "_shrinkwrap": null,
   "_spec": "jquery-mockjax@^2.2.0",
   "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/orgchart",
@@ -86,11 +86,11 @@
   },
   "directories": {},
   "dist": {
-    "integrity": "sha512-stVgUln5bo7g14KjeU45c31nAYlBHAUVBo4JbdoDYIJ3i6Nzlu8mkjKcAviwad9AU1dBEHHpuzA7R6mKcWgvZA==",
-    "shasum": "9c7d2b103a44cf61c99cc78a9ee7878504b60907",
-    "tarball": "https://registry.npmjs.org/jquery-mockjax/-/jquery-mockjax-2.2.2.tgz"
+    "integrity": "sha512-ur5YhwDwT2P+zz4RJedV/ldC+4lZQQoU3/nNKRbK521jTTGvnrzmx4PZJM4Dquk1r2OlIER4sK5ZaxunMbaB7w==",
+    "shasum": "e55eb65626d44bf35b3990dc56ef94a64c6b5c1f",
+    "tarball": "https://registry.npmjs.org/jquery-mockjax/-/jquery-mockjax-2.3.0.tgz"
   },
-  "gitHead": "e8eee6b7e65e4b698342c1a75a6e5f8942fd364f",
+  "gitHead": "47be29e88b167398f81577b6fb89d0a02311975f",
   "homepage": "https://github.com/jakerella/jquery-mockjax",
   "keywords": [
     "ajax",
@@ -137,5 +137,5 @@
   },
   "title": "jQuery Mockjax",
   "url": "https://github.com/jakerella/jquery-mockjax",
-  "version": "2.2.2"
+  "version": "2.3.0"
 }

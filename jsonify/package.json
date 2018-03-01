@@ -32,12 +32,14 @@
     "type": "range"
   },
   "_requiredBy": [
-    "/ajv/json-stable-stringify",
     "/eslint/json-stable-stringify",
     "/gulp-typescript/json-stable-stringify",
     "/json-stable-stringify",
+    "/less/json-stable-stringify",
+    "/localtunnel/json-stable-stringify",
     "/shell-quote",
-    "/sprity/json-stable-stringify"
+    "/sprity/json-stable-stringify",
+    "/table/json-stable-stringify"
   ],
   "_resolved": "https://registry.npmjs.org/jsonify/-/jsonify-0.0.0.tgz",
   "_shasum": "2c74b6ee41d93ca51b7b5aaee8f503631d252a73",

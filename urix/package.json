@@ -10,7 +10,7 @@
         "spec": ">=0.1.0 <0.2.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/css"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/source-map-resolve"
     ]
   ],
   "_from": "urix@>=0.1.0 <0.2.0",
@@ -34,13 +34,14 @@
   },
   "_requiredBy": [
     "/css",
+    "/css/source-map-resolve",
     "/source-map-resolve"
   ],
   "_resolved": "https://registry.npmjs.org/urix/-/urix-0.1.0.tgz",
   "_shasum": "da937f7a62e21fec1fd18d49b35c2935067a6c72",
   "_shrinkwrap": null,
   "_spec": "urix@^0.1.0",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/css",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/source-map-resolve",
   "author": {
     "name": "Simon Lydell"
   },

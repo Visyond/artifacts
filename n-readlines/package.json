@@ -1,0 +1,102 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "n-readlines@^0.2.8",
+        "scope": null,
+        "escapedName": "n-readlines",
+        "name": "n-readlines",
+        "rawSpec": "^0.2.8",
+        "spec": ">=0.2.8 <0.3.0",
+        "type": "range"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2"
+    ]
+  ],
+  "_from": "n-readlines@>=0.2.8 <0.3.0",
+  "_id": "n-readlines@0.2.8",
+  "_inCache": true,
+  "_location": "/n-readlines",
+  "_nodeVersion": "8.1.2",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/n-readlines-0.2.8.tgz_1502954935590_0.0034458644222468138"
+  },
+  "_npmUser": {
+    "name": "nacholibre",
+    "email": "jonidev@gmail.com"
+  },
+  "_npmVersion": "5.0.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "n-readlines@^0.2.8",
+    "scope": null,
+    "escapedName": "n-readlines",
+    "name": "n-readlines",
+    "rawSpec": "^0.2.8",
+    "spec": ">=0.2.8 <0.3.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/n-readlines/-/n-readlines-0.2.8.tgz",
+  "_shasum": "6022f0b1a034a32dc0bfcc0e8ca9fbd6877d341a",
+  "_shrinkwrap": null,
+  "_spec": "n-readlines@^0.2.8",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2",
+  "author": {
+    "name": "Yoan Arnaudov",
+    "email": "jonidev@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/nacholibre/node-readlines/issues"
+  },
+  "dependencies": {},
+  "description": "Read file line by line without buffering the whole file in memory.",
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  },
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-FRr6GU0vooiPAuHMBt/Pspm4htItJKCehs8Q2urdUuigXsdQzP8V03UaQedeCmiygqJwtuGhnidWHRHhUOAg9w==",
+    "shasum": "6022f0b1a034a32dc0bfcc0e8ca9fbd6877d341a",
+    "tarball": "https://registry.npmjs.org/n-readlines/-/n-readlines-0.2.8.tgz"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "gitHead": "c7ebedd19286b90ed1de52ec418ab52387804617",
+  "homepage": "https://github.com/nacholibre/node-readlines#readme",
+  "keywords": [
+    "read",
+    "line",
+    "reader",
+    "linereader",
+    "readfile",
+    "linebyline",
+    "synchronous",
+    "sync",
+    "readline",
+    "readlines"
+  ],
+  "license": "MIT",
+  "main": "./readlines.js",
+  "maintainers": [
+    {
+      "name": "nacholibre",
+      "email": "jonidev@gmail.com"
+    }
+  ],
+  "name": "n-readlines",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nacholibre/node-readlines.git"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha *_test.js"
+  },
+  "version": "0.2.8"
+}

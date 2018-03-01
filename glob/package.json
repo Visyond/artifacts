@@ -42,6 +42,7 @@
     "/accord",
     "/browserify",
     "/eslint",
+    "/globby",
     "/node-gyp",
     "/node-sass",
     "/node-sass/globule",

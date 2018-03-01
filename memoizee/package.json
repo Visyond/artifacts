@@ -14,19 +14,19 @@
     ]
   ],
   "_from": "memoizee@>=0.4.3 <0.5.0",
-  "_id": "memoizee@0.4.5",
+  "_id": "memoizee@0.4.12",
   "_inCache": true,
   "_location": "/memoizee",
-  "_nodeVersion": "7.10.0",
+  "_nodeVersion": "9.6.1",
   "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/memoizee-0.4.5.tgz_1494398519033_0.011726024793460965"
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/memoizee_0.4.12_1519401054123_0.46577511245114245"
   },
   "_npmUser": {
     "name": "medikoo",
     "email": "medikoo+npm@medikoo.com"
   },
-  "_npmVersion": "4.2.0",
+  "_npmVersion": "5.6.0",
   "_phantomChildren": {},
   "_requested": {
     "raw": "memoizee@^0.4.3",
@@ -40,8 +40,8 @@
   "_requiredBy": [
     "/cli-color"
   ],
-  "_resolved": "https://registry.npmjs.org/memoizee/-/memoizee-0.4.5.tgz",
-  "_shasum": "1bc3ea1e4be056dd475d521979d7be3d5e5b21c8",
+  "_resolved": "https://registry.npmjs.org/memoizee/-/memoizee-0.4.12.tgz",
+  "_shasum": "780e99a219c50c549be6d0fc61765080975c58fb",
   "_shrinkwrap": null,
   "_spec": "memoizee@^0.4.3",
   "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/cli-color",
@@ -55,27 +55,38 @@
   },
   "dependencies": {
     "d": "1",
-    "es5-ext": "^0.10.13",
-    "es6-weak-map": "^2.0.1",
-    "event-emitter": "^0.3.4",
+    "es5-ext": "^0.10.30",
+    "es6-weak-map": "^2.0.2",
+    "event-emitter": "^0.3.5",
     "is-promise": "^2.1",
     "lru-queue": "0.1",
     "next-tick": "1",
-    "timers-ext": "0.1"
+    "timers-ext": "^0.1.2"
   },
   "description": "Memoize/cache function results",
   "devDependencies": {
+    "eslint": "^4.6.1",
+    "eslint-config-medikoo-es5": "^1.4.3",
     "plain-promise": "^0.1.1",
-    "tad": "^0.2.7",
-    "xlint": "^0.2.2",
-    "xlint-jslint-medikoo": "^0.1.4"
+    "tad": "^0.2.7"
   },
   "directories": {},
   "dist": {
-    "shasum": "1bc3ea1e4be056dd475d521979d7be3d5e5b21c8",
-    "tarball": "https://registry.npmjs.org/memoizee/-/memoizee-0.4.5.tgz"
+    "integrity": "sha512-sprBu6nwxBWBvBOh5v2jcsGqiGLlL2xr2dLub3vR8dnE8YB17omwtm/0NSHl8jjNbcsJd5GMWJAnTSVe/O0Wfg==",
+    "shasum": "780e99a219c50c549be6d0fc61765080975c58fb",
+    "tarball": "https://registry.npmjs.org/memoizee/-/memoizee-0.4.12.tgz",
+    "fileCount": 58,
+    "unpackedSize": 264158
   },
-  "gitHead": "3e1d094289b4b735890a9951f3a6633bfb01c32f",
+  "eslintConfig": {
+    "extends": "medikoo-es5",
+    "root": true,
+    "globals": {
+      "setTimeout": true,
+      "clearTimeout": true
+    }
+  },
+  "gitHead": "6e543ae2f0c9f4d0a081539b65483a57bd41701d",
   "homepage": "https://github.com/medikoo/memoizee#readme",
   "keywords": [
     "memoize",
@@ -94,7 +105,7 @@
     "collector",
     "async"
   ],
-  "license": "MIT",
+  "license": "ISC",
   "maintainers": [
     {
       "name": "medikoo",
@@ -109,10 +120,9 @@
     "url": "git://github.com/medikoo/memoizee.git"
   },
   "scripts": {
-    "lint": "npm run lint-medikoo -- --no-cache --no-stream",
-    "lint-console": "npm run lint-medikoo -- --watch",
+    "lint": "eslint --ignore-path=.gitignore .",
     "lint-medikoo": "xlint --linter=node_modules/xlint-jslint-medikoo/index.js",
     "test": "tad"
   },
-  "version": "0.4.5"
+  "version": "0.4.12"
 }

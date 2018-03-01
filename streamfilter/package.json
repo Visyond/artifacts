@@ -14,22 +14,20 @@
     ]
   ],
   "_from": "streamfilter@>=1.0.5 <2.0.0",
-  "_id": "streamfilter@1.0.5",
+  "_id": "streamfilter@1.0.7",
   "_inCache": true,
   "_location": "/streamfilter",
-  "_nodeVersion": "0.12.0",
+  "_nodeVersion": "6.10.3",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/streamfilter-1.0.7.tgz_1512545341229_0.7666103506926447"
+  },
   "_npmUser": {
     "name": "nfroidure",
-    "email": "nfroidure@elitwork.com"
+    "email": "nicolas.froidure@insertafter.com"
   },
-  "_npmVersion": "2.5.1",
-  "_phantomChildren": {
-    "core-util-is": "1.0.2",
-    "inherits": "2.0.3",
-    "process-nextick-args": "1.0.7",
-    "safe-buffer": "5.1.1",
-    "util-deprecate": "1.0.2"
-  },
+  "_npmVersion": "5.5.1",
+  "_phantomChildren": {},
   "_requested": {
     "raw": "streamfilter@^1.0.5",
     "scope": null,
@@ -42,8 +40,8 @@
   "_requiredBy": [
     "/gulp-iconfont"
   ],
-  "_resolved": "https://registry.npmjs.org/streamfilter/-/streamfilter-1.0.5.tgz",
-  "_shasum": "87507111beb8e298451717b511cfed8f002abf53",
+  "_resolved": "https://registry.npmjs.org/streamfilter/-/streamfilter-1.0.7.tgz",
+  "_shasum": "ae3e64522aa5a35c061fd17f67620c7653c643c9",
   "_shrinkwrap": null,
   "_spec": "streamfilter@^1.0.5",
   "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/gulp-iconfont",
@@ -67,10 +65,11 @@
   },
   "directories": {},
   "dist": {
-    "shasum": "87507111beb8e298451717b511cfed8f002abf53",
-    "tarball": "https://registry.npmjs.org/streamfilter/-/streamfilter-1.0.5.tgz"
+    "integrity": "sha512-Gk6KZM+yNA1JpW0KzlZIhjo3EaBJDkYfXtYSbOwNIQ7Zd6006E6+sCFlW1NDvFG/vnXhKmw6TJJgiEQg/8lXfQ==",
+    "shasum": "ae3e64522aa5a35c061fd17f67620c7653c643c9",
+    "tarball": "https://registry.npmjs.org/streamfilter/-/streamfilter-1.0.7.tgz"
   },
-  "gitHead": "0c0c8a117b79cca6ceb69ab5dbd1789e1ee57e2f",
+  "gitHead": "6c9733f67f9c21c4df81728ff3bfd3d67ba24b2a",
   "homepage": "https://github.com/nfroidure/streamfilter",
   "keywords": [
     "assert",
@@ -99,5 +98,5 @@
     "lint": "eslint **/*.s",
     "test": "mocha tests/*.mocha.js"
   },
-  "version": "1.0.5"
+  "version": "1.0.7"
 }

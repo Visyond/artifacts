@@ -14,30 +14,27 @@
     ]
   ],
   "_from": "minimize@>=2.0.0 <3.0.0",
-  "_id": "minimize@2.1.0",
+  "_id": "minimize@2.2.0",
   "_inCache": true,
   "_location": "/minimize",
-  "_nodeVersion": "6.9.4",
+  "_nodeVersion": "8.6.0",
   "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/minimize-2.1.0.tgz_1488967223740_0.08496835408732295"
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/minimize-2.2.0.tgz_1516356752005_0.6091139274649322"
   },
   "_npmUser": {
     "name": "swaagie",
     "email": "info@martijnswaagman.nl"
   },
-  "_npmVersion": "3.10.10",
+  "_npmVersion": "5.5.1",
   "_phantomChildren": {
-    "core-util-is": "1.0.2",
     "domelementtype": "1.3.0",
     "domhandler": "2.3.0",
     "domutils": "1.5.1",
     "entities": "1.1.1",
     "inherits": "2.0.3",
-    "lodash": "4.17.4",
-    "process-nextick-args": "1.0.7",
-    "safe-buffer": "5.1.1",
-    "util-deprecate": "1.0.2"
+    "lodash": "4.17.5",
+    "readable-stream": "2.3.4"
   },
   "_requested": {
     "raw": "minimize@^2.0.0",
@@ -51,8 +48,8 @@
   "_requiredBy": [
     "/gulp-angular-embed-templates"
   ],
-  "_resolved": "https://registry.npmjs.org/minimize/-/minimize-2.1.0.tgz",
-  "_shasum": "fa277647fc5f9a21524bfde62814ca7ce1ffd7a2",
+  "_resolved": "https://registry.npmjs.org/minimize/-/minimize-2.2.0.tgz",
+  "_shasum": "8b1676f30051d8598d743646bd12690b074da4c3",
   "_shrinkwrap": null,
   "_spec": "minimize@^2.0.0",
   "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/gulp-angular-embed-templates",
@@ -76,19 +73,20 @@
   },
   "description": "Minimize HTML",
   "devDependencies": {
-    "chai": "^3.5.0",
+    "chai": "^4.1.0",
     "istanbul": "^0.4.5",
-    "mocha": "^3.2.0",
+    "mocha": "^5.0.0",
     "pre-commit": "^1.2.2",
-    "sinon": "^1.17.7",
+    "sinon": "^4.0.0",
     "sinon-chai": "^2.8.0"
   },
   "directories": {},
   "dist": {
-    "shasum": "fa277647fc5f9a21524bfde62814ca7ce1ffd7a2",
-    "tarball": "https://registry.npmjs.org/minimize/-/minimize-2.1.0.tgz"
+    "integrity": "sha512-IxR2XMbw9pXCxApkdD9BTcH2U4XlXhbeySUrv71rmMS9XDA8BVXEsIuFu24LtwCfBgfbL7Fuh8/ZzkO5DaTLlQ==",
+    "shasum": "8b1676f30051d8598d743646bd12690b074da4c3",
+    "tarball": "https://registry.npmjs.org/minimize/-/minimize-2.2.0.tgz"
   },
-  "gitHead": "67713aa6182941edb53f24598b700349812fb8d5",
+  "gitHead": "4689d8e2c1c094b2bcc85ae308c531e0b487763b",
   "homepage": "https://github.com/Moveo/minimize#readme",
   "keywords": [
     "minify",
@@ -116,5 +114,5 @@
     "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- $(find test -name '*.test.js')",
     "watch": "mocha --watch $(find test -name '*.test.js')"
   },
-  "version": "2.1.0"
+  "version": "2.2.0"
 }

@@ -2,18 +2,18 @@
   "_args": [
     [
       {
-        "raw": "stable@~0.1.3",
+        "raw": "stable@^0.1.5",
         "scope": null,
         "escapedName": "stable",
         "name": "stable",
-        "rawSpec": "~0.1.3",
-        "spec": ">=0.1.3 <0.2.0",
+        "rawSpec": "^0.1.5",
+        "spec": ">=0.1.5 <0.2.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/alter"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/tsconfig-glob"
     ]
   ],
-  "_from": "stable@>=0.1.3 <0.2.0",
+  "_from": "stable@>=0.1.5 <0.2.0",
   "_id": "stable@0.1.6",
   "_inCache": true,
   "_location": "/stable",
@@ -29,23 +29,22 @@
   "_npmVersion": "4.1.2",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "stable@~0.1.3",
+    "raw": "stable@^0.1.5",
     "scope": null,
     "escapedName": "stable",
     "name": "stable",
-    "rawSpec": "~0.1.3",
-    "spec": ">=0.1.3 <0.2.0",
+    "rawSpec": "^0.1.5",
+    "spec": ">=0.1.5 <0.2.0",
     "type": "range"
   },
   "_requiredBy": [
-    "/alter",
     "/tsconfig-glob"
   ],
   "_resolved": "https://registry.npmjs.org/stable/-/stable-0.1.6.tgz",
   "_shasum": "910f5d2aed7b520c6e777499c1f32e139fdecb10",
   "_shrinkwrap": null,
-  "_spec": "stable@~0.1.3",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/alter",
+  "_spec": "stable@^0.1.5",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/tsconfig-glob",
   "author": {
     "name": "Angry Bytes",
     "email": "info@angrybytes.com"

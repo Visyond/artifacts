@@ -10,7 +10,7 @@
         "spec": ">=1.0.1 <2.0.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/is-resolvable"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/gulp-wrap"
     ]
   ],
   "_from": "tryit@>=1.0.1 <2.0.0",
@@ -38,14 +38,13 @@
     "type": "range"
   },
   "_requiredBy": [
-    "/gulp-wrap",
-    "/is-resolvable"
+    "/gulp-wrap"
   ],
   "_resolved": "https://registry.npmjs.org/tryit/-/tryit-1.0.3.tgz",
   "_shasum": "393be730a9446fd1ead6da59a014308f36c289cb",
   "_shrinkwrap": null,
   "_spec": "tryit@^1.0.1",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/is-resolvable",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/gulp-wrap",
   "author": {
     "name": "Henrik Joreteg",
     "email": "henrik@andyet.net"

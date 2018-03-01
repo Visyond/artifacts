@@ -27,11 +27,7 @@
     "email": "sindresorhus@gmail.com"
   },
   "_npmVersion": "5.0.0",
-  "_phantomChildren": {
-    "graceful-fs": "4.1.11",
-    "imurmurhash": "0.1.4",
-    "slide": "1.1.6"
-  },
+  "_phantomChildren": {},
   "_requested": {
     "raw": "configstore@^3.0.0",
     "scope": null,

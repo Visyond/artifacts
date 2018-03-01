@@ -14,13 +14,13 @@
     ]
   ],
   "_from": "nightwatch@>=0.9.1 <0.10.0",
-  "_id": "nightwatch@0.9.16",
+  "_id": "nightwatch@0.9.19",
   "_inCache": true,
   "_location": "/nightwatch",
   "_nodeVersion": "6.9.2",
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/nightwatch-0.9.16.tgz_1497210365410_0.8873387491330504"
+    "tmp": "tmp/nightwatch-0.9.19.tgz_1512477781846_0.8229073213879019"
   },
   "_npmUser": {
     "name": "beatfactor",
@@ -28,8 +28,7 @@
   },
   "_npmVersion": "3.10.9",
   "_phantomChildren": {
-    "agent-base": "2.1.1",
-    "brace-expansion": "1.1.8",
+    "brace-expansion": "1.1.11",
     "browser-stdout": "1.3.0",
     "degenerator": "1.0.4",
     "diff": "1.4.0",
@@ -50,14 +49,14 @@
     "lodash.create": "3.1.1",
     "lodash.isplainobject": "4.0.6",
     "lodash.keysin": "4.2.0",
-    "lodash.mergewith": "4.6.0",
+    "lodash.mergewith": "4.6.1",
     "lodash.rest": "4.0.5",
     "mkdirp": "0.5.1",
     "netmask": "1.0.6",
     "once": "1.4.0",
     "path-is-absolute": "1.0.1",
-    "raw-body": "2.2.0",
-    "socks-proxy-agent": "2.1.1",
+    "raw-body": "2.3.2",
+    "socks": "1.1.10",
     "thunkify": "2.1.2"
   },
   "_requested": {
@@ -72,8 +71,8 @@
   "_requiredBy": [
     "#DEV:/"
   ],
-  "_resolved": "https://registry.npmjs.org/nightwatch/-/nightwatch-0.9.16.tgz",
-  "_shasum": "c4ac3ec711b0ff047c3dca9c6557365ee236519f",
+  "_resolved": "https://registry.npmjs.org/nightwatch/-/nightwatch-0.9.19.tgz",
+  "_shasum": "4bd9757273d30b845f04847a98b71be9bb7c4b3b",
   "_shrinkwrap": null,
   "_spec": "nightwatch@^0.9.1",
   "_where": "/var/lib/jenkins/workspace/build/server/v2",
@@ -89,7 +88,7 @@
   },
   "dependencies": {
     "chai-nightwatch": "~0.1.x",
-    "ejs": "0.8.3",
+    "ejs": "2.5.7",
     "lodash.clone": "3.0.3",
     "lodash.defaultsdeep": "4.3.2",
     "minimatch": "3.0.3",
@@ -99,7 +98,7 @@
     "proxy-agent": "2.0.0",
     "q": "1.4.1"
   },
-  "description": "A node.js bindings implementation for selenium 2.0/webdriver",
+  "description": "Easy to use Node.js based End-to-End testing solution for browser based apps and websites, using the W3C WebDriver API.",
   "devDependencies": {
     "chai": "^3.2.0",
     "coveralls": "latest",
@@ -120,8 +119,8 @@
   },
   "directories": {},
   "dist": {
-    "shasum": "c4ac3ec711b0ff047c3dca9c6557365ee236519f",
-    "tarball": "https://registry.npmjs.org/nightwatch/-/nightwatch-0.9.16.tgz"
+    "shasum": "4bd9757273d30b845f04847a98b71be9bb7c4b3b",
+    "tarball": "https://registry.npmjs.org/nightwatch/-/nightwatch-0.9.19.tgz"
   },
   "files": [
     "bin",
@@ -131,7 +130,7 @@
     "LICENSE.md",
     "index.js"
   ],
-  "gitHead": "f568f7bbfe7dad646d707c124f6a26c6e8c7701f",
+  "gitHead": "3f9ea4c2636fb25826875224406c403d884f10b8",
   "homepage": "http://nightwatchjs.org",
   "license": "MIT",
   "main": "./lib/index.js",
@@ -156,5 +155,5 @@
     "test": "mocha test/src",
     "unit-tests": "./bin/nightwatch -c test/nightwatch.json"
   },
-  "version": "0.9.16"
+  "version": "0.9.19"
 }

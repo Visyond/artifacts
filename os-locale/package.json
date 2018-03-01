@@ -10,7 +10,7 @@
         "spec": ">=2.0.0 <3.0.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-lex/node_modules/yargs"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-gho/node_modules/yargs"
     ]
   ],
   "_from": "os-locale@>=2.0.0 <3.0.0",
@@ -38,13 +38,13 @@
     "type": "range"
   },
   "_requiredBy": [
-    "/jison-lex/yargs"
+    "/jison-gho/yargs"
   ],
   "_resolved": "https://registry.npmjs.org/os-locale/-/os-locale-2.1.0.tgz",
   "_shasum": "42bc2900a6b5b8bd17376c8e882b65afccf24bf2",
   "_shrinkwrap": null,
   "_spec": "os-locale@^2.0.0",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-lex/node_modules/yargs",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-gho/node_modules/yargs",
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",

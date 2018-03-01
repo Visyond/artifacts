@@ -27,9 +27,7 @@
     "core-util-is": "1.0.2",
     "escape-string-regexp": "1.0.5",
     "get-stdin": "4.0.1",
-    "has-ansi": "0.1.0",
     "inherits": "2.0.3",
-    "isarray": "0.0.1",
     "lodash._escapehtmlchar": "2.4.1",
     "lodash._escapestringchar": "2.4.1",
     "lodash._isnative": "2.4.1",
@@ -39,9 +37,7 @@
     "lodash.isobject": "2.4.1",
     "lodash.values": "2.4.1",
     "meow": "3.7.0",
-    "multipipe": "0.1.2",
-    "string_decoder": "0.10.31",
-    "strip-ansi": "0.3.0"
+    "multipipe": "0.1.2"
   },
   "_requested": {
     "raw": "gulp-concat-json@^1.0.0",

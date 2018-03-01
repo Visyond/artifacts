@@ -24,8 +24,8 @@
   },
   "_npmVersion": "2.9.1",
   "_phantomChildren": {
-    "natives": "1.1.0",
-    "rimraf": "2.6.1"
+    "natives": "1.1.1",
+    "rimraf": "2.6.2"
   },
   "_requested": {
     "raw": "sprity-css@^1.0.2",

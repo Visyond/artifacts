@@ -4,13 +4,9 @@
 [![Codacy Badge](https://www.codacy.com/project/badge/72d5f8c1c29ee60f6282d7d3fa9cb52c)](https://www.codacy.com/app/mikehostetler_1249/jquery-mockjax/dashboard)
 [![Travis CI Badge](https://travis-ci.org/jakerella/jquery-mockjax.svg?branch=master)](https://travis-ci.org/jakerella/jquery-mockjax)
 
-**Note that we recently switched the `master` branch to version 2!** There are some
-minor breaking changes in v2, so if you need an older version, please check the
-[v1.x](https://github.com/jakerella/jquery-mockjax/tree/v1.x) branch or the list of
-[releases](https://github.com/jakerella/jquery-mockjax/tags) in Github.
+There are some minor breaking changes in v2, so if you need an older version, please check the [v1.x](https://github.com/jakerella/jquery-mockjax/tree/v1.x) branch or the list of [releases](https://github.com/jakerella/jquery-mockjax/tags) in Github.
 
-jQuery Mockjax provides request/response mocking for ajax requests using the
-jQuery API and provides all standard behaviors in the request/response flow.
+jQuery Mockjax provides request/response mocking for ajax requests using the jQuery API and provides all standard behaviors in the request/response flow.
 
 You may report any issues you may find [in the github issue tracking](https://github.com/jakerella/jquery-mockjax/issues).
 
@@ -104,7 +100,9 @@ checkout this list:
       * `onAfterError`: [Function] A callback that will be called after the error method has been called, this is useful to check a condition after the call has been completed
       * `onAfterComplete`: [Function] Similar to onAfterSuccess, but will be executed after the complete method has been called
 * `Object $.mockjax.handler(/* Number */ id)`
-  * Returns the mock request settings for the handler with the provided `id`
+  * Returns the mock request settings for the handler with the provided `id`. Be careful here, you're accessing the inner workings of the plugin, any changes to this object could be bad.
+* `Array $.mockjax.handlers()`
+  * Returns the array of mock handlers. **NOTE:** This array is NOT modified when a handler is cleared, the cleared handler position is simply set to `null`. As such, the array length will only change when new mocks are added. Be careful here, you're accessing the inner workings of the plugin, any changes to the array could be very bad.
 * `void $.mockjax.clear([/* Number */ id])`
   * If the `id` is provided, the handler with that ID is cleared (that is, requests matching it will no longer do so, the handler is completely removed)
   * If no `id` is provided, all handlers are cleared, resetting Mockjax to its initial state
@@ -771,7 +769,7 @@ using a module intended for use as a "browserified" module:
 
 ```js
 var jquery = require('jquery');
-var mockjax = require('jquery.mockjax')(jquery, window);
+var mockjax = require('jquery-mockjax')(jquery, window);
 // Note that we expect `window` to be defined once this file is browserified and
 // used in a browser. If it isn't Mockjax will have a problem!
 

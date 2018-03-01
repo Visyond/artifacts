@@ -38,7 +38,10 @@
     "type": "range"
   },
   "_requiredBy": [
-    "/form-data"
+    "/form-data",
+    "/less/form-data",
+    "/localtunnel/form-data",
+    "/selenium-standalone/form-data"
   ],
   "_resolved": "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz",
   "_shasum": "c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79",

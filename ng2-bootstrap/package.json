@@ -55,7 +55,7 @@
   "dependencies": {
     "moment": "2.18.1"
   },
-  "deprecated": "DEPRECATED: package was renamed to ngx-bootstrap",
+  "deprecated": "ng2-bootstrap is renamed to ngx-bootstrap, please do npm i ngx-bootstrap -S",
   "description": "Native Angular Bootstrap Components",
   "devDependencies": {},
   "directories": {},

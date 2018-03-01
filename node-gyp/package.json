@@ -27,7 +27,11 @@
     "email": "rod@vagg.org"
   },
   "_npmVersion": "4.2.0",
-  "_phantomChildren": {},
+  "_phantomChildren": {
+    "block-stream": "0.0.9",
+    "fstream": "1.0.11",
+    "inherits": "2.0.3"
+  },
   "_requested": {
     "raw": "node-gyp@^3.0.3",
     "scope": null,

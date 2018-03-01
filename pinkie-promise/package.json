@@ -38,18 +38,24 @@
     "type": "range"
   },
   "_requiredBy": [
+    "/browser-sync/load-json-file",
+    "/browser-sync/path-type",
     "/del",
+    "/del/globby",
     "/find-up",
     "/globby",
     "/got",
-    "/load-json-file",
+    "/meow/load-json-file",
+    "/meow/path-type",
     "/opn",
     "/path-exists",
-    "/path-type",
     "/read-all-stream",
     "/selenium-standalone/har-validator",
     "/tsconfig",
-    "/vinyl-file"
+    "/tsconfig/globby",
+    "/vinyl-file",
+    "/yargs/load-json-file",
+    "/yargs/path-type"
   ],
   "_resolved": "https://registry.npmjs.org/pinkie-promise/-/pinkie-promise-2.0.1.tgz",
   "_shasum": "2135d6dfa7a358c069ac9b178776288228450ffa",

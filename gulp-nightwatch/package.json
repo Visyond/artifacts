@@ -34,12 +34,11 @@
     "lodash._bindcallback": "3.0.1",
     "lodash._isiterateecall": "3.0.9",
     "lodash.defaultsdeep": "4.6.0",
-    "lru-cache": "2.7.3",
     "mkpath": "1.0.0",
     "mocha-nightwatch": "2.2.7",
     "optimist": "0.6.1",
-    "proxy-agent": "2.1.0",
-    "q": "1.5.0",
+    "proxy-agent": "2.2.0",
+    "q": "1.5.1",
     "sigmund": "1.0.1"
   },
   "_requested": {

@@ -4,10 +4,11 @@
  *
  * By Zachary Carter <zach@carter.name>
  * MIT Licensed
- * */
+ */
 
-var typal = (function () {
-'use strict';
+import helpers from '../../packages/helpers-lib';
+var mkIdentifier = helpers.mkIdentifier;
+
 
 var create = Object.create || function (o) { 
     function F(){} 
@@ -75,13 +76,6 @@ function typal_camel_mix(cb) {
     var self = this;
     var i, o, k;
 
-    // Convert dashed option keys to Camel Case, e.g. `camelCase('camels-have-one-hump')` => `'camelsHaveOneHump'` 
-    function camelCase(s) {
-        return s.replace(/-\w/g, function (match) { 
-            return match.charAt(1).toUpperCase(); 
-        });
-    }
-
     // Convert first character to lowercase
     function lcase0(s) {
         return s.replace(/^\w/, function (match) { 
@@ -103,7 +97,7 @@ function typal_camel_mix(cb) {
         }
         for (k in o) {
             if (Object.prototype.hasOwnProperty.call(o, k)) {
-                var nk = camelCase(k);
+                var nk = mkIdentifier(k);
                 var match = k.match(position);
                 var key = k.replace(position, '');
                 // This anticipates before/after members to be camelcased already, e.g.
@@ -123,7 +117,7 @@ function typal_camel_mix(cb) {
     return this;
 }
 
-return {
+var typal = {
     // extend object with own properties of each argument
     mix: typal_mix,
 
@@ -150,7 +144,4 @@ return {
     constructor: function typal_constructor() { return this; }
 };
 
-})();
-
-if (typeof exports !== 'undefined')
-    exports.typal = typal;
+export default typal;

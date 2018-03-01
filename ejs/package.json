@@ -48,6 +48,7 @@
     "url": "https://github.com/visionmedia/ejs/issues"
   },
   "dependencies": {},
+  "deprecated": "Critical security bugs fixed in 2.5.5",
   "description": "Embedded JavaScript templates",
   "devDependencies": {
     "mocha": "*",

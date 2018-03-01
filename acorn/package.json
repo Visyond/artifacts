@@ -39,9 +39,7 @@
   },
   "_requiredBy": [
     "/astw",
-    "/detective",
-    "/gulp-sourcemaps",
-    "/syntax-error"
+    "/gulp-sourcemaps"
   ],
   "_resolved": "https://registry.npmjs.org/acorn/-/acorn-4.0.13.tgz",
   "_shasum": "105495ae5361d697bd195c825192e1ad7f253787",

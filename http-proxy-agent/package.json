@@ -2,11 +2,11 @@
   "_args": [
     [
       {
-        "raw": "http-proxy-agent@1",
+        "raw": "http-proxy-agent@^1.0.0",
         "scope": null,
         "escapedName": "http-proxy-agent",
         "name": "http-proxy-agent",
-        "rawSpec": "1",
+        "rawSpec": "^1.0.0",
         "spec": ">=1.0.0 <2.0.0",
         "type": "range"
       },
@@ -23,13 +23,15 @@
     "email": "nathan@tootallnate.net"
   },
   "_npmVersion": "2.11.2",
-  "_phantomChildren": {},
+  "_phantomChildren": {
+    "extend": "3.0.1"
+  },
   "_requested": {
-    "raw": "http-proxy-agent@1",
+    "raw": "http-proxy-agent@^1.0.0",
     "scope": null,
     "escapedName": "http-proxy-agent",
     "name": "http-proxy-agent",
-    "rawSpec": "1",
+    "rawSpec": "^1.0.0",
     "spec": ">=1.0.0 <2.0.0",
     "type": "range"
   },
@@ -42,7 +44,7 @@
   "_resolved": "https://registry.npmjs.org/http-proxy-agent/-/http-proxy-agent-1.0.0.tgz",
   "_shasum": "cc1ce38e453bf984a0f7702d2dd59c73d081284a",
   "_shrinkwrap": null,
-  "_spec": "http-proxy-agent@1",
+  "_spec": "http-proxy-agent@^1.0.0",
   "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/proxy-agent",
   "author": {
     "name": "Nathan Rajlich",

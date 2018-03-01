@@ -14,12 +14,12 @@
     ]
   ],
   "_from": "@types/jasmine@>=2.5.36 <3.0.0",
-  "_id": "@types/jasmine@2.5.53",
+  "_id": "@types/jasmine@2.8.6",
   "_inCache": true,
   "_location": "/@types/jasmine",
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/jasmine-2.5.53.tgz_1498239317086_0.6815302141476423"
+    "tmp": "tmp/jasmine-2.8.6.tgz_1516987303500_0.7104015576187521"
   },
   "_npmUser": {
     "name": "types",
@@ -38,15 +38,15 @@
   "_requiredBy": [
     "/protractor"
   ],
-  "_resolved": "https://registry.npmjs.org/@types/jasmine/-/jasmine-2.5.53.tgz",
-  "_shasum": "4e0cefad09df5ec48c8dd40433512f84b1568d61",
+  "_resolved": "https://registry.npmjs.org/@types/jasmine/-/jasmine-2.8.6.tgz",
+  "_shasum": "14445b6a1613cf4e05dd61c3c3256d0e95c0421e",
   "_shrinkwrap": null,
   "_spec": "@types/jasmine@^2.5.36",
   "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/protractor",
   "contributors": [
     {
       "name": "Boris Yankov",
-      "url": "https://github.com/borisyankov/"
+      "url": "https://github.com/borisyankov"
     },
     {
       "name": "Theodore Brown",
@@ -54,7 +54,7 @@
     },
     {
       "name": "David Pärsson",
-      "url": "https://github.com/davidparsson/"
+      "url": "https://github.com/davidparsson"
     },
     {
       "name": "Gabe Moothart",
@@ -63,6 +63,10 @@
     {
       "name": "Lukas Zech",
       "url": "https://github.com/lukas-zech-software"
+    },
+    {
+      "name": "Boris Breuer",
+      "url": "https://github.com/Engineer2B"
     }
   ],
   "dependencies": {},
@@ -70,9 +74,9 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "integrity": "sha512-2YNL0jXYuN7w07mb1sMZQ6T6zOvGi83v8UbjhBZ8mhvI1VkQ2STU9XOrTFyvWswMyh5rW1evS+e7qltYJvTqPA==",
-    "shasum": "4e0cefad09df5ec48c8dd40433512f84b1568d61",
-    "tarball": "https://registry.npmjs.org/@types/jasmine/-/jasmine-2.5.53.tgz"
+    "integrity": "sha512-clg9raJTY0EOo5pVZKX3ZlMjlYzVU73L71q5OV1jhE2Uezb7oF94jh4CvwrW6wInquQAdhOxJz5VDF2TLUGmmA==",
+    "shasum": "14445b6a1613cf4e05dd61c3c3256d0e95c0421e",
+    "tarball": "https://registry.npmjs.org/@types/jasmine/-/jasmine-2.8.6.tgz"
   },
   "license": "MIT",
   "main": "",
@@ -84,7 +88,6 @@
   ],
   "name": "@types/jasmine",
   "optionalDependencies": {},
-  "peerDependencies": {},
   "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
@@ -92,6 +95,6 @@
   },
   "scripts": {},
   "typeScriptVersion": "2.1",
-  "typesPublisherContentHash": "5707f8739192e5e1c0202d630546228db04cf9ac32e0f284141ffdb37b72a916",
-  "version": "2.5.53"
+  "typesPublisherContentHash": "92179f70f2b38380da53ee5f83cfc48a962e1ba600e3611a98509bfda63ac3af",
+  "version": "2.8.6"
 }

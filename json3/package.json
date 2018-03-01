@@ -10,7 +10,7 @@
         "spec": "3.3.2",
         "type": "version"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/socket.io-parser"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/nightwatch/node_modules/mocha-nightwatch"
     ]
   ],
   "_from": "json3@3.3.2",
@@ -33,14 +33,13 @@
     "type": "version"
   },
   "_requiredBy": [
-    "/nightwatch/mocha-nightwatch",
-    "/socket.io-parser"
+    "/nightwatch/mocha-nightwatch"
   ],
   "_resolved": "https://registry.npmjs.org/json3/-/json3-3.3.2.tgz",
   "_shasum": "3c0434743df93e2f5c42aee7b19bcb483575f4e1",
   "_shrinkwrap": null,
   "_spec": "json3@3.3.2",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/socket.io-parser",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/nightwatch/node_modules/mocha-nightwatch",
   "author": {
     "name": "Kit Cambridge",
     "email": "github@kitcambridge.be",

@@ -14,24 +14,23 @@
     ]
   ],
   "_from": "gulp-sourcemaps@>=1.6.0 <2.0.0",
-  "_id": "gulp-sourcemaps@1.12.0",
+  "_id": "gulp-sourcemaps@1.12.1",
   "_inCache": true,
   "_location": "/gulp-sourcemaps",
-  "_nodeVersion": "0.10.41",
+  "_nodeVersion": "6.12.2",
   "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/gulp-sourcemaps-1.12.0.tgz_1490741084233_0.33308355789631605"
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/gulp-sourcemaps-1.12.1.tgz_1516642477671_0.538768045604229"
   },
   "_npmUser": {
-    "name": "phated",
-    "email": "blaine.bublitz@gmail.com"
+    "name": "nmccready",
+    "email": "nemtcan@gmail.com"
   },
-  "_npmVersion": "2.15.2",
+  "_npmVersion": "4.4.4",
   "_phantomChildren": {
-    "clone": "1.0.2",
+    "clone": "1.0.3",
     "clone-stats": "0.0.1",
-    "is-utf8": "0.2.1",
-    "replace-ext": "0.0.1"
+    "is-utf8": "0.2.1"
   },
   "_requested": {
     "raw": "gulp-sourcemaps@^1.6.0",
@@ -45,8 +44,8 @@
   "_requiredBy": [
     "#DEV:/"
   ],
-  "_resolved": "https://registry.npmjs.org/gulp-sourcemaps/-/gulp-sourcemaps-1.12.0.tgz",
-  "_shasum": "786f97c94a0f968492465d70558e04242c679598",
+  "_resolved": "https://registry.npmjs.org/gulp-sourcemaps/-/gulp-sourcemaps-1.12.1.tgz",
+  "_shasum": "b437d1f3d980cf26e81184823718ce15ae6597b6",
   "_shrinkwrap": null,
   "_spec": "gulp-sourcemaps@^1.6.0",
   "_where": "/var/lib/jenkins/workspace/build/server/v2",
@@ -65,7 +64,7 @@
     "debug-fabulous": "0.0.X",
     "detect-newline": "2.X",
     "graceful-fs": "4.X",
-    "source-map": "0.X",
+    "source-map": "~0.6.0",
     "strip-bom": "2.X",
     "through2": "2.X",
     "vinyl": "1.X"
@@ -92,8 +91,8 @@
   },
   "directories": {},
   "dist": {
-    "shasum": "786f97c94a0f968492465d70558e04242c679598",
-    "tarball": "https://registry.npmjs.org/gulp-sourcemaps/-/gulp-sourcemaps-1.12.0.tgz"
+    "shasum": "b437d1f3d980cf26e81184823718ce15ae6597b6",
+    "tarball": "https://registry.npmjs.org/gulp-sourcemaps/-/gulp-sourcemaps-1.12.1.tgz"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -102,7 +101,7 @@
     "index.js",
     "src"
   ],
-  "gitHead": "260b5cd0b9f351d273cd567c7284368f35cc0368",
+  "gitHead": "3ce7c6662de0bb7c5427a01872d9902929bae580",
   "homepage": "http://github.com/floridoo/gulp-sourcemaps",
   "keywords": [
     "gulpplugin",
@@ -142,5 +141,5 @@
     "test": "npm run lint && faucet test/*.js $@",
     "test:int": "rm -rf ./tmp && tape ./test/integration.js"
   },
-  "version": "1.12.0"
+  "version": "1.12.1"
 }

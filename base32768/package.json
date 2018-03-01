@@ -2,18 +2,18 @@
   "_args": [
     [
       {
-        "raw": "base32768",
+        "raw": "base32768@^0.0.3",
         "scope": null,
         "escapedName": "base32768",
         "name": "base32768",
-        "rawSpec": "",
-        "spec": "latest",
-        "type": "tag"
+        "rawSpec": "^0.0.3",
+        "spec": ">=0.0.3 <0.0.4",
+        "type": "range"
       },
-      "/var/lib/jenkins/workspace/checkbranch/node_modules"
+      "/var/lib/jenkins/workspace/build/server/v2"
     ]
   ],
-  "_from": "base32768@latest",
+  "_from": "base32768@>=0.0.3 <0.0.4",
   "_id": "base32768@0.0.3",
   "_inCache": true,
   "_location": "/base32768",
@@ -29,22 +29,22 @@
   "_npmVersion": "4.0.5",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "base32768",
+    "raw": "base32768@^0.0.3",
     "scope": null,
     "escapedName": "base32768",
     "name": "base32768",
-    "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
+    "rawSpec": "^0.0.3",
+    "spec": ">=0.0.3 <0.0.4",
+    "type": "range"
   },
   "_requiredBy": [
-    "#USER"
+    "/"
   ],
   "_resolved": "https://registry.npmjs.org/base32768/-/base32768-0.0.3.tgz",
   "_shasum": "2e91598dbbfccf7e106b6c1607d83a45646bdbd1",
   "_shrinkwrap": null,
-  "_spec": "base32768",
-  "_where": "/var/lib/jenkins/workspace/checkbranch/node_modules",
+  "_spec": "base32768@^0.0.3",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2",
   "author": {
     "name": "qntm"
   },

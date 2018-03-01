@@ -2,18 +2,18 @@
   "_args": [
     [
       {
-        "raw": "fstream@^1.0.8",
+        "raw": "fstream@^1.0.0",
         "scope": null,
         "escapedName": "fstream",
         "name": "fstream",
-        "rawSpec": "^1.0.8",
-        "spec": ">=1.0.8 <2.0.0",
+        "rawSpec": "^1.0.0",
+        "spec": ">=1.0.0 <2.0.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/tar.gz"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/node-gyp"
     ]
   ],
-  "_from": "fstream@>=1.0.8 <2.0.0",
+  "_from": "fstream@>=1.0.0 <2.0.0",
   "_id": "fstream@1.0.11",
   "_inCache": true,
   "_location": "/fstream",
@@ -29,24 +29,23 @@
   "_npmVersion": "4.1.2",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "fstream@^1.0.8",
+    "raw": "fstream@^1.0.0",
     "scope": null,
     "escapedName": "fstream",
     "name": "fstream",
-    "rawSpec": "^1.0.8",
-    "spec": ">=1.0.8 <2.0.0",
+    "rawSpec": "^1.0.0",
+    "spec": ">=1.0.0 <2.0.0",
     "type": "range"
   },
   "_requiredBy": [
     "/node-gyp",
-    "/tar",
-    "/tar.gz"
+    "/node-gyp/tar"
   ],
   "_resolved": "https://registry.npmjs.org/fstream/-/fstream-1.0.11.tgz",
   "_shasum": "5c1fb1f117477114f0632a0eb4b71b3cb0fd3171",
   "_shrinkwrap": null,
-  "_spec": "fstream@^1.0.8",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/tar.gz",
+  "_spec": "fstream@^1.0.0",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/node-gyp",
   "author": {
     "name": "Isaac Z. Schlueter",
     "email": "i@izs.me",

@@ -27,7 +27,9 @@
     "email": "jmleyba@gmail.com"
   },
   "_npmVersion": "2.14.12",
-  "_phantomChildren": {},
+  "_phantomChildren": {
+    "options": "0.0.6"
+  },
   "_requested": {
     "raw": "selenium-webdriver@2.53.3",
     "scope": null,

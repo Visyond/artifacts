@@ -2,6 +2,7 @@
 
 module.exports = {
 	assign: require("./assign"),
+	assignDeep: require("./assign-deep"),
 	clear: require("./clear"),
 	compact: require("./compact"),
 	compare: require("./compare"),
@@ -9,6 +10,7 @@ module.exports = {
 	copyDeep: require("./copy-deep"),
 	count: require("./count"),
 	create: require("./create"),
+	ensureArray: require("./ensure-array"),
 	ensureFiniteNumber: require("./ensure-finite-number"),
 	ensureNaturalNumber: require("./ensure-natural-number"),
 	ensureNaturalNumberValue: require("./ensure-natural-number-value"),
@@ -29,8 +31,11 @@ module.exports = {
 	isCopyDeep: require("./is-copy-deep"),
 	isEmpty: require("./is-empty"),
 	isFiniteNumber: require("./is-finite-number"),
+	isNaturalNumber: require("./is-natural-number"),
+	isNaturalNumberValue: require("./is-natural-number-value"),
 	isNumberValue: require("./is-number-value"),
 	isObject: require("./is-object"),
+	isPlainFunction: require("./is-plain-function"),
 	isPlainObject: require("./is-plain-object"),
 	isPromise: require("./is-promise"),
 	isValue: require("./is-value"),

@@ -35,7 +35,10 @@
   },
   "_requiredBy": [
     "/ajv",
-    "/pac-resolver"
+    "/less/ajv",
+    "/localtunnel/ajv",
+    "/pac-resolver",
+    "/table/ajv"
   ],
   "_resolved": "https://registry.npmjs.org/co/-/co-4.6.0.tgz",
   "_shasum": "6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184",

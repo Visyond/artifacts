@@ -36,7 +36,6 @@
     "/gulp-concat-json/dateformat",
     "/gulp-manifest/dateformat",
     "/gulp-spawn/dateformat",
-    "/jscodeshift/detect-indent",
     "/node-sass",
     "/strip-indent"
   ],

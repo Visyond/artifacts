@@ -22,7 +22,7 @@
         "spec": ">=3.2.1 <4.0.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-lex/node_modules/yargs"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-gho/node_modules/yargs"
     ]
   ],
   "_from": "y18n@^3.2.1",
@@ -51,8 +51,7 @@
   },
   "_requiredBy": [
     "/browser-sync/yargs",
-    "/defs/yargs",
-    "/jison-lex/yargs",
+    "/jison-gho/yargs",
     "/localtunnel/yargs",
     "/yargs"
   ],
@@ -60,7 +59,7 @@
   "_shasum": "6d15fba884c08679c0d77e88e7759e811e07fa41",
   "_shrinkwrap": null,
   "_spec": "y18n@^3.2.1",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-lex/node_modules/yargs",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-gho/node_modules/yargs",
   "author": {
     "name": "Ben Coe",
     "email": "ben@npmjs.com"

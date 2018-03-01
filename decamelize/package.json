@@ -39,9 +39,8 @@
   },
   "_requiredBy": [
     "/browser-sync/yargs",
-    "/defs/yargs",
     "/gulp-uglify/yargs",
-    "/jison-lex/yargs",
+    "/jison-gho/yargs",
     "/localtunnel/yargs",
     "/meow",
     "/uglify-js/yargs",

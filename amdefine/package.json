@@ -39,9 +39,7 @@
   },
   "_requiredBy": [
     "/css/source-map",
-    "/escodegen/source-map",
     "/handlebars/source-map",
-    "/jscodeshift/source-map-support/source-map",
     "/scss-tokenizer/source-map",
     "/sprity/source-map",
     "/traceur/source-map",

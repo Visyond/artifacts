@@ -14,12 +14,13 @@
     ]
   ],
   "_from": "@types/lodash@>=4.14.61 <5.0.0",
-  "_id": "@types/lodash@4.14.73",
+  "_hasShrinkwrap": false,
+  "_id": "@types/lodash@4.14.104",
   "_inCache": true,
   "_location": "/@types/lodash",
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/lodash-4.14.73.tgz_1502820709932_0.5841277886647731"
+    "tmp": "tmp/lodash_4.14.104_1518805127059_0.25329211407905317"
   },
   "_npmUser": {
     "name": "types",
@@ -39,8 +40,8 @@
     "#DEV:/",
     "/typedoc"
   ],
-  "_resolved": "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.73.tgz",
-  "_shasum": "9837e47db8643ba5bcef2c7921f37d90f9c24213",
+  "_resolved": "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.104.tgz",
+  "_shasum": "53ee2357fa2e6e68379341d92eb2ecea4b11bb80",
   "_shrinkwrap": null,
   "_spec": "@types/lodash@^4.14.61",
   "_where": "/var/lib/jenkins/workspace/build/server/v2",
@@ -58,16 +59,28 @@
       "url": "https://github.com/stepancar"
     },
     {
-      "name": "Eric L Anderson",
-      "url": "https://github.com/ericanderson"
-    },
-    {
       "name": "AJ Richardson",
       "url": "https://github.com/aj-r"
     },
     {
       "name": "Junyoung Clare Jang",
       "url": "https://github.com/ailrun"
+    },
+    {
+      "name": "e-cloud",
+      "url": "https://github.com/e-cloud"
+    },
+    {
+      "name": "Georgii Dolzhykov",
+      "url": "https://github.com/thorn0"
+    },
+    {
+      "name": "Jack Moore",
+      "url": "https://github.com/jtmthf"
+    },
+    {
+      "name": "Dominique Rau",
+      "url": "https://github.com/DomiR"
     }
   ],
   "dependencies": {},
@@ -75,9 +88,11 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "integrity": "sha512-wZDQC6C2VlCaddkd57b363vLL8J6zcwMqP5jqR4Aikcfh85FmPTINrSCWXZHG9JlkQ07ojeNNt71EyccfIdnKQ==",
-    "shasum": "9837e47db8643ba5bcef2c7921f37d90f9c24213",
-    "tarball": "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.73.tgz"
+    "integrity": "sha512-ufQcVg4daO8xQ5kopxRHanqFdL4AI7ondQkV+2f+7mz3gvp0LkBx2zBRC6hfs3T87mzQFmf5Fck7Fi145Ul6NQ==",
+    "shasum": "53ee2357fa2e6e68379341d92eb2ecea4b11bb80",
+    "tarball": "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.104.tgz",
+    "fileCount": 315,
+    "unpackedSize": 606923
   },
   "license": "MIT",
   "main": "",
@@ -89,7 +104,6 @@
   ],
   "name": "@types/lodash",
   "optionalDependencies": {},
-  "peerDependencies": {},
   "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
@@ -97,6 +111,6 @@
   },
   "scripts": {},
   "typeScriptVersion": "2.2",
-  "typesPublisherContentHash": "e8c327829569bf87d1bcfca59ac1df1319e9944fa83e77eb03b0e1552dbb1035",
-  "version": "4.14.73"
+  "typesPublisherContentHash": "c36738a623ac109215d6490f59bd1353f53841adaf45cf1a63b6415b5ba96bf5",
+  "version": "4.14.104"
 }

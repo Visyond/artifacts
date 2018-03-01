@@ -2,18 +2,18 @@
   "_args": [
     [
       {
-        "raw": "lodash.clonedeep@^4.3.2",
+        "raw": "lodash.clonedeep@^4.5.0",
         "scope": null,
         "escapedName": "lodash.clonedeep",
         "name": "lodash.clonedeep",
-        "rawSpec": "^4.3.2",
-        "spec": ">=4.3.2 <5.0.0",
+        "rawSpec": "^4.5.0",
+        "spec": ">=4.5.0 <5.0.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/gulp-sass"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/sanitize-html"
     ]
   ],
-  "_from": "lodash.clonedeep@>=4.3.2 <5.0.0",
+  "_from": "lodash.clonedeep@>=4.5.0 <5.0.0",
   "_id": "lodash.clonedeep@4.5.0",
   "_inCache": true,
   "_location": "/lodash.clonedeep",
@@ -29,23 +29,24 @@
   "_npmVersion": "2.15.10",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "lodash.clonedeep@^4.3.2",
+    "raw": "lodash.clonedeep@^4.5.0",
     "scope": null,
     "escapedName": "lodash.clonedeep",
     "name": "lodash.clonedeep",
-    "rawSpec": "^4.3.2",
-    "spec": ">=4.3.2 <5.0.0",
+    "rawSpec": "^4.5.0",
+    "spec": ">=4.5.0 <5.0.0",
     "type": "range"
   },
   "_requiredBy": [
     "/gulp-sass",
-    "/node-sass"
+    "/node-sass",
+    "/sanitize-html"
   ],
   "_resolved": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz",
   "_shasum": "e23f3f9c4f8fbdde872529c1071857a086e5ccef",
   "_shrinkwrap": null,
-  "_spec": "lodash.clonedeep@^4.3.2",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/gulp-sass",
+  "_spec": "lodash.clonedeep@^4.5.0",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/sanitize-html",
   "author": {
     "name": "John-David Dalton",
     "email": "john.david.dalton@gmail.com",

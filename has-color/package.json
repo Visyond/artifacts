@@ -10,7 +10,7 @@
         "spec": ">=0.1.0 <0.2.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/jscodeshift/node_modules/nomnom/node_modules/chalk"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/nomnom/node_modules/chalk"
     ]
   ],
   "_from": "has-color@>=0.1.0 <0.2.0",
@@ -33,14 +33,13 @@
     "type": "range"
   },
   "_requiredBy": [
-    "/jscodeshift/nomnom/chalk",
-    "/sprity/chalk"
+    "/nomnom/chalk"
   ],
   "_resolved": "https://registry.npmjs.org/has-color/-/has-color-0.1.7.tgz",
   "_shasum": "67144a5260c34fc3cca677d041daf52fe7b78b2f",
   "_shrinkwrap": null,
   "_spec": "has-color@~0.1.0",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jscodeshift/node_modules/nomnom/node_modules/chalk",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/nomnom/node_modules/chalk",
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",

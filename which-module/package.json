@@ -10,7 +10,7 @@
         "spec": ">=2.0.0 <3.0.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-lex/node_modules/yargs"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-gho/node_modules/yargs"
     ]
   ],
   "_from": "which-module@>=2.0.0 <3.0.0",
@@ -38,13 +38,13 @@
     "type": "range"
   },
   "_requiredBy": [
-    "/jison-lex/yargs"
+    "/jison-gho/yargs"
   ],
   "_resolved": "https://registry.npmjs.org/which-module/-/which-module-2.0.0.tgz",
   "_shasum": "d9ef07dce77b9902b8a3a8fa4b31c3e3f7e6e87a",
   "_shrinkwrap": null,
   "_spec": "which-module@^2.0.0",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-lex/node_modules/yargs",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/jison-gho/node_modules/yargs",
   "author": {
     "name": "nexdrew"
   },

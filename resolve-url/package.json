@@ -2,11 +2,11 @@
   "_args": [
     [
       {
-        "raw": "resolve-url@~0.2.1",
+        "raw": "resolve-url@^0.2.1",
         "scope": null,
         "escapedName": "resolve-url",
         "name": "resolve-url",
-        "rawSpec": "~0.2.1",
+        "rawSpec": "^0.2.1",
         "spec": ">=0.2.1 <0.3.0",
         "type": "range"
       },
@@ -24,21 +24,22 @@
   "_npmVersion": "1.4.4",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "resolve-url@~0.2.1",
+    "raw": "resolve-url@^0.2.1",
     "scope": null,
     "escapedName": "resolve-url",
     "name": "resolve-url",
-    "rawSpec": "~0.2.1",
+    "rawSpec": "^0.2.1",
     "spec": ">=0.2.1 <0.3.0",
     "type": "range"
   },
   "_requiredBy": [
+    "/css/source-map-resolve",
     "/source-map-resolve"
   ],
   "_resolved": "https://registry.npmjs.org/resolve-url/-/resolve-url-0.2.1.tgz",
   "_shasum": "2c637fe77c893afd2a663fe21aa9080068e2052a",
   "_shrinkwrap": null,
-  "_spec": "resolve-url@~0.2.1",
+  "_spec": "resolve-url@^0.2.1",
   "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/source-map-resolve",
   "author": {
     "name": "Simon Lydell"

@@ -1,7 +1,9 @@
 'use strict';
-const gutil = require('gulp-util');
 const through = require('through2');
 const nunjucks = require('nunjucks');
+const PluginError = require('plugin-error');
+const Buffer = require('safe-buffer').Buffer;
+const replaceExt = require('replace-ext');
 
 function compile(data, opts) {
 	return through.obj(function (file, enc, cb) {
@@ -11,7 +13,7 @@ function compile(data, opts) {
 		}
 
 		if (file.isStream()) {
-			cb(new gutil.PluginError('gulp-nunjucks', 'Streaming not supported'));
+			cb(new PluginError('gulp-nunjucks', 'Streaming not supported'));
 			return;
 		}
 
@@ -20,10 +22,10 @@ function compile(data, opts) {
 		const env = (opts && opts.env) || new nunjucks.Environment(new nunjucks.FileSystemLoader(file.base), opts);
 
 		try {
-			file.contents = new Buffer(env.renderString(file.contents.toString(), context));
+			file.contents = Buffer.from(env.renderString(file.contents.toString(), context));
 			this.push(file);
 		} catch (err) {
-			this.emit('error', new gutil.PluginError('gulp-nunjucks', err, {fileName: filePath}));
+			this.emit('error', new PluginError('gulp-nunjucks', err, {fileName: filePath}));
 		}
 
 		cb();
@@ -38,7 +40,7 @@ function precompile(opts) {
 		}
 
 		if (file.isStream()) {
-			cb(new gutil.PluginError('gulp-nunjucks', 'Streaming not supported'));
+			cb(new PluginError('gulp-nunjucks', 'Streaming not supported'));
 			return;
 		}
 
@@ -47,11 +49,11 @@ function precompile(opts) {
 
 		try {
 			options.name = (typeof options.name === 'function' && options.name(file)) || file.relative;
-			file.contents = new Buffer(nunjucks.precompileString(file.contents.toString(), options));
-			file.path = gutil.replaceExtension(filePath, '.js');
+			file.contents = Buffer.from(nunjucks.precompileString(file.contents.toString(), options));
+			file.path = replaceExt(filePath, '.js');
 			this.push(file);
 		} catch (err) {
-			this.emit('error', new gutil.PluginError('gulp-nunjucks', err, {fileName: filePath}));
+			this.emit('error', new PluginError('gulp-nunjucks', err, {fileName: filePath}));
 		}
 
 		cb();

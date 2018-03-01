@@ -2,83 +2,105 @@
   "_args": [
     [
       {
-        "raw": "jison-gho@0.4.18-178",
+        "raw": "jison-gho@0.6.1-214",
         "scope": null,
         "escapedName": "jison-gho",
         "name": "jison-gho",
-        "rawSpec": "0.4.18-178",
-        "spec": "0.4.18-178",
+        "rawSpec": "0.6.1-214",
+        "spec": "0.6.1-214",
         "type": "version"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/gulp-jison"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/@gerhobbelt/gulp-jison"
     ]
   ],
-  "_from": "jison-gho@0.4.18-178",
-  "_id": "jison-gho@0.4.18-178",
+  "_from": "jison-gho@0.6.1-214",
+  "_id": "jison-gho@0.6.1-214",
   "_inCache": true,
   "_location": "/jison-gho",
-  "_nodeVersion": "7.8.0",
+  "_nodeVersion": "8.9.1",
   "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/jison-gho-0.4.18-178.tgz_1491751431563_0.6940722609870136"
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/jison-gho-0.6.1-214.tgz_1513794096210_0.6814883898478001"
   },
   "_npmUser": {
     "name": "gerhobbelt",
     "email": "ger@hobbelt.com"
   },
-  "_npmVersion": "4.2.0",
-  "_phantomChildren": {},
+  "_npmVersion": "5.5.1",
+  "_phantomChildren": {
+    "camelcase": "4.1.0",
+    "cliui": "3.2.0",
+    "decamelize": "1.2.0",
+    "get-caller-file": "1.0.2",
+    "os-locale": "2.1.0",
+    "read-pkg-up": "2.0.0",
+    "require-directory": "2.1.1",
+    "require-main-filename": "1.0.1",
+    "set-blocking": "2.0.0",
+    "string-width": "2.1.1",
+    "which-module": "2.0.0",
+    "y18n": "3.2.1",
+    "yargs-parser": "7.0.0"
+  },
   "_requested": {
-    "raw": "jison-gho@0.4.18-178",
+    "raw": "jison-gho@0.6.1-214",
     "scope": null,
     "escapedName": "jison-gho",
     "name": "jison-gho",
-    "rawSpec": "0.4.18-178",
-    "spec": "0.4.18-178",
+    "rawSpec": "0.6.1-214",
+    "spec": "0.6.1-214",
     "type": "version"
   },
   "_requiredBy": [
-    "/gulp-jison"
+    "/@gerhobbelt/gulp-jison"
   ],
-  "_resolved": "https://registry.npmjs.org/jison-gho/-/jison-gho-0.4.18-178.tgz",
-  "_shasum": "c8fa1681098c36e0f9aecb487fcda60b1032e5c7",
+  "_resolved": "https://registry.npmjs.org/jison-gho/-/jison-gho-0.6.1-214.tgz",
+  "_shasum": "2dbb4ef72786a9b45604246830ef10671c95b9e7",
   "_shrinkwrap": null,
-  "_spec": "jison-gho@0.4.18-178",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/gulp-jison",
+  "_spec": "jison-gho@0.6.1-214",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/@gerhobbelt/gulp-jison",
   "author": {
     "name": "Zach Carter",
     "email": "zach@carter.name",
     "url": "http://zaa.ch"
   },
   "bin": {
-    "jison": "lib/cli.js"
+    "jison": "dist/cli-cjs-es5.js"
   },
   "bugs": {
     "url": "http://github.com/GerHobbelt/jison/issues",
     "email": "jison@librelist.com"
   },
   "dependencies": {
-    "ebnf-parser": "github:gerhobbelt/ebnf-parser#master",
-    "jison-lex": "github:gerhobbelt/jison-lex#master",
-    "jscodeshift": "0.3.30",
-    "json5": "0.5.1",
-    "lex-parser": "github:gerhobbelt/lex-parser#master",
-    "nomnom": "github:gerhobbelt/nomnom#master",
-    "recast": "0.12.3",
-    "xregexp": "github:gerhobbelt/xregexp#master"
+    "@gerhobbelt/ast-util": "0.6.1-4",
+    "@gerhobbelt/json5": "0.5.1-20",
+    "@gerhobbelt/nomnom": "1.8.4-24",
+    "@gerhobbelt/recast": "0.13.0-22",
+    "@gerhobbelt/xregexp": "3.2.0-22"
   },
-  "description": "A parser generator with Bison's API (derived off zaach/jison repo)",
+  "description": "A parser generator with a Bison/YACC-similar API (derived off zaach/jison repo)",
   "devDependencies": {
-    "browserify": "14.3.0",
-    "chai": "3.5.0",
-    "glob": "7.1.1",
-    "mocha": "3.2.0",
-    "uglify-js": "2.8.22"
+    "@gerhobbelt/js-yaml": "3.10.1-5",
+    "@gerhobbelt/live-server": "1.3.0-22",
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-modern-browsers": "10.0.1",
+    "browserify": "14.5.0",
+    "chai": "4.1.2",
+    "get-stdin": "5.0.1",
+    "globby": "7.1.1",
+    "jison-gho": "0.6.1-212",
+    "mocha": "4.0.1",
+    "rollup": "0.52.2",
+    "rollup-plugin-node-resolve": "3.0.0",
+    "uglify-js": "3.2.2"
   },
   "directories": {},
   "dist": {
-    "shasum": "c8fa1681098c36e0f9aecb487fcda60b1032e5c7",
-    "tarball": "https://registry.npmjs.org/jison-gho/-/jison-gho-0.4.18-178.tgz"
+    "integrity": "sha512-ZqDkGpGKMU2TzARnwBxRuXjCypOHmpOVaQyOZAp0gyy6hjw+ncryizBaCA0cV0e8b9zpjsdWNM9KGLi9MMuP5A==",
+    "shasum": "2dbb4ef72786a9b45604246830ef10671c95b9e7",
+    "tarball": "https://registry.npmjs.org/jison-gho/-/jison-gho-0.6.1-214.tgz"
   },
   "engines": {
     "node": ">=4.0"
@@ -96,13 +118,14 @@
     "compiler"
   ],
   "license": "MIT",
-  "main": "lib/jison",
+  "main": "dist/jison-cjs-es5.js",
   "maintainers": [
     {
       "name": "gerhobbelt",
       "email": "ger@hobbelt.com"
     }
   ],
+  "module": "lib/jison.js",
   "name": "jison-gho",
   "optionalDependencies": {},
   "preferGlobal": true,
@@ -112,7 +135,10 @@
     "url": "git+https://github.com/GerHobbelt/jison.git"
   },
   "scripts": {
-    "test": "make test"
+    "build": "make",
+    "pub": "npm publish --access public",
+    "test": "make test",
+    "website": "live-server docs/"
   },
-  "version": "0.4.18-178"
+  "version": "0.6.1-214"
 }

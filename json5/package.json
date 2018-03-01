@@ -40,7 +40,6 @@
   "_requiredBy": [
     "#DEV:/",
     "/babel-core",
-    "/jison-gho",
     "/loader-utils"
   ],
   "_resolved": "https://registry.npmjs.org/json5/-/json5-0.5.1.tgz",

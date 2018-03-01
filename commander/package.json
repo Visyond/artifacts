@@ -34,7 +34,6 @@
     "type": "version"
   },
   "_requiredBy": [
-    "/commoner",
     "/concurrently",
     "/docco",
     "/selenium-standalone",

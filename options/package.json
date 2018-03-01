@@ -10,7 +10,7 @@
         "spec": ">=0.0.5",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/ws"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/selenium-webdriver/node_modules/ws"
     ]
   ],
   "_from": "options@>=0.0.5",
@@ -33,13 +33,13 @@
     "type": "range"
   },
   "_requiredBy": [
-    "/ws"
+    "/selenium-webdriver/ws"
   ],
   "_resolved": "https://registry.npmjs.org/options/-/options-0.0.6.tgz",
   "_shasum": "ec22d312806bb53e731773e7cdaefcf1c643128f",
   "_shrinkwrap": null,
   "_spec": "options@>=0.0.5",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/ws",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/selenium-webdriver/node_modules/ws",
   "author": {
     "name": "Einar Otto Stangvik",
     "email": "einaros@gmail.com",

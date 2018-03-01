@@ -38,6 +38,8 @@
     "type": "range"
   },
   "_requiredBy": [
+    "/less/request",
+    "/localtunnel/request",
     "/request"
   ],
   "_resolved": "https://registry.npmjs.org/tunnel-agent/-/tunnel-agent-0.6.0.tgz",

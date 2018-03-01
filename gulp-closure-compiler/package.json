@@ -55,7 +55,7 @@
     "#DEV:/"
   ],
   "_resolved": "git://github.com/visyond/gulp-closure-compiler.git#39c98e76debaf6447e6553276b5f0c7d64aed1fa",
-  "_shasum": "0acd197ddcb166884fe6a6687c1ddffcfb3d1c30",
+  "_shasum": "a4728282db6fdd408307aefc89326dff49971ff0",
   "_shrinkwrap": null,
   "_spec": "gulp-closure-compiler@github:visyond/gulp-closure-compiler#master",
   "_where": "/var/lib/jenkins/workspace/build/server/v2",

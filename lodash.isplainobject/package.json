@@ -2,18 +2,18 @@
   "_args": [
     [
       {
-        "raw": "lodash.isplainobject@^4.0.4",
+        "raw": "lodash.isplainobject@^4.0.6",
         "scope": null,
         "escapedName": "lodash.isplainobject",
         "name": "lodash.isplainobject",
-        "rawSpec": "^4.0.4",
-        "spec": ">=4.0.4 <5.0.0",
+        "rawSpec": "^4.0.6",
+        "spec": ">=4.0.6 <5.0.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/liftoff"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/sanitize-html"
     ]
   ],
-  "_from": "lodash.isplainobject@>=4.0.4 <5.0.0",
+  "_from": "lodash.isplainobject@>=4.0.6 <5.0.0",
   "_id": "lodash.isplainobject@4.0.6",
   "_inCache": true,
   "_location": "/lodash.isplainobject",
@@ -29,23 +29,23 @@
   "_npmVersion": "2.15.10",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "lodash.isplainobject@^4.0.4",
+    "raw": "lodash.isplainobject@^4.0.6",
     "scope": null,
     "escapedName": "lodash.isplainobject",
     "name": "lodash.isplainobject",
-    "rawSpec": "^4.0.4",
-    "spec": ">=4.0.4 <5.0.0",
+    "rawSpec": "^4.0.6",
+    "spec": ">=4.0.6 <5.0.0",
     "type": "range"
   },
   "_requiredBy": [
-    "/liftoff",
-    "/nightwatch/lodash.defaultsdeep"
+    "/nightwatch/lodash.defaultsdeep",
+    "/sanitize-html"
   ],
   "_resolved": "https://registry.npmjs.org/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz",
   "_shasum": "7c526a52d89b45c45cc690b88163be0497f550cb",
   "_shrinkwrap": null,
-  "_spec": "lodash.isplainobject@^4.0.4",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/liftoff",
+  "_spec": "lodash.isplainobject@^4.0.6",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/sanitize-html",
   "author": {
     "name": "John-David Dalton",
     "email": "john.david.dalton@gmail.com",

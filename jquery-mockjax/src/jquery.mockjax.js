@@ -651,6 +651,24 @@
 				$.ajaxSetup({}, requestSettings)
 			] );
 
+			if ((mockHandler.status === 301 || mockHandler.status === 302) &&
+				(requestSettings.type.toUpperCase() === 'GET' || requestSettings.type.toUpperCase() === 'HEAD') &&
+				mockHandler.headers.Location) {
+				logger.debug('Doing mock redirect to', mockHandler.headers.Location, requestSettings.type);
+
+				var redirectSettings = {};
+				var origKeys = Object.keys(origSettings);
+				// We can't alter origSettings, so we need a shallow copy of it...
+				for (var oi=0; oi<origKeys.length; oi++) {
+					redirectSettings[origKeys[oi]] = origSettings[origKeys[oi]];
+				}
+				redirectSettings.url = mockHandler.headers.Location;
+				redirectSettings.headers = {
+					Referer: origSettings.url
+				};
+
+				return handleAjax(redirectSettings);
+			}
 
 			if ( requestSettings.dataType && requestSettings.dataType.toUpperCase() === 'JSONP' ) {
 				if ((mockRequest = processJsonpMock( requestSettings, mockHandler, origSettings ))) {
@@ -718,6 +736,7 @@
 			throw new Error('AJAX not mocked: ' + origSettings.url);
 		}
 		else { // trigger a normal request
+			logger.log('Real ajax call to', origSettings.url);
 			return _ajax.apply($, [origSettings]);
 		}
 	}
@@ -954,6 +973,24 @@
 		if ( arguments.length === 1 ) {
 			return mockHandlers[i];
 		}
+	};
+
+	/**
+	 * Retrieve the current array of mock handlers.
+	 * NOTE: Altering these handlers, or the array itself is probably not a good
+	 * idea! This could easily lead to malfunction of the library. If you need
+	 * to alter a handler, clear(index) it (using the array index) and then
+	 * create a new handler with $.mockjax({ ... })
+	 *
+	 * **WARNING**: Additionally, note that the handlers array WILL NOT CHANGE
+	 * when a mock is cleared. This is because we have to maintain the handler
+	 * indeces for clearing of other mock handlers. (This is not ideal, and
+	 * will probably change in the future.) Cleared mocks are set to null!
+	 *
+ 	 * @return {Array} The current collection of handlers
+	 */
+	$.mockjax.handlers = function() {
+		return mockHandlers;
 	};
 
 	/**

@@ -38,11 +38,10 @@
     "type": "range"
   },
   "_requiredBy": [
-    "/commoner/glob",
+    "/del/glob",
     "/duplexify/end-of-stream",
     "/glob",
     "/glob-stream/glob",
-    "/globby/glob",
     "/gulp-closure-compiler/glob",
     "/gulp-typescript/glob",
     "/inflight",
@@ -51,6 +50,7 @@
     "/sprity/glob",
     "/tar-stream/end-of-stream",
     "/traceur/glob",
+    "/tsconfig/glob",
     "/tslint/findup-sync/glob"
   ],
   "_resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",

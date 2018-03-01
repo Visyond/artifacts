@@ -24,11 +24,8 @@
   },
   "_npmVersion": "2.14.2",
   "_phantomChildren": {
-    "core-util-is": "1.0.2",
-    "inherits": "2.0.3",
-    "process-nextick-args": "1.0.7",
-    "safe-buffer": "5.1.1",
-    "util-deprecate": "1.0.2"
+    "isstream": "0.1.2",
+    "readable-stream": "2.3.4"
   },
   "_requested": {
     "raw": "gulp-svgicons2svgfont@^2.4.0",

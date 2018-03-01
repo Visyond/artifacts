@@ -46,7 +46,6 @@
     "/inquirer",
     "/live-server/event-stream",
     "/pause-stream",
-    "/regenerator",
     "/split"
   ],
   "_resolved": "https://registry.npmjs.org/through/-/through-2.3.8.tgz",

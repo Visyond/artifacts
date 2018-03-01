@@ -14,19 +14,19 @@
     ]
   ],
   "_from": "gulp-less@>=3.1.0 <4.0.0",
-  "_id": "gulp-less@3.3.2",
+  "_id": "gulp-less@3.5.0",
   "_inCache": true,
   "_location": "/gulp-less",
-  "_nodeVersion": "7.10.0",
+  "_nodeVersion": "8.9.1",
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/gulp-less-3.3.2.tgz_1497887310373_0.8002076423726976"
+    "tmp": "tmp/gulp-less_3.5.0_1518465435610_0.298473455896092"
   },
   "_npmUser": {
     "name": "stevelacy",
     "email": "me@slacy.me"
   },
-  "_npmVersion": "4.6.1",
+  "_npmVersion": "5.5.1",
   "_phantomChildren": {},
   "_requested": {
     "raw": "gulp-less@^3.1.0",
@@ -40,8 +40,8 @@
   "_requiredBy": [
     "#DEV:/"
   ],
-  "_resolved": "https://registry.npmjs.org/gulp-less/-/gulp-less-3.3.2.tgz",
-  "_shasum": "f6636adcc66150a8902719fa59963fc7f862a49a",
+  "_resolved": "https://registry.npmjs.org/gulp-less/-/gulp-less-3.5.0.tgz",
+  "_shasum": "8014f469ddfc6544d7dda50098def0371bbb4f78",
   "_shrinkwrap": null,
   "_spec": "gulp-less@^3.1.0",
   "_where": "/var/lib/jenkins/workspace/build/server/v2",
@@ -52,10 +52,11 @@
     "url": "https://github.com/plus3network/gulp-less/issues"
   },
   "dependencies": {
-    "accord": "^0.27.3",
-    "gulp-util": "^3.0.7",
+    "accord": "^0.28.0",
     "less": "2.6.x || ^2.7.1",
     "object-assign": "^4.0.1",
+    "plugin-error": "^0.1.2",
+    "replace-ext": "^1.0.0",
     "through2": "^2.0.0",
     "vinyl-sourcemaps-apply": "^0.2.0"
   },
@@ -63,17 +64,21 @@
   "devDependencies": {
     "jshint": "^2.9.4",
     "mocha": "^3.4.2",
-    "should": "^11.2.0"
+    "should": "^11.2.0",
+    "vinyl": "^2.1.0"
   },
   "directories": {},
   "dist": {
-    "shasum": "f6636adcc66150a8902719fa59963fc7f862a49a",
-    "tarball": "https://registry.npmjs.org/gulp-less/-/gulp-less-3.3.2.tgz"
+    "integrity": "sha512-FQLY7unaHdTOXG0jlwxeBQcWoPPrTMQZRA7HfYwSNi9IPVx5l7GJEN72mG4ri2yigp/f/VNGUAJnFMJHBmH3iw==",
+    "shasum": "8014f469ddfc6544d7dda50098def0371bbb4f78",
+    "tarball": "https://registry.npmjs.org/gulp-less/-/gulp-less-3.5.0.tgz",
+    "fileCount": 4,
+    "unpackedSize": 7884
   },
   "engines": {
     "node": ">=0.10.0"
   },
-  "gitHead": "dd37ea22520d72265f0f028fd62c447c0c915dac",
+  "gitHead": "453625a294f0a725ac7122a2b9a2b45528e70b35",
   "homepage": "https://github.com/plus3network/gulp-less#readme",
   "keywords": [
     "gulpplugin",
@@ -84,20 +89,20 @@
   "main": "index.js",
   "maintainers": [
     {
-      "name": "stevelacy",
-      "email": "me@slacy.me"
-    },
-    {
-      "name": "contra",
-      "email": "contra@wearefractal.com"
-    },
-    {
       "name": "ccowan",
       "email": "chris@chriscowan.us"
     },
     {
+      "name": "contra",
+      "email": "yo@contra.io"
+    },
+    {
       "name": "fractal",
       "email": "contact@wearefractal.com"
+    },
+    {
+      "name": "stevelacy",
+      "email": "me@slacy.me"
     }
   ],
   "name": "gulp-less",
@@ -110,5 +115,5 @@
   "scripts": {
     "test": "jshint index.js && node_modules/.bin/mocha"
   },
-  "version": "3.3.2"
+  "version": "3.5.0"
 }

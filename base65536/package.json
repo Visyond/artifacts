@@ -49,7 +49,7 @@
     "/"
   ],
   "_resolved": "git://github.com/visyond/base65536.git#2ad8f51e3729285ba5600685ac12532b97fe1e39",
-  "_shasum": "79e8146f959c0c6a5c21d46fc40b2059a202ab01",
+  "_shasum": "99dea872740a47570dfcf764a031677cea138c27",
   "_shrinkwrap": null,
   "_spec": "base65536@github:visyond/base65536#master",
   "_where": "/var/lib/jenkins/workspace/build/server/v2",

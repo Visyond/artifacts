@@ -10,7 +10,7 @@
         "spec": ">=1.0.3 <2.0.0",
         "type": "range"
       },
-      "/var/lib/jenkins/workspace/checkbranch/node_modules"
+      "/var/lib/jenkins/workspace/build/server/v2"
     ]
   ],
   "_from": "siphash@>=1.0.3 <2.0.0",
@@ -38,14 +38,13 @@
     "type": "range"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/siphash/-/siphash-1.0.3.tgz",
   "_shasum": "7fb4e3f7986168a01722a7788eb5110f6268498e",
   "_shrinkwrap": null,
   "_spec": "siphash@^1.0.3",
-  "_where": "/var/lib/jenkins/workspace/checkbranch/node_modules",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2",
   "author": {
     "name": "Frank Denis",
     "email": "j at pureftpd dot org"

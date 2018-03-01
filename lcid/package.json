@@ -47,7 +47,6 @@
   },
   "_requiredBy": [
     "/browser-sync/os-locale",
-    "/defs/os-locale",
     "/localtunnel/os-locale",
     "/os-locale",
     "/yargs/os-locale"

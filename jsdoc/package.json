@@ -50,7 +50,7 @@
     "/gulp-jsdoc3"
   ],
   "_resolved": "git://github.com/gerhobbelt/jsdoc.git#b46f372e69b2baba27b4a1a0962c7d5d993641ff",
-  "_shasum": "0aac348cba88dec652378bb376ee224e0bbbe226",
+  "_shasum": "0c464f125d80b91d29c24b0d51cf5b60e000b3a2",
   "_shrinkwrap": null,
   "_spec": "jsdoc@github:gerhobbelt/jsdoc#master",
   "_where": "/var/lib/jenkins/workspace/build/server/v2",

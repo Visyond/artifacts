@@ -23,7 +23,10 @@
     "email": "me@feedic.com"
   },
   "_npmVersion": "2.11.1",
-  "_phantomChildren": {},
+  "_phantomChildren": {
+    "core-util-is": "1.0.2",
+    "inherits": "2.0.3"
+  },
   "_requested": {
     "raw": "htmlparser2@~3.8.1",
     "scope": null,

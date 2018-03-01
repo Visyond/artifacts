@@ -2,91 +2,111 @@
   "_args": [
     [
       {
-        "raw": "tar@^2.1.1",
+        "raw": "tar@4.0.2",
         "scope": null,
         "escapedName": "tar",
         "name": "tar",
-        "rawSpec": "^2.1.1",
-        "spec": ">=2.1.1 <3.0.0",
-        "type": "range"
+        "rawSpec": "4.0.2",
+        "spec": "4.0.2",
+        "type": "version"
       },
-      "/var/lib/jenkins/workspace/build/server/v2/node_modules/tar.gz"
+      "/var/lib/jenkins/workspace/build/server/v2/node_modules/geckodriver"
     ]
   ],
-  "_from": "tar@>=2.1.1 <3.0.0",
-  "_id": "tar@2.2.1",
+  "_from": "tar@4.0.2",
+  "_id": "tar@4.0.2",
   "_inCache": true,
   "_location": "/tar",
-  "_nodeVersion": "2.2.2",
+  "_nodeVersion": "8.5.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/tar-4.0.2.tgz_1508355005096_0.7286235468927771"
+  },
   "_npmUser": {
     "name": "zkat",
-    "email": "kat@sykosomatic.org"
+    "email": "kzm@sykosomatic.org"
   },
-  "_npmVersion": "2.14.3",
+  "_npmVersion": "5.5.1-canary.2",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "tar@^2.1.1",
+    "raw": "tar@4.0.2",
     "scope": null,
     "escapedName": "tar",
     "name": "tar",
-    "rawSpec": "^2.1.1",
-    "spec": ">=2.1.1 <3.0.0",
-    "type": "range"
+    "rawSpec": "4.0.2",
+    "spec": "4.0.2",
+    "type": "version"
   },
   "_requiredBy": [
-    "/node-gyp",
-    "/tar.gz"
+    "/geckodriver"
   ],
-  "_resolved": "https://registry.npmjs.org/tar/-/tar-2.2.1.tgz",
-  "_shasum": "8e4d2a256c0e2185c6b18ad694aec968b83cb1d1",
+  "_resolved": "https://registry.npmjs.org/tar/-/tar-4.0.2.tgz",
+  "_shasum": "e8e22bf3eec330e5c616d415a698395e294e8fad",
   "_shrinkwrap": null,
-  "_spec": "tar@^2.1.1",
-  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/tar.gz",
+  "_spec": "tar@4.0.2",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2/node_modules/geckodriver",
   "author": {
     "name": "Isaac Z. Schlueter",
     "email": "i@izs.me",
     "url": "http://blog.izs.me/"
   },
   "bugs": {
-    "url": "https://github.com/isaacs/node-tar/issues"
+    "url": "https://github.com/npm/node-tar/issues"
   },
   "dependencies": {
-    "block-stream": "*",
-    "fstream": "^1.0.2",
-    "inherits": "2"
+    "chownr": "^1.0.1",
+    "minipass": "^2.2.1",
+    "minizlib": "^1.0.4",
+    "mkdirp": "^0.5.0",
+    "yallist": "^3.0.2"
   },
   "description": "tar for node",
   "devDependencies": {
-    "graceful-fs": "^4.1.2",
-    "mkdirp": "^0.5.0",
-    "rimraf": "1.x",
-    "tap": "0.x"
+    "chmodr": "^1.0.2",
+    "end-of-stream": "^1.4.0",
+    "events-to-array": "^1.1.2",
+    "mutate-fs": "^1.1.0",
+    "rimraf": "^2.6.2",
+    "tap": "^10.7.2",
+    "tar-fs": "^1.16.0",
+    "tar-stream": "^1.5.2"
   },
   "directories": {},
   "dist": {
-    "shasum": "8e4d2a256c0e2185c6b18ad694aec968b83cb1d1",
-    "tarball": "https://registry.npmjs.org/tar/-/tar-2.2.1.tgz"
+    "integrity": "sha512-4lWN4uAEWzw8aHyBUx9HWXvH3vIFEhOyvN22HfBzWpE07HaTBXM8ttSeCQpswRo5On4q3nmmYmk7Tomn0uhUaw==",
+    "shasum": "e8e22bf3eec330e5c616d415a698395e294e8fad",
+    "tarball": "https://registry.npmjs.org/tar/-/tar-4.0.2.tgz"
   },
-  "gitHead": "52237e39d2eb68d22a32d9a98f1d762189fe6a3d",
-  "homepage": "https://github.com/isaacs/node-tar#readme",
+  "engines": {
+    "node": ">=4.5"
+  },
+  "files": [
+    "index.js",
+    "lib/"
+  ],
+  "gitHead": "ec864233e717a978553be174dc352f9ca411a8e4",
+  "homepage": "https://github.com/npm/node-tar#readme",
   "license": "ISC",
-  "main": "tar.js",
   "maintainers": [
-    {
-      "name": "isaacs",
-      "email": "isaacs@npmjs.com"
-    },
     {
       "name": "othiym23",
       "email": "ogd@aoaioxxysz.net"
+    },
+    {
+      "name": "iarna",
+      "email": "me@re-becca.org"
+    },
+    {
+      "name": "zkat",
+      "email": "kzm@sykosomatic.org"
     },
     {
       "name": "soldair",
       "email": "soldair@gmail.com"
     },
     {
-      "name": "zkat",
-      "email": "kat@sykosomatic.org"
+      "name": "isaacs",
+      "email": "i@izs.me"
     }
   ],
   "name": "tar",
@@ -94,10 +114,15 @@
   "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
-    "url": "git://github.com/isaacs/node-tar.git"
+    "url": "git+https://github.com/npm/node-tar.git"
   },
   "scripts": {
-    "test": "tap test/*.js"
+    "bench": "for i in benchmarks/*/*.js; do echo $i; for j in {1..5}; do node $i || break; done; done",
+    "genparse": "node scripts/generate-parse-fixtures.js",
+    "postpublish": "git push origin --all; git push origin --tags",
+    "postversion": "npm publish",
+    "preversion": "npm test",
+    "test": "tap test/*.js --100 -J --coverage-report=text"
   },
-  "version": "2.2.1"
+  "version": "4.0.2"
 }

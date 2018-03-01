@@ -14,19 +14,19 @@
     ]
   ],
   "_from": "merge2@>=1.0.2 <2.0.0",
-  "_id": "merge2@1.1.0",
+  "_id": "merge2@1.2.1",
   "_inCache": true,
   "_location": "/merge2",
-  "_nodeVersion": "6.11.0",
+  "_nodeVersion": "8.9.0",
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/merge2-1.1.0.tgz_1499003858617_0.15787300490774214"
+    "tmp": "tmp/merge2-1.2.1.tgz_1515514622244_0.8095978898927569"
   },
   "_npmUser": {
     "name": "zensh",
     "email": "admin@zensh.com"
   },
-  "_npmVersion": "3.10.10",
+  "_npmVersion": "5.5.1",
   "_phantomChildren": {},
   "_requested": {
     "raw": "merge2@^1.0.2",
@@ -40,8 +40,8 @@
   "_requiredBy": [
     "#DEV:/"
   ],
-  "_resolved": "https://registry.npmjs.org/merge2/-/merge2-1.1.0.tgz",
-  "_shasum": "99fb32b35e9fad840146004e13a56b7549a524db",
+  "_resolved": "https://registry.npmjs.org/merge2/-/merge2-1.2.1.tgz",
+  "_shasum": "271d2516ff52d4af7f7b710b8bf3e16e183fef66",
   "_shrinkwrap": null,
   "_spec": "merge2@^1.0.2",
   "_where": "/var/lib/jenkins/workspace/build/server/v2",
@@ -54,25 +54,30 @@
   "dependencies": {},
   "description": "Merge multiple streams into one stream in sequence or parallel.",
   "devDependencies": {
-    "standard": "^10.0.2",
+    "@std/esm": "^0.19.1",
+    "standard": "^10.0.3",
     "through2": "^2.0.3",
-    "thunks": "^4.8.0",
-    "tman": "^1.6.9"
+    "thunks": "^4.9.0",
+    "tman": "^1.7.4",
+    "to-through": "^2.0.0"
   },
   "directories": {},
   "dist": {
-    "shasum": "99fb32b35e9fad840146004e13a56b7549a524db",
-    "tarball": "https://registry.npmjs.org/merge2/-/merge2-1.1.0.tgz"
+    "integrity": "sha512-wUqcG5pxrAcaFI1lkqkMnk3Q7nUxV/NWfpAFSeWUwG9TRODnBDCUHa75mi3o3vLWQ5N4CQERWCauSlP0I3ZqUg==",
+    "shasum": "271d2516ff52d4af7f7b710b8bf3e16e183fef66",
+    "tarball": "https://registry.npmjs.org/merge2/-/merge2-1.2.1.tgz"
   },
   "engines": {
     "node": ">= 4.5.0"
   },
   "files": [
     "README.md",
-    "index.js"
+    "index.js",
+    "index.mjs"
   ],
-  "gitHead": "9d0b0a4032500cb5ea638a82dfcdb5b9311efbac",
+  "gitHead": "e13bd5cc3db17460a011e372321f94d11acb6130",
   "homepage": "https://github.com/teambition/merge2",
+  "jsnext:main": "index.mjs",
   "keywords": [
     "merge2",
     "multiple",
@@ -83,7 +88,7 @@
     "merge stream",
     "sync"
   ],
-  "main": "index.js",
+  "main": "./index",
   "maintainers": [
     {
       "name": "zensh",
@@ -100,5 +105,5 @@
   "scripts": {
     "test": "standard && tman"
   },
-  "version": "1.1.0"
+  "version": "1.2.1"
 }

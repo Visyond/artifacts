@@ -38,15 +38,15 @@
     "type": "range"
   },
   "_requiredBy": [
-    "/commoner/glob",
+    "/del/glob",
     "/glob",
     "/glob-stream/glob",
-    "/globby/glob",
     "/gulp-closure-compiler/glob",
     "/gulp-typescript/glob",
     "/nightwatch/glob",
     "/sprity/glob",
     "/traceur/glob",
+    "/tsconfig/glob",
     "/tslint/findup-sync/glob"
   ],
   "_resolved": "https://registry.npmjs.org/inflight/-/inflight-1.0.6.tgz",

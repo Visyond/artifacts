@@ -28,8 +28,7 @@
   },
   "_npmVersion": "5.0.0",
   "_phantomChildren": {
-    "es6-promisify": "5.0.0",
-    "socks": "1.1.10"
+    "extend": "3.0.1"
   },
   "_requested": {
     "raw": "pac-proxy-agent@^2.0.0",

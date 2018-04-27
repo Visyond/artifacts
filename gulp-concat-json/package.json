@@ -1,0 +1,102 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "gulp-concat-json@^1.0.0",
+        "scope": null,
+        "escapedName": "gulp-concat-json",
+        "name": "gulp-concat-json",
+        "rawSpec": "^1.0.0",
+        "spec": ">=1.0.0 <2.0.0",
+        "type": "range"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2"
+    ]
+  ],
+  "_from": "gulp-concat-json@>=1.0.0 <2.0.0",
+  "_id": "gulp-concat-json@1.0.0",
+  "_inCache": true,
+  "_location": "/gulp-concat-json",
+  "_npmUser": {
+    "name": "itrulia",
+    "email": "info@karl-merkli.ch"
+  },
+  "_npmVersion": "1.4.9",
+  "_phantomChildren": {
+    "clone-stats": "0.0.1",
+    "core-util-is": "1.0.2",
+    "escape-string-regexp": "1.0.5",
+    "get-stdin": "4.0.1",
+    "inherits": "2.0.3",
+    "lodash._escapehtmlchar": "2.4.1",
+    "lodash._escapestringchar": "2.4.1",
+    "lodash._isnative": "2.4.1",
+    "lodash._reunescapedhtml": "2.4.1",
+    "lodash._shimkeys": "2.4.1",
+    "lodash.defaults": "2.4.1",
+    "lodash.isobject": "2.4.1",
+    "lodash.values": "2.4.1",
+    "meow": "3.7.0",
+    "multipipe": "0.1.2"
+  },
+  "_requested": {
+    "raw": "gulp-concat-json@^1.0.0",
+    "scope": null,
+    "escapedName": "gulp-concat-json",
+    "name": "gulp-concat-json",
+    "rawSpec": "^1.0.0",
+    "spec": ">=1.0.0 <2.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gulp-concat-json/-/gulp-concat-json-1.0.0.tgz",
+  "_shasum": "a4c4ae7d79b5cda93a6db3dd1eaa2622f1102c5b",
+  "_shrinkwrap": null,
+  "_spec": "gulp-concat-json@^1.0.0",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2",
+  "author": {
+    "name": "Karl Merkli",
+    "email": "info@karl-merkli.ch",
+    "url": "http://itrulia.io"
+  },
+  "bugs": {
+    "url": "https://github.com/itruli/gulp-concat-json/issues"
+  },
+  "dependencies": {
+    "gulp-util": "~2.2.0",
+    "through": "*"
+  },
+  "description": "A plugin for Gulp to combine several JSON files",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "a4c4ae7d79b5cda93a6db3dd1eaa2622f1102c5b",
+    "tarball": "https://registry.npmjs.org/gulp-concat-json/-/gulp-concat-json-1.0.0.tgz"
+  },
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">=1.2.10"
+  },
+  "homepage": "https://github.com/itruli/gulp-concat-json",
+  "keywords": [
+    "gulpplugin",
+    "json"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "itrulia",
+      "email": "info@karl-merkli.ch"
+    }
+  ],
+  "name": "gulp-concat-json",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/itruli/gulp-concat-json.git"
+  },
+  "version": "1.0.0"
+}

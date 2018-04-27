@@ -1,0 +1,89 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "siphash@^1.0.3",
+        "scope": null,
+        "escapedName": "siphash",
+        "name": "siphash",
+        "rawSpec": "^1.0.3",
+        "spec": ">=1.0.3 <2.0.0",
+        "type": "range"
+      },
+      "/var/lib/jenkins/workspace/build/server/v2"
+    ]
+  ],
+  "_from": "siphash@>=1.0.3 <2.0.0",
+  "_id": "siphash@1.0.3",
+  "_inCache": true,
+  "_location": "/siphash",
+  "_nodeVersion": "7.2.1",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/siphash-1.0.3.tgz_1481554615557_0.3214608917478472"
+  },
+  "_npmUser": {
+    "name": "jedisct1",
+    "email": "npm@pureftpd.org"
+  },
+  "_npmVersion": "3.10.9",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "siphash@^1.0.3",
+    "scope": null,
+    "escapedName": "siphash",
+    "name": "siphash",
+    "rawSpec": "^1.0.3",
+    "spec": ">=1.0.3 <2.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/siphash/-/siphash-1.0.3.tgz",
+  "_shasum": "7fb4e3f7986168a01722a7788eb5110f6268498e",
+  "_shrinkwrap": null,
+  "_spec": "siphash@^1.0.3",
+  "_where": "/var/lib/jenkins/workspace/build/server/v2",
+  "author": {
+    "name": "Frank Denis",
+    "email": "j at pureftpd dot org"
+  },
+  "bugs": {
+    "url": "https://github.com/jedisct1/siphash-js/issues"
+  },
+  "dependencies": {},
+  "description": "SipHash-2-4 fast short-input pseudo-random function",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "7fb4e3f7986168a01722a7788eb5110f6268498e",
+    "tarball": "https://registry.npmjs.org/siphash/-/siphash-1.0.3.tgz"
+  },
+  "gitHead": "227d4a3523d04432aa55778330e331962bb49536",
+  "homepage": "https://github.com/jedisct1/siphash-js",
+  "keywords": [
+    "prf",
+    "hash",
+    "crypto"
+  ],
+  "license": "BSD-2-Clause",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "jedisct1",
+      "email": "npm@pureftpd.org"
+    }
+  ],
+  "name": "siphash",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jedisct1/siphash-js.git"
+  },
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "version": "1.0.3"
+}

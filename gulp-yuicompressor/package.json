@@ -1,0 +1,90 @@
+{
+  "_args": [
+    [
+      "gulp-yuicompressor@0.0.3",
+      "/home/doctor/prog/environment_root/server/v2"
+    ]
+  ],
+  "_from": "gulp-yuicompressor@0.0.3",
+  "_id": "gulp-yuicompressor@0.0.3",
+  "_inCache": true,
+  "_location": "/gulp-yuicompressor",
+  "_npmUser": {
+    "email": "anhulife@gmail.com",
+    "name": "anhulife"
+  },
+  "_npmVersion": "1.4.14",
+  "_phantomChildren": {
+    "core-util-is": "1.0.1",
+    "inherits": "2.0.1",
+    "isarray": "0.0.1",
+    "string_decoder": "0.10.31"
+  },
+  "_requested": {
+    "name": "gulp-yuicompressor",
+    "raw": "gulp-yuicompressor@0.0.3",
+    "rawSpec": "0.0.3",
+    "scope": null,
+    "spec": "0.0.3",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gulp-yuicompressor/-/gulp-yuicompressor-0.0.3.tgz",
+  "_shasum": "a6f238f7603f5d428ee052dbd0fc089c046a6853",
+  "_shrinkwrap": null,
+  "_spec": "gulp-yuicompressor@0.0.3",
+  "_where": "/home/doctor/prog/environment_root/server/v2",
+  "author": {
+    "email": "anhulife@gmail.com",
+    "name": "anhulife"
+  },
+  "bugs": {
+    "url": "https://github.com/anhulife/gulp-yuicompressor/issues"
+  },
+  "dependencies": {
+    "gulp-util": "^3.0.0",
+    "through2": "^0.5.1"
+  },
+  "description": "Minify files with yuicompressor",
+  "devDependencies": {
+    "gulp": "^3.8.7",
+    "mocha": "*",
+    "vinyl": "~0.2.3"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "a6f238f7603f5d428ee052dbd0fc089c046a6853",
+    "tarball": "http://registry.npmjs.org/gulp-yuicompressor/-/gulp-yuicompressor-0.0.3.tgz"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "yuicompressor.js"
+  ],
+  "gitHead": "7bfd0de8e64f3ebcd1b87cbfd79e02d9caafb9bd",
+  "homepage": "https://github.com/anhulife/gulp-yuicompressor",
+  "installable": true,
+  "keywords": [
+    "gulpplugin",
+    "yuicompressor"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "anhulife",
+      "email": "anhulife@gmail.com"
+    }
+  ],
+  "name": "gulp-yuicompressor",
+  "optionalDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:anhulife/gulp-yuicompressor.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "0.0.3"
+}

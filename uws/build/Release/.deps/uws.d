@@ -1,1 +1,0 @@
-cmd_uws := LD_LIBRARY_PATH=/var/lib/jenkins/workspace/build/server/v2/node_modules/uws/build/Release/lib.host:/var/lib/jenkins/workspace/build/server/v2/node_modules/uws/build/Release/lib.target:$$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd ../.; cp "/var/lib/jenkins/workspace/build/server/v2/node_modules/uws/build/Release/uws.node" uws_linux_48.node

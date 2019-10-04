@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['saxdocumentbuilderstate',['SAXDocumentBuilderState',['../namespacecom_1_1sun_1_1star_1_1xml_1_1dom.html#a8e1d723b2d19d95078879bf81b535b36',1,'com::sun::star::xml::dom']]],
+  ['scanerror',['ScanError',['../namespacecom_1_1sun_1_1star_1_1scanner.html#abd1619ea132004db8599d9529755e9ab',1,'com::sun::star::scanner']]],
+  ['searchalgorithms',['SearchAlgorithms',['../namespacecom_1_1sun_1_1star_1_1util.html#a88c44d0f9aaded4e5618f3f8adcde79f',1,'com::sun::star::util']]],
+  ['searchrecursion',['SearchRecursion',['../namespacecom_1_1sun_1_1star_1_1ucb.html#a8f357eda7c29e9601428bdc8834c7bd8',1,'com::sun::star::ucb']]],
+  ['securityoperationstatus',['SecurityOperationStatus',['../namespacecom_1_1sun_1_1star_1_1xml_1_1crypto.html#ab5d887eb5da1173b766d96d0d863d1dc',1,'com::sun::star::xml::crypto']]],
+  ['selectiontype',['SelectionType',['../namespacecom_1_1sun_1_1star_1_1view.html#acffca3b33fddce63d3220bc7487e879d',1,'com::sun::star::view']]],
+  ['shademode',['ShadeMode',['../namespacecom_1_1sun_1_1star_1_1drawing.html#af49ab4b65513d2c0077f76b2227326e9',1,'com::sun::star::drawing']]],
+  ['shadowlocation',['ShadowLocation',['../namespacecom_1_1sun_1_1star_1_1table.html#a9ab4ece6abe8ce0c4ad3123d6e3916c0',1,'com::sun::star::table']]],
+  ['sheetlinkmode',['SheetLinkMode',['../namespacecom_1_1sun_1_1star_1_1sheet.html#a34cdda19a5183f39256021e0c2bc46cc',1,'com::sun::star::sheet']]],
+  ['smarttagrecognizermode',['SmartTagRecognizerMode',['../namespacecom_1_1sun_1_1star_1_1smarttags.html#a2eab74f21d11f78b5aa7826b0c60604f',1,'com::sun::star::smarttags']]],
+  ['snapobjecttype',['SnapObjectType',['../namespacecom_1_1sun_1_1star_1_1drawing.html#aac70ce37cdcc7a4bfcf79309db1a438b',1,'com::sun::star::drawing']]],
+  ['solverconstraintoperator',['SolverConstraintOperator',['../namespacecom_1_1sun_1_1star_1_1sheet.html#a491ab8ed5b7b5809e7be869d26b071cf',1,'com::sun::star::sheet']]],
+  ['sortfieldtype',['SortFieldType',['../namespacecom_1_1sun_1_1star_1_1util.html#aa222808b6dd3437074e57760d8e15a83',1,'com::sun::star::util']]],
+  ['stackingdirection',['StackingDirection',['../namespacecom_1_1sun_1_1star_1_1chart2.html#ad5b96f2511266754f439e0cfdbe44545',1,'com::sun::star::chart2']]],
+  ['symbolstyle',['SymbolStyle',['../namespacecom_1_1sun_1_1star_1_1chart2.html#a8068445d248b830d1708dcb2a2afb2c6',1,'com::sun::star::chart2']]],
+  ['synchronizepolicy',['SynchronizePolicy',['../namespacecom_1_1sun_1_1star_1_1ucb.html#aaa633f0c45560a4367cb74d393c0c619',1,'com::sun::star::ucb']]]
+];

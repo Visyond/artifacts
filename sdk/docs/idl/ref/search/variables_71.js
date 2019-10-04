@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['q',['Q',['../namespacecom_1_1sun_1_1star_1_1awt_1_1Key.html#aa188a3442433ccc860fc76599fad60d6',1,'com::sun::star::awt::Key']]],
+  ['qname',['QName',['../namespacecom_1_1sun_1_1star_1_1xsd_1_1DataTypeClass.html#a89f8f18c1a6fe546bf0ead25e467ef67',1,'com::sun::star::xsd::DataTypeClass']]],
+  ['quadraticcurveto',['QUADRATICCURVETO',['../namespacecom_1_1sun_1_1star_1_1drawing_1_1EnhancedCustomShapeSegmentCommand.html#a691b41c520ee6349eabbee14bdf6e3ed',1,'com::sun::star::drawing::EnhancedCustomShapeSegmentCommand']]],
+  ['quartal',['QUARTAL',['../namespacecom_1_1sun_1_1star_1_1report_1_1GroupOn.html#a911fca3af8491aa93e01f77a8cb9d151',1,'com::sun::star::report::GroupOn']]],
+  ['quarter1_5fabbreviation',['QUARTER1_ABBREVIATION',['../namespacecom_1_1sun_1_1star_1_1i18n_1_1reservedWords.html#ac7e16c7951f3e5b528e6efc7834649bb',1,'com::sun::star::i18n::reservedWords']]],
+  ['quarter1_5fword',['QUARTER1_WORD',['../namespacecom_1_1sun_1_1star_1_1i18n_1_1reservedWords.html#afcc2abbfa31a6ab826ff7ae6543751f8',1,'com::sun::star::i18n::reservedWords']]],
+  ['quarter2_5fabbreviation',['QUARTER2_ABBREVIATION',['../namespacecom_1_1sun_1_1star_1_1i18n_1_1reservedWords.html#a4f6d8b3467affd2e1354ac1001739e13',1,'com::sun::star::i18n::reservedWords']]],
+  ['quarter2_5fword',['QUARTER2_WORD',['../namespacecom_1_1sun_1_1star_1_1i18n_1_1reservedWords.html#aff6c61bd930e413c3ea88e8b620c13a6',1,'com::sun::star::i18n::reservedWords']]],
+  ['quarter3_5fabbreviation',['QUARTER3_ABBREVIATION',['../namespacecom_1_1sun_1_1star_1_1i18n_1_1reservedWords.html#a31ca2442db16896038ff769aa5f92614',1,'com::sun::star::i18n::reservedWords']]],
+  ['quarter3_5fword',['QUARTER3_WORD',['../namespacecom_1_1sun_1_1star_1_1i18n_1_1reservedWords.html#a950fd6895f31c537ae9ff94595103076',1,'com::sun::star::i18n::reservedWords']]],
+  ['quarter4_5fabbreviation',['QUARTER4_ABBREVIATION',['../namespacecom_1_1sun_1_1star_1_1i18n_1_1reservedWords.html#aa9131b4987f50870bf523fde381162a5',1,'com::sun::star::i18n::reservedWords']]],
+  ['quarter4_5fword',['QUARTER4_WORD',['../namespacecom_1_1sun_1_1star_1_1i18n_1_1reservedWords.html#ab317958d975df31b4a26561c307c1e3b',1,'com::sun::star::i18n::reservedWords']]],
+  ['quarters',['QUARTERS',['../namespacecom_1_1sun_1_1star_1_1sheet_1_1DataPilotFieldGroupBy.html#a0a3c763ee3f5f0c045e0527cfd4cd853',1,'com::sun::star::sheet::DataPilotFieldGroupBy']]],
+  ['queries',['QUERIES',['../namespacecom_1_1sun_1_1star_1_1sdb_1_1application_1_1DatabaseObjectContainer.html#a7a960bbf434611db953b5f28245dfd6b',1,'com::sun::star::sdb::application::DatabaseObjectContainer']]],
+  ['query',['QUERY',['../namespacecom_1_1sun_1_1star_1_1sdb_1_1application_1_1DatabaseObject.html#acc82c7ba0c00090afccfd5f506ad786c',1,'com::sun::star::sdb::application::DatabaseObject::QUERY()'],['../namespacecom_1_1sun_1_1star_1_1sdb_1_1CommandType.html#acc82c7ba0c00090afccfd5f506ad786c',1,'com::sun::star::sdb::CommandType::QUERY()']]],
+  ['query_5fdelete',['QUERY_DELETE',['../namespacecom_1_1sun_1_1star_1_1ucb_1_1Error.html#a3c87e118c81fa8804a21136f3ec3dbb9',1,'com::sun::star::ucb::Error']]],
+  ['query_5fdelete_5fcache',['QUERY_DELETE_CACHE',['../namespacecom_1_1sun_1_1star_1_1ucb_1_1Error.html#a25223e03174a4df567b519cec756b551',1,'com::sun::star::ucb::Error']]],
+  ['querytimeout',['QueryTimeOut',['../servicecom_1_1sun_1_1star_1_1sdbc_1_1PreparedStatement.html#a969c52e3b4011e05d33bf95f4035a5ba',1,'com::sun::star::sdbc::PreparedStatement::QueryTimeOut()'],['../servicecom_1_1sun_1_1star_1_1sdbc_1_1RowSet.html#a969c52e3b4011e05d33bf95f4035a5ba',1,'com::sun::star::sdbc::RowSet::QueryTimeOut()'],['../servicecom_1_1sun_1_1star_1_1sdbc_1_1Statement.html#a969c52e3b4011e05d33bf95f4035a5ba',1,'com::sun::star::sdbc::Statement::QueryTimeOut()']]],
+  ['quickhelptext',['QuickHelpText',['../interfacecom_1_1sun_1_1star_1_1ui_1_1XStatusbarItem.html#a4184fdee67dcb9e0e3a0805615c1b995',1,'com::sun::star::ui::XStatusbarItem']]],
+  ['quiet_5fupdate',['QUIET_UPDATE',['../namespacecom_1_1sun_1_1star_1_1document_1_1UpdateDocMode.html#a8bcf71fa5cfc4a903fa7db9ed0ce8f21',1,'com::sun::star::document::UpdateDocMode']]],
+  ['quit',['QUIT',['../namespacecom_1_1sun_1_1star_1_1awt_1_1KeyFunction.html#a9912bfb763778f3c08b48dcd11beafd4',1,'com::sun::star::awt::KeyFunction']]],
+  ['quotationend',['quotationEnd',['../structcom_1_1sun_1_1star_1_1i18n_1_1LocaleDataItem.html#a0b38420a4f8bf6f04d5d4bc35194beb1',1,'com::sun::star::i18n::LocaleDataItem']]],
+  ['quotationstart',['quotationStart',['../structcom_1_1sun_1_1star_1_1i18n_1_1LocaleDataItem.html#a2deae614c0aa44141d2944398f8c5abf',1,'com::sun::star::i18n::LocaleDataItem']]],
+  ['quoteleft',['QUOTELEFT',['../namespacecom_1_1sun_1_1star_1_1awt_1_1Key.html#add69b02942afa42354437ff31ed32c95',1,'com::sun::star::awt::Key']]],
+  ['quoteright',['QUOTERIGHT',['../namespacecom_1_1sun_1_1star_1_1awt_1_1Key.html#a850677e3e1e5d110c4633368238100d8',1,'com::sun::star::awt::Key']]]
+];

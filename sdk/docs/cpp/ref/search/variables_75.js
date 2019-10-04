@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['uattributes',['uAttributes',['../a00007.html#a40f4d1d56f02d357a7cd263defaa06a1',1,'_oslFileStatus::uAttributes()'],['../a00008.html#a257bd1afa651e50183767f438112e30d',1,'_oslVolumeInfo::uAttributes()']]],
+  ['ufilesize',['uFileSize',['../a00007.html#a75ceaf2d09b3dba8ab6ebbcc07d2f721',1,'_oslFileStatus']]],
+  ['ufreespace',['uFreeSpace',['../a00008.html#af0cde1f869fb488ada3e2b248a7035d3',1,'_oslVolumeInfo']]],
+  ['umaxnamelength',['uMaxNameLength',['../a00008.html#a11f139af77f919366cb6fc791eb863c7',1,'_oslVolumeInfo']]],
+  ['umaxpathlength',['uMaxPathLength',['../a00008.html#a18ee684455fa2a6505d43ec781704b7b',1,'_oslVolumeInfo']]],
+  ['unusedsince',['unusedSince',['../a00011.html#a2c27af5fa12d01c9c39f80eb0b2c36c3',1,'_rtl_StandardModuleCount']]],
+  ['userdata',['UserData',['../a00147.html#a94fb723f758d991a10e73d7bf1f5b5f0',1,'oslSignalInfo']]],
+  ['usersignal',['UserSignal',['../a00147.html#ab9106b39d2c7ae15f39aeee2b287241a',1,'oslSignalInfo']]],
+  ['usertime',['UserTime',['../a00146.html#acdbec544965f2ff1f1085b11bfa2f9e3',1,'oslProcessInfo']]],
+  ['ustrfilename',['ustrFileName',['../a00007.html#a52fc198fb3cd85d3b41ef5cf1efe5215',1,'_oslFileStatus']]],
+  ['ustrfilesystemname',['ustrFileSystemName',['../a00008.html#a9455d8abee0819e384a537c306d88a7f',1,'_oslVolumeInfo']]],
+  ['ustrfileurl',['ustrFileURL',['../a00007.html#ac225b4dc066bcc99088e3a8f9614ab2a',1,'_oslFileStatus']]],
+  ['ustrlinktargeturl',['ustrLinkTargetURL',['../a00007.html#a2de4bbf56cecf5435fe11dea696092ce',1,'_oslFileStatus']]],
+  ['ustructsize',['uStructSize',['../a00007.html#a9dd21f3d1a624da3b85b65caba4282ac',1,'_oslFileStatus::uStructSize()'],['../a00008.html#ae7df80711543ea419945503a03d227fe',1,'_oslVolumeInfo::uStructSize()']]],
+  ['utotalspace',['uTotalSpace',['../a00008.html#a82cd611883c8c6187e4cc090e37b5137',1,'_oslVolumeInfo']]],
+  ['uusedspace',['uUsedSpace',['../a00008.html#a4dcd71fa9f7fd7f2c9924651b1f9d1e1',1,'_oslVolumeInfo']]],
+  ['uvalidfields',['uValidFields',['../a00007.html#a1ea0b2e33b86e8cb9680c16c9f0611da',1,'_oslFileStatus::uValidFields()'],['../a00008.html#a177b8213c8e157fe61ded493f8d40e87',1,'_oslVolumeInfo::uValidFields()']]]
+];

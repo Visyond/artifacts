@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['k',['K',['../namespacecom_1_1sun_1_1star_1_1awt_1_1Key.html#a19359316f58dda97c1ab163e3a7b0dbd',1,'com::sun::star::awt::Key']]],
+  ['keep',['KEEP',['../namespacecom_1_1sun_1_1star_1_1ucb_1_1NameClash.html#a28e859852ecabe5a1de9e0d2d9a69df3',1,'com::sun::star::ucb::NameClash']]],
+  ['keepformats',['KeepFormats',['../servicecom_1_1sun_1_1star_1_1sheet_1_1DatabaseRange.html#ac34b74170aee53aa1f3898b38f5ac393',1,'com::sun::star::sheet::DatabaseRange']]],
+  ['keeptogether',['KeepTogether',['../interfacecom_1_1sun_1_1star_1_1report_1_1XGroup.html#a8c23ee90f1673324ebe9be853d698d0b',1,'com::sun::star::report::XGroup::KeepTogether()'],['../interfacecom_1_1sun_1_1star_1_1report_1_1XSection.html#a8d835b5db9271067f775fd2d7493c3b9',1,'com::sun::star::report::XSection::KeepTogether()'],['../servicecom_1_1sun_1_1star_1_1text_1_1TextTable.html#a8d835b5db9271067f775fd2d7493c3b9',1,'com::sun::star::text::TextTable::KeepTogether()']]],
+  ['kerning',['Kerning',['../structcom_1_1sun_1_1star_1_1awt_1_1FontDescriptor.html#aa6eda54d871903b98a22c0b1db0630f7',1,'com::sun::star::awt::FontDescriptor']]],
+  ['key_5fagreement',['KEY_AGREEMENT',['../namespacecom_1_1sun_1_1star_1_1security_1_1KeyUsage.html#aa122bee0e332805fdeba43e6d951c17e',1,'com::sun::star::security::KeyUsage']]],
+  ['key_5fcert_5fsign',['KEY_CERT_SIGN',['../namespacecom_1_1sun_1_1star_1_1security_1_1KeyUsage.html#a463ae94ba5bd24621488cb5435b1eff0',1,'com::sun::star::security::KeyUsage']]],
+  ['key_5fencipherment',['KEY_ENCIPHERMENT',['../namespacecom_1_1sun_1_1star_1_1security_1_1KeyUsage.html#a61450b1151c9b77bcb2c0fc89e53998d',1,'com::sun::star::security::KeyUsage']]],
+  ['keychar',['KeyChar',['../structcom_1_1sun_1_1star_1_1awt_1_1KeyEvent.html#a2ebeaada4dee647dafd1cd26ea1a60c7',1,'com::sun::star::awt::KeyEvent::KeyChar()'],['../structcom_1_1sun_1_1star_1_1awt_1_1KeyStroke.html#a2ebeaada4dee647dafd1cd26ea1a60c7',1,'com::sun::star::awt::KeyStroke::KeyChar()']]],
+  ['keycode',['KeyCode',['../structcom_1_1sun_1_1star_1_1awt_1_1KeyEvent.html#ac52fee1e96933f6d99789b325933a7ab',1,'com::sun::star::awt::KeyEvent::KeyCode()'],['../structcom_1_1sun_1_1star_1_1awt_1_1KeyStroke.html#ac52fee1e96933f6d99789b325933a7ab',1,'com::sun::star::awt::KeyStroke::KeyCode()']]],
+  ['keyfunc',['KeyFunc',['../structcom_1_1sun_1_1star_1_1awt_1_1KeyEvent.html#a607ef284179388eaf7163586eaccafa4',1,'com::sun::star::awt::KeyEvent::KeyFunc()'],['../structcom_1_1sun_1_1star_1_1awt_1_1KeyStroke.html#a607ef284179388eaf7163586eaccafa4',1,'com::sun::star::awt::KeyStroke::KeyFunc()']]],
+  ['keyhole',['KEYHOLE',['../namespacecom_1_1sun_1_1star_1_1animations_1_1TransitionSubType.html#ac8c11e631b64563c2927cd482e0e357d',1,'com::sun::star::animations::TransitionSubType']]],
+  ['keyname',['KeyName',['../interfacecom_1_1sun_1_1star_1_1registry_1_1XRegistryKey.html#ad75286a69f558484322dac5297e2ed64',1,'com::sun::star::registry::XRegistryKey']]],
+  ['keytimes',['KeyTimes',['../interfacecom_1_1sun_1_1star_1_1animations_1_1XAnimate.html#a02aa546f990f8d460a8b1c78da3ba708',1,'com::sun::star::animations::XAnimate']]],
+  ['keytype',['KeyType',['../interfacecom_1_1sun_1_1star_1_1container_1_1XMap.html#a30f2a87e0c20d8c997a6de03a3959683',1,'com::sun::star::container::XMap']]],
+  ['keywords',['Keywords',['../interfacecom_1_1sun_1_1star_1_1document_1_1XDocumentProperties.html#ab1ec921456fe6ab228469292cea71bf3',1,'com::sun::star::document::XDocumentProperties']]],
+  ['kind_5fdocument',['KIND_DOCUMENT',['../namespacecom_1_1sun_1_1star_1_1ucb_1_1ContentInfoAttribute.html#a17dc9b4d5d20df7676b55b537831c880',1,'com::sun::star::ucb::ContentInfoAttribute']]],
+  ['kind_5ffolder',['KIND_FOLDER',['../namespacecom_1_1sun_1_1star_1_1ucb_1_1ContentInfoAttribute.html#accceefb8d791ac0f6ca9e03b1ebf867b',1,'com::sun::star::ucb::ContentInfoAttribute']]],
+  ['kind_5flink',['KIND_LINK',['../namespacecom_1_1sun_1_1star_1_1ucb_1_1ContentInfoAttribute.html#a5acb4fb0a755945672e079704a70d2f4',1,'com::sun::star::ucb::ContentInfoAttribute']]],
+  ['km',['KM',['../namespacecom_1_1sun_1_1star_1_1util_1_1MeasureUnit.html#a283d542e141c7362a5ac415a9789887a',1,'com::sun::star::util::MeasureUnit']]]
+];

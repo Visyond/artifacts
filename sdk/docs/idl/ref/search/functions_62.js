@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['beforefirst',['beforeFirst',['../interfacecom_1_1sun_1_1star_1_1sdbc_1_1XResultSet.html#a2284197abfed1a50b569a045d191bf1a',1,'com::sun::star::sdbc::XResultSet']]],
+  ['begincollectevents',['beginCollectEvents',['../interfacecom_1_1sun_1_1star_1_1linguistic2_1_1XDictionaryList.html#a8e84a94125ab486dbe6d5f3587ee13d3',1,'com::sun::star::linguistic2::XDictionaryList']]],
+  ['beginevent',['beginEvent',['../interfacecom_1_1sun_1_1star_1_1animations_1_1XAnimationListener.html#a9df28a6aeb5a0d584e32fac9fb70dcec',1,'com::sun::star::animations::XAnimationListener']]],
+  ['beginofcharblock',['beginOfCharBlock',['../interfacecom_1_1sun_1_1star_1_1i18n_1_1XBreakIterator.html#a54e2bd38769f90f67926c6760afcb13b',1,'com::sun::star::i18n::XBreakIterator']]],
+  ['beginofctlscripttype',['beginOfCTLScriptType',['../interfacecom_1_1sun_1_1star_1_1i18n_1_1XScriptTypeDetector.html#ae567daf50b69500bbdf220524b5149a2',1,'com::sun::star::i18n::XScriptTypeDetector']]],
+  ['beginofscript',['beginOfScript',['../interfacecom_1_1sun_1_1star_1_1i18n_1_1XBreakIterator.html#a967904c63a57aae079490d15177dc57c',1,'com::sun::star::i18n::XBreakIterator']]],
+  ['beginofscriptdirection',['beginOfScriptDirection',['../interfacecom_1_1sun_1_1star_1_1i18n_1_1XScriptTypeDetector.html#aaab3f2c94149bac34e068b6b141df0f9',1,'com::sun::star::i18n::XScriptTypeDetector']]],
+  ['beginofsentence',['beginOfSentence',['../interfacecom_1_1sun_1_1star_1_1i18n_1_1XBreakIterator.html#a5f68857f13e1a25f959a918e71ed0a14',1,'com::sun::star::i18n::XBreakIterator']]],
+  ['bind',['bind',['../interfacecom_1_1sun_1_1star_1_1drawing_1_1XShapeBinder.html#a60919efaee1cbef4cd78b05fa8d48174',1,'com::sun::star::drawing::XShapeBinder']]],
+  ['bindalias',['bindAlias',['../interfacecom_1_1sun_1_1star_1_1util_1_1XLocalizedAliases.html#a1d8257d19ae9bd4fc74d14c8273cdd49',1,'com::sun::star::util::XLocalizedAliases']]],
+  ['bindpackage',['bindPackage',['../interfacecom_1_1sun_1_1star_1_1deployment_1_1XPackageRegistry.html#ac1f05487413a2738d0b580673990d68d',1,'com::sun::star::deployment::XPackageRegistry']]],
+  ['blankscreen',['blankScreen',['../interfacecom_1_1sun_1_1star_1_1presentation_1_1XSlideShowController.html#ab9fb0b068dd2236341baf09d676b3b35',1,'com::sun::star::presentation::XSlideShowController']]],
+  ['blockingstatuschanged',['blockingStatusChanged',['../interfacecom_1_1sun_1_1star_1_1xml_1_1crypto_1_1sax_1_1XSAXEventKeeperStatusChangeListener.html#af57d190e57458810436578e8a30dd1e1',1,'com::sun::star::xml::crypto::sax::XSAXEventKeeperStatusChangeListener']]],
+  ['bootupprofile',['bootupProfile',['../interfacecom_1_1sun_1_1star_1_1mozilla_1_1XProfileManager.html#aa500086af4e39d043dd433305be2f4b2',1,'com::sun::star::mozilla::XProfileManager']]],
+  ['borderwidthschanged',['borderWidthsChanged',['../interfacecom_1_1sun_1_1star_1_1frame_1_1XBorderResizeListener.html#a0ded278b1feb55dcdb8f286814eee71e',1,'com::sun::star::frame::XBorderResizeListener']]],
+  ['breaklink',['breakLink',['../interfacecom_1_1sun_1_1star_1_1embed_1_1XLinkageSupport.html#af721be70d45cceb3ef3199094202e9f4',1,'com::sun::star::embed::XLinkageSupport']]],
+  ['bringtofront',['bringToFront',['../interfacecom_1_1sun_1_1star_1_1drawing_1_1XShapeArranger.html#aa6804ab9692f8234cec304e69f8a7fe0',1,'com::sun::star::drawing::XShapeArranger']]],
+  ['broadcastcontextchangeevent',['broadcastContextChangeEvent',['../interfacecom_1_1sun_1_1star_1_1ui_1_1XContextChangeEventMultiplexer.html#a68b42de79baa20e50de1e0dab0498f69',1,'com::sun::star::ui::XContextChangeEventMultiplexer']]],
+  ['broadcastvbascriptevent',['broadcastVBAScriptEvent',['../interfacecom_1_1sun_1_1star_1_1script_1_1vba_1_1XVBACompatibility.html#a461dec41b9a487699b50def9770533d0',1,'com::sun::star::script::vba::XVBACompatibility']]],
+  ['bufferstatuschanged',['bufferStatusChanged',['../interfacecom_1_1sun_1_1star_1_1xml_1_1crypto_1_1sax_1_1XSAXEventKeeperStatusChangeListener.html#a5dd413aaf910963c5a73ea3e57460a40',1,'com::sun::star::xml::crypto::sax::XSAXEventKeeperStatusChangeListener']]],
+  ['buildcertificatepath',['buildCertificatePath',['../interfacecom_1_1sun_1_1star_1_1xml_1_1crypto_1_1XSecurityEnvironment.html#a5dd624ce7594e060cde475b3e0a470cd',1,'com::sun::star::xml::crypto::XSecurityEnvironment']]]
+];

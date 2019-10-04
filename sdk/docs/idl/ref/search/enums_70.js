@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['pagenumbertype',['PageNumberType',['../namespacecom_1_1sun_1_1star_1_1text.html#aeffd73e249af906f303724f66f1f01c5',1,'com::sun::star::text']]],
+  ['pagestylelayout',['PageStyleLayout',['../namespacecom_1_1sun_1_1star_1_1style.html#ae13f8c21c10b194207bb33f84a33d50f',1,'com::sun::star::style']]],
+  ['paperformat',['PaperFormat',['../namespacecom_1_1sun_1_1star_1_1view.html#a12ab04987d08416f8347a9790c7abf3e',1,'com::sun::star::view']]],
+  ['paperorientation',['PaperOrientation',['../namespacecom_1_1sun_1_1star_1_1view.html#a5312aa9f24f5483f2a37fd41a47d852a',1,'com::sun::star::view']]],
+  ['paragraphadjust',['ParagraphAdjust',['../namespacecom_1_1sun_1_1star_1_1style.html#ab9b2806f97ec4c3b5d4e2d92084948f1',1,'com::sun::star::style']]],
+  ['parammode',['ParamMode',['../namespacecom_1_1sun_1_1star_1_1reflection.html#ada880a15fc14bc0e53c3dd7c3c8a34eb',1,'com::sun::star::reflection']]],
+  ['passwordrequestmode',['PasswordRequestMode',['../namespacecom_1_1sun_1_1star_1_1task.html#a921a6f0fb0abf824f006cab79dbc54d0',1,'com::sun::star::task']]],
+  ['pasteoperation',['PasteOperation',['../namespacecom_1_1sun_1_1star_1_1sheet.html#af53d63b24461405946937e0b962a8a9b',1,'com::sun::star::sheet']]],
+  ['phasetype',['PhaseType',['../namespacecom_1_1sun_1_1star_1_1xml_1_1dom_1_1events.html#af00a42ecad444bbda75cde1b64bd7e72',1,'com::sun::star::xml::dom::events']]],
+  ['piechartoffsetmode',['PieChartOffsetMode',['../namespacecom_1_1sun_1_1star_1_1chart2.html#aa17c0b28cca2adc2be9b3c5954111489',1,'com::sun::star::chart2']]],
+  ['polygonflags',['PolygonFlags',['../namespacecom_1_1sun_1_1star_1_1drawing.html#af3965fa427851bc02bfe32c5d95d7406',1,'com::sun::star::drawing']]],
+  ['polygonkind',['PolygonKind',['../namespacecom_1_1sun_1_1star_1_1drawing.html#adec70dcaa1fdfc08f03cf30ccee65ef6',1,'com::sun::star::drawing']]],
+  ['presentationrange',['PresentationRange',['../namespacecom_1_1sun_1_1star_1_1presentation.html#a69c71b14b95cc70bce7122a7b8287045',1,'com::sun::star::presentation']]],
+  ['printablestate',['PrintableState',['../namespacecom_1_1sun_1_1star_1_1view.html#ad9b0afaffefc166344fd9575516b6626',1,'com::sun::star::view']]],
+  ['priority',['Priority',['../namespacecom_1_1sun_1_1star_1_1ucb.html#a315655b1bb5848c063491adffde62b15',1,'com::sun::star::ucb']]],
+  ['projectionmode',['ProjectionMode',['../namespacecom_1_1sun_1_1star_1_1drawing.html#a635428fef8d6e4afba288610c9c65bd5',1,'com::sun::star::drawing']]],
+  ['propertystate',['PropertyState',['../namespacecom_1_1sun_1_1star_1_1beans.html#a1a5ccb5c59cace4a214c1e2eae8620b0',1,'com::sun::star::beans']]],
+  ['propertyvaluestate',['PropertyValueState',['../namespacecom_1_1sun_1_1star_1_1ucb.html#a82ef3fdcd414866879e7aae1e52748d0',1,'com::sun::star::ucb']]],
+  ['pushbuttontype',['PushButtonType',['../namespacecom_1_1sun_1_1star_1_1awt.html#aa4e49c7e6c5bf2b4d010ad4a50b90ec0',1,'com::sun::star::awt']]]
+];
